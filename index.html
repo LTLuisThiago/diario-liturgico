@@ -89,6 +89,15 @@
   .destaque-hoje:hover { transform:translateY(-4px); box-shadow:0 24px 64px rgba(14,21,32,0.18); }
   .destaque-topo { background:linear-gradient(135deg, var(--purpura), var(--noite-med), var(--aurora)); padding:40px 52px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; position:relative; overflow:hidden; }
   .destaque-topo::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:24px 24px; pointer-events:none; }
+  @media(max-width:768px){
+    .diarios-secao { padding:60px 20px 80px; }
+    .destaque-corpo { padding:28px 24px; }
+    .escritura-secao { padding:60px 20px; }
+    .capitulos-grid { padding:24px 20px; grid-template-columns:1fr; }
+    .sobre { padding:60px 20px; }
+    .d-hom-corpo { padding:32px 24px; }
+    .d-or-corpo { padding:14px 28px 40px; }
+  }
   @media(max-width:600px){ .destaque-topo{grid-template-columns:1fr; padding:28px 24px;} }
   .destaque-badge { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:var(--noite); background:var(--ouro); padding:5px 14px; display:inline-block; margin-bottom:14px; text-transform:uppercase; border-radius:1px; position:relative; }
   .destaque-tempo { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:rgba(253,248,240,0.5); text-transform:uppercase; margin-bottom:10px; position:relative; }
@@ -262,26 +271,26 @@
 </head>
 <body>
 
-<nav class="nav" id="nav">
-  <div class="nav-logo" onclick="irPortal()">✦ Diário Litúrgico</div>
-  <div class="nav-voltar" id="nav-voltar" onclick="irPortal()">← Voltar</div>
+<nav class="nav" id="nav" role="navigation" aria-label="Navegação principal">
+  <div class="nav-logo" onclick="irPortal()" role="button" tabindex="0" aria-label="Ir para o portal principal">✦ Diário Litúrgico</div>
+  <div class="nav-voltar" id="nav-voltar" onclick="irPortal()" role="button" tabindex="0" aria-label="Voltar ao portal">← Voltar</div>
 </nav>
 
 <!-- PORTAL -->
 <div class="view ativa" id="view-portal">
 
-  <section class="hero">
-    <div class="hero-grade"></div>
-    <div class="hero-glow"></div>
+  <section class="hero" role="banner" aria-labelledby="hero-titulo-id">
+    <div class="hero-grade" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-conteudo">
-      <div class="hero-emblema">✦ ✝ ✦</div>
+      <div class="hero-emblema" aria-hidden="true">✦ ✝ ✦</div>
       <div class="hero-rotulo">Reflexões sobre a Palavra de Deus</div>
-      <h1 class="hero-titulo">Diário Litúrgico</h1>
+      <h1 class="hero-titulo" id="hero-titulo-id">Diário Litúrgico</h1>
       <p class="hero-subtitulo">Meditações diárias para quem tem sede<br>e busca a fonte que não seca.</p>
       <div class="hero-autor">Por Luis Thiago</div>
-      <button class="hero-btn" onclick="document.getElementById('diarios').scrollIntoView({behavior:'smooth'})">Ler as Reflexões</button>
+      <button class="hero-btn" onclick="document.getElementById('diarios').scrollIntoView({behavior:'smooth'})" aria-label="Ir para a seção de reflexões">Ler as Reflexões</button>
     </div>
-    <div class="hero-scroll"><span>Descer</span><div class="seta"></div></div>
+    <div class="hero-scroll" aria-hidden="true"><span>Descer</span><div class="seta"></div></div>
   </section>
 
   <div class="versiculo-fixo">
@@ -289,15 +298,15 @@
     <div class="ref">1 Samuel 16,7</div>
   </div>
 
-  <section class="diarios-secao" id="diarios">
+  <section class="diarios-secao" id="diarios" role="region" aria-labelledby="diarios-titulo-id">
     <div class="secao-topo">
       <div class="secao-rotulo">✦ 4.ª Semana da Quaresma ✦</div>
-      <h2 class="secao-titulo">Reflexão em Destaque</h2>
+      <h2 class="secao-titulo" id="diarios-titulo-id">Reflexão em Destaque</h2>
       <div class="secao-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
     </div>
 
     <!-- HOJE — Domingo 4.ª Semana -->
-    <div class="destaque-hoje" onclick="abrirDiario('d_15mar')">
+    <article class="destaque-hoje" onclick="abrirDiario('d_15mar')" role="button" tabindex="0" aria-label="Abrir reflexão do 4.º Domingo da Quaresma — 15 de março de 2026">
       <div class="destaque-topo">
         <div>
           <div class="destaque-badge">✦ Reflexão de Hoje</div>
@@ -317,7 +326,7 @@
         </div>
         <div class="destaque-ler">Ler a reflexão completa</div>
       </div>
-    </div>
+    </article>
 
     <!-- DIAS ANTERIORES DA 4ª SEMANA -->
     <div class="grid-secao">
@@ -331,25 +340,25 @@
     <div class="grid-secao" style="margin-top:52px;">
       <div class="grid-rotulo">✦ 3.ª Semana da Quaresma — Arquivo</div>
       <div class="diarios-grid">
-        <div class="diario-card" onclick="abrirDiario('d_14mar')">
+        <article class="diario-card" onclick="abrirDiario('d_14mar')" role="button" tabindex="0" aria-label="Abrir reflexão do Sábado da 3.ª Semana — 14 de março de 2026">
           <div class="card-tempo">Sábado — 3.ª Semana</div>
           <div class="card-data">14 de março de 2026</div>
-          <div class="card-titulo">"Separados de Deus, a única coisa que produzimos por conta própria é o pecado"</div>
+          <div class="card-titulo">"O único bem que é genuinamente nosso"</div>
           <div class="card-versiculo">"Quero misericórdia e não sacrifício, conhecimento de Deus mais do que holocaustos." — Os 6,6</div>
           <div class="card-tags"><span class="card-tag">Oséias 6</span><span class="card-tag">Salmo 50</span><span class="card-tag">Lucas 18</span></div>
           <div class="card-ler">Ler reflexão</div>
-        </div>
+        </article>
       </div>
     </div>
 
   </section>
 
   <!-- ESTUDO DA ESCRITURA -->
-  <section class="escritura-secao" id="escritura">
+  <section class="escritura-secao" id="escritura" role="region" aria-labelledby="escritura-titulo-id">
     <div class="escritura-inner">
       <div class="secao-topo">
         <div class="secao-rotulo">✦ Estudo da Escritura ✦</div>
-        <h2 class="secao-titulo" style="color:#f0ece0;">Reflexões por Capítulo</h2>
+        <h2 class="secao-titulo" id="escritura-titulo-id" style="color:#f0ece0;">Reflexões por Capítulo</h2>
         <div class="secao-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
       </div>
       <p class="escritura-intro">Uma leitura contínua da Palavra — capítulo a capítulo, camada a camada. Cada reflexão aprofunda o texto e o conecta à vida de quem busca compreender a Escritura com o coração.</p>
@@ -407,7 +416,7 @@
     </div>
   </section>
 
-  <section class="sobre">
+  <section class="sobre" role="region" aria-label="Sobre o Diário Litúrgico">
     <div class="sobre-inner">
       <div class="sobre-rotulo">✦ Sobre ✦</div>
       <h2 class="sobre-titulo">"A Palavra enviada todos os dias — sem cessar"</h2>
