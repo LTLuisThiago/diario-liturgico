@@ -55,32 +55,16 @@
     text-align:center; padding:60px 32px;
     position:relative; overflow:hidden;
   }
-  .hero-grade {
-    position:absolute; inset:0;
-    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
-    background-size:40px 40px; pointer-events:none;
-  }
-  .hero-glow {
-    position:absolute; width:600px; height:300px;
-    background:radial-gradient(ellipse, rgba(232,149,106,0.2) 0%, transparent 60%);
-    bottom:80px; left:50%; transform:translateX(-50%); pointer-events:none;
-  }
-  .hero::after {
-    content:''; position:absolute; bottom:0; left:0; right:0; height:100px;
-    background:linear-gradient(to top, var(--creme), transparent); pointer-events:none;
-  }
+  .hero-grade { position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px); background-size:40px 40px; pointer-events:none; }
+  .hero-glow { position:absolute; width:600px; height:300px; background:radial-gradient(ellipse, rgba(232,149,106,0.2) 0%, transparent 60%); bottom:80px; left:50%; transform:translateX(-50%); pointer-events:none; }
+  .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:100px; background:linear-gradient(to top, var(--creme), transparent); pointer-events:none; }
   .hero-conteudo { position:relative; z-index:2; max-width:680px; animation:subir 1s ease both; }
   .hero-emblema { font-size:28px; color:rgba(255,255,255,0.4); letter-spacing:16px; margin-bottom:28px; }
   .hero-rotulo { font-family:'Cinzel',serif; font-size:10px; letter-spacing:6px; color:rgba(255,255,255,0.55); text-transform:uppercase; margin-bottom:18px; }
   .hero-titulo { font-family:'Cormorant',serif; font-size:clamp(2.2rem,7vw,4rem); font-style:italic; font-weight:300; color:#fdf8f0; line-height:1.15; margin-bottom:14px; }
   .hero-subtitulo { font-family:'Crimson Pro',serif; font-size:clamp(1rem,2.5vw,1.3rem); font-style:italic; color:rgba(253,248,240,0.5); line-height:1.75; margin-bottom:36px; }
   .hero-autor { font-family:'Cinzel',serif; font-size:11px; letter-spacing:4px; color:rgba(232,192,74,0.6); text-transform:uppercase; margin-bottom:44px; }
-  .hero-btn {
-    display:inline-block; font-family:'Cinzel',serif; font-size:11px;
-    letter-spacing:4px; text-transform:uppercase; color:var(--noite);
-    background:var(--ouro); padding:15px 36px; border:none; cursor:pointer; border-radius:2px;
-    transition:background 0.2s, transform 0.2s, box-shadow 0.2s;
-  }
+  .hero-btn { display:inline-block; font-family:'Cinzel',serif; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--noite); background:var(--ouro); padding:15px 36px; border:none; cursor:pointer; border-radius:2px; transition:background 0.2s, transform 0.2s, box-shadow 0.2s; }
   .hero-btn:hover { background:var(--ouro-brilho); transform:translateY(-2px); box-shadow:0 8px 24px rgba(201,168,76,0.3); }
   .hero-scroll { position:absolute; bottom:28px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; opacity:0.25; z-index:2; }
   .hero-scroll span { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:var(--ouro); text-transform:uppercase; }
@@ -101,18 +85,9 @@
   .secao-linha span { color:var(--ouro); opacity:0.4; font-size:12px; }
 
   /* DESTAQUE */
-  .destaque-hoje { cursor:pointer;
-    background:var(--branco); border-radius:8px; overflow:hidden;
-    box-shadow:0 16px 56px rgba(14,21,32,0.12); margin-bottom:52px;
-    cursor:pointer; transition:transform 0.25s, box-shadow 0.25s;
-    border-top:5px solid var(--aurora);
-  }
+  .destaque-hoje { background:var(--branco); border-radius:8px; overflow:hidden; box-shadow:0 16px 56px rgba(14,21,32,0.12); margin-bottom:52px; cursor:pointer; transition:transform 0.25s, box-shadow 0.25s; border-top:5px solid var(--aurora); }
   .destaque-hoje:hover { transform:translateY(-4px); box-shadow:0 24px 64px rgba(14,21,32,0.18); }
-  .destaque-topo {
-    background:linear-gradient(135deg, var(--purpura), var(--noite-med), var(--aurora));
-    padding:40px 52px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center;
-    position:relative; overflow:hidden;
-  }
+  .destaque-topo { background:linear-gradient(135deg, var(--purpura), var(--noite-med), var(--aurora)); padding:40px 52px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; position:relative; overflow:hidden; }
   .destaque-topo::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:24px 24px; pointer-events:none; }
   @media(max-width:600px){ .destaque-topo{grid-template-columns:1fr; padding:28px 24px;} }
   .destaque-badge { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:var(--noite); background:var(--ouro); padding:5px 14px; display:inline-block; margin-bottom:14px; text-transform:uppercase; border-radius:1px; position:relative; }
@@ -160,7 +135,6 @@
   .rodape { background:#080c14; padding:36px 32px; text-align:center; border-top:1px solid rgba(201,168,76,0.06); }
   .rodape p { font-family:'Cormorant',serif; font-size:14px; font-style:italic; color:rgba(240,236,224,0.2); }
 
-
   /* ══ ESCRITURA ══ */
   .escritura-secao { background:var(--noite-med); padding:80px 32px; }
   .escritura-inner { max-width:960px; margin:0 auto; }
@@ -180,9 +154,7 @@
   .cap-versiculo { font-size:12.5px; font-style:italic; color:rgba(240,236,224,0.4); line-height:1.55; margin-bottom:14px; }
   .cap-ler { font-family:'Cinzel',serif; font-size:9px; letter-spacing:2px; color:var(--ouro); text-transform:uppercase; opacity:0.6; transition:opacity 0.2s; }
   .capitulo-card:hover .cap-ler { opacity:1; }
-  .capitulos-em-breve { grid-column:1/-1; text-align:center; padding:48px 24px; border:1px dashed rgba(201,168,76,0.15); border-radius:4px; }
-  .em-breve-icone { font-size:32px; margin-bottom:16px; opacity:0.4; }
-  .capitulos-em-breve p { font-size:15px; font-style:italic; color:rgba(240,236,224,0.35); line-height:1.75; margin-bottom:6px; }
+
   /* ══ DIÁRIO ══ */
   #view-diario { padding-top:56px; }
   .diario-wrap { max-width:800px; margin:0 auto; padding:0 28px 100px; }
@@ -230,6 +202,7 @@
   .d-citacao { background:var(--aurora-claro); border-left:4px solid var(--aurora); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
   .d-citacao-purpura { background:#f5eefa; border-left:4px solid #7a4090; border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
   .d-citacao-ouro { background:var(--ouro-claro); border-left:4px solid var(--ouro); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+  .d-citacao-verde { background:var(--verde-claro); border-left:4px solid var(--verde); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
 
   .d-homilia { border-radius:8px; overflow:hidden; box-shadow:0 12px 48px rgba(14,21,32,0.15); }
   .d-hom-topo { background:linear-gradient(135deg, var(--purpura), var(--noite-med), var(--aurora)); padding:32px 44px; text-align:center; position:relative; overflow:hidden; }
@@ -242,6 +215,7 @@
   .d-hom-corpo p:last-child { margin-bottom:0; }
   .d-hom-destaque { background:var(--aurora-claro); border-left:5px solid var(--aurora); border-radius:0 8px 8px 0; padding:20px 28px; margin:26px 0; font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:var(--noite); line-height:1.65; }
   .d-hom-destaque-purpura { background:#f5eefa; border-left:5px solid #7a4090; border-radius:0 8px 8px 0; padding:20px 28px; margin:26px 0; font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:var(--noite); line-height:1.65; }
+  .d-hom-destaque-ouro { background:var(--ouro-claro); border-left:5px solid var(--ouro); border-radius:0 8px 8px 0; padding:20px 28px; margin:26px 0; font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:var(--noite); line-height:1.65; }
   .d-hom-fecho { margin-top:36px; padding-top:26px; border-top:1px solid rgba(201,168,76,0.15); text-align:center; font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:var(--noite-claro); line-height:2.1; }
 
   .d-oracao { background:linear-gradient(160deg, var(--purpura), var(--noite)); border-radius:8px; overflow:hidden; position:relative; box-shadow:0 12px 40px rgba(74,32,96,0.2); }
@@ -311,48 +285,64 @@
   </section>
 
   <div class="versiculo-fixo">
-    <p>"Nos levantará ao terceiro dia — e viveremos na sua presença."</p>
-    <div class="ref">Oséias 6,2</div>
+    <p>"O Senhor não vê como vê o homem: o homem vê as aparências, mas o Senhor vê o coração."</p>
+    <div class="ref">1 Samuel 16,7</div>
   </div>
 
   <section class="diarios-secao" id="diarios">
     <div class="secao-topo">
-      <div class="secao-rotulo">✦ 3.ª Semana da Quaresma ✦</div>
+      <div class="secao-rotulo">✦ 4.ª Semana da Quaresma ✦</div>
       <h2 class="secao-titulo">Reflexão em Destaque</h2>
       <div class="secao-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
     </div>
 
-    <!-- HOJE -->
-    <div class="destaque-hoje" onclick="window.location='liturgia/quaresma/semana3/sab_14mar.html'">
+    <!-- HOJE — Domingo 4.ª Semana -->
+    <div class="destaque-hoje" onclick="abrirDiario('d_15mar')">
       <div class="destaque-topo">
         <div>
           <div class="destaque-badge">✦ Reflexão de Hoje</div>
-          <div class="destaque-tempo">Sábado da 3.ª Semana da Quaresma</div>
-          <div class="destaque-titulo">"Separados de Deus, a única coisa que produzimos por conta própria é o pecado"</div>
-          <div class="destaque-data">14 de março de 2026</div>
+          <div class="destaque-tempo">4.º Domingo da Quaresma</div>
+          <div class="destaque-titulo">"Deus vê o que o homem não consegue ver"</div>
+          <div class="destaque-data">15 de março de 2026</div>
         </div>
-        <div class="destaque-icone">✝</div>
+        <div class="destaque-icone">👁</div>
       </div>
       <div class="destaque-corpo">
-        <div class="destaque-versiculo">"Quero misericórdia e não sacrifício, conhecimento de Deus mais do que holocaustos." — Os 6,6</div>
+        <div class="destaque-versiculo">"O Senhor não vê como vê o homem: o homem vê as aparências, mas o Senhor vê o coração." — 1 Sm 16,7</div>
         <div class="destaque-leituras">
-          <span class="destaque-tag">Oséias 6,1-6</span>
-          <span class="destaque-tag">Salmo 50</span>
-          <span class="destaque-tag">Lucas 18,9-14</span>
+          <span class="destaque-tag">1 Samuel 16,1.6-7.10-13</span>
+          <span class="destaque-tag">Salmo 22</span>
+          <span class="destaque-tag">Efésios 5,8-14</span>
+          <span class="destaque-tag">João 9,1-41</span>
         </div>
         <div class="destaque-ler">Ler a reflexão completa</div>
       </div>
     </div>
 
-    <!-- DIAS ANTERIORES -->
+    <!-- DIAS ANTERIORES DA 4ª SEMANA -->
     <div class="grid-secao">
-      <div class="grid-rotulo">✦ Dias Anteriores desta Semana</div>
+      <div class="grid-rotulo">✦ Dias Anteriores — 4.ª Semana</div>
       <div class="diarios-grid">
-        <!-- A cada novo dia, adicionar um card aqui -->
+        <!-- Os próximos dias serão adicionados aqui ao longo da semana -->
       </div>
     </div>
-  </section>
 
+    <!-- SEMANA ANTERIOR — ARQUIVO -->
+    <div class="grid-secao" style="margin-top:52px;">
+      <div class="grid-rotulo">✦ 3.ª Semana da Quaresma — Arquivo</div>
+      <div class="diarios-grid">
+        <div class="diario-card" onclick="abrirDiario('d_14mar')">
+          <div class="card-tempo">Sábado — 3.ª Semana</div>
+          <div class="card-data">14 de março de 2026</div>
+          <div class="card-titulo">"O único bem que é genuinamente nosso"</div>
+          <div class="card-versiculo">"Quero misericórdia e não sacrifício, conhecimento de Deus mais do que holocaustos." — Os 6,6</div>
+          <div class="card-tags"><span class="card-tag">Oséias 6</span><span class="card-tag">Salmo 50</span><span class="card-tag">Lucas 18</span></div>
+          <div class="card-ler">Ler reflexão</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
 
   <!-- ESTUDO DA ESCRITURA -->
   <section class="escritura-secao" id="escritura">
@@ -370,48 +360,48 @@
           <div class="livro-desc">A glória de Salomão, a divisão do reino e os primeiros profetas — o coração humano diante do poder e da fidelidade de Deus.</div>
         </div>
         <div class="capitulos-grid">
-        <a class="capitulo-card" href="escritura/1reis/cap7.html">
-          <div class="cap-numero">Capítulo 7</div>
-          <div class="cap-titulo">A construção do palácio e as obras do Templo</div>
-          <div class="cap-versiculo">"A grandiosidade genuinamente dedicada a Deus, construída por mãos que já começavam a servir a outros senhores."</div>
-          <div class="cap-ler">Ler reflexão</div>
-        </a>
-        <a class="capitulo-card" href="escritura/1reis/cap8.html">
-          <div class="cap-numero">Capítulo 8</div>
-          <div class="cap-titulo">A dedicação do Templo e a oração de Salomão</div>
-          <div class="cap-versiculo">"Ouvir, perdoar, restaurar — três verbos que definem a graça de Deus ao longo de toda a oração de Salomão."</div>
-          <div class="cap-ler">Ler reflexão</div>
-        </a>
-        <a class="capitulo-card" href="escritura/1reis/cap9.html">
-          <div class="cap-numero">Capítulo 9</div>
-          <div class="cap-titulo">A segunda aparição de Deus e os primeiros sinais de desvio</div>
-          <div class="cap-versiculo">"Deus desce até o homem para chamá-lo — e nós tantas vezes não somos capazes de ir até Deus simplesmente para louvá-Lo."</div>
-          <div class="cap-ler">Ler reflexão</div>
-        </a>
-        <a class="capitulo-card" href="escritura/1reis/cap10.html">
-          <div class="cap-numero">Capítulo 10</div>
-          <div class="cap-titulo">A Rainha de Sabá e o acúmulo que condena</div>
-          <div class="cap-versiculo">"Quando acumulamos demais, perdemos a capacidade de valorizar. O coração que tem tudo pode acabar não precisando de nada — inclusive de Deus."</div>
-          <div class="cap-ler">Ler reflexão</div>
-        </a>
-        <a class="capitulo-card" href="escritura/1reis/cap11.html">
-          <div class="cap-numero">Capítulo 11</div>
-          <div class="cap-titulo">A queda de Salomão e a promessa do julgamento</div>
-          <div class="cap-versiculo">"O maior perigo não veio de fora. O inimigo mais perigoso é o que cresce nas brechas do coração que foi abrindo mão de Deus aos poucos."</div>
-          <div class="cap-ler">Ler reflexão</div>
-        </a>
-        <a class="capitulo-card" href="escritura/1reis/cap12.html">
-          <div class="cap-numero">Capítulo 12</div>
-          <div class="cap-titulo">A divisão do reino e os bezerros de ouro</div>
-          <div class="cap-versiculo">"Uma espiritualidade conveniente que não exige transformação. A carne sempre prefere o Deus conveniente ao Deus verdadeiro."</div>
-          <div class="cap-ler">Ler reflexão</div>
-        </a>
-        <a class="capitulo-card" href="escritura/1reis/cap13.html">
-          <div class="cap-numero">Capítulo 13</div>
-          <div class="cap-titulo">O Homem de Deus, o velho profeta e a desobediência</div>
-          <div class="cap-versiculo">"A mentira mais sofisticada não nega Deus diretamente — ela fala no nome de Deus para contradizer a palavra de Deus."</div>
-          <div class="cap-ler">Ler reflexão</div>
-        </a>
+          <a class="capitulo-card" href="escritura/1reis/cap7.html">
+            <div class="cap-numero">Capítulo 7</div>
+            <div class="cap-titulo">A construção do palácio e as obras do Templo</div>
+            <div class="cap-versiculo">"A grandiosidade genuinamente dedicada a Deus, construída por mãos que já começavam a servir a outros senhores."</div>
+            <div class="cap-ler">Ler reflexão</div>
+          </a>
+          <a class="capitulo-card" href="escritura/1reis/cap8.html">
+            <div class="cap-numero">Capítulo 8</div>
+            <div class="cap-titulo">A dedicação do Templo e a oração de Salomão</div>
+            <div class="cap-versiculo">"Ouvir, perdoar, restaurar — três verbos que definem a graça de Deus ao longo de toda a oração de Salomão."</div>
+            <div class="cap-ler">Ler reflexão</div>
+          </a>
+          <a class="capitulo-card" href="escritura/1reis/cap9.html">
+            <div class="cap-numero">Capítulo 9</div>
+            <div class="cap-titulo">A segunda aparição de Deus e os primeiros sinais de desvio</div>
+            <div class="cap-versiculo">"Deus desce até o homem para chamá-lo — e nós tantas vezes não somos capazes de ir até Deus simplesmente para louvá-Lo."</div>
+            <div class="cap-ler">Ler reflexão</div>
+          </a>
+          <a class="capitulo-card" href="escritura/1reis/cap10.html">
+            <div class="cap-numero">Capítulo 10</div>
+            <div class="cap-titulo">A Rainha de Sabá e o acúmulo que condena</div>
+            <div class="cap-versiculo">"Quando acumulamos demais, perdemos a capacidade de valorizar. O coração que tem tudo pode acabar não precisando de nada — inclusive de Deus."</div>
+            <div class="cap-ler">Ler reflexão</div>
+          </a>
+          <a class="capitulo-card" href="escritura/1reis/cap11.html">
+            <div class="cap-numero">Capítulo 11</div>
+            <div class="cap-titulo">A queda de Salomão e a promessa do julgamento</div>
+            <div class="cap-versiculo">"O maior perigo não veio de fora. O inimigo mais perigoso é o que cresce nas brechas do coração que foi abrindo mão de Deus aos poucos."</div>
+            <div class="cap-ler">Ler reflexão</div>
+          </a>
+          <a class="capitulo-card" href="escritura/1reis/cap12.html">
+            <div class="cap-numero">Capítulo 12</div>
+            <div class="cap-titulo">A divisão do reino e os bezerros de ouro</div>
+            <div class="cap-versiculo">"Uma espiritualidade conveniente que não exige transformação. A carne sempre prefere o Deus conveniente ao Deus verdadeiro."</div>
+            <div class="cap-ler">Ler reflexão</div>
+          </a>
+          <a class="capitulo-card" href="escritura/1reis/cap13.html">
+            <div class="cap-numero">Capítulo 13</div>
+            <div class="cap-titulo">O Homem de Deus, o velho profeta e a desobediência</div>
+            <div class="cap-versiculo">"A mentira mais sofisticada não nega Deus diretamente — ela fala no nome de Deus para contradizer a palavra de Deus."</div>
+            <div class="cap-ler">Ler reflexão</div>
+          </a>
         </div>
       </div>
     </div>
@@ -461,6 +451,190 @@ function abrirDiario(id) {
 
 const diarios = {
 
+/* ═══════════════════════════════════════════════════
+   4.º DOMINGO DA QUARESMA — 15 DE MARÇO DE 2026
+   ═══════════════════════════════════════════════════ */
+'d_15mar': `
+<div class="d-header">
+  <div class="d-header-grade"></div><div class="d-header-glow"></div>
+  <div class="d-header-conteudo">
+    <div class="d-header-emblema">✦ ✝ ✦</div>
+    <div class="d-header-tempo">4.º Domingo da Quaresma</div>
+    <h1 class="d-header-titulo">Diário Litúrgico</h1>
+    <p class="d-header-subtitulo">Deus vê o que o homem não consegue ver</p>
+    <div class="d-header-data">Domingo, 15 de março de 2026</div>
+    <div class="d-header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">📖</span><h2 class="d-secao-label">A Palavra de Hoje</h2><div class="d-secao-fio"></div></div>
+  <div class="d-leituras">
+    <div class="d-leitura"><div class="d-leitura-tipo">Primeira Leitura</div><div class="d-leitura-ref">1 Samuel 16,1.6-7.10-13</div><div class="d-leitura-desc">Samuel unge Davi em Belém — Deus escolhe pelo coração, não pela aparência</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Salmo Responsorial</div><div class="d-leitura-ref">Salmo 22 (23)</div><div class="d-leitura-desc">O Senhor é meu pastor — ainda que eu atravesse o vale da sombra da morte</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Segunda Leitura</div><div class="d-leitura-ref">Efésios 5,8-14</div><div class="d-leitura-desc">Antes éreis trevas, agora sois luz — desperta tu que dormes</div></div>
+    <div class="d-leitura evang"><div class="d-leitura-tipo">Evangelho</div><div class="d-leitura-ref">João 9,1-41</div><div class="d-leitura-desc">A cura do cego de nascença — os que veem tornam-se cegos, o cego passa a ver</div></div>
+  </div>
+  <div class="d-versiculo">
+    <p>"O Senhor não vê como vê o homem: o homem vê as aparências, mas o Senhor vê o coração."</p>
+    <div class="ref">— 1 Samuel 16,7</div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🙏</span><h2 class="d-secao-label">Meu Coração Responde</h2><div class="d-secao-fio"></div></div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">1 Samuel 16 — Deus envia, Samuel parte, Davi é encontrado</div>
+    <p>A cena começa com uma pergunta de Deus que é ao mesmo tempo interpelação e convite: <em>até quando chorarás por Saul?</em> Samuel estava paralisado na tristeza de um passado que já havia encerrado seu ciclo. E Deus não o repreende com frieza — intervém com amor soberano, chamando-o ao movimento, à missão, ao futuro que Ele já estava preparando.</p>
+    <p>Há aqui uma primeira camada para cada um de nós: quantas vezes ficamos imobilizados nas consequências dos erros — os nossos e os alheios — sem tomar atitude de corrigir, de refletir, de agir? Samuel chorava. Mas o luto, quando se estende além do seu tempo, torna-se uma forma de inércia disfarçada de fidelidade.</p>
+    <div class="d-citacao">"A conversão não é apenas parar de errar — é recomeçar a caminhar. Deus cura pela missão, pelo movimento, pelo recomeço confiante."</div>
+    <p>Samuel teme ir a Belém e ser visto por Saul. Deus o instrui a levar uma novilha para oferecer sacrifício — e aqui não há nenhuma inverdade. Samuel <em>de fato</em> vai oferecer sacrifício. O que Deus pede não é mentira, mas prudência: o mistério que ainda está germinando precisa de proteção antes de se revelar. Há uma diferença fundamental entre sigilo e engano — e Deus pede discernimento, não desonestidade.</p>
+    <p>Em Belém, Samuel pede a purificação de Jessé e seus filhos antes do sacrifício. A purificação precede o encontro. Ninguém se apresenta digno diante de Deus por mérito próprio — a graça prepara o terreno antes de semear a revelação. A família inteira se purifica, e cada filho desfila diante de Samuel — e diante do próprio Deus, que fala ao coração do profeta: <em>não é este... não é este.</em></p>
+    <div class="d-citacao-purpura">"O homem sem Deus só produz pecado. Por isso a purificação não é protocolo opcional — é a condição para que o encontro verdadeiro aconteça. Sem ela, apresentamo-nos diante de Deus carregando nós mesmos em vez de nos abrirmos para Ele."</div>
+    <p>E então Samuel pergunta a Jessé: <em>são estes todos os teus filhos?</em> Há um que faltava — o menor, o esquecido, o que estava no campo pastoreando. Davi não estava presente na cerimônia. Estava trabalhando. Cumprindo fielmente sua missão cotidiana, sem saber que naquele exato momento o profeta de Deus o procurava. Deus encontra o seu escolhido no exercício fiel do ordinário.</p>
+    <p>Quando Davi chega, o texto o descreve com os mesmos atributos exteriores de Saul: belo, de boa aparência. E Deus imediatamente diz a Samuel: <em>levanta-te e unge-o, é ele.</em> Isso não contradiz o que Deus dissera sobre não olhar as aparências — confirma-o. Davi tinha beleza <em>e</em> coração. Saul tinha beleza <em>sem</em> o coração correspondente. O problema nunca foi a aparência — foi o que havia, ou não havia, por dentro.</p>
+    <div class="d-citacao-ouro">"Deus não escolheu Saul por engano. Deu a ele a chance real de se tornar aquilo que Deus já havia enxergado que ele poderia ser. O reinado de Saul não foi um erro divino — foi uma oportunidade de conversão que Saul recusou. Em Davi, Deus enxergou não ausência de pecado — mas capacidade de conversão. Um coração que, mesmo caindo, sabe voltar."</div>
+    <p>O texto não menciona a purificação de Davi antes da unção. Pode ser que tenha acontecido e não foi narrada — ou que Davi, pela vida fiel no campo, lutando com leões e ursos em defesa de suas ovelhas, já vivesse numa purificação contínua pela presença de Deus. O homem com Deus já carrega em si a fonte da purificação. A unção não inaugurou a relação de Davi com Deus — ela a revelou publicamente e a equipou para uma nova missão.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Salmo 22 — O Senhor é meu pastor e nada me faltará</div>
+    <p>Davi, o pastor de ovelhas, torna-se o cantor do Pastor divino. Ele sabe do que fala — não por metáfora literária, mas por experiência vivida. Conheceu os verdes pastos, as águas refrescantes, os vales escuros e os predadores noturnos. E reconheceu em tudo isso a presença condutora de Deus.</p>
+    <p>O domingo é exatamente isso: o dia em que o Pastor nos faz repousar, restaura nossas forças, reorienta nosso caminhar para a semana. A Palavra lida e meditada diariamente é o caminho reto que o Salmo menciona — não um caminho sem obstáculos, mas um caminho com direção clara mesmo em meio aos obstáculos.</p>
+    <div class="d-citacao">"O Salmo não promete vida sem trevas. Diz: quando passar pelo vale, não estarás só. Cristo em várias passagens do Evangelho não promete ausência de tribulação — promete presença na tribulação. Quem atravessa o vale com Deus sai do outro lado transformado, não apenas sobrevivente."</div>
+    <p>A fé cristã madura não é a que espera ser poupada das dificuldades — é a que aprendeu a atravessá-las com os olhos abertos e o coração ancorado em Deus. Cada missa, cada leitura bíblica, cada momento de oração tem esse potencial: não nos deixar iguais. Sair melhor do que se entrou — esse é o critério espiritual do verde pasto semanal.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Efésios 5,8-14 — Antes éreis trevas, agora sois luz</div>
+    <p>Paulo não diz <em>estáveis nas trevas</em> — diz <em>éreis trevas</em>. A transformação operada por Cristo não é apenas de circunstância, mas de essência. E agora, em Cristo, não apenas estão na luz — <em>são luz</em>. O chamado à santidade não é isolamento dos impuros, mas distinção de conduta no meio deles. A vela cumpre sua missão no escuro.</p>
+    <p>Paulo retoma Isaías com um chamado batismal urgente: <em>Desperta, tu que dormes, levanta-te dos mortos, e Cristo te iluminará.</em> Não é um chamado feito uma vez na vida — é contínuo e diário. O cristão pode adormecer espiritualmente em qualquer fase. A acomodação é uma forma de sono. A rotina religiosa sem conversão interior é uma forma de sono.</p>
+    <div class="d-citacao-purpura">"O fruto da luz é bondade — e a bondade não tem dia de folga. Vigiar a própria conduta significa reconhecer-se pecador, e ao fim de cada dia, na oração pessoal, apresentar a Deus os atos e omissões, pedindo purificação para o dia seguinte. A unção inaugura — a fidelidade sustenta."</div>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">João 9,1-41 — O cego que vê e os videntes que se cegam</div>
+    <p>Os discípulos perguntam a Jesus sobre o cego de nascença: quem pecou, ele ou seus pais? A pergunta revela uma teologia popular rígida — sofrimento visível equivale a punição por pecado identificável. Mas a pergunta carrega uma contradição interna: como poderia o cego ter pecado antes de nascer? Jesus dissolve a premissa inteira: <em>nem ele pecou, nem seus pais; mas é para que as obras de Deus se manifestem nele.</em></p>
+    <p>Isso é uma revolução na teologia do sofrimento. O cego não era punido — era palco. A Escritura é clara que cada um responde pelos próprios pecados — mas há uma dimensão social do pecado onde as consequências dos atos de alguém podem marcar profundamente a vida dos que vêm depois, sem que estes sejam culpados. Jesus chega e recusa toda interpretação que faz do sofrimento uma maldição.</p>
+    <div class="d-citacao">"O cego não pediu a cura. Jesus o viu primeiro, Jesus tomou a iniciativa. A graça não é recompensa pela fé prévia — ela frequentemente a precede e a produz. Assim como Davi não escolheu ser ungido, o cego não escolheu ser curado. Foi visto por Cristo no meio do caminho."</div>
+    <p>Jesus unge os olhos do cego com lodo — terra, água e cuspe. O mais humilde dos materiais. A mesma unção que Israel fazia aos reis com azeite precioso, Cristo faz aqui com o que tem nas mãos na rua. E há ressonância com a criação: Deus formou o homem do pó da terra. Cristo, ao fazer lodo, está recriando aquilo que estava incompleto desde o nascimento. É um ato criador, não apenas terapêutico.</p>
+    <p>Depois envia o cego às águas de Siloé — cujo nome significa <em>enviado</em>. A graça foi dada, mas a cooperação humana é necessária. O cego caminhou, se abaixou, se lavou. A purificação que nunca cessa: mesmo após a unção, mesmo após a graça recebida, continuamos precisando das águas purificadoras da Palavra de Deus. A graça não nos dispensa da busca — ela nos capacita para uma busca mais profunda.</p>
+    <div class="d-citacao-ouro">"Os fariseus interrogam o cego porque o milagre os incomoda. Não porque seja falso — eles não conseguem negá-lo — mas porque desestrutura o sistema de controle religioso. O sábado foi dado como libertação: você não é escravo de nenhum Faraó. Os fariseus transformaram esse dom de liberdade numa nova escravidão ao protocolo. O instrumento da graça tornou-se barreira contra a graça."</div>
+    <p>E o texto constrói uma das ironias mais dramáticas de todo o Evangelho: os fariseus interrogam o cego como juízes — e no final Jesus inverte completamente os papéis. Os que julgavam são os verdadeiramente cegos. O que era julgado é o que verdadeiramente vê. O tribunal humano e o tribunal de Deus raramente chegam à mesma sentença.</p>
+    <p>A confissão de fé do cego é progressiva e corajosa: primeiro diz que Jesus é profeta, depois o defende diante dos fariseus, depois o adora ao encontrá-Lo novamente. É o arco da fé que começa no encontro com a graça e vai crescendo à medida que o encontro se aprofunda — exatamente o que a vida cristã é chamada a ser.</p>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">✝</span><h2 class="d-secao-label">Homilia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-homilia">
+    <div class="d-hom-topo">
+      <div class="d-hom-rotulo">✦ Reflexão do Dia ✦</div>
+      <div class="d-hom-titulo">"Deus vê o que o homem não consegue ver"</div>
+    </div>
+    <div class="d-hom-corpo">
+      <p>Há uma pergunta de Deus a Samuel que ecoa através de séculos e chega intacta até nós hoje: <em>até quando chorarás por Saul?</em> Não é uma repreensão fria — é uma intervenção amorosa. Deus não diz a Samuel que pare de sentir. Diz: o luto já cumpriu seu tempo, agora é hora de mover. E nessa pergunta simples está o retrato de uma armadilha que conhecemos bem: a paralisia que se disfarça de fidelidade, o lamento que substitui a conversão, a reclamação que ocupa o lugar da ação.</p>
+      <p>Saul tinha os atributos que Israel reconhecia num rei — alto, belo, imponente. Foi escolhido pela aparência e confirmado pela aclamação do povo. E Deus não errou nessa escolha. Deu a Saul a oportunidade real de se tornar aquilo que poderia ser. Mas Saul, confrontado com seus erros, justificou — culpou o povo, alegou motivo religioso, nunca dobrou o joelho por dentro. O coração foi endurecendo, e o que parecia obediência exterior foi se revelando resistência interior. Quando o coração não se converte, nenhuma prática religiosa o substitui.</p>
+      <div class="d-hom-destaque">Por isso Deus envia Samuel a Belém — não para corrigir um erro, mas para revelar uma lógica diferente. Os filhos de Jessé desfilam diante do profeta: homens de porte, guerreiros, pastores imponentes. E a cada um, Deus diz ao coração de Samuel: não é este. Até que a pergunta é feita: são estes todos os teus filhos? E faltava um. O menor. O que estava no campo.</div>
+      <p>Davi não estava presente na cerimônia. Estava trabalhando — pastoreando ovelhas, cumprindo sua missão cotidiana sem saber que o profeta de Deus o procurava. E é exatamente aí que a graça o alcança. Deus encontra o seu escolhido no exercício fiel do ordinário. A fidelidade no pequeno é a formação invisível para a missão grande. O pastor de ovelhas que protege seu rebanho de leões e ursos está sendo preparado, sem saber, para pastor de um povo.</p>
+      <p>Quando Davi chega, Deus diz imediatamente a Samuel: <em>levanta-te e unge-o, é ele.</em> E aqui está a chave de tudo: o texto descreve Davi com os mesmos atributos exteriores de Saul — belo, de boa aparência. Isso não contradiz o que Deus dissera sobre não olhar as aparências — confirma sua profundidade. Davi tinha beleza e coração. Saul tinha beleza sem o coração correspondente. O critério de Deus não rejeita o exterior — ele simplesmente não se limita a ele. Deus vê o que o homem não consegue ver.</p>
+      <div class="d-hom-destaque-purpura">E o que Deus enxergou em Davi não foi ausência de pecado. Foi capacidade de conversão. Davi pecará gravemente — adultério, homicídio indireto. Mas quando confrontado, não justificará. Se prostrará. O Salmo 50 nasce desse momento. A diferença entre Saul e Davi não é a quantidade de pecados — é o que o coração faz com eles. Um fechou. O outro abriu.</div>
+      <p>Séculos depois, Jesus caminha por uma rua e vê um cego de nascença. Os discípulos perguntam: quem pecou, ele ou seus pais? A mesma lógica de Saul — sofrimento como punição, aparência exterior como critério de julgamento. E Jesus dissolve a pergunta inteira: <em>nem ele nem seus pais — é para que as obras de Deus se manifestem nele.</em> Aquele homem não era punido. Era palco.</p>
+      <p>Jesus unge os olhos do cego com lodo — terra, água, cuspe — o mais humilde dos materiais. A mesma unção que Israel fazia aos reis com azeite precioso, feita aqui na rua, com o que estava disponível. Deus não precisa de instrumentos preciosos. Precisa de um coração disponível. E o cego, sem ter pedido, sem ter fé declarada ainda, recebe a graça que precede a fé e a produz.</p>
+      <p>Os fariseus, ao saberem do milagre, não se alegram. Interrogam. O milagre aconteceu no sábado — dia sagrado — e isso para eles invalida tudo. O sábado foi dado por Deus para que Israel descansasse <em>nele</em>, se voltasse <em>para ele</em>. Mas os fariseus transformaram esse dom de liberdade numa nova escravidão ao protocolo. O instrumento da graça tornou-se barreira contra a graça. Eles tinham os olhos abertos — e não conseguiram ver o que o cego, sem nenhuma formação teológica, viu claramente.</p>
+      <div class="d-hom-destaque">Paulo em Efésios nos diz: antes éreis trevas, agora sois luz no Senhor. Não estáveis nas trevas — éreis trevas. E agora não estais na luz — sois luz. A transformação é de essência. E o chamado é para viver como luz: não fugindo dos que estão no escuro, mas sendo claridade no meio deles. Assim como Davi pastoreava no campo e estava disposto a Deus, assim como Cristo curava no sábado e cumpria o sábado em sua plenitude mais profunda — o sábado perfeito não é o dia em que não se faz nada, mas o dia em que tudo o que se faz aponta para Deus.</div>
+      <p>E Paulo termina com um versículo que parece um hino antigo: <em>Desperta, tu que dormes, levanta-te dos mortos, e Cristo te iluminará.</em> Não é um chamado feito uma vez na vida. É o chamado de cada manhã. A acomodação é uma forma de sono. A rotina religiosa sem conversão interior é uma forma de sono. Frequentar a missa sem deixar que a Palavra nos transforme é uma forma de sono. O cristão que não sai melhor do que entrou perdeu a oportunidade do verde pasto.</p>
+      <p>A Quaresma nos coloca nesse caminho de purificação progressiva — como a família de Jessé antes do sacrifício, como o cego nas águas de Siloé. A graça é dada, mas a cooperação é necessária. O exame de consciência ao fim de cada dia, o reconhecimento dos atos e omissões, o pedido de purificação para o dia seguinte — isso é a fidelidade cotidiana que sustenta o que a graça inaugurou.</p>
+      <div class="d-hom-fecho">Deus não escolhe pelos critérios do mundo.<br>Não escolhe os sem pecado — escolhe os que sabem se arrepender.<br>Não escolhe os que têm tudo — escolhe os que reconhecem que precisam.<br>Não escolhe os que veem — escolhe os que estão dispostos a receber a visão.<br><br>O menor filho de Jessé, esquecido no campo.<br>O cego de nascença, ignorado na rua.<br>Você e eu — com os nossos limites e as nossas quedas.<br><br>Levanta-te. Cristo te iluminará.</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🌿</span><h2 class="d-secao-label">Para Levar no Dia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-oracao">
+    <div class="d-or-topo"><div class="d-or-rotulo">✦ Oração do Dia ✦</div></div>
+    <div class="d-or-corpo">
+      <p>Senhor e Pai,
+Tu que vês o coração quando o homem vê apenas a aparência —
+vê o meu. Com toda a sua fragilidade, suas quedas, seus desvios.
+
+Não me escolhas pelo que aparento ser.
+Escolhe-me pelo que Tu podes fazer em mim
+quando eu me rendo ao Teu olhar.
+
+Que eu não adormeça na rotina que não transforma.
+Que eu não me paralise no luto do que já passou.
+Que eu caminhe até Siloé — e me lave na Tua Palavra todos os dias.
+
+Purifica o que em mim ainda resiste.
+Unge o que em mim ainda espera missão.
+Ilumina o que em mim ainda não vê.
+
+Desperta-me, Senhor — a cada manhã,
+a cada leitura, a cada Eucaristia.
+Pois Tu és o meu pastor — e nada me faltará.</p>
+      <div class="d-or-amen">AMÉM</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🧵</span><h2 class="d-secao-label">Fio da Semana — Abertura</h2><div class="d-secao-fio"></div></div>
+  <div class="d-palavra"><div class="d-palavra-inner">Ver com os Olhos de Deus</div></div>
+  <div class="d-fio-arco">
+    <div class="d-fio-dia hoje"><div class="d-fio-dia-label">Hoje — Domingo 15/03</div><div class="d-fio-dia-palavra">Enxergar</div><div class="d-fio-dia-texto">Deus vê o coração. Samuel é enviado. Davi é ungido. O cego recupera a visão. A semana começa com novos olhos.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Segunda — 16/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Terça — 17/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Quarta — 18/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Quinta — 19/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Sexta — 20/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
+  </div>
+  <div class="d-fio-convergencia">
+    <p>A semana começa com um olhar invertido —<br>
+    <strong>o menor filho esquecido no campo,</strong><br>
+    o cego ungido na rua,<br>
+    a luz que nasce onde o mundo não esperava.<br><br>
+    Ver com os olhos de Deus é o exercício de toda a semana.</p>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🌱</span><h2 class="d-secao-label">Para Nossa Vida Hoje</h2><div class="d-secao-fio"></div></div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">Na oração</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Ao iniciar a oração do dia, pergunte a Deus: <em>em que ainda estou paralisado, como Samuel diante da tristeza de Saul?</em> Nomeie o luto, a mágoa ou a paralisia — e entregue. Peça o movimento.</p></div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Ao fim do dia, faça o exame de consciência: reconheça os atos e omissões, apresente-os a Deus e peça purificação para o dia seguinte. A fidelidade cotidiana sustenta o que a graça inaugurou.</p></div>
+  </div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">Na leitura e meditação</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Leia o Salmo 22 devagar, em voz baixa. Substitua mentalmente "o Senhor" pelo nome de Deus que seu coração conhece. Deixe que o verde pasto e o vale escuro se conectem com momentos reais da sua vida.</p></div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Releia João 9 e pergunte: em qual personagem me reconheço hoje? No cego disponível? Nos pais com medo? Nos fariseus presos ao protocolo? A resposta honesta é o primeiro passo da conversão.</p></div>
+  </div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">No lar e nas relações</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Há alguém próximo que você tem julgado pela aparência — pelos erros visíveis, pela fragilidade exterior? Peça a Deus que lhe empreste o olhar com que Ele viu Davi no campo: o olhar que enxerga o coração.</p></div>
+  </div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">No trabalho</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Davi estava cumprindo fielmente o seu trabalho quando foi chamado para algo maior. A fidelidade no ordinário é a preparação invisível para a missão extraordinária. Trabalhe hoje como quem está sendo formado — sem saber para quê.</p></div>
+  </div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">Na equipe de liturgia</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>O rito que serve à comunidade deve sempre conduzir ao encontro — nunca substituí-lo. Como a purificação de Jessé e seus filhos antes da unção, o serviço litúrgico começa com disposição interior. Cuide da sua purificação pessoal antes de servir.</p></div>
+  </div>
+</div>
+
+<div class="d-rodape">
+  <div class="orn">✦ ✦ ✦</div>
+  <p>"O Senhor é meu pastor — e nada me faltará." — Sl 22,1</p>
+</div>
+`,
+
+/* ═══════════════════════════════════════════════════
+   SÁBADO — 3.ª SEMANA — 14 DE MARÇO DE 2026
+   ═══════════════════════════════════════════════════ */
 'd_14mar': `
 <div class="d-header">
   <div class="d-header-grade"></div><div class="d-header-glow"></div>
