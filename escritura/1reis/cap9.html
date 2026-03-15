@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 Reis 9 — A segunda aparição de Deus e os primeiros sinais de desvio | Luis Thiago</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noite:      #0e1520;
+    --noite-med:  #1a2535;
+    --verde:      #1e4a30;
+    --verde-med:  #2a6e48;
+    --verde-cl:   #e8f4ee;
+    --ouro:       #c9a84c;
+    --ouro-cl:    #fdf6e3;
+    --ouro-br:    #e8c96a;
+    --creme:      #f9f6f0;
+    --texto:      #1e1a14;
+    --suave:      #6b5f4e;
+    --branco:     #fefefc;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--creme); font-family:'Crimson Pro',Georgia,serif; color:var(--texto); }
+
+  .nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(14,21,32,0.96); backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(201,168,76,0.1);
+    height:56px; padding:0 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-logo { font-family:'Cinzel',serif; font-size:12px; letter-spacing:3px; color:var(--ouro); opacity:0.8; text-decoration:none; text-transform:uppercase; }
+  .nav-voltar { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:rgba(240,236,224,0.5); text-transform:uppercase; text-decoration:none; transition:color 0.2s; }
+  .nav-voltar:hover { color:var(--ouro); }
+
+  .header {
+    background:linear-gradient(160deg, #0a1a10 0%, #1a3a20 50%, #2a5a30 100%);
+    padding:80px 32px 64px; text-align:center;
+    position:relative; overflow:hidden; margin-top:56px;
+  }
+  .header::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:32px 32px; pointer-events:none; }
+  .header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--creme), transparent); pointer-events:none; }
+  .header-glow { position:absolute; width:500px; height:280px; background:radial-gradient(ellipse, rgba(42,110,72,0.25) 0%, transparent 65%); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; }
+  .header-conteudo { position:relative; z-index:2; }
+  .header-serie { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(255,255,255,0.45); text-transform:uppercase; margin-bottom:16px; }
+  .header-livro { font-family:'Cormorant',serif; font-size:clamp(1rem,2.5vw,1.3rem); font-style:italic; color:rgba(255,255,255,0.4); margin-bottom:8px; }
+  .header-titulo { font-family:'Cormorant',serif; font-size:clamp(2rem,6vw,3.6rem); font-style:italic; font-weight:300; color:#f0ece0; line-height:1.2; margin-bottom:10px; }
+  .header-subtitulo { font-size:17px; font-style:italic; color:rgba(240,236,224,0.5); line-height:1.7; margin-bottom:6px; }
+  .header-linha { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:22px; }
+  .header-linha .l { width:70px; height:1px; background:linear-gradient(to right, transparent, rgba(201,168,76,0.4)); }
+  .header-linha .l.r { background:linear-gradient(to left, transparent, rgba(201,168,76,0.4)); }
+  .header-linha span { color:rgba(201,168,76,0.5); font-size:12px; }
+
+  .container { max-width:800px; margin:0 auto; padding:56px 32px 100px; }
+
+  .versiculo {
+    background:var(--noite); border-left:5px solid var(--verde-med);
+    border-radius:0 8px 8px 0; padding:28px 36px;
+    margin-bottom:56px; position:relative; overflow:hidden;
+  }
+  .versiculo::before { content:'\201C'; font-family:'Cormorant',serif; font-size:130px; color:var(--verde-med); opacity:0.07; position:absolute; top:-28px; left:8px; line-height:1; pointer-events:none; }
+  .versiculo p { font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:#f2ede0; line-height:1.75; }
+  .versiculo .ref { margin-top:12px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--verde-med); opacity:0.7; }
+
+  .secao-topo { display:flex; align-items:center; gap:12px; margin-bottom:28px; padding-bottom:12px; border-bottom:1px solid rgba(42,110,72,0.15); }
+  .secao-icone { font-size:17px; flex-shrink:0; }
+  .secao-label { font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; color:var(--noite-med); text-transform:uppercase; font-weight:600; }
+  .secao-fio { flex:1; height:1px; background:linear-gradient(to right, var(--verde-med), transparent); opacity:0.2; }
+
+  .med-titulo { font-family:'Cormorant',serif; font-size:21px; font-style:italic; font-weight:600; color:var(--noite-med); margin-bottom:16px; padding-left:16px; border-left:3px solid var(--verde-med); line-height:1.3; margin-top:32px; }
+  .med-titulo:first-child { margin-top:0; }
+  p { font-size:17px; line-height:2; color:var(--texto); margin-bottom:14px; text-align:justify; }
+  .citacao { background:var(--verde-cl); border-left:4px solid var(--verde-med); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+
+  .nav-caps {
+    background:var(--noite-med); border-radius:8px; padding:28px 36px;
+    margin-top:64px; display:flex; justify-content:space-between;
+    align-items:center; gap:16px; flex-wrap:wrap;
+  }
+  .nav-cap-btn {
+    font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px;
+    color:var(--ouro); text-transform:uppercase; text-decoration:none;
+    opacity:0.65; transition:opacity 0.2s; display:flex; align-items:center; gap:8px;
+  }
+  .nav-cap-btn:hover { opacity:1; }
+  .nav-cap-btn.prev::before { content:'←'; }
+  .nav-cap-btn.next::after { content:'→'; }
+  .nav-cap-btn.voltar { color:rgba(240,236,224,0.4); }
+
+  .rodape { text-align:center; padding:48px 0 20px; border-top:1px solid rgba(42,110,72,0.12); margin-top:20px; }
+  .rodape-orn { font-size:13px; color:var(--verde-med); letter-spacing:14px; margin-bottom:14px; opacity:0.45; }
+  .rodape p { font-family:'Cormorant',serif; font-size:17px; font-style:italic; color:var(--suave); }
+
+  @keyframes subir { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+  .container { animation:subir 0.5s ease both; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../../index.html" class="nav-logo">✦ Diário Litúrgico</a>
+  <a href="../../index.html" class="nav-voltar">← Voltar ao Portal</a>
+</nav>
+
+<header class="header">
+  <div class="header-glow"></div>
+  <div class="header-conteudo">
+    <div class="header-serie">✦ Estudo da Escritura ✦</div>
+    <div class="header-livro">1 Reis — Série de Reflexões</div>
+    <h1 class="header-titulo">Capítulo 9</h1>
+    <p class="header-subtitulo">A segunda aparição de Deus e os primeiros sinais de desvio</p>
+    <div class="header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="versiculo">
+    <p>"Deus desce até o homem para chamá-lo — e nós tantas vezes não somos capazes de ir até Deus simplesmente para louvá-Lo."</p>
+    <div class="ref">— 1 Reis 9</div>
+  </div>
+
+  <div class="secao-topo">
+    <span class="secao-icone">🙏</span>
+    <h2 class="secao-label">Reflexão do Capítulo</h2>
+    <div class="secao-fio"></div>
+  </div>
+
+  <div class="med-titulo">A segunda aparição — por que segunda?</div>
+      <p>Após Salomão concluir o Templo, Deus apareceu a ele pela segunda vez. A primeira havia sido em Gibeão, no início do reinado, quando Salomão pediu sabedoria. Agora, após a conclusão do Templo e da oração de dedicação, Deus aparece novamente. Ele estava presente tanto na partida quanto na chegada, tanto na semente quanto no fruto.</p>
+
+      <p>Deus disse: "Ouvi a tua oração e tua súplica. Consagrei esta casa que me construíste." Não foi o edifício que tocou a Deus — foi o coração aberto em oração. E então Deus faz uma promessa carregada de condição: "Meus olhos e meu coração estarão aqui perpetuamente, se tu e teus filhos andares diante de Mim como andou Davi." Os olhos falam de vigilância e cuidado. O coração fala de amor e comprometimento. É a linguagem de um relacionamento, não de um contrato.</p>
+
+      <div class="citacao">Deus desce até o homem para chamá-lo — e nós, tantas vezes, não somos capazes de ir até Deus simplesmente para louvá-Lo.</div>
+
+      <div class="med-titulo">A face sombria do reino</div>
+      <p>Logo após toda a glória da dedicação, o texto nos traz de volta à terra de forma abrupta. Salomão havia feito um acordo com Hirão, rei de Tiro, que forneceu materiais para as construções. Como pagamento, Salomão deu a Hirão vinte cidades — e Hirão não gostou, chamando aquela região de terra sem valor. A sabedoria administrativa estava começando a mostrar rachaduras.</p>
+
+      <p>O texto também registra o uso de trabalho forçado nas construções. Israel havia sido escravo no Egito. A libertação da escravidão era o evento fundador de toda a identidade nacional. E agora Salomão reconstrói uma estrutura de trabalho forçado. O reino que deveria ser diferente das nações estava se tornando parecido com elas. E a Lei de Deus para os reis de Israel, registrada em Deuteronômio 17, dizia explicitamente para não multiplicar cavalos do Egito, não multiplicar mulheres e não multiplicar prata e ouro para si mesmo. Salomão estava fazendo as três coisas. A distância entre o "se" de Deus e as escolhas de Salomão já estava crescendo silenciosamente.</p>
+
+      <p>Vale ressaltar: Deus ainda assim consagrou o Templo, mesmo sabendo de todas essas contradições. Isso não é indiferença ao pecado — é graça soberana. Se Deus só consagrasse o que fosse perfeito, nunca consagraria nada humano. Porque tudo que passa por mãos humanas carrega as marcas das nossas contradições.</p>
+
+  <div class="nav-caps">
+    <a href="cap8.html" class="nav-cap-btn prev">Capítulo 8</a>
+    <a href="../../index.html" class="nav-cap-btn voltar">↑ Todos os Capítulos</a>
+    <a href="cap10.html" class="nav-cap-btn next">Capítulo 10</a>
+  </div>
+
+  <div class="rodape">
+    <div class="rodape-orn">✦ ✦ ✦</div>
+    <p>1 Reis 9 — Série de reflexões por Luis Thiago</p>
+  </div>
+
+</div>
+</body>
+</html>

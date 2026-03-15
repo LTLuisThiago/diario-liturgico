@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 Reis 12 — A divisão do reino e os bezerros de ouro | Luis Thiago</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noite:      #0e1520;
+    --noite-med:  #1a2535;
+    --verde:      #1e4a30;
+    --verde-med:  #2a6e48;
+    --verde-cl:   #e8f4ee;
+    --ouro:       #c9a84c;
+    --ouro-cl:    #fdf6e3;
+    --ouro-br:    #e8c96a;
+    --creme:      #f9f6f0;
+    --texto:      #1e1a14;
+    --suave:      #6b5f4e;
+    --branco:     #fefefc;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--creme); font-family:'Crimson Pro',Georgia,serif; color:var(--texto); }
+
+  .nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(14,21,32,0.96); backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(201,168,76,0.1);
+    height:56px; padding:0 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-logo { font-family:'Cinzel',serif; font-size:12px; letter-spacing:3px; color:var(--ouro); opacity:0.8; text-decoration:none; text-transform:uppercase; }
+  .nav-voltar { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:rgba(240,236,224,0.5); text-transform:uppercase; text-decoration:none; transition:color 0.2s; }
+  .nav-voltar:hover { color:var(--ouro); }
+
+  .header {
+    background:linear-gradient(160deg, #0a1a10 0%, #1a3a20 50%, #2a5a30 100%);
+    padding:80px 32px 64px; text-align:center;
+    position:relative; overflow:hidden; margin-top:56px;
+  }
+  .header::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:32px 32px; pointer-events:none; }
+  .header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--creme), transparent); pointer-events:none; }
+  .header-glow { position:absolute; width:500px; height:280px; background:radial-gradient(ellipse, rgba(42,110,72,0.25) 0%, transparent 65%); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; }
+  .header-conteudo { position:relative; z-index:2; }
+  .header-serie { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(255,255,255,0.45); text-transform:uppercase; margin-bottom:16px; }
+  .header-livro { font-family:'Cormorant',serif; font-size:clamp(1rem,2.5vw,1.3rem); font-style:italic; color:rgba(255,255,255,0.4); margin-bottom:8px; }
+  .header-titulo { font-family:'Cormorant',serif; font-size:clamp(2rem,6vw,3.6rem); font-style:italic; font-weight:300; color:#f0ece0; line-height:1.2; margin-bottom:10px; }
+  .header-subtitulo { font-size:17px; font-style:italic; color:rgba(240,236,224,0.5); line-height:1.7; margin-bottom:6px; }
+  .header-linha { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:22px; }
+  .header-linha .l { width:70px; height:1px; background:linear-gradient(to right, transparent, rgba(201,168,76,0.4)); }
+  .header-linha .l.r { background:linear-gradient(to left, transparent, rgba(201,168,76,0.4)); }
+  .header-linha span { color:rgba(201,168,76,0.5); font-size:12px; }
+
+  .container { max-width:800px; margin:0 auto; padding:56px 32px 100px; }
+
+  .versiculo {
+    background:var(--noite); border-left:5px solid var(--verde-med);
+    border-radius:0 8px 8px 0; padding:28px 36px;
+    margin-bottom:56px; position:relative; overflow:hidden;
+  }
+  .versiculo::before { content:'\201C'; font-family:'Cormorant',serif; font-size:130px; color:var(--verde-med); opacity:0.07; position:absolute; top:-28px; left:8px; line-height:1; pointer-events:none; }
+  .versiculo p { font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:#f2ede0; line-height:1.75; }
+  .versiculo .ref { margin-top:12px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--verde-med); opacity:0.7; }
+
+  .secao-topo { display:flex; align-items:center; gap:12px; margin-bottom:28px; padding-bottom:12px; border-bottom:1px solid rgba(42,110,72,0.15); }
+  .secao-icone { font-size:17px; flex-shrink:0; }
+  .secao-label { font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; color:var(--noite-med); text-transform:uppercase; font-weight:600; }
+  .secao-fio { flex:1; height:1px; background:linear-gradient(to right, var(--verde-med), transparent); opacity:0.2; }
+
+  .med-titulo { font-family:'Cormorant',serif; font-size:21px; font-style:italic; font-weight:600; color:var(--noite-med); margin-bottom:16px; padding-left:16px; border-left:3px solid var(--verde-med); line-height:1.3; margin-top:32px; }
+  .med-titulo:first-child { margin-top:0; }
+  p { font-size:17px; line-height:2; color:var(--texto); margin-bottom:14px; text-align:justify; }
+  .citacao { background:var(--verde-cl); border-left:4px solid var(--verde-med); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+
+  .nav-caps {
+    background:var(--noite-med); border-radius:8px; padding:28px 36px;
+    margin-top:64px; display:flex; justify-content:space-between;
+    align-items:center; gap:16px; flex-wrap:wrap;
+  }
+  .nav-cap-btn {
+    font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px;
+    color:var(--ouro); text-transform:uppercase; text-decoration:none;
+    opacity:0.65; transition:opacity 0.2s; display:flex; align-items:center; gap:8px;
+  }
+  .nav-cap-btn:hover { opacity:1; }
+  .nav-cap-btn.prev::before { content:'←'; }
+  .nav-cap-btn.next::after { content:'→'; }
+  .nav-cap-btn.voltar { color:rgba(240,236,224,0.4); }
+
+  .rodape { text-align:center; padding:48px 0 20px; border-top:1px solid rgba(42,110,72,0.12); margin-top:20px; }
+  .rodape-orn { font-size:13px; color:var(--verde-med); letter-spacing:14px; margin-bottom:14px; opacity:0.45; }
+  .rodape p { font-family:'Cormorant',serif; font-size:17px; font-style:italic; color:var(--suave); }
+
+  @keyframes subir { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+  .container { animation:subir 0.5s ease both; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../../index.html" class="nav-logo">✦ Diário Litúrgico</a>
+  <a href="../../index.html" class="nav-voltar">← Voltar ao Portal</a>
+</nav>
+
+<header class="header">
+  <div class="header-glow"></div>
+  <div class="header-conteudo">
+    <div class="header-serie">✦ Estudo da Escritura ✦</div>
+    <div class="header-livro">1 Reis — Série de Reflexões</div>
+    <h1 class="header-titulo">Capítulo 12</h1>
+    <p class="header-subtitulo">A divisão do reino e os bezerros de ouro</p>
+    <div class="header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="versiculo">
+    <p>"Uma espiritualidade conveniente que não exige transformação. A carne sempre prefere o Deus conveniente ao Deus verdadeiro."</p>
+    <div class="ref">— 1 Reis 12</div>
+  </div>
+
+  <div class="secao-topo">
+    <span class="secao-icone">🙏</span>
+    <h2 class="secao-label">Reflexão do Capítulo</h2>
+    <div class="secao-fio"></div>
+  </div>
+
+  <div class="med-titulo">A história que se repete</div>
+      <p>Davi fugiu de Saul. Jeroboão fugiu de Salomão. Deus havia designado Jeroboão enquanto Salomão ainda vivia — e quando Salomão morre, Jeroboão retorna. Mas sua primeira ação não é reivindicar o trono. Ele representa o povo e faz um pedido simples e legítimo a Roboão: alivia o jugo pesado que Salomão impôs, e nós te serviremos. Era um pedido de justiça, não uma declaração de rebelião. Havia uma saída simples para Roboão: ouvir o povo, aliviar o jugo, governar com justiça. Os anciãos que haviam servido a Salomão disseram exatamente isso: se hoje fores servo deste povo e o servires, eles te servirão para sempre. É sabedoria política e teológica ao mesmo tempo.</p>
+
+      <div class="med-titulo">A insensatez de Roboão</div>
+      <p>Roboão rejeitou o conselho dos anciãos e ouviu os jovens que haviam crescido com ele, que lhe disseram para aumentar o jugo, para mostrar força, para impor autoridade. O filho que havia herdado o homem mais sábio do mundo escolheu a insensatez. Há um contraste devastador: Salomão em Gibeão, no início do reinado, pediu sabedoria porque reconhecia sua própria insuficiência. Roboão, no início do seu reinado, desprezou a sabedoria dos que tinham experiência. A herança espiritual não é automática. Cada geração precisa escolher por si mesma.</p>
+
+      <div class="med-titulo">"Somente a casa de Judá permaneceu fiel à casa de Davi"</div>
+      <p>O texto não diz a casa de Salomão — diz a casa de Davi. Essa distinção é uma declaração teológica deliberada. Salomão havia falhado. Seu nome não podia mais ser âncora de nada. Mas Davi — com todas as suas falhas — havia deixado algo que Salomão não conseguiu destruir: um coração que sempre voltou para Deus.</p>
+
+      <p>E Judá, a tribo do arrependimento, merece atenção especial. Foi Judá quem propôs vender José ao invés de matá-lo — vinte moedas de prata. Mas depois, quando Benjamim estava prestes a ser retido no Egito, foi Judá quem se adiantou e ofereceu a própria vida como substituto. O mesmo homem que havia vendido um irmão agora se oferecia como escravo para salvar outro. Isso é arrependimento genuíno que produz transformação real. E essa capacidade de se arrepender e voltar definiu a linhagem — a linhagem de onde viria o Messias, traído por trinta moedas de prata, descendo à morte e ressurgindo como salvador dos mesmos que o rejeitaram.</p>
+
+      <div class="med-titulo">Deus intervém para proteger Israel de si mesmo</div>
+      <p>Roboão reuniu cento e oitenta mil homens para reconquistar pela força o que havia perdido pela insensatez. E então Deus enviou o profeta Semaías — cujo nome significa "Deus ouviu" — com uma palavra clara: não guerreeis contra vossos irmãos. Voltai cada um para sua casa, pois tudo isso é da minha vontade. E eles obedeceram. Cento e oitenta mil homens armados, e quando a Palavra de Deus chegou através de um profeta — voltaram. Isso nos pergunta: quantas guerras travamos que Deus nunca nos mandou travar? Guerras para recuperar posições perdidas por nossa própria insensatez, guerras contra irmãos por questões que Deus nunca classificou como batalhas Suas?</p>
+
+      <div class="med-titulo">Os bezerros de ouro</div>
+      <p>Jeroboão começou com uma caricatura de bom rei: não buscou o trono, deu chance ao adversário, representou o povo com legitimidade. Mas o medo entrou — o medo de perder poder pela peregrinação dos fiéis a Jerusalém. E com o medo veio a decisão que definiria seu legado: construiu dois bezerros de ouro e declarou ao povo: não precisais ir a Jerusalém, aqui estão vossos deuses que vos tiraram do Egito.</p>
+
+      <p>Essa frase congela o sangue de qualquer leitor atento, pois foi dita antes — palavra por palavra — por Arão diante do bezerro de ouro no deserto. O pecado antigo sendo ressuscitado com nova embalagem política. E além disso, Jeroboão nomeou como servidores do Templo homens de qualquer tribo, contrariando a ordenança divina. Os servidores improvisados não tinham formação — serviam ao rei, não a Deus. Quando líderes constroem sistemas religiosos para servir ao próprio poder, rebaixam os padrões espirituais para aumentar a base de apoio.</p>
+
+      <div class="citacao">Jeroboão oferecia uma experiência de Deus sem o custo do verdadeiro encontro com Ele. Uma espiritualidade conveniente que não exige transformação. E o povo aceitou — porque a carne sempre prefere o Deus conveniente ao Deus verdadeiro.</div>
+
+  <div class="nav-caps">
+    <a href="cap11.html" class="nav-cap-btn prev">Capítulo 11</a>
+    <a href="../../index.html" class="nav-cap-btn voltar">↑ Todos os Capítulos</a>
+    <a href="cap13.html" class="nav-cap-btn next">Capítulo 13</a>
+  </div>
+
+  <div class="rodape">
+    <div class="rodape-orn">✦ ✦ ✦</div>
+    <p>1 Reis 12 — Série de reflexões por Luis Thiago</p>
+  </div>
+
+</div>
+</body>
+</html>

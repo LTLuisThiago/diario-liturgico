@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 Reis 10 — A Rainha de Sabá e o acúmulo que condena | Luis Thiago</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noite:      #0e1520;
+    --noite-med:  #1a2535;
+    --verde:      #1e4a30;
+    --verde-med:  #2a6e48;
+    --verde-cl:   #e8f4ee;
+    --ouro:       #c9a84c;
+    --ouro-cl:    #fdf6e3;
+    --ouro-br:    #e8c96a;
+    --creme:      #f9f6f0;
+    --texto:      #1e1a14;
+    --suave:      #6b5f4e;
+    --branco:     #fefefc;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--creme); font-family:'Crimson Pro',Georgia,serif; color:var(--texto); }
+
+  .nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(14,21,32,0.96); backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(201,168,76,0.1);
+    height:56px; padding:0 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-logo { font-family:'Cinzel',serif; font-size:12px; letter-spacing:3px; color:var(--ouro); opacity:0.8; text-decoration:none; text-transform:uppercase; }
+  .nav-voltar { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:rgba(240,236,224,0.5); text-transform:uppercase; text-decoration:none; transition:color 0.2s; }
+  .nav-voltar:hover { color:var(--ouro); }
+
+  .header {
+    background:linear-gradient(160deg, #0a1a10 0%, #1a3a20 50%, #2a5a30 100%);
+    padding:80px 32px 64px; text-align:center;
+    position:relative; overflow:hidden; margin-top:56px;
+  }
+  .header::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:32px 32px; pointer-events:none; }
+  .header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--creme), transparent); pointer-events:none; }
+  .header-glow { position:absolute; width:500px; height:280px; background:radial-gradient(ellipse, rgba(42,110,72,0.25) 0%, transparent 65%); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; }
+  .header-conteudo { position:relative; z-index:2; }
+  .header-serie { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(255,255,255,0.45); text-transform:uppercase; margin-bottom:16px; }
+  .header-livro { font-family:'Cormorant',serif; font-size:clamp(1rem,2.5vw,1.3rem); font-style:italic; color:rgba(255,255,255,0.4); margin-bottom:8px; }
+  .header-titulo { font-family:'Cormorant',serif; font-size:clamp(2rem,6vw,3.6rem); font-style:italic; font-weight:300; color:#f0ece0; line-height:1.2; margin-bottom:10px; }
+  .header-subtitulo { font-size:17px; font-style:italic; color:rgba(240,236,224,0.5); line-height:1.7; margin-bottom:6px; }
+  .header-linha { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:22px; }
+  .header-linha .l { width:70px; height:1px; background:linear-gradient(to right, transparent, rgba(201,168,76,0.4)); }
+  .header-linha .l.r { background:linear-gradient(to left, transparent, rgba(201,168,76,0.4)); }
+  .header-linha span { color:rgba(201,168,76,0.5); font-size:12px; }
+
+  .container { max-width:800px; margin:0 auto; padding:56px 32px 100px; }
+
+  .versiculo {
+    background:var(--noite); border-left:5px solid var(--verde-med);
+    border-radius:0 8px 8px 0; padding:28px 36px;
+    margin-bottom:56px; position:relative; overflow:hidden;
+  }
+  .versiculo::before { content:'\201C'; font-family:'Cormorant',serif; font-size:130px; color:var(--verde-med); opacity:0.07; position:absolute; top:-28px; left:8px; line-height:1; pointer-events:none; }
+  .versiculo p { font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:#f2ede0; line-height:1.75; }
+  .versiculo .ref { margin-top:12px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--verde-med); opacity:0.7; }
+
+  .secao-topo { display:flex; align-items:center; gap:12px; margin-bottom:28px; padding-bottom:12px; border-bottom:1px solid rgba(42,110,72,0.15); }
+  .secao-icone { font-size:17px; flex-shrink:0; }
+  .secao-label { font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; color:var(--noite-med); text-transform:uppercase; font-weight:600; }
+  .secao-fio { flex:1; height:1px; background:linear-gradient(to right, var(--verde-med), transparent); opacity:0.2; }
+
+  .med-titulo { font-family:'Cormorant',serif; font-size:21px; font-style:italic; font-weight:600; color:var(--noite-med); margin-bottom:16px; padding-left:16px; border-left:3px solid var(--verde-med); line-height:1.3; margin-top:32px; }
+  .med-titulo:first-child { margin-top:0; }
+  p { font-size:17px; line-height:2; color:var(--texto); margin-bottom:14px; text-align:justify; }
+  .citacao { background:var(--verde-cl); border-left:4px solid var(--verde-med); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+
+  .nav-caps {
+    background:var(--noite-med); border-radius:8px; padding:28px 36px;
+    margin-top:64px; display:flex; justify-content:space-between;
+    align-items:center; gap:16px; flex-wrap:wrap;
+  }
+  .nav-cap-btn {
+    font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px;
+    color:var(--ouro); text-transform:uppercase; text-decoration:none;
+    opacity:0.65; transition:opacity 0.2s; display:flex; align-items:center; gap:8px;
+  }
+  .nav-cap-btn:hover { opacity:1; }
+  .nav-cap-btn.prev::before { content:'←'; }
+  .nav-cap-btn.next::after { content:'→'; }
+  .nav-cap-btn.voltar { color:rgba(240,236,224,0.4); }
+
+  .rodape { text-align:center; padding:48px 0 20px; border-top:1px solid rgba(42,110,72,0.12); margin-top:20px; }
+  .rodape-orn { font-size:13px; color:var(--verde-med); letter-spacing:14px; margin-bottom:14px; opacity:0.45; }
+  .rodape p { font-family:'Cormorant',serif; font-size:17px; font-style:italic; color:var(--suave); }
+
+  @keyframes subir { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+  .container { animation:subir 0.5s ease both; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../../index.html" class="nav-logo">✦ Diário Litúrgico</a>
+  <a href="../../index.html" class="nav-voltar">← Voltar ao Portal</a>
+</nav>
+
+<header class="header">
+  <div class="header-glow"></div>
+  <div class="header-conteudo">
+    <div class="header-serie">✦ Estudo da Escritura ✦</div>
+    <div class="header-livro">1 Reis — Série de Reflexões</div>
+    <h1 class="header-titulo">Capítulo 10</h1>
+    <p class="header-subtitulo">A Rainha de Sabá e o acúmulo que condena</p>
+    <div class="header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="versiculo">
+    <p>"Quando acumulamos demais, perdemos a capacidade de valorizar. O coração que tem tudo pode acabar não precisando de nada — inclusive de Deus."</p>
+    <div class="ref">— 1 Reis 10</div>
+  </div>
+
+  <div class="secao-topo">
+    <span class="secao-icone">🙏</span>
+    <h2 class="secao-label">Reflexão do Capítulo</h2>
+    <div class="secao-fio"></div>
+  </div>
+
+  <div class="med-titulo">A rainha que veio de longe</div>
+      <p>A Rainha de Sabá era uma líder poderosa, acostumada a grandiosidade e riqueza. Ela não era uma pessoa simples, facilmente impressionável. Chegou com perguntas difíceis — enigmas — e Salomão respondeu a todas. O texto diz que não havia palavra obscura que ele não explicasse. Mas a sabedoria de Salomão não era produto de sua inteligência natural; era dom divino, a resposta ao pedido feito no início do reinado. Quando a rainha ficou maravilhada com a sabedoria de Salomão, ela estava, sem perceber, contemplando a obra de Deus nele.</p>
+
+      <p>Então ela disse: "O que chegou a mim sobre o rei não era nem a metade do que realmente é." Normalmente acontece o contrário com as coisas humanas — a realidade decepciona a expectativa, a fama supera o fato. Com Salomão nesse momento, a substância era maior que a imagem. Isso só é possível quando há algo genuíno por trás — e esse algo genuíno era a presença de Deus.</p>
+
+      <div class="med-titulo">A confissão de uma estrangeira</div>
+      <p>Uma mulher estrangeira, de outra cultura, de outro continente, pronuncia uma das mais belas confissões teológicas de todo o livro de Reis. Ela disse: "Bendito seja o Senhor teu Deus, que te colocou no trono. O Senhor amou a Israel." Ela reconheceu que a fonte de tudo era Deus, compreendeu que a realeza de Salomão era providencial, e fez uma leitura teológica da história de um povo que não era o seu.</p>
+
+      <p>Ela não tinha a Lei nem os profetas. Não havia crescido ouvindo as histórias da aliança. E ainda assim seu coração reconheceu Deus quando o encontrou, mesmo que indiretamente, através da sabedoria de Salomão. Há corações que, mesmo sem a revelação formal, estão abertos o suficiente para reconhecer Deus quando O encontram. A rainha de Sabá era um desses corações. Jesus mesmo a citaria mais tarde, dizendo que ela se levantaria no julgamento para confrontar aqueles que tiveram algo maior que Salomão diante de si — e não reconheceram. Os fariseus não reconheceram Jesus. Nós, quantas vezes olhamos sem ver, temos ouvidos e não ouvimos?</p>
+
+      <div class="med-titulo">O inventário que condena</div>
+      <p>O restante do capítulo descreve com riqueza de detalhes tudo que Salomão acumulou. O escritor sagrado não está admirando — está documentando. Cada item listado é essencialmente uma violação de Deuteronômio 17 sendo registrada para a posteridade. Seiscentos e sessenta e seis talentos de ouro por ano. Tronos de marfim cobertos de ouro. Leões enormes nos degraus — doze ao total.</p>
+
+      <p>Os leões representavam as tribos de Israel. Mas havia uma inversão simbólica perturbadora: as tribos que deveriam estar ao lado do rei, caminhando com ele, foram transformadas em degraus sobre os quais ele pisava para subir ao trono. O símbolo que apontava para a identidade de um povo foi reduzido a ornamento de vaidade real.</p>
+
+      <div class="citacao">Quando acumulamos demais, perdemos a capacidade de valorizar. O texto diz que a prata não era considerada nada diante do ouro acumulado. Isso é uma lei espiritual disfarçada de observação econômica.</div>
+
+      <p>Salomão escreveu Provérbios — cheio de advertências contra o amor ao dinheiro e contra o orgulho. Escreveu Eclesiastes — que declara vaidade de vaidades sobre tudo que ele estava acumulando. Ele sabia. E ainda assim fez tudo que sabia ser errado. Isso é talvez o retrato mais honesto da condição humana em toda a Bíblia: saber não é suficiente, ensinar não é suficiente. Se o coração não for guardado diariamente pela Palavra, até o mais sábio pode se desviar.</p>
+
+  <div class="nav-caps">
+    <a href="cap9.html" class="nav-cap-btn prev">Capítulo 9</a>
+    <a href="../../index.html" class="nav-cap-btn voltar">↑ Todos os Capítulos</a>
+    <a href="cap11.html" class="nav-cap-btn next">Capítulo 11</a>
+  </div>
+
+  <div class="rodape">
+    <div class="rodape-orn">✦ ✦ ✦</div>
+    <p>1 Reis 10 — Série de reflexões por Luis Thiago</p>
+  </div>
+
+</div>
+</body>
+</html>

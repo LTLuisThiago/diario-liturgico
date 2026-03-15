@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sábado 14/03 — O único bem que é genuinamente nosso | Luis Thiago</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noite:#0e1520; --noite-med:#1a2535; --noite-claro:#1e2d50;
+    --ouro:#c9a84c; --ouro-brilho:#e8c96a; --ouro-claro:#fdf6e3;
+    --aurora:#c45c2a; --aurora-suave:#e8956a; --aurora-claro:#fdf0e8;
+    --purpura:#4a2060; --creme:#f9f6f0; --texto:#1e1a14;
+    --texto-suave:#6b5f4e; --branco:#fefefc; --verde:#1e4a30; --verde-claro:#e8f4ee;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--creme); font-family:'Crimson Pro',Georgia,serif; color:var(--texto); }
+  .nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(14,21,32,0.96); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.1); height:56px; padding:0 32px; display:flex; align-items:center; justify-content:space-between; }
+  .nav-logo { font-family:'Cinzel',serif; font-size:12px; letter-spacing:3px; color:var(--ouro); opacity:0.8; text-decoration:none; text-transform:uppercase; }
+  .nav-voltar { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:rgba(240,236,224,0.5); text-transform:uppercase; text-decoration:none; transition:color 0.2s; }
+  .nav-voltar:hover { color:var(--ouro); }
+  .wrap { max-width:800px; margin:0 auto; padding:0 28px 100px; padding-top:56px; }
+  .d-header { background:linear-gradient(170deg, var(--purpura) 0%, var(--noite-med) 40%, var(--aurora) 80%, #e8a050 100%); padding:64px 28px 56px; text-align:center; position:relative; overflow:hidden; }
+  .d-header-grade { position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size:36px 36px; pointer-events:none; }
+  .d-header-glow { position:absolute; width:500px; height:280px; background:radial-gradient(ellipse, rgba(232,149,106,0.2) 0%, transparent 60%); bottom:40px; left:50%; transform:translateX(-50%); pointer-events:none; }
+  .d-header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--creme), transparent); pointer-events:none; }
+  .d-header-conteudo { position:relative; z-index:2; }
+  .d-header-emblema { font-size:20px; color:rgba(255,255,255,0.35); letter-spacing:14px; margin-bottom:22px; }
+  .d-header-tempo { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(255,255,255,0.55); text-transform:uppercase; margin-bottom:14px; }
+  .d-header-titulo { font-family:'Cormorant',serif; font-size:clamp(1.8rem,6vw,3.4rem); font-style:italic; font-weight:300; color:#fdf8f0; line-height:1.2; margin-bottom:10px; }
+  .d-header-subtitulo { font-family:'Crimson Pro',serif; font-size:18px; font-style:italic; color:rgba(253,248,240,0.5); margin-bottom:10px; }
+  .d-header-data { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:rgba(232,192,74,0.5); text-transform:uppercase; }
+  .d-header-linha { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:24px; }
+  .d-header-linha .l { width:70px; height:1px; background:linear-gradient(to right, transparent, rgba(255,255,255,0.2)); }
+  .d-header-linha .l.r { background:linear-gradient(to left, transparent, rgba(255,255,255,0.2)); }
+  .d-header-linha span { color:rgba(255,255,255,0.25); font-size:12px; }
+  .d-secao { margin-bottom:64px; margin-top:48px; }
+  .d-secao-topo { display:flex; align-items:center; gap:12px; margin-bottom:28px; padding-bottom:12px; border-bottom:1px solid rgba(201,168,76,0.12); }
+  .d-secao-icone { font-size:17px; flex-shrink:0; }
+  .d-secao-label { font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; color:var(--noite-claro); text-transform:uppercase; font-weight:600; }
+  .d-secao-fio { flex:1; height:1px; background:linear-gradient(to right, var(--ouro), transparent); opacity:0.2; }
+  .d-leituras { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:24px; }
+  @media(max-width:500px){ .d-leituras{grid-template-columns:1fr} }
+  .d-leitura { background:var(--noite); padding:18px 20px; border-radius:3px; border-top:3px solid var(--aurora); }
+  .d-leitura.evang { grid-column:1/-1; border-top-color:var(--ouro-brilho); background:linear-gradient(135deg, var(--noite), var(--noite-med)); }
+  .d-leitura-tipo { font-family:'Cinzel',serif; font-size:9px; letter-spacing:2px; color:var(--aurora-suave); text-transform:uppercase; margin-bottom:6px; opacity:0.8; }
+  .d-leitura.evang .d-leitura-tipo { color:var(--ouro-brilho); }
+  .d-leitura-ref { font-family:'Cormorant',serif; font-size:19px; font-weight:600; color:#f2ede0; margin-bottom:4px; }
+  .d-leitura-desc { font-size:12.5px; font-style:italic; color:rgba(242,237,224,0.45); line-height:1.5; }
+  .d-versiculo { background:var(--noite); border-left:5px solid var(--aurora); border-radius:0 8px 8px 0; padding:28px 36px; position:relative; overflow:hidden; }
+  .d-versiculo::before { content:'\201C'; font-family:'Cormorant',serif; font-size:130px; color:var(--aurora); opacity:0.06; position:absolute; top:-28px; left:8px; line-height:1; pointer-events:none; }
+  .d-versiculo p { font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:#f2ede0; line-height:1.75; }
+  .d-versiculo .ref { margin-top:12px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--aurora-suave); opacity:0.7; }
+  .d-meditacao { margin-bottom:40px; padding-bottom:40px; border-bottom:1px solid rgba(201,168,76,0.1); }
+  .d-meditacao:last-child { border-bottom:none; padding-bottom:0; margin-bottom:0; }
+  .d-med-titulo { font-family:'Cormorant',serif; font-size:21px; font-style:italic; font-weight:600; color:var(--noite-claro); margin-bottom:18px; padding-left:16px; border-left:3px solid var(--aurora); line-height:1.3; }
+  .d-meditacao p { font-size:17px; line-height:2; color:var(--texto); margin-bottom:14px; text-align:justify; }
+  .d-citacao { background:var(--aurora-claro); border-left:4px solid var(--aurora); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+  .d-citacao-purpura { background:#f5eefa; border-left:4px solid #7a4090; border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+  .d-homilia { border-radius:8px; overflow:hidden; box-shadow:0 12px 48px rgba(14,21,32,0.15); }
+  .d-hom-topo { background:linear-gradient(135deg, var(--purpura), var(--noite-med), var(--aurora)); padding:32px 44px; text-align:center; position:relative; overflow:hidden; }
+  .d-hom-topo::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:22px 22px; pointer-events:none; }
+  .d-hom-rotulo { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(253,248,240,0.55); text-transform:uppercase; margin-bottom:10px; position:relative; }
+  .d-hom-titulo { font-family:'Cormorant',serif; font-size:clamp(1.4rem,4vw,2rem); font-style:italic; font-weight:300; color:#fdf8f0; line-height:1.3; position:relative; }
+  .d-hom-corpo { background:var(--branco); padding:44px 52px; }
+  @media(max-width:520px){ .d-hom-corpo{padding:32px 24px} }
+  .d-hom-corpo p { font-size:17px; line-height:2.05; color:var(--texto); margin-bottom:20px; text-align:justify; }
+  .d-hom-corpo p:last-child { margin-bottom:0; }
+  .d-hom-destaque { background:var(--aurora-claro); border-left:5px solid var(--aurora); border-radius:0 8px 8px 0; padding:20px 28px; margin:26px 0; font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:var(--noite); line-height:1.65; }
+  .d-hom-destaque-purpura { background:#f5eefa; border-left:5px solid #7a4090; border-radius:0 8px 8px 0; padding:20px 28px; margin:26px 0; font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:var(--noite); line-height:1.65; }
+  .d-hom-fecho { margin-top:36px; padding-top:26px; border-top:1px solid rgba(201,168,76,0.15); text-align:center; font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:var(--noite-claro); line-height:2.1; }
+  .d-oracao { background:linear-gradient(160deg, var(--purpura), var(--noite)); border-radius:8px; overflow:hidden; position:relative; box-shadow:0 12px 40px rgba(74,32,96,0.2); }
+  .d-oracao::after { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg, var(--aurora), var(--ouro-brilho), var(--aurora)); }
+  .d-or-topo { padding:28px 44px 6px; text-align:center; position:relative; }
+  .d-or-rotulo { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(253,248,240,0.45); text-transform:uppercase; }
+  .d-or-corpo { padding:14px 48px 48px; text-align:center; position:relative; }
+  @media(max-width:520px){ .d-or-corpo{padding:14px 24px 40px} }
+  .d-or-corpo p { font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:rgba(253,248,240,0.82); line-height:2.15; white-space:pre-line; }
+  .d-or-amen { margin-top:28px; font-family:'Cinzel',serif; font-size:14px; letter-spacing:8px; color:var(--ouro-brilho); font-weight:600; }
+  .d-fio-arco { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:24px; }
+  @media(max-width:520px){ .d-fio-arco{grid-template-columns:1fr} }
+  .d-fio-dia { background:var(--branco); border-radius:4px; border:1px solid rgba(201,168,76,0.1); border-top:3px solid var(--ouro); padding:16px 18px; }
+  .d-fio-dia.hoje { border-top-color:var(--aurora); background:var(--aurora-claro); }
+  .d-fio-dia-label { font-family:'Cinzel',serif; font-size:9px; letter-spacing:2px; color:var(--ouro); text-transform:uppercase; margin-bottom:5px; opacity:0.7; }
+  .d-fio-dia.hoje .d-fio-dia-label { color:var(--aurora); }
+  .d-fio-dia-palavra { font-family:'Cormorant',serif; font-size:17px; font-weight:600; color:var(--noite); margin-bottom:5px; }
+  .d-fio-dia-texto { font-size:13px; font-style:italic; color:var(--texto-suave); line-height:1.6; }
+  .d-fio-convergencia { background:var(--noite); border-radius:6px; padding:26px 32px; text-align:center; }
+  .d-fio-convergencia p { font-family:'Cormorant',serif; font-size:17px; font-style:italic; color:rgba(253,248,240,0.65); line-height:1.85; }
+  .d-fio-convergencia strong { color:var(--aurora-suave); font-weight:400; }
+  .d-vida-grupo { margin-bottom:28px; }
+  .d-vida-titulo { font-family:'Cormorant',serif; font-size:19px; font-style:italic; font-weight:600; color:var(--noite-claro); margin-bottom:12px; display:flex; align-items:center; gap:12px; }
+  .d-vida-titulo::after { content:''; flex:1; height:1px; background:rgba(201,168,76,0.2); }
+  .d-pratica { display:flex; gap:12px; padding:13px 16px; margin-bottom:9px; background:var(--branco); border-radius:4px; border:1px solid rgba(201,168,76,0.08); transition:background 0.2s; }
+  .d-pratica:hover { background:var(--aurora-claro); }
+  .d-pratica-dot { flex-shrink:0; width:7px; height:7px; border-radius:50%; background:var(--aurora); margin-top:8px; }
+  .d-pratica p { font-size:15px; line-height:1.75; color:var(--texto); }
+  .d-rodape { text-align:center; padding:48px 0 20px; border-top:1px solid rgba(201,168,76,0.12); margin-top:20px; }
+  .d-rodape .orn { font-size:13px; color:var(--ouro); letter-spacing:14px; margin-bottom:14px; opacity:0.45; }
+  .d-rodape p { font-family:'Cormorant',serif; font-size:17px; font-style:italic; color:var(--texto-suave); }
+  .d-palavra { text-align:center; margin-bottom:28px; }
+  .d-palavra-inner { display:inline-block; font-family:'Cormorant',serif; font-size:22px; font-style:italic; font-weight:600; color:var(--branco); background:var(--noite); letter-spacing:4px; padding:13px 36px; border-radius:2px; }
+  .d-palavra-inner::before { content:'\2726 '; color:var(--ouro); font-size:11px; vertical-align:middle; }
+  .d-palavra-inner::after  { content:' \2726'; color:var(--ouro); font-size:11px; vertical-align:middle; }
+  @keyframes subir { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+  .wrap { animation:subir 0.5s ease both; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../../../index.html" class="nav-logo">✦ Diário Litúrgico</a>
+  <a href="../../../index.html" class="nav-voltar">← Voltar ao Portal</a>
+</nav>
+
+<div class="wrap">
+  <div class="d-header">
+  <div class="d-header-grade"></div><div class="d-header-glow"></div>
+  <div class="d-header-conteudo">
+    <div class="d-header-emblema">✦ ✝ ✦</div>
+    <div class="d-header-tempo">Sábado — Encerramento da 3.ª Semana da Quaresma</div>
+    <h1 class="d-header-titulo">Diário Litúrgico</h1>
+    <p class="d-header-subtitulo">Nos levantará ao terceiro dia — e voltará para casa justificado</p>
+    <div class="d-header-data">Sábado, 14 de março de 2026</div>
+    <div class="d-header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">📖</span><h2 class="d-secao-label">A Palavra de Hoje</h2><div class="d-secao-fio"></div></div>
+  <div class="d-leituras">
+    <div class="d-leitura"><div class="d-leitura-tipo">Primeira Leitura</div><div class="d-leitura-ref">Oséias 6,1-6</div><div class="d-leitura-desc">Nos levantará ao terceiro dia — quero misericórdia, não sacrifício</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Salmo Responsorial</div><div class="d-leitura-ref">Salmo 50 (51)</div><div class="d-leitura-desc">Tende piedade de mim — cria em mim um coração puro</div></div>
+    <div class="d-leitura evang"><div class="d-leitura-tipo">Evangelho</div><div class="d-leitura-ref">Lucas 18,9-14</div><div class="d-leitura-desc">O fariseu e o publicano — este voltou para casa justificado</div></div>
+  </div>
+  <div class="d-versiculo">
+    <p>"Quero misericórdia e não sacrifício, conhecimento de Deus mais do que holocaustos."</p>
+    <div class="ref">— Os 6,6</div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🙏</span><h2 class="d-secao-label">Meu Coração Responde</h2><div class="d-secao-fio"></div></div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Oséias 6 — O terceiro dia que o sábado guarda</div>
+    <p>Não é acidente que esta profecia seja proclamada num sábado da Quaresma. Oséias diz — <em>nos levantará ao terceiro dia.</em> Esta Palavra é lida no dia entre a sexta-feira e o domingo. No mesmo silêncio em que os discípulos viveram entre a cruz e a ressurreição — sabendo a profecia, não vendo ainda o cumprimento, esperando com a única coisa que lhes restava: a confiança de que a aurora vem, certa como prometeu.</p>
+    <p>O capítulo começa com o povo falando — <em>vinde, voltemos ao Senhor.</em> E há uma leveza quase suspeita nesse retorno. O povo sabe as palavras. Conhece o ritual. Mas Deus responde com um lamento — <em>o que farei a vós?</em> O amor de vocês é como nuvem matinal que desaparece antes do meio-dia.</p>
+    <div class="d-citacao">"É possível pedir perdão com as palavras certas e o coração ainda fechado. Deus não quer o discurso do retorno — quer as raízes que ficam quando a emoção passa."</div>
+    <p>E então a frase que resume toda a semana — <em>quero misericórdia e não sacrifício.</em> Os sacrifícios eram pedagógicos — para ensinar que o pecado tem peso, que a graça não é barata. Mas o destino sempre foi o amor. O conhecimento vivo de Deus — não sobre Deus, mas de Deus — na intimidade de quem se deixou conhecer e conhece de volta.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Salmo 50 — As palavras do retorno</div>
+    <p>O Salmo não começa com pedido de bênção. Não começa com louvor. Começa com misericórdia. Porque a primeira necessidade humana diante de Deus não é receber mais — é ser perdoado pelo que já se fez com o que se recebeu.</p>
+    <p>O argumento não é o mérito do orante — é o caráter de Deus. <em>Segundo a vossa bondade. Segundo a vossa misericórdia.</em> Não pede perdão porque merece. Pede porque Deus é quem é.</p>
+    <div class="d-citacao-purpura">"O único bem genuinamente nosso — o único que produzimos por conta própria, sem a graça de Deus — é o pecado. E é exatamente isso que Deus quer receber. Para carregar. Para transformar em redenção."</div>
+    <p>E então o pedido mais audacioso do Salmo — <em>cria em mim um coração puro.</em> Não pede reforma — pede nova criação. Não melhoramento — novo começo. O mesmo poder que fez o mundo do nada, aplicado ao coração humano que chegou vazio e honesto diante de Deus.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Lucas 18,9-14 — O orgulho que orou para si mesmo</div>
+    <p>Lucas não diz que o fariseu orou a Deus. Diz que orou <em>para si mesmo.</em> Ele entrou no templo, ficou diante de Deus, e enxergou apenas a si mesmo refletido. O orgulho é exatamente isso — uma cegueira que só enxerga a si mesmo.</p>
+    <p>O fariseu tinha a observância sem o amor. E o mais grave — não pediu perdão em nenhum momento. Porque genuinamente não se reconhecia pecador. O coração calcificado a tal ponto que perdeu a capacidade de se ver.</p>
+    <div class="d-citacao">"O fariseu transformou o que era caminho em chegada. O que era meio em fim. Usou as ferramentas da graça para construir o trono do orgulho."</div>
+    <p>O publicano tem apenas o gesto de bater no peito — pedindo que algo mude por dentro — e a confissão mais honesta que um ser humano pode fazer: <em>pois sou pecador.</em></p>
+    <p>E Deus diz — este voltou para casa justificado. Não o que mais sabia. O que chegou mais vazio — e por isso saiu mais cheio.</p>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">✝</span><h2 class="d-secao-label">Homilia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-homilia">
+    <div class="d-hom-topo">
+      <div class="d-hom-rotulo">✦ Reflexão do Dia ✦</div>
+      <div class="d-hom-titulo">"O único bem que é genuinamente nosso"</div>
+    </div>
+    <div class="d-hom-corpo">
+      <p>Há uma história sobre um grande estudioso da Escritura que passou décadas traduzindo e estudando a Palavra de Deus. E quando foi a Deus com tudo isso nos braços — a obra da vida inteira, o fruto do esforço de décadas — recebeu uma resposta que deveria parar qualquer coração: <em>eu que te dei tudo isso. Não é teu para oferecer.</em></p>
+      <p>E então perguntou — o que posso Te dar? A resposta foi: <em>dá-me os teus pecados.</em> O único bem genuinamente nosso — o único que produzimos por conta própria, sem nenhuma graça — é o pecado. E é exatamente isso que Deus quer receber.</p>
+      <div class="d-hom-destaque">Oséias chegou séculos antes e disse a mesma coisa: quero misericórdia e não sacrifício. Os sacrifícios eram pedagógicos — ensinavam que o pecado tem peso. Mas o destino sempre foi o coração aberto que reconhece que precisa de Deus.</div>
+      <p>O Salmo 50 nos deu hoje as palavras exatas para fazer essa entrega. Não começa com bênção — começa com misericórdia. Porque a primeira necessidade humana diante de Deus não é receber mais. É ser perdoado pelo que se fez com o que já se recebeu.</p>
+      <div class="d-hom-destaque-purpura">O fariseu entrou no templo e orou para si mesmo. O publicano entrou e encontrou Deus. A diferença não era o lugar — era a postura do coração. Um chegou cheio de si. O outro chegou vazio. E Deus só entra onde há espaço.</div>
+      <p>O fariseu tinha as práticas corretas. Observava, dava, cumpria. Mas transformou tudo isso em espelho em vez de janela. Entrou no templo e viu a si mesmo. Não pediu perdão — porque não se reconhecia pecador. É o endurecimento em seu estágio mais grave.</p>
+      <p>O publicano chegou sem nada. Com o único bem que tinha — os próprios pecados. Bateu no peito. Disse a verdade. E Deus declara: <em>este voltou para casa justificado.</em></p>
+      <p>Hoje esta reflexão fecha a terceira semana da Quaresma com uma profecia que o sábado guarda com precisão — seremos levantados ao terceiro dia. E lemos isso no sábado, no silêncio que precede o domingo. É a posição do solo fértil — que plantou, que esperou, que não vê ainda o fruto, mas sabe que a aurora vem. Certa. Fiel. Imerecida.</p>
+      <div class="d-hom-fecho">Desde o início da humanidade até a nossa partida para a casa do Pai —<br>é a mesma história contada de formas diferentes.<br>Deus buscando o coração que se fechou.<br>Enviando a Palavra todos os dias, sem cessar.<br><br>E nós — com os nossos pecados nas mãos,<br>batendo no peito,<br>voltando para casa justificados.</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🌿</span><h2 class="d-secao-label">Para Levar no Dia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-oracao">
+    <div class="d-or-topo"><div class="d-or-rotulo">✦ Oração do Dia ✦</div></div>
+    <div class="d-or-corpo">
+      <p>Senhor e Pai,
+tende piedade de mim — que sou pecador.
+
+Não venho com obras para apresentar,
+não venho com virtudes acumuladas
+como argumento para a Tua misericórdia.
+
+Venho com o único bem que é genuinamente meu —
+os meus pecados.
+Recebe-os. Carrega-os.
+Faz deles o material da minha renovação.
+
+Cria em mim um coração puro —
+não reformado, não remendado —
+criado de novo, pelo mesmo poder
+com que criaste o mundo no princípio.
+
+Que eu não ore para mim mesmo.
+Que eu chegue vazio como o publicano
+e de lá seja levantado.
+
+E que amanhã, quando me reunir ao redor da Tua mesa,
+eu saiba que esse dia não é rotina.
+É a aurora certa cumprindo-se mais uma vez.</p>
+      <div class="d-or-amen">AMÉM</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🧵</span><h2 class="d-secao-label">Fio da Semana — Encerramento</h2><div class="d-secao-fio"></div></div>
+  <div class="d-palavra"><div class="d-palavra-inner">Esvaziar para Receber</div></div>
+  <div class="d-fio-arco">
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Segunda — 09/03</div><div class="d-fio-dia-palavra">Descer</div><div class="d-fio-dia-texto">Naamã no Jordão. O orgulho que quase perdeu a cura. O critério de Deus é a sede, não o prestígio.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Terça — 10/03</div><div class="d-fio-dia-palavra">Perdoar</div><div class="d-fio-dia-texto">A dívida impagável perdoada. Setenta vezes sete. Reconhecer o tamanho do que foi perdoado.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Quarta — 11/03</div><div class="d-fio-dia-palavra">Cumprir</div><div class="d-fio-dia-texto">Não a casca do sacrifício — o núcleo do amor. Fazer e transmitir. As duas asas do mesmo voo.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Quinta — 12/03</div><div class="d-fio-dia-palavra">Escutar</div><div class="d-fio-dia-texto">A Palavra enviada todos os dias sem cessar. Arrancar os espinhos. Abrir o solo. Aos poucos, mas sempre.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Sexta — 13/03</div><div class="d-fio-dia-palavra">Amar</div><div class="d-fio-dia-texto">Com todo o coração, alma e forças. O banquete preparado para quem renunciou aos substitutos.</div></div>
+    <div class="d-fio-dia hoje"><div class="d-fio-dia-label">Hoje — Sábado 14/03</div><div class="d-fio-dia-palavra">Esvaziar</div><div class="d-fio-dia-texto">Os pecados entregues. O coração criado de novo. O publicano que voltou para casa justificado.</div></div>
+  </div>
+  <div class="d-fio-convergencia">
+    <p>Do início da humanidade até a nossa partida para a casa do Pai — <strong>é a mesma história.</strong><br>
+    Deus buscando o coração que se fechou.<br>
+    A Palavra enviada todos os dias, sem cessar.<br>
+    E nós — <strong>o solo que escolhemos ser</strong> — escavando o tesouro dia a dia,<br>
+    sedentes pela próxima revelação,<br>
+    voltando para casa justificados.</p>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🌱</span><h2 class="d-secao-label">Para Nossa Vida Hoje</h2><div class="d-secao-fio"></div></div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">Na oração</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Antes de qualquer outra oração — uma frase só: <em>tende piedade de mim, que sou pecador.</em> Não como fórmula. Como primeiro movimento do coração que se abre.</p></div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Entregue os seus pecados — nomeie-os. Coloque-os nas mãos de Deus. É o único bem genuinamente seu para oferecer.</p></div>
+  </div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">No exame da semana</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Olhe para os dias que passaram. Em qual solo você viveu mais — o que fecha ou o que abre? Para saber onde trabalhar na próxima semana.</p></div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Identifique o momento em que orou para si mesmo — quando a prática serviu de espelho em vez de janela. Nomeie. Entregue.</p></div>
+  </div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">No lar e nas relações</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Quem está em casa vai sentir a diferença de alguém que voltou da oração transformado. A misericórdia recebida precisa transbordar para quem está ao lado.</p></div>
+  </div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">No trabalho</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>O testemunho de quem voltou justificado é visível sem palavras. A serenidade, a paciência e a integridade são os sinais que fazem os outros perguntarem.</p></div>
+  </div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">Preparação para o domingo</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Amanhã é o terceiro dia de Oséias cumprindo-se mais uma vez. Vá como o publicano — com os pecados nas mãos, coração aberto para receber o que só Deus pode dar.</p></div>
+  </div>
+</div>
+
+<div class="d-rodape">
+  <div class="orn">✦ ✦ ✦</div>
+  <p>"Nos levantará ao terceiro dia — e viveremos na sua presença." — Os 6,2</p>
+</div>
+</div>
+
+</body>
+</html>

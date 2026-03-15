@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 Reis 13 — O Homem de Deus, o velho profeta e a desobediência | Luis Thiago</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noite:      #0e1520;
+    --noite-med:  #1a2535;
+    --verde:      #1e4a30;
+    --verde-med:  #2a6e48;
+    --verde-cl:   #e8f4ee;
+    --ouro:       #c9a84c;
+    --ouro-cl:    #fdf6e3;
+    --ouro-br:    #e8c96a;
+    --creme:      #f9f6f0;
+    --texto:      #1e1a14;
+    --suave:      #6b5f4e;
+    --branco:     #fefefc;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--creme); font-family:'Crimson Pro',Georgia,serif; color:var(--texto); }
+
+  .nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(14,21,32,0.96); backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(201,168,76,0.1);
+    height:56px; padding:0 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-logo { font-family:'Cinzel',serif; font-size:12px; letter-spacing:3px; color:var(--ouro); opacity:0.8; text-decoration:none; text-transform:uppercase; }
+  .nav-voltar { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:rgba(240,236,224,0.5); text-transform:uppercase; text-decoration:none; transition:color 0.2s; }
+  .nav-voltar:hover { color:var(--ouro); }
+
+  .header {
+    background:linear-gradient(160deg, #0a1a10 0%, #1a3a20 50%, #2a5a30 100%);
+    padding:80px 32px 64px; text-align:center;
+    position:relative; overflow:hidden; margin-top:56px;
+  }
+  .header::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:32px 32px; pointer-events:none; }
+  .header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--creme), transparent); pointer-events:none; }
+  .header-glow { position:absolute; width:500px; height:280px; background:radial-gradient(ellipse, rgba(42,110,72,0.25) 0%, transparent 65%); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; }
+  .header-conteudo { position:relative; z-index:2; }
+  .header-serie { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(255,255,255,0.45); text-transform:uppercase; margin-bottom:16px; }
+  .header-livro { font-family:'Cormorant',serif; font-size:clamp(1rem,2.5vw,1.3rem); font-style:italic; color:rgba(255,255,255,0.4); margin-bottom:8px; }
+  .header-titulo { font-family:'Cormorant',serif; font-size:clamp(2rem,6vw,3.6rem); font-style:italic; font-weight:300; color:#f0ece0; line-height:1.2; margin-bottom:10px; }
+  .header-subtitulo { font-size:17px; font-style:italic; color:rgba(240,236,224,0.5); line-height:1.7; margin-bottom:6px; }
+  .header-linha { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:22px; }
+  .header-linha .l { width:70px; height:1px; background:linear-gradient(to right, transparent, rgba(201,168,76,0.4)); }
+  .header-linha .l.r { background:linear-gradient(to left, transparent, rgba(201,168,76,0.4)); }
+  .header-linha span { color:rgba(201,168,76,0.5); font-size:12px; }
+
+  .container { max-width:800px; margin:0 auto; padding:56px 32px 100px; }
+
+  .versiculo {
+    background:var(--noite); border-left:5px solid var(--verde-med);
+    border-radius:0 8px 8px 0; padding:28px 36px;
+    margin-bottom:56px; position:relative; overflow:hidden;
+  }
+  .versiculo::before { content:'\201C'; font-family:'Cormorant',serif; font-size:130px; color:var(--verde-med); opacity:0.07; position:absolute; top:-28px; left:8px; line-height:1; pointer-events:none; }
+  .versiculo p { font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:#f2ede0; line-height:1.75; }
+  .versiculo .ref { margin-top:12px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--verde-med); opacity:0.7; }
+
+  .secao-topo { display:flex; align-items:center; gap:12px; margin-bottom:28px; padding-bottom:12px; border-bottom:1px solid rgba(42,110,72,0.15); }
+  .secao-icone { font-size:17px; flex-shrink:0; }
+  .secao-label { font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; color:var(--noite-med); text-transform:uppercase; font-weight:600; }
+  .secao-fio { flex:1; height:1px; background:linear-gradient(to right, var(--verde-med), transparent); opacity:0.2; }
+
+  .med-titulo { font-family:'Cormorant',serif; font-size:21px; font-style:italic; font-weight:600; color:var(--noite-med); margin-bottom:16px; padding-left:16px; border-left:3px solid var(--verde-med); line-height:1.3; margin-top:32px; }
+  .med-titulo:first-child { margin-top:0; }
+  p { font-size:17px; line-height:2; color:var(--texto); margin-bottom:14px; text-align:justify; }
+  .citacao { background:var(--verde-cl); border-left:4px solid var(--verde-med); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+
+  .nav-caps {
+    background:var(--noite-med); border-radius:8px; padding:28px 36px;
+    margin-top:64px; display:flex; justify-content:space-between;
+    align-items:center; gap:16px; flex-wrap:wrap;
+  }
+  .nav-cap-btn {
+    font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px;
+    color:var(--ouro); text-transform:uppercase; text-decoration:none;
+    opacity:0.65; transition:opacity 0.2s; display:flex; align-items:center; gap:8px;
+  }
+  .nav-cap-btn:hover { opacity:1; }
+  .nav-cap-btn.prev::before { content:'←'; }
+  .nav-cap-btn.next::after { content:'→'; }
+  .nav-cap-btn.voltar { color:rgba(240,236,224,0.4); }
+
+  .rodape { text-align:center; padding:48px 0 20px; border-top:1px solid rgba(42,110,72,0.12); margin-top:20px; }
+  .rodape-orn { font-size:13px; color:var(--verde-med); letter-spacing:14px; margin-bottom:14px; opacity:0.45; }
+  .rodape p { font-family:'Cormorant',serif; font-size:17px; font-style:italic; color:var(--suave); }
+
+  @keyframes subir { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+  .container { animation:subir 0.5s ease both; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../../index.html" class="nav-logo">✦ Diário Litúrgico</a>
+  <a href="../../index.html" class="nav-voltar">← Voltar ao Portal</a>
+</nav>
+
+<header class="header">
+  <div class="header-glow"></div>
+  <div class="header-conteudo">
+    <div class="header-serie">✦ Estudo da Escritura ✦</div>
+    <div class="header-livro">1 Reis — Série de Reflexões</div>
+    <h1 class="header-titulo">Capítulo 13</h1>
+    <p class="header-subtitulo">O Homem de Deus, o velho profeta e a desobediência</p>
+    <div class="header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="versiculo">
+    <p>"A mentira mais sofisticada não nega Deus diretamente — ela fala no nome de Deus para contradizer a palavra de Deus."</p>
+    <div class="ref">— 1 Reis 13</div>
+  </div>
+
+  <div class="secao-topo">
+    <span class="secao-icone">🙏</span>
+    <h2 class="secao-label">Reflexão do Capítulo</h2>
+    <div class="secao-fio"></div>
+  </div>
+
+  <div class="med-titulo">Uma profecia de precisão sobrenatural</div>
+      <p>Jeroboão estava diante de um altar em Betel quando um homem de Deus chegou e profetizou. Ele não apenas anunciou um evento futuro — anunciou um nome específico: Josias. Trezentos anos antes de Josias nascer. Isso é algo que nenhuma inteligência humana poderia fabricar. É a assinatura inequívoca de um Deus que habita a eternidade e vê o fim desde o princípio. E quando chegamos a 2 Reis 23 e lemos o cumprimento dessa profecia — Josias destruindo exatamente aquele altar, como havia sido dito — o texto faz questão de conectar os pontos.</p>
+
+      <div class="med-titulo">O Homem de Deus — uma identidade sem nome</div>
+      <p>O profeta não tem nome próprio registrado. Não tem família mencionada. Não tem história anterior ou posterior fora desse episódio. Ele é simplesmente o Homem de Deus. Isso é uma declaração teológica deliberada. Sua identidade completa estava contida nessa designação. Não era alguém que também servia a Deus — era alguém cuja existência inteira se definia pela relação com Deus. Ao chamar esse profeta anônimo de Homem de Deus, o texto o coloca numa linhagem de entrega total. E quando o profeta não tem nome, só resta a mensagem. Deus às vezes esconde o mensageiro para que a mensagem seja tudo.</p>
+
+      <div class="med-titulo">Jeroboão tenta cooptar o profeta</div>
+      <p>Quando a mão de Jeroboão secou e foi restaurada pela oração do profeta, sua primeira reação foi tentar trazer o Homem de Deus para dentro de sua esfera de influência. Primeiro ofereceu hospitalidade, depois prometeu um presente. No mundo antigo, aceitar um presente de um rei criava uma obrigação formal e pública. Jeroboão não estava sendo generoso — estava comprando. Queria usar a credibilidade do profeta para legitimar o sistema que o profeta havia condenado. Era uma operação de controle de narrativa. Mas o Homem de Deus respondeu com firmeza: ainda que me desses metade da tua casa, eu não iria. Essa liberdade só é possível em quem não deseja nada que o poder possa oferecer.</p>
+
+      <p>Também vale notar que durante toda essa cena, Jeroboão pediu a intercessão do profeta dizendo "ora ao Senhor teu Deus" — não ao meu Deus, não ao nosso Deus. Com a mão seca diante do altar fendido, ele sabia que os bezerros de ouro eram mentira. Mas não se arrependeu. Apenas pediu o benefício do Deus que havia rejeitado publicamente. Queria a bênção sem a transformação. É uma das formas mais antigas de usar o nome de Deus em vão: invocar a Deus apenas quando se precisa de algo, sem nenhuma intenção de mudar.</p>
+
+      <div class="med-titulo">O velho profeta de Betel</div>
+      <p>Havia em Betel um profeta idoso cujos filhos lhe contaram tudo o que havia acontecido. Ele saiu apressadamente atrás do Homem de Deus e o encontrou sentado ao pé de uma árvore. E então lhe disse que também era profeta, e que um anjo havia dito que era para levá-lo consigo. Era uma mentira. O Homem de Deus cedeu.</p>
+
+      <p>O velho profeta morava em Betel — a cidade dos bezerros de ouro. Um homem de Deus vivendo na capital da idolatria, em silêncio cúmplice. Havia feito suas concessões, havia se acomodado, havia escolhido o silêncio conveniente em vez da palavra custosa. E quando um desconhecido de Judá fez em um dia o que ele nunca havia feito em anos, algo se moveu nele — não para arrependimento, mas para ciúme. O ciúme espiritual é um dos venenos mais silenciosos que existem: a incapacidade de alegrar-se com o que Deus fez através de outro.</p>
+
+      <div class="citacao">A mentira mais sofisticada não nega Deus diretamente. Ela fala no nome de Deus para contradizer a palavra de Deus. Foi assim no jardim do Éden, foi assim em Betel, e continua sendo assim hoje.</div>
+
+      <p>O Homem de Deus tinha todos os instrumentos para discernir o engano: tinha a palavra clara de Deus, sem ambiguidade. Tinha o princípio de que uma nova palavra que contradiz uma palavra já recebida não é de Deus. Tinha a evidência visível da vida do velho profeta — que morava em Betel e nunca havia confrontado Jeroboão. Tinha a lógica da missão — se havia um profeta em Betel, por que Deus o enviou de Judá? Todos os instrumentos estavam disponíveis. Nenhum foi usado.</p>
+
+      <p>O inimigo não conseguiu entrar pela porta da frente da força. Entrou pela porta dos fundos da necessidade legítima. Após uma missão custosa, após resistir a tudo sozinho, a carne desejava exatamente o que o velho profeta oferecia: descanso, refeição, companhia de alguém que parecia entender. Por isso devemos ler, refletir, orar o tempo todo — não porque Deus exige performance constante, mas porque o engano não tira folga.</p>
+
+      <div class="med-titulo">O julgamento e a graça dentro dele</div>
+      <p>Durante a refeição, o Espírito do Senhor veio sobre o velho profeta e ele pronunciou o julgamento: por ter desobedecido, teu cadáver não será levado ao sepulcro de teus pais. Para o israelita, ser enterrado com seus pais era a confirmação de que se havia vivido e morrido dentro da aliança. Ser privado disso era morrer como estrangeiro em terra estranha — sem raízes, sem pertencimento. A desobediência e o julgamento tinham a mesma geografia: ele havia ficado onde não deveria — e ficaria para sempre onde não deveria.</p>
+
+      <p>O Homem de Deus morreu no caminho, atingido por um leão. E então acontece algo inesperado: o próprio velho profeta foi buscar o corpo, chorou sobre ele, o sepultou em seu próprio túmulo e disse: quando eu morrer, sepultai-me ao lado dele. E esse túmulo seria preservado trezentos anos depois — quando Josias destruiu todos os altares de Betel, mas preservou os ossos do profeta de Judá que havia profetizado aquele dia. A palavra do Homem de Deus durou mais que seu desvio. Sua missão foi cumprida mesmo que sua obediência tenha falhado no final. A graça de Deus operou mesmo dentro do julgamento.</p>
+
+      <div class="med-titulo">Jeroboão não se converteu</div>
+      <p>O capítulo encerra com um registro sóbrio e definitivo: Jeroboão não se converteu após tudo isso, e continuou pecando e desobedecendo às leis do Senhor. Ele havia experimentado o altar fendido, a mão seca, a restauração, a morte do profeta. Cinco experiências sobrenaturais inegáveis. E não se converteu. Experiências sobrenaturais sem rendição do coração não produzem conversão — produzem endurecimento. Cada evidência ignorada torna o próximo passo de ignorar mais fácil, até que o coração se torna incapaz de ser movido pelo que antes o movia.</p>
+
+      <p>Deus nunca julgou sem antes chamar. Nunca encerrou sem antes convidar. A demora do julgamento final não é indiferença — é paciência que espera arrependimento. Jeroboão recebeu toda essa longanimidade. E não se converteu. Que cada um de nós, diante de tudo o que recebemos e de tudo o que estudamos aqui, faça uma escolha diferente.</p>
+
+  <div class="nav-caps">
+    <a href="cap12.html" class="nav-cap-btn prev">Capítulo 12</a>
+    <a href="../../index.html" class="nav-cap-btn voltar">↑ Todos os Capítulos</a>
+    <span></span>
+  </div>
+
+  <div class="rodape">
+    <div class="rodape-orn">✦ ✦ ✦</div>
+    <p>1 Reis 13 — Série de reflexões por Luis Thiago</p>
+  </div>
+
+</div>
+</body>
+</html>
