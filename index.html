@@ -209,42 +209,28 @@
   .d-med-titulo { font-family:'Cormorant',serif; font-size:21px; font-style:italic; font-weight:600; color:var(--noite-claro); margin-bottom:18px; padding-left:16px; border-left:3px solid var(--aurora); line-height:1.3; }
   .d-meditacao p { font-size:17px; line-height:2; color:var(--texto); margin-bottom:14px; text-align:justify; }
   .d-citacao { background:var(--aurora-claro); border-left:4px solid var(--aurora); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
-  .d-citacao-purpura { background:#f5eefa; border-left:4px solid #7a4090; border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+  .d-citacao-purpura { background:#f5eefa; border-left:4px solid #7a40a0; border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
   .d-citacao-ouro { background:var(--ouro-claro); border-left:4px solid var(--ouro); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
-  .d-citacao-verde { background:var(--verde-claro); border-left:4px solid var(--verde); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
 
-  .d-homilia { border-radius:8px; overflow:hidden; box-shadow:0 12px 48px rgba(14,21,32,0.15); }
-  .d-hom-topo { background:linear-gradient(135deg, var(--purpura), var(--noite-med), var(--aurora)); padding:32px 44px; text-align:center; position:relative; overflow:hidden; }
-  .d-hom-topo::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:22px 22px; pointer-events:none; }
-  .d-hom-rotulo { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(253,248,240,0.55); text-transform:uppercase; margin-bottom:10px; position:relative; }
-  .d-hom-titulo { font-family:'Cormorant',serif; font-size:clamp(1.4rem,4vw,2rem); font-style:italic; font-weight:300; color:#fdf8f0; line-height:1.3; position:relative; }
-  .d-hom-corpo { background:var(--branco); padding:44px 52px; }
-  @media(max-width:520px){ .d-hom-corpo{padding:32px 24px} }
-  .d-hom-corpo p { font-size:17px; line-height:2.05; color:var(--texto); margin-bottom:20px; text-align:justify; }
-  .d-hom-corpo p:last-child { margin-bottom:0; }
-  .d-hom-destaque { background:var(--aurora-claro); border-left:5px solid var(--aurora); border-radius:0 8px 8px 0; padding:20px 28px; margin:26px 0; font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:var(--noite); line-height:1.65; }
-  .d-hom-destaque-purpura { background:#f5eefa; border-left:5px solid #7a4090; border-radius:0 8px 8px 0; padding:20px 28px; margin:26px 0; font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:var(--noite); line-height:1.65; }
-  .d-hom-destaque-ouro { background:var(--ouro-claro); border-left:5px solid var(--ouro); border-radius:0 8px 8px 0; padding:20px 28px; margin:26px 0; font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:var(--noite); line-height:1.65; }
-  .d-hom-fecho { margin-top:36px; padding-top:26px; border-top:1px solid rgba(201,168,76,0.15); text-align:center; font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:var(--noite-claro); line-height:2.1; }
+  .d-homilia { background:var(--branco); border-radius:8px; overflow:hidden; box-shadow:0 8px 32px rgba(14,21,32,0.08); border-top:4px solid var(--purpura); }
+  .d-hom-topo { background:linear-gradient(135deg, var(--purpura), var(--noite-med)); padding:28px 44px; }
+  .d-hom-rotulo { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:rgba(253,248,240,0.5); text-transform:uppercase; margin-bottom:8px; }
+  .d-hom-titulo { font-family:'Cormorant',serif; font-size:clamp(1.3rem,3vw,1.9rem); font-style:italic; font-weight:300; color:#fdf8f0; line-height:1.3; }
+  .d-hom-corpo { padding:40px 44px; }
+  .d-hom-corpo p { font-size:17px; line-height:2; color:var(--texto); margin-bottom:16px; text-align:justify; }
+  .d-hom-destaque { background:var(--aurora-claro); border-left:4px solid var(--aurora); border-radius:0 6px 6px 0; padding:18px 26px; margin:24px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+  .d-hom-destaque-purpura { background:#f5eefa; border-left:4px solid #7a40a0; border-radius:0 6px 6px 0; padding:18px 26px; margin:24px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+  .d-hom-fecho { background:var(--noite); border-radius:6px; padding:28px 36px; margin-top:28px; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:rgba(253,248,240,0.75); line-height:2; text-align:center; }
 
-  .d-oracao { background:linear-gradient(160deg, var(--purpura), var(--noite)); border-radius:8px; overflow:hidden; position:relative; box-shadow:0 12px 40px rgba(74,32,96,0.2); }
-  .d-oracao::after { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg, var(--aurora), var(--ouro-brilho), var(--aurora)); }
-  .d-or-topo { padding:28px 44px 6px; text-align:center; position:relative; }
-  .d-or-rotulo { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(253,248,240,0.45); text-transform:uppercase; }
-  .d-or-corpo { padding:14px 48px 48px; text-align:center; position:relative; }
-  @media(max-width:520px){ .d-or-corpo{padding:14px 24px 40px} }
-  .d-or-corpo p { font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:rgba(253,248,240,0.82); line-height:2.15; white-space:pre-line; }
-  .d-or-amen { margin-top:28px; font-family:'Cinzel',serif; font-size:14px; letter-spacing:8px; color:var(--ouro-brilho); font-weight:600; }
+  .d-oracao { background:var(--noite); border-radius:8px; overflow:hidden; }
+  .d-or-topo { background:linear-gradient(135deg, var(--noite-claro), var(--noite-med)); padding:20px 44px; border-bottom:1px solid rgba(201,168,76,0.1); }
+  .d-or-rotulo { font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; color:var(--ouro); text-transform:uppercase; opacity:0.7; text-align:center; }
+  .d-or-corpo { padding:32px 44px 44px; }
+  .d-or-corpo p { font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:rgba(253,248,240,0.75); line-height:2.1; white-space:pre-line; }
+  .d-or-amen { font-family:'Cinzel',serif; font-size:11px; letter-spacing:5px; color:var(--ouro); text-align:center; margin-top:24px; opacity:0.7; }
 
-  .d-palavra { text-align:center; margin-bottom:28px; }
-  .d-palavra-inner { display:inline-block; font-family:'Cormorant',serif; font-size:22px; font-style:italic; font-weight:600; color:var(--branco); background:var(--noite); letter-spacing:4px; padding:13px 36px; border-radius:2px; }
-  .d-palavra-inner::before { content:'✦ '; color:var(--ouro); font-size:11px; vertical-align:middle; }
-  .d-palavra-inner::after  { content:' ✦'; color:var(--ouro); font-size:11px; vertical-align:middle; }
-
-  .d-fio-arco { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:24px; }
-  @media(max-width:520px){ .d-fio-arco{grid-template-columns:1fr} }
-  .d-fio-dia { background:var(--branco); border-radius:4px; border:1px solid rgba(201,168,76,0.1); border-top:3px solid var(--ouro); padding:16px 18px; transition:transform 0.2s; }
-  .d-fio-dia:hover { transform:translateY(-2px); }
+  .d-fio-arco { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; margin:24px 0; }
+  .d-fio-dia { background:var(--branco); border-radius:4px; border:1px solid rgba(201,168,76,0.1); border-top:3px solid rgba(201,168,76,0.3); padding:16px 14px; }
   .d-fio-dia.hoje { border-top-color:var(--aurora); background:var(--aurora-claro); }
   .d-fio-dia-label { font-family:'Cinzel',serif; font-size:9px; letter-spacing:2px; color:var(--ouro); text-transform:uppercase; margin-bottom:5px; opacity:0.7; }
   .d-fio-dia.hoje .d-fio-dia-label { color:var(--aurora); }
@@ -253,6 +239,9 @@
   .d-fio-convergencia { background:var(--noite); border-radius:6px; padding:26px 32px; text-align:center; }
   .d-fio-convergencia p { font-family:'Cormorant',serif; font-size:17px; font-style:italic; color:rgba(253,248,240,0.65); line-height:1.85; }
   .d-fio-convergencia strong { color:var(--aurora-suave); font-weight:400; }
+
+  .d-palavra { text-align:center; margin-bottom:20px; }
+  .d-palavra-inner { font-family:'Cormorant',serif; font-size:clamp(1.2rem,3vw,1.7rem); font-style:italic; color:var(--noite-claro); }
 
   .d-vida-grupo { margin-bottom:28px; }
   .d-vida-titulo { font-family:'Cormorant',serif; font-size:19px; font-style:italic; font-weight:600; color:var(--noite-claro); margin-bottom:12px; display:flex; align-items:center; gap:12px; }
@@ -294,8 +283,8 @@
   </section>
 
   <div class="versiculo-fixo">
-    <p>"Eu me alegrarei em Jerusalém e me regozijarei no meu povo — nunca mais se ouvirá nela voz de choro nem voz de clamor."</p>
-    <div class="ref">Isaías 65,19</div>
+    <p>"O rio que jorra do templo vai aprofundando — e onde chega, tudo o que vive prosperará."</p>
+    <div class="ref">Ezequiel 47,9</div>
   </div>
 
   <section class="diarios-secao" id="diarios" role="region" aria-labelledby="diarios-titulo-id">
@@ -305,23 +294,23 @@
       <div class="secao-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
     </div>
 
-    <!-- HOJE — Segunda 4.ª Semana -->
-    <article class="destaque-hoje" onclick="abrirDiario('d_16mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Segunda-feira da 4.ª Semana — 16 de março de 2026">
+    <!-- HOJE — Terça 4.ª Semana -->
+    <article class="destaque-hoje" onclick="abrirDiario('d_17mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Terça-feira da 4.ª Semana — 17 de março de 2026">
       <div class="destaque-topo">
         <div>
           <div class="destaque-badge">✦ Reflexão de Hoje</div>
-          <div class="destaque-tempo">Segunda-feira — 4.ª Semana da Quaresma</div>
-          <div class="destaque-titulo">"A Palavra que cria, cura e não volta vazia"</div>
-          <div class="destaque-data">16 de março de 2026</div>
+          <div class="destaque-tempo">Terça-feira — 4.ª Semana da Quaresma</div>
+          <div class="destaque-titulo">"O Rio que Levanta"</div>
+          <div class="destaque-data">17 de março de 2026</div>
         </div>
         <div class="destaque-icone">✦</div>
       </div>
       <div class="destaque-corpo">
-        <div class="destaque-versiculo">"Eu me alegrarei em Jerusalém e me regozijarei no meu povo — nunca mais se ouvirá nela voz de choro nem voz de clamor." — Is 65,19</div>
+        <div class="destaque-versiculo">"Levanta-te, toma o teu leito e anda." — João 5,8</div>
         <div class="destaque-leituras">
-          <span class="destaque-tag">Isaías 65,17-21</span>
-          <span class="destaque-tag">Salmo 29</span>
-          <span class="destaque-tag">João 4,43-54</span>
+          <span class="destaque-tag">Ezequiel 47,1-9.12</span>
+          <span class="destaque-tag">Salmo 46</span>
+          <span class="destaque-tag">João 5,1-16</span>
         </div>
         <div class="destaque-ler">Ler a reflexão completa</div>
       </div>
@@ -331,6 +320,14 @@
     <div class="grid-secao">
       <div class="grid-rotulo">✦ Dias Anteriores — 4.ª Semana</div>
       <div class="diarios-grid">
+        <article class="diario-card" onclick="abrirDiario('d_16mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Segunda-feira da 4.ª Semana — 16 de março de 2026">
+          <div class="card-tempo">Segunda-feira — 4.ª Semana</div>
+          <div class="card-data">16 de março de 2026</div>
+          <div class="card-titulo">"A Palavra que cria, cura e não volta vazia"</div>
+          <div class="card-versiculo">"Eu me alegrarei em Jerusalém e me regozijarei no meu povo." — Is 65,19</div>
+          <div class="card-tags"><span class="card-tag">Isaías 65</span><span class="card-tag">Salmo 29</span><span class="card-tag">João 4</span></div>
+          <div class="card-ler">Ler reflexão</div>
+        </article>
         <article class="diario-card" onclick="abrirDiario('d_15mar')" role="button" tabindex="0" aria-label="Abrir reflexão do 4.º Domingo da Quaresma — 15 de março de 2026">
           <div class="card-tempo">Domingo — 4.ª Semana</div>
           <div class="card-data">15 de março de 2026</div>
@@ -349,7 +346,7 @@
         <article class="diario-card" onclick="abrirDiario('d_14mar')" role="button" tabindex="0" aria-label="Abrir reflexão do Sábado da 3.ª Semana — 14 de março de 2026">
           <div class="card-tempo">Sábado — 3.ª Semana</div>
           <div class="card-data">14 de março de 2026</div>
-          <div class="card-titulo">"Separados de Deus, a única coisa que produzimos por conta própria é o pecado"</div>
+          <div class="card-titulo">"O único bem que é genuinamente nosso"</div>
           <div class="card-versiculo">"Quero misericórdia e não sacrifício, conhecimento de Deus mais do que holocaustos." — Os 6,6</div>
           <div class="card-tags"><span class="card-tag">Oséias 6</span><span class="card-tag">Salmo 50</span><span class="card-tag">Lucas 18</span></div>
           <div class="card-ler">Ler reflexão</div>
@@ -465,6 +462,179 @@ function abrirDiario(id) {
 }
 
 const diarios = {
+
+/* ═══════════════════════════════════════════════════
+   TERÇA-FEIRA — 4.ª SEMANA — 17 DE MARÇO DE 2026
+   ═══════════════════════════════════════════════════ */
+'d_17mar': `
+<div class="d-header">
+  <div class="d-header-grade"></div><div class="d-header-glow"></div>
+  <div class="d-header-conteudo">
+    <div class="d-header-emblema">✦ ✝ ✦</div>
+    <div class="d-header-tempo">Terça-feira — 4.ª Semana da Quaresma</div>
+    <h1 class="d-header-titulo">Diário Litúrgico</h1>
+    <p class="d-header-subtitulo">O Rio que Levanta</p>
+    <div class="d-header-data">Terça-feira, 17 de março de 2026</div>
+    <div class="d-header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">📖</span><h2 class="d-secao-label">A Palavra de Hoje</h2><div class="d-secao-fio"></div></div>
+  <div class="d-leituras">
+    <div class="d-leitura"><div class="d-leitura-tipo">Primeira Leitura</div><div class="d-leitura-ref">Ezequiel 47,1-9.12</div><div class="d-leitura-desc">O rio que jorra do templo — tornozelos, joelhos, cintura, e por fim o homem nada</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Salmo Responsorial</div><div class="d-leitura-ref">Salmo 46 (45)</div><div class="d-leitura-desc">O Senhor é nosso refúgio e fortaleza — Deus está no meio dela, não será abalada</div></div>
+    <div class="d-leitura evang"><div class="d-leitura-tipo">Evangelho</div><div class="d-leitura-ref">João 5,1-16</div><div class="d-leitura-desc">O paralítico de Betesda — trinta e oito anos de espera, e Jesus: levanta-te, toma o teu leito e anda</div></div>
+  </div>
+  <div class="d-versiculo">
+    <p>"Levanta-te, toma o teu leito e anda."</p>
+    <div class="ref">— João 5,8</div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🙏</span><h2 class="d-secao-label">Meu Coração Responde</h2><div class="d-secao-fio"></div></div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Ezequiel 47,1-9.12 — O rio que nasce do sacrifício e avança para o Mar Morto</div>
+    <p>A visão que Ezequiel recebe não é apenas poética — é uma promessa de transformação progressiva. O rio nasce no templo, do lado direito do altar, onde corria o sangue dos sacrifícios. Não nasce da chuva nem da montanha — nasce do lugar do sagrado. Há aqui uma profecia que João desenvolverá séculos depois: é do sacrifício oferecido a Deus que jorra a vida para o mundo.</p>
+    <p>E o rio segue para o oriente. Na cosmologia bíblica, o oriente é a direção do Éden, da origem, do paraíso perdido. Ezequiel está dizendo que essas águas não vão para qualquer lugar — vão restaurar o que foi perdido na queda. Não é apenas crescimento: é recriação.</p>
+    <div class="d-citacao">O que impressiona não é a largura do rio — é a profundidade que cresce. Tornozelos. Joelhos. Cintura. E por fim o homem já não toca o fundo: nada. Deus não nos empurra para o fundo. Ele caminha ao lado, mede cada etapa, espera. A profundidade é proposta, nunca imposta.</div>
+    <p>E para onde vai esse rio? Para o Mar Morto — o lugar mais inóspito da terra, o mais salgado, onde nada sobrevive, onde o sal devora tudo. O rio de Deus não escolhe os lugares fáceis. Vai especialmente onde a vida parece impossível. E as águas o curam: onde chega, tudo prospera, as árvores frutificam em todas as estações, com folhas que curam. O que estava morto vive. O que estava estéril dá fruto.</p>
+    <div class="d-citacao-purpura">Há ainda uma camada no texto que passa quase despercebida: o homem que guia Ezequiel mede cada etapa — mil côvados. Deus não apenas propõe a profundidade — ele a mede. Ele caminha ao lado e acompanha cada passo. A Palavra de Deus vai alcançando cada vez mais o coração de seus fiéis, tornando-o fértil. E todo aquele que dela beber não mais sentirá sede.</div>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Salmo 46 — O rio que alegra, a presença que não abala</div>
+    <p>O salmista já havia contemplado o mesmo mistério que Ezequiel viu em visão: <em>um rio e seus braços alegram a cidade de Deus.</em> Não apenas água que mata a sede — água que alegra. Há uma diferença profunda entre sobreviver e se alegrar. O rio de Ezequiel cura o Mar Morto; o Salmo fala do rio que produz alegria. São dois movimentos do mesmo mistério: a Palavra de Deus restaura o que foi destruído e alegra o que já existe.</p>
+    <p>E o Salmo não convida apenas a crer — convida a contemplar. <em>Vinde, contemplai as obras do Senhor.</em> Antes de proclamar, olha. Antes de anunciar, para e vê. Ezequiel também não recebeu uma doutrina — recebeu uma visão. Deus educa os seus pelo olhar interior antes de educá-los pela palavra.</p>
+    <div class="d-citacao">No centro do Salmo está uma frase que concentra tudo: <em>aquietai-vos e sabei que Eu sou Deus.</em> O verbo hebraico raphah significa também soltar, largar, afrouxar as mãos. Não é uma quietude passiva — é o gesto de quem estava segurando demais e finalmente abre as mãos. É só nesse momento que o rio pode entrar: quando paramos de segurar as margens.</div>
+    <p>E a imagem do amanhecer é poderosa: <em>Deus a socorre ao romper da aurora.</em> Não no meio do dia, quando já enxergamos tudo. No momento mais vulnerável, quando a noite ainda não terminou completamente e o dia ainda não se confirmou — é ali que Ele age. Do amanhecer ao anoitecer, Deus está no centro, e nossa fé se torna inabalável — não pela força da pessoa, mas porque Ele está no meio.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">João 5,1-16 — Betesda, o pecado da omissão e a Palavra que levanta</div>
+    <p>João nos leva a Jerusalém, junto à porta das ovelhas. O nome do tanque é Betesda — <em>casa da misericórdia</em>. Ali estavam os esquecidos do mundo: cegos, coxos, paralíticos. De tempos em tempos o anjo agitava as águas, e o primeiro que entrava era curado. É uma imagem extraordinária da bondade de Deus presente no meio dos pobres, disponível para os pobres — ensinando como devemos nos comportar diante dos necessitados.</p>
+    <p>Mas havia um homem ali enfermo há trinta e oito anos. O mesmo tempo que Israel vagou no deserto por causa da incredulidade — João não coloca números por acaso. Esse homem conhece o caminho da cura: está no lugar certo, diante da água certa. E ainda assim, em trinta e oito anos, ninguém o ajudou a entrar. A multidão de enfermos ao redor, cada um olhando apenas para si. O pecado da omissão — não o de quem empurra, mas o de quem vê e acelera o passo.</p>
+    <div class="d-citacao-purpura">E ainda assim ele continua indo. Há uma fidelidade sofrida nesse gesto que não pode passar despercebida. Mas quando Jesus o encontra e pergunta — <em>queres ser curado?</em> — a resposta não é um sim simples. É uma queixa: não tenho ninguém. Os dois são verdadeiros ao mesmo tempo: o desejo e o desamparo coexistindo, a busca e o abandono no mesmo coração. Quantos de nós vivemos exatamente assim — nos pórticos da fé, sabendo onde está a água, mas esperando que alguém nos carregue.</div>
+    <p>E então Jesus não manda chamar a água. Usa apenas a Palavra. <em>Levanta-te. Toma o teu leito. E anda.</em> Três palavras. Três movimentos. Levanta-te — rompe com a horizontalidade da morte, restaura a dignidade, devolve a verticalidade de quem foi criado à imagem de Deus. Toma o teu leito — não abandones tua história, carrega o passado. O que antes aprisionava torna-se testemunho. E anda — entra em movimento, em missão, em vida.</p>
+    <div class="d-citacao">Os fariseus não viram um milagre — viram uma infração. Quando o rito se torna maior que a pessoa, a religião perdeu sua alma. O homem foi ao templo e ali reconheceu Jesus. A graça o alcançou na rua; a comunhão se aprofundou no sagrado. É assim ainda hoje: a oração diária, a eucaristia, a comunidade, o serviço — não são obrigações, são o rio continuando a fluir depois que entrou no coração. E Jesus foi perseguido por curar no dia errado, as pessoas erradas. Como Ele mesmo disse: o mundo que me perseguiu perseguirá os que me seguem. O rio não para porque as margens reclamam.</div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">✝</span><h2 class="d-secao-label">Homilia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-homilia">
+    <div class="d-hom-topo">
+      <div class="d-hom-rotulo">✦ Reflexão do Dia ✦</div>
+      <div class="d-hom-titulo">"O Rio que Levanta"</div>
+    </div>
+    <div class="d-hom-corpo">
+      <p>Há um fio invisível que costura as três leituras de hoje. Um fio feito de água.</p>
+      <p>Ezequiel o vê jorrar do templo — não da chuva, não da montanha, mas do lugar do sacrifício. Um rio que nasce do sagrado e avança em direção ao que está morto. E o que impressiona não é sua largura, mas sua profundidade que cresce. Tornozelos. Joelhos. Cintura. E por fim o homem já não toca o fundo — ele nada. Deus não nos empurra para o fundo. Ele caminha ao lado, mede cada etapa, espera. A profundidade é proposta, nunca imposta.</p>
+      <div class="d-hom-destaque">Esse rio não escolhe os lugares fáceis. Vai para o Mar Morto — o lugar mais inóspito da terra, onde nada sobrevive. E as águas o curam. Onde a vida parecia impossível, o rio de Deus faz brotar árvores que frutificam em todas as estações. O salmista já havia contemplado esse mesmo mistério: o rio que alegra a cidade de Deus. Não apenas água que mata a sede — água que alegra. Que restaura a dignidade. Que devolve o sorriso ao rosto cansado.</div>
+      <p>E então João nos leva a Jerusalém. Junto à porta das ovelhas, há um tanque chamado Betesda — casa da misericórdia. Ali estão os esquecidos do mundo. De tempos em tempos o anjo agita as águas, e o primeiro que entra é curado. Uma imagem extraordinária da bondade de Deus presente no meio dos pobres, ensinando como devemos nos comportar diante dos necessitados.</p>
+      <p>Mas há um homem ali que está enfermo há trinta e oito anos. O mesmo tempo que Israel vagou no deserto por sua incredulidade. Ele conhece o caminho da cura — está no lugar certo, diante da água certa. Mas em trinta e oito anos, ninguém jamais o ajudou a entrar. A multidão ao redor, cada um olhando apenas para si. O pecado da omissão — não o de quem empurra, mas o de quem vê e acelera o passo.</p>
+      <div class="d-hom-destaque-purpura">E ainda assim ele continua indo. Há uma fidelidade sofrida nesse gesto. Mas quando Jesus o encontra e pergunta — <em>queres ser curado?</em> — a resposta é uma queixa: não tenho ninguém. O desejo e o desamparo coexistindo. A busca e o abandono juntos no mesmo coração. Quantos de nós vivemos exatamente assim — nos pórticos da fé, sabendo onde está a água, mas esperando que alguém nos carregue até ela.</div>
+      <p>Jesus não manda chamar a água. Usa apenas a Palavra. <em>Levanta-te. Toma o teu leito. E anda.</em> Três palavras que revelam tudo sobre quem é Deus. Levanta-te — o mesmo verbo da ressurreição, rompe com a horizontalidade da morte, restaura a dignidade. Toma o teu leito — não abandones tua história. Carrega-a. O que antes te aprisionava agora se torna testemunho. E anda — entra em movimento, em missão, em vida nova.</p>
+      <p>A Palavra não apenas informa. Ela realiza o que diz. É o mesmo rio de Ezequiel — que não descreve a cura, mas a opera. O Salmo dizia: <em>aquietai-vos</em> — soltai as mãos. E aqui, esse homem que por trinta e oito anos segurava a beira da esteira finalmente a carrega nos ombros e anda. É o mesmo movimento das três leituras: o aprofundamento, o soltar, o levantar.</p>
+      <div class="d-hom-destaque">Os fariseus, ao verem o homem curado carregando o leito num sábado, não viram um milagre — viram uma infração. Quando o rito se torna maior que a pessoa, a religião perdeu sua alma. O sábado foi dado como presente — mas transformaram o presente em prisão. E Jesus foi perseguido por ter curado no dia errado, no lugar errado, as pessoas erradas. Como Ele mesmo disse: o mundo que me perseguiu perseguirá os que me seguem. O rio não para porque as margens reclamam.</div>
+      <p>O homem curado encontrou Jesus no templo — e ali O reconheceu. A graça o alcançou na rua. A comunhão se aprofundou no sagrado. É assim ainda hoje: Deus nos alcança onde estamos — no trabalho, na dor, na beira do tanque onde ninguém nos ajuda. Mas o reconhecimento que transforma se aprofunda na oração diária, na eucaristia, na comunidade, no serviço. O rio continua fluindo em nós quando nos mantemos nas margens onde Ele planta suas árvores.</p>
+      <div class="d-hom-fecho">A Quaresma nos convida hoje a uma pergunta simples e exigente:<br>até onde você está disposto a entrar nas águas?<br>Ainda nos tornozelos, ainda segurando o chão da própria vontade?<br>Ou já entregue à correnteza,<br>deixando a Palavra levantar o que em você está deitado há anos?<br><br>O rio está em movimento.<br>A água está agitada.<br>E Jesus já está ao seu lado, perguntando —<br><em>queres ser curado?</em></div>
+    </div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🌿</span><h2 class="d-secao-label">Para Levar no Dia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-oracao">
+    <div class="d-or-topo"><div class="d-or-rotulo">✦ Oração do Dia ✦</div></div>
+    <div class="d-or-corpo">
+      <p>Senhor,
+tu que fazes jorrar rios do lugar do sacrifício,
+que curas o que todos julgaram morto
+e alegras o que todos julgaram perdido —
+
+perdoa-nos as vezes em que ficamos nos pórticos
+esperando que alguém nos carregue
+sem perceber que Tu já estavas ao nosso lado,
+perguntando se queríamos ser curados.
+
+Perdoa-nos o pecado da omissão —
+as vezes em que aceleramos o passo
+diante de quem precisava apenas de uma mão
+para entrar nas águas.
+
+Faz de nós rios, Senhor,
+não represas.
+Que o que recebemos de Ti
+flua para os lugares mortos ao nosso redor,
+para os que estão há anos na beira da cura
+e nunca encontraram quem os ajudasse a entrar.
+
+Que a Tua Palavra nos levante,
+que carreguemos com dignidade nossa história,
+e que andemos —
+sem medo da perseguição de quem prefere o rito à vida,
+sem medo das águas fundas onde o chão desaparece,
+porque Tu estás no centro
+e do amanhecer ao anoitecer,
+nada nos poderá abalar.</p>
+      <div class="d-or-amen">AMÉM</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🧵</span><h2 class="d-secao-label">Fio da Semana</h2><div class="d-secao-fio"></div></div>
+  <div class="d-palavra"><div class="d-palavra-inner">Ver com os Olhos de Deus</div></div>
+  <div class="d-fio-arco">
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Domingo — 15/03</div><div class="d-fio-dia-palavra">Enxergar</div><div class="d-fio-dia-texto">Deus vê o coração. Davi ungido no campo. O cego que passa a ver. A semana começou com novos olhos.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Segunda — 16/03</div><div class="d-fio-dia-palavra">Partir</div><div class="d-fio-dia-texto">A Palavra pronunciada é suficiente. Crer antes de ver. O oficial que partiu sem confirmação e encontrou o filho curado.</div></div>
+    <div class="d-fio-dia hoje"><div class="d-fio-dia-label">Hoje — Terça 17/03</div><div class="d-fio-dia-palavra">Levantar</div><div class="d-fio-dia-texto">O rio que chega ao Mar Morto. A Palavra que levanta o que estava deitado há trinta e oito anos. Toma o teu leito e anda.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Quarta — 18/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Quinta — 19/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Sexta — 20/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
+  </div>
+  <div class="d-fio-convergencia">
+    <p>Ver com os olhos de Deus é o exercício da semana —<br>
+    <strong>enxergar onde o rio precisa chegar,</strong><br>
+    partir com a Palavra onde o mundo exige confirmação,<br>
+    e levantar o que estava deitado<br>
+    carregando a própria história como testemunho.</p>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🌱</span><h2 class="d-secao-label">Para Nossa Vida Hoje</h2><div class="d-secao-fio"></div></div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">Na oração</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Há algo em você que está deitado há muito tempo — uma área da vida que não se levantou ainda? Traga-o nomeado à oração. Deixe Jesus fazer a pergunta: <em>queres ser curado?</em> E responda com honestidade.</p></div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Pratique o <em>raphah</em> do Salmo: solte as mãos. Identifique o que você está segurando demais — uma preocupação, um controle, um medo — e deliberadamente abra as mãos durante a oração.</p></div>
+  </div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">Na vida interior</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Examine: onde você está nos pórticos de Betesda — conhecendo o caminho da cura, estando perto da água, mas sem dar o passo decisivo? O que sempre "entra na frente"?</p></div>
+  </div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">No lar e nas relações</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>O pecado da omissão: quem ao seu redor está há muito tempo na beira da cura, esperando que alguém o ajude a entrar? Um familiar, um amigo, um colega? A misericórdia recebida precisa transbordar.</p></div>
+  </div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">No trabalho</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Jesus curou no sábado — no dia em que os guardiões da lei disseram que não se devia fazer nada. Há momentos em que fazer o certo será questionado por quem prefere o protocolo à pessoa. Ande com coragem.</p></div>
+  </div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">Continuando a semana</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Esta semana caminha sob o tema de ver com os olhos de Deus. Domingo enxergamos o coração. Segunda partimos com a Palavra. Hoje levantamos. Amanhã — o rio continuará fluindo.</p></div>
+  </div>
+</div>
+
+<div class="d-rodape">
+  <div class="orn">✦ ✦ ✦</div>
+  <p>"O rio que jorra do templo vai aprofundando — e onde chega, tudo o que vive prosperará." — Ez 47,9</p>
+</div>
+`,
 
 /* ═══════════════════════════════════════════════════
    SEGUNDA-FEIRA — 4.ª SEMANA — 16 DE MARÇO DE 2026
@@ -587,7 +757,7 @@ hoje, nesta hora, neste dia.</p>
     <div class="d-fio-dia hoje"><div class="d-fio-dia-label">Hoje — Segunda 16/03</div><div class="d-fio-dia-palavra">Partir</div><div class="d-fio-dia-texto">A Palavra pronunciada é suficiente. Crer antes de ver. Partir sem confirmação e chegar em casa para encontrar o que a Palavra já realizou.</div></div>
     <div class="d-fio-dia"><div class="d-fio-dia-label">Terça — 17/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
     <div class="d-fio-dia"><div class="d-fio-dia-label">Quarta — 18/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
-    <div class="d-fio-dia"><div class="d-fio-dia-label">Quinta — 19/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Quinta — 19/03</div><div class="d-fio-dia-label">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
     <div class="d-fio-dia"><div class="d-fio-dia-label">Sexta — 20/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
   </div>
   <div class="d-fio-convergencia">
@@ -645,59 +815,13 @@ hoje, nesta hora, neste dia.</p>
 <div class="d-secao">
   <div class="d-secao-topo"><span class="d-secao-icone">📖</span><h2 class="d-secao-label">A Palavra de Hoje</h2><div class="d-secao-fio"></div></div>
   <div class="d-leituras">
-    <div class="d-leitura"><div class="d-leitura-tipo">Primeira Leitura</div><div class="d-leitura-ref">1 Samuel 16,1.6-7.10-13</div><div class="d-leitura-desc">Samuel unge Davi em Belém — Deus escolhe pelo coração, não pela aparência</div></div>
-    <div class="d-leitura"><div class="d-leitura-tipo">Salmo Responsorial</div><div class="d-leitura-ref">Salmo 22 (23)</div><div class="d-leitura-desc">O Senhor é meu pastor — ainda que eu atravesse o vale da sombra da morte</div></div>
-    <div class="d-leitura"><div class="d-leitura-tipo">Segunda Leitura</div><div class="d-leitura-ref">Efésios 5,8-14</div><div class="d-leitura-desc">Antes éreis trevas, agora sois luz — desperta tu que dormes</div></div>
-    <div class="d-leitura evang"><div class="d-leitura-tipo">Evangelho</div><div class="d-leitura-ref">João 9,1-41</div><div class="d-leitura-desc">A cura do cego de nascença — os que veem tornam-se cegos, o cego passa a ver</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Primeira Leitura</div><div class="d-leitura-ref">1 Samuel 16,1b.6-7.10-13a</div><div class="d-leitura-desc">Samuel é enviado a Jessé — Davi ungido no campo, o menor dos filhos</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Segunda Leitura</div><div class="d-leitura-ref">Efésios 5,8-14</div><div class="d-leitura-desc">Antes éreis trevas, agora sois luz — vivei como filhos da luz</div></div>
+    <div class="d-leitura evang"><div class="d-leitura-tipo">Evangelho</div><div class="d-leitura-ref">João 9,1-41</div><div class="d-leitura-desc">O cego de nascença — nem ele nem seus pais pecaram, é para que as obras de Deus se manifestem</div></div>
   </div>
   <div class="d-versiculo">
     <p>"O Senhor não vê como vê o homem: o homem vê as aparências, mas o Senhor vê o coração."</p>
     <div class="ref">— 1 Samuel 16,7</div>
-  </div>
-</div>
-
-<div class="d-secao">
-  <div class="d-secao-topo"><span class="d-secao-icone">🙏</span><h2 class="d-secao-label">Meu Coração Responde</h2><div class="d-secao-fio"></div></div>
-
-  <div class="d-meditacao">
-    <div class="d-med-titulo">1 Samuel 16 — Deus envia, Samuel parte, Davi é encontrado</div>
-    <p>A cena começa com uma pergunta de Deus que é ao mesmo tempo interpelação e convite: <em>até quando chorarás por Saul?</em> Samuel estava paralisado na tristeza de um passado que já havia encerrado seu ciclo. E Deus não o repreende com frieza — intervém com amor soberano, chamando-o ao movimento, à missão, ao futuro que Ele já estava preparando.</p>
-    <p>Há aqui uma primeira camada para cada um de nós: quantas vezes ficamos imobilizados nas consequências dos erros — os nossos e os alheios — sem tomar atitude de corrigir, de refletir, de agir? Samuel chorava. Mas o luto, quando se estende além do seu tempo, torna-se uma forma de inércia disfarçada de fidelidade.</p>
-    <div class="d-citacao">"A conversão não é apenas parar de errar — é recomeçar a caminhar. Deus cura pela missão, pelo movimento, pelo recomeço confiante."</div>
-    <p>Samuel teme ir a Belém e ser visto por Saul. Deus o instrui a levar uma novilha para oferecer sacrifício — e aqui não há nenhuma inverdade. Samuel <em>de fato</em> vai oferecer sacrifício. O que Deus pede não é mentira, mas prudência: o mistério que ainda está germinando precisa de proteção antes de se revelar. Há uma diferença fundamental entre sigilo e engano — e Deus pede discernimento, não desonestidade.</p>
-    <p>Em Belém, Samuel pede a purificação de Jessé e seus filhos antes do sacrifício. A purificação precede o encontro. Ninguém se apresenta digno diante de Deus por mérito próprio — a graça prepara o terreno antes de semear a revelação. A família inteira se purifica, e cada filho desfila diante de Samuel — e diante do próprio Deus, que fala ao coração do profeta: <em>não é este... não é este.</em></p>
-    <div class="d-citacao-purpura">"O homem sem Deus só produz pecado. Por isso a purificação não é protocolo opcional — é a condição para que o encontro verdadeiro aconteça. Sem ela, apresentamo-nos diante de Deus carregando nós mesmos em vez de nos abrirmos para Ele."</div>
-    <p>E então Samuel pergunta a Jessé: <em>são estes todos os teus filhos?</em> Há um que faltava — o menor, o esquecido, o que estava no campo pastoreando. Davi não estava presente na cerimônia. Estava trabalhando. Cumprindo fielmente sua missão cotidiana, sem saber que naquele exato momento o profeta de Deus o procurava. Deus encontra o seu escolhido no exercício fiel do ordinário.</p>
-    <p>Quando Davi chega, o texto o descreve com os mesmos atributos exteriores de Saul: belo, de boa aparência. E Deus imediatamente diz a Samuel: <em>levanta-te e unge-o, é ele.</em> Isso não contradiz o que Deus dissera sobre não olhar as aparências — confirma-o. Davi tinha beleza <em>e</em> coração. Saul tinha beleza <em>sem</em> o coração correspondente. O problema nunca foi a aparência — foi o que havia, ou não havia, por dentro.</p>
-    <div class="d-citacao-ouro">"Deus não escolheu Saul por engano. Deu a ele a chance real de se tornar aquilo que Deus já havia enxergado que ele poderia ser. O reinado de Saul não foi um erro divino — foi uma oportunidade de conversão que Saul recusou. Em Davi, Deus enxergou não ausência de pecado — mas capacidade de conversão. Um coração que, mesmo caindo, sabe voltar."</div>
-    <p>O texto não menciona a purificação de Davi antes da unção. Pode ser que tenha acontecido e não foi narrada — ou que Davi, pela vida fiel no campo, lutando com leões e ursos em defesa de suas ovelhas, já vivesse numa purificação contínua pela presença de Deus. O homem com Deus já carrega em si a fonte da purificação. A unção não inaugurou a relação de Davi com Deus — ela a revelou publicamente e a equipou para uma nova missão.</p>
-  </div>
-
-  <div class="d-meditacao">
-    <div class="d-med-titulo">Salmo 22 — O Senhor é meu pastor e nada me faltará</div>
-    <p>Davi, o pastor de ovelhas, torna-se o cantor do Pastor divino. Ele sabe do que fala — não por metáfora literária, mas por experiência vivida. Conheceu os verdes pastos, as águas refrescantes, os vales escuros e os predadores noturnos. E reconheceu em tudo isso a presença condutora de Deus.</p>
-    <p>O domingo é exatamente isso: o dia em que o Pastor nos faz repousar, restaura nossas forças, reorienta nosso caminhar para a semana. A Palavra lida e meditada diariamente é o caminho reto que o Salmo menciona — não um caminho sem obstáculos, mas um caminho com direção clara mesmo em meio aos obstáculos.</p>
-    <div class="d-citacao">"O Salmo não promete vida sem trevas. Diz: quando passar pelo vale, não estarás só. Cristo em várias passagens do Evangelho não promete ausência de tribulação — promete presença na tribulação. Quem atravessa o vale com Deus sai do outro lado transformado, não apenas sobrevivente."</div>
-    <p>A fé cristã madura não é a que espera ser poupada das dificuldades — é a que aprendeu a atravessá-las com os olhos abertos e o coração ancorado em Deus. Cada missa, cada leitura bíblica, cada momento de oração tem esse potencial: não nos deixar iguais. Sair melhor do que se entrou — esse é o critério espiritual do verde pasto semanal.</p>
-  </div>
-
-  <div class="d-meditacao">
-    <div class="d-med-titulo">Efésios 5,8-14 — Antes éreis trevas, agora sois luz</div>
-    <p>Paulo não diz <em>estáveis nas trevas</em> — diz <em>éreis trevas</em>. A transformação operada por Cristo não é apenas de circunstância, mas de essência. E agora, em Cristo, não apenas estão na luz — <em>são luz</em>. O chamado à santidade não é isolamento dos impuros, mas distinção de conduta no meio deles. A vela cumpre sua missão no escuro.</p>
-    <p>Paulo retoma Isaías com um chamado batismal urgente: <em>Desperta, tu que dormes, levanta-te dos mortos, e Cristo te iluminará.</em> Não é um chamado feito uma vez na vida — é contínuo e diário. O cristão pode adormecer espiritualmente em qualquer fase. A acomodação é uma forma de sono. A rotina religiosa sem conversão interior é uma forma de sono.</p>
-    <div class="d-citacao-purpura">"O fruto da luz é bondade — e a bondade não tem dia de folga. Vigiar a própria conduta significa reconhecer-se pecador, e ao fim de cada dia, na oração pessoal, apresentar a Deus os atos e omissões, pedindo purificação para o dia seguinte. A unção inaugura — a fidelidade sustenta."</div>
-  </div>
-
-  <div class="d-meditacao">
-    <div class="d-med-titulo">João 9,1-41 — O cego que vê e os videntes que se cegam</div>
-    <p>Os discípulos perguntam a Jesus sobre o cego de nascença: quem pecou, ele ou seus pais? A pergunta revela uma teologia popular rígida — sofrimento visível equivale a punição por pecado identificável. Mas a pergunta carrega uma contradição interna: como poderia o cego ter pecado antes de nascer? Jesus dissolve a premissa inteira: <em>nem ele pecou, nem seus pais; mas é para que as obras de Deus se manifestem nele.</em></p>
-    <p>Isso é uma revolução na teologia do sofrimento. O cego não era punido — era palco. A Escritura é clara que cada um responde pelos próprios pecados — mas há uma dimensão social do pecado onde as consequências dos atos de alguém podem marcar profundamente a vida dos que vêm depois, sem que estes sejam culpados. Jesus chega e recusa toda interpretação que faz do sofrimento uma maldição.</p>
-    <div class="d-citacao">"O cego não pediu a cura. Jesus o viu primeiro, Jesus tomou a iniciativa. A graça não é recompensa pela fé prévia — ela frequentemente a precede e a produz. Assim como Davi não escolheu ser ungido, o cego não escolheu ser curado. Foi visto por Cristo no meio do caminho."</div>
-    <p>Jesus unge os olhos do cego com lodo — terra, água e cuspe. O mais humilde dos materiais. A mesma unção que Israel fazia aos reis com azeite precioso, Cristo faz aqui com o que tem nas mãos na rua. E há ressonância com a criação: Deus formou o homem do pó da terra. Cristo, ao fazer lodo, está recriando aquilo que estava incompleto desde o nascimento. É um ato criador, não apenas terapêutico.</p>
-    <p>Depois envia o cego às águas de Siloé — cujo nome significa <em>enviado</em>. A graça foi dada, mas a cooperação humana é necessária. O cego caminhou, se abaixou, se lavou. A purificação que nunca cessa: mesmo após a unção, mesmo após a graça recebida, continuamos precisando das águas purificadoras da Palavra de Deus. A graça não nos dispensa da busca — ela nos capacita para uma busca mais profunda.</p>
-    <div class="d-citacao-ouro">"Os fariseus interrogam o cego porque o milagre os incomoda. Não porque seja falso — eles não conseguem negá-lo — mas porque desestrutura o sistema de controle religioso. O sábado foi dado como libertação: você não é escravo de nenhum Faraó. Os fariseus transformaram esse dom de liberdade numa nova escravidão ao protocolo. O instrumento da graça tornou-se barreira contra a graça."</div>
-    <p>E o texto constrói uma das ironias mais dramáticas de todo o Evangelho: os fariseus interrogam o cego como juízes — e no final Jesus inverte completamente os papéis. Os que julgavam são os verdadeiramente cegos. O que era julgado é o que verdadeiramente vê. O tribunal humano e o tribunal de Deus raramente chegam à mesma sentença.</p>
-    <p>A confissão de fé do cego é progressiva e corajosa: primeiro diz que Jesus é profeta, depois o defende diante dos fariseus, depois o adora ao encontrá-Lo novamente. É o arco da fé que começa no encontro com a graça e vai crescendo à medida que o encontro se aprofunda — exatamente o que a vida cristã é chamada a ser.</p>
   </div>
 </div>
 
@@ -710,17 +834,11 @@ hoje, nesta hora, neste dia.</p>
     </div>
     <div class="d-hom-corpo">
       <p>Há uma pergunta de Deus a Samuel que ecoa através de séculos e chega intacta até nós hoje: <em>até quando chorarás por Saul?</em> Não é uma repreensão fria — é uma intervenção amorosa. Deus não diz a Samuel que pare de sentir. Diz: o luto já cumpriu seu tempo, agora é hora de mover. E nessa pergunta simples está o retrato de uma armadilha que conhecemos bem: a paralisia que se disfarça de fidelidade, o lamento que substitui a conversão, a reclamação que ocupa o lugar da ação.</p>
-      <p>Saul tinha os atributos que Israel reconhecia num rei — alto, belo, imponente. Foi escolhido pela aparência e confirmado pela aclamação do povo. E Deus não errou nessa escolha. Deu a Saul a oportunidade real de se tornar aquilo que poderia ser. Mas Saul, confrontado com seus erros, justificou — culpou o povo, alegou motivo religioso, nunca dobrou o joelho por dentro. O coração foi endurecendo, e o que parecia obediência exterior foi se revelando resistência interior. Quando o coração não se converte, nenhuma prática religiosa o substitui.</p>
       <div class="d-hom-destaque">Por isso Deus envia Samuel a Belém — não para corrigir um erro, mas para revelar uma lógica diferente. Os filhos de Jessé desfilam diante do profeta: homens de porte, guerreiros, pastores imponentes. E a cada um, Deus diz ao coração de Samuel: não é este. Até que a pergunta é feita: são estes todos os teus filhos? E faltava um. O menor. O que estava no campo.</div>
-      <p>Davi não estava presente na cerimônia. Estava trabalhando — pastoreando ovelhas, cumprindo sua missão cotidiana sem saber que o profeta de Deus o procurava. E é exatamente aí que a graça o alcança. Deus encontra o seu escolhido no exercício fiel do ordinário. A fidelidade no pequeno é a formação invisível para a missão grande. O pastor de ovelhas que protege seu rebanho de leões e ursos está sendo preparado, sem saber, para pastor de um povo.</p>
-      <p>Quando Davi chega, Deus diz imediatamente a Samuel: <em>levanta-te e unge-o, é ele.</em> E aqui está a chave de tudo: o texto descreve Davi com os mesmos atributos exteriores de Saul — belo, de boa aparência. Isso não contradiz o que Deus dissera sobre não olhar as aparências — confirma sua profundidade. Davi tinha beleza e coração. Saul tinha beleza sem o coração correspondente. O critério de Deus não rejeita o exterior — ele simplesmente não se limita a ele. Deus vê o que o homem não consegue ver.</p>
+      <p>Davi não estava presente na cerimônia. Estava trabalhando — pastoreando ovelhas, cumprindo sua missão cotidiana sem saber que o profeta de Deus o procurava. E é exatamente aí que a graça o alcança. Deus encontra o seu escolhido no exercício fiel do ordinário. A fidelidade no pequeno é a formação invisível para a missão grande.</p>
       <div class="d-hom-destaque-purpura">E o que Deus enxergou em Davi não foi ausência de pecado. Foi capacidade de conversão. Davi pecará gravemente — adultério, homicídio indireto. Mas quando confrontado, não justificará. Se prostrará. O Salmo 50 nasce desse momento. A diferença entre Saul e Davi não é a quantidade de pecados — é o que o coração faz com eles. Um fechou. O outro abriu.</div>
-      <p>Séculos depois, Jesus caminha por uma rua e vê um cego de nascença. Os discípulos perguntam: quem pecou, ele ou seus pais? A mesma lógica de Saul — sofrimento como punição, aparência exterior como critério de julgamento. E Jesus dissolve a pergunta inteira: <em>nem ele nem seus pais — é para que as obras de Deus se manifestem nele.</em> Aquele homem não era punido. Era palco.</p>
-      <p>Jesus unge os olhos do cego com lodo — terra, água, cuspe — o mais humilde dos materiais. A mesma unção que Israel fazia aos reis com azeite precioso, feita aqui na rua, com o que estava disponível. Deus não precisa de instrumentos preciosos. Precisa de um coração disponível. E o cego, sem ter pedido, sem ter fé declarada ainda, recebe a graça que precede a fé e a produz.</p>
-      <p>Os fariseus, ao saberem do milagre, não se alegram. Interrogam. O milagre aconteceu no sábado — dia sagrado — e isso para eles invalida tudo. O sábado foi dado por Deus para que Israel descansasse <em>nele</em>, se voltasse <em>para ele</em>. Mas os fariseus transformaram esse dom de liberdade numa nova escravidão ao protocolo. O instrumento da graça tornou-se barreira contra a graça. Eles tinham os olhos abertos — e não conseguiram ver o que o cego, sem nenhuma formação teológica, viu claramente.</p>
-      <div class="d-hom-destaque">Paulo em Efésios nos diz: antes éreis trevas, agora sois luz no Senhor. Não estáveis nas trevas — éreis trevas. E agora não estais na luz — sois luz. A transformação é de essência. E o chamado é para viver como luz: não fugindo dos que estão no escuro, mas sendo claridade no meio deles. Assim como Davi pastoreava no campo e estava disposto a Deus, assim como Cristo curava no sábado e cumpria o sábado em sua plenitude mais profunda — o sábado perfeito não é o dia em que não se faz nada, mas o dia em que tudo o que se faz aponta para Deus.</div>
-      <p>E Paulo termina com um versículo que parece um hino antigo: <em>Desperta, tu que dormes, levanta-te dos mortos, e Cristo te iluminará.</em> Não é um chamado feito uma vez na vida. É o chamado de cada manhã. A acomodação é uma forma de sono. A rotina religiosa sem conversão interior é uma forma de sono. Frequentar a missa sem deixar que a Palavra nos transforme é uma forma de sono. O cristão que não sai melhor do que entrou perdeu a oportunidade do verde pasto.</p>
-      <p>A Quaresma nos coloca nesse caminho de purificação progressiva — como a família de Jessé antes do sacrifício, como o cego nas águas de Siloé. A graça é dada, mas a cooperação é necessária. O exame de consciência ao fim de cada dia, o reconhecimento dos atos e omissões, o pedido de purificação para o dia seguinte — isso é a fidelidade cotidiana que sustenta o que a graça inaugurou.</p>
+      <p>Séculos depois, Jesus caminha por uma rua e vê um cego de nascença. Os discípulos perguntam: quem pecou, ele ou seus pais? E Jesus dissolve a pergunta inteira: <em>nem ele nem seus pais — é para que as obras de Deus se manifestem nele.</em> Aquele homem não era punido. Era palco.</p>
+      <p>Os fariseus, ao saberem do milagre, não se alegram. O milagre aconteceu no sábado — e isso para eles invalida tudo. Eles tinham os olhos abertos — e não conseguiram ver o que o cego, sem nenhuma formação teológica, viu claramente. Paulo em Efésios nos diz: antes éreis trevas, agora sois luz no Senhor. A transformação é de essência. E o chamado é para viver como luz.</p>
       <div class="d-hom-fecho">Deus não escolhe pelos critérios do mundo.<br>Não escolhe os sem pecado — escolhe os que sabem se arrepender.<br>Não escolhe os que têm tudo — escolhe os que reconhecem que precisam.<br>Não escolhe os que veem — escolhe os que estão dispostos a receber a visão.<br><br>O menor filho de Jessé, esquecido no campo.<br>O cego de nascença, ignorado na rua.<br>Você e eu — com os nossos limites e as nossas quedas.<br><br>Levanta-te. Cristo te iluminará.</div>
     </div>
   </div>
@@ -755,55 +873,9 @@ Pois Tu és o meu pastor — e nada me faltará.</p>
   </div>
 </div>
 
-<div class="d-secao">
-  <div class="d-secao-topo"><span class="d-secao-icone">🧵</span><h2 class="d-secao-label">Fio da Semana — Abertura</h2><div class="d-secao-fio"></div></div>
-  <div class="d-palavra"><div class="d-palavra-inner">Ver com os Olhos de Deus</div></div>
-  <div class="d-fio-arco">
-    <div class="d-fio-dia hoje"><div class="d-fio-dia-label">Hoje — Domingo 15/03</div><div class="d-fio-dia-palavra">Enxergar</div><div class="d-fio-dia-texto">Deus vê o coração. Samuel é enviado. Davi é ungido. O cego recupera a visão. A semana começa com novos olhos.</div></div>
-    <div class="d-fio-dia"><div class="d-fio-dia-label">Segunda — 16/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
-    <div class="d-fio-dia"><div class="d-fio-dia-label">Terça — 17/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
-    <div class="d-fio-dia"><div class="d-fio-dia-label">Quarta — 18/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
-    <div class="d-fio-dia"><div class="d-fio-dia-label">Quinta — 19/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
-    <div class="d-fio-dia"><div class="d-fio-dia-label">Sexta — 20/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
-  </div>
-  <div class="d-fio-convergencia">
-    <p>A semana começa com um olhar invertido —<br>
-    <strong>o menor filho esquecido no campo,</strong><br>
-    o cego ungido na rua,<br>
-    a luz que nasce onde o mundo não esperava.<br><br>
-    Ver com os olhos de Deus é o exercício de toda a semana.</p>
-  </div>
-</div>
-
-<div class="d-secao">
-  <div class="d-secao-topo"><span class="d-secao-icone">🌱</span><h2 class="d-secao-label">Para Nossa Vida Hoje</h2><div class="d-secao-fio"></div></div>
-  <div class="d-vida-grupo">
-    <div class="d-vida-titulo">Na oração</div>
-    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Ao iniciar a oração do dia, pergunte a Deus: <em>em que ainda estou paralisado, como Samuel diante da tristeza de Saul?</em> Nomeie o luto, a mágoa ou a paralisia — e entregue. Peça o movimento.</p></div>
-    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Ao fim do dia, faça o exame de consciência: reconheça os atos e omissões, apresente-os a Deus e peça purificação para o dia seguinte. A fidelidade cotidiana sustenta o que a graça inaugurou.</p></div>
-  </div>
-  <div class="d-vida-grupo">
-    <div class="d-vida-titulo">Na leitura e meditação</div>
-    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Leia o Salmo 22 devagar, em voz baixa. Substitua mentalmente "o Senhor" pelo nome de Deus que seu coração conhece. Deixe que o verde pasto e o vale escuro se conectem com momentos reais da sua vida.</p></div>
-    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Releia João 9 e pergunte: em qual personagem me reconheço hoje? No cego disponível? Nos pais com medo? Nos fariseus presos ao protocolo? A resposta honesta é o primeiro passo da conversão.</p></div>
-  </div>
-  <div class="d-vida-grupo">
-    <div class="d-vida-titulo">No lar e nas relações</div>
-    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Há alguém próximo que você tem julgado pela aparência — pelos erros visíveis, pela fragilidade exterior? Peça a Deus que lhe empreste o olhar com que Ele viu Davi no campo: o olhar que enxerga o coração.</p></div>
-  </div>
-  <div class="d-vida-grupo">
-    <div class="d-vida-titulo">No trabalho</div>
-    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Davi estava cumprindo fielmente o seu trabalho quando foi chamado para algo maior. A fidelidade no ordinário é a preparação invisível para a missão extraordinária. Trabalhe hoje como quem está sendo formado — sem saber para quê.</p></div>
-  </div>
-  <div class="d-vida-grupo">
-    <div class="d-vida-titulo">Na equipe de liturgia</div>
-    <div class="d-pratica"><div class="d-pratica-dot"></div><p>O rito que serve à comunidade deve sempre conduzir ao encontro — nunca substituí-lo. Como a purificação de Jessé e seus filhos antes da unção, o serviço litúrgico começa com disposição interior. Cuide da sua purificação pessoal antes de servir.</p></div>
-  </div>
-</div>
-
 <div class="d-rodape">
   <div class="orn">✦ ✦ ✦</div>
-  <p>"O Senhor é meu pastor — e nada me faltará." — Sl 22,1</p>
+  <p>"Desperta, tu que dormes, levanta-te dos mortos, e Cristo te iluminará." — Ef 5,14</p>
 </div>
 `,
 
@@ -815,9 +887,9 @@ Pois Tu és o meu pastor — e nada me faltará.</p>
   <div class="d-header-grade"></div><div class="d-header-glow"></div>
   <div class="d-header-conteudo">
     <div class="d-header-emblema">✦ ✝ ✦</div>
-    <div class="d-header-tempo">Sábado — Encerramento da 3.ª Semana da Quaresma</div>
+    <div class="d-header-tempo">Sábado — 3.ª Semana da Quaresma</div>
     <h1 class="d-header-titulo">Diário Litúrgico</h1>
-    <p class="d-header-subtitulo">Nos levantará ao terceiro dia — e voltará para casa justificado</p>
+    <p class="d-header-subtitulo">O único bem que é genuinamente nosso</p>
     <div class="d-header-data">Sábado, 14 de março de 2026</div>
     <div class="d-header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
   </div>
@@ -826,42 +898,13 @@ Pois Tu és o meu pastor — e nada me faltará.</p>
 <div class="d-secao">
   <div class="d-secao-topo"><span class="d-secao-icone">📖</span><h2 class="d-secao-label">A Palavra de Hoje</h2><div class="d-secao-fio"></div></div>
   <div class="d-leituras">
-    <div class="d-leitura"><div class="d-leitura-tipo">Primeira Leitura</div><div class="d-leitura-ref">Oséias 6,1-6</div><div class="d-leitura-desc">Nos levantará ao terceiro dia — quero misericórdia, não sacrifício</div></div>
-    <div class="d-leitura"><div class="d-leitura-tipo">Salmo Responsorial</div><div class="d-leitura-ref">Salmo 50 (51)</div><div class="d-leitura-desc">Tende piedade de mim — cria em mim um coração puro</div></div>
-    <div class="d-leitura evang"><div class="d-leitura-tipo">Evangelho</div><div class="d-leitura-ref">Lucas 18,9-14</div><div class="d-leitura-desc">O fariseu e o publicano — este voltou para casa justificado</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Primeira Leitura</div><div class="d-leitura-ref">Oséias 6,1-6</div><div class="d-leitura-desc">Quero misericórdia e não sacrifício — conhecimento de Deus mais do que holocaustos</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Salmo Responsorial</div><div class="d-leitura-ref">Salmo 50 (51)</div><div class="d-leitura-desc">Misericórdia, Senhor, pois sou pecador — cria em mim um coração puro</div></div>
+    <div class="d-leitura evang"><div class="d-leitura-tipo">Evangelho</div><div class="d-leitura-ref">Lucas 18,9-14</div><div class="d-leitura-desc">O fariseu e o publicano — este voltou para casa justificado, aquele não</div></div>
   </div>
   <div class="d-versiculo">
     <p>"Quero misericórdia e não sacrifício, conhecimento de Deus mais do que holocaustos."</p>
-    <div class="ref">— Os 6,6</div>
-  </div>
-</div>
-
-<div class="d-secao">
-  <div class="d-secao-topo"><span class="d-secao-icone">🙏</span><h2 class="d-secao-label">Meu Coração Responde</h2><div class="d-secao-fio"></div></div>
-
-  <div class="d-meditacao">
-    <div class="d-med-titulo">Oséias 6 — O terceiro dia que o sábado guarda</div>
-    <p>Não é acidente que esta profecia seja proclamada num sábado da Quaresma. Oséias diz — <em>nos levantará ao terceiro dia.</em> Esta Palavra é lida no dia entre a sexta-feira e o domingo. No mesmo silêncio em que os discípulos viveram entre a cruz e a ressurreição — sabendo a profecia, não vendo ainda o cumprimento, esperando com a única coisa que lhes restava: a confiança de que a aurora vem, certa como prometeu.</p>
-    <p>O capítulo começa com o povo falando — <em>vinde, voltemos ao Senhor.</em> E há uma leveza quase suspeita nesse retorno. O povo sabe as palavras. Conhece o ritual. Mas Deus responde com um lamento — <em>o que farei a vós?</em> O amor de vocês é como nuvem matinal que desaparece antes do meio-dia.</p>
-    <div class="d-citacao">"É possível pedir perdão com as palavras certas e o coração ainda fechado. Deus não quer o discurso do retorno — quer as raízes que ficam quando a emoção passa."</div>
-    <p>E então a frase que resume toda a semana — <em>quero misericórdia e não sacrifício.</em> Os sacrifícios eram pedagógicos — para ensinar que o pecado tem peso, que a graça não é barata. Mas o destino sempre foi o amor. O conhecimento vivo de Deus — não sobre Deus, mas de Deus — na intimidade de quem se deixou conhecer e conhece de volta.</p>
-  </div>
-
-  <div class="d-meditacao">
-    <div class="d-med-titulo">Salmo 50 — As palavras do retorno</div>
-    <p>O Salmo não começa com pedido de bênção. Não começa com louvor. Começa com misericórdia. Porque a primeira necessidade humana diante de Deus não é receber mais — é ser perdoado pelo que já se fez com o que se recebeu.</p>
-    <p>O argumento não é o mérito do orante — é o caráter de Deus. <em>Segundo a vossa bondade. Segundo a vossa misericórdia.</em> Não pede perdão porque merece. Pede porque Deus é quem é.</p>
-    <div class="d-citacao-purpura">"O único bem genuinamente nosso — o único que produzimos por conta própria, sem a graça de Deus — é o pecado. E é exatamente isso que Deus quer receber. Para carregar. Para transformar em redenção."</div>
-    <p>E então o pedido mais audacioso do Salmo — <em>cria em mim um coração puro.</em> Não pede reforma — pede nova criação. Não melhoramento — novo começo. O mesmo poder que fez o mundo do nada, aplicado ao coração humano que chegou vazio e honesto diante de Deus.</p>
-  </div>
-
-  <div class="d-meditacao">
-    <div class="d-med-titulo">Lucas 18,9-14 — O orgulho que orou para si mesmo</div>
-    <p>Lucas não diz que o fariseu orou a Deus. Diz que orou <em>para si mesmo.</em> Ele entrou no templo, ficou diante de Deus, e enxergou apenas a si mesmo refletido. O orgulho é exatamente isso — uma cegueira que só enxerga a si mesmo.</p>
-    <p>O fariseu tinha a observância sem o amor. E o mais grave — não pediu perdão em nenhum momento. Porque genuinamente não se reconhecia pecador. O coração calcificado a tal ponto que perdeu a capacidade de se ver.</p>
-    <div class="d-citacao">"O fariseu transformou o que era caminho em chegada. O que era meio em fim. Usou as ferramentas da graça para construir o trono do orgulho."</div>
-    <p>O publicano tem apenas o gesto de bater no peito — pedindo que algo mude por dentro — e a confissão mais honesta que um ser humano pode fazer: <em>pois sou pecador.</em></p>
-    <p>E Deus diz — este voltou para casa justificado. Não o que mais sabia. O que chegou mais vazio — e por isso saiu mais cheio.</p>
+    <div class="ref">— Oséias 6,6</div>
   </div>
 </div>
 
@@ -873,14 +916,11 @@ Pois Tu és o meu pastor — e nada me faltará.</p>
       <div class="d-hom-titulo">"O único bem que é genuinamente nosso"</div>
     </div>
     <div class="d-hom-corpo">
-      <p>Há uma história sobre um grande estudioso da Escritura que passou décadas traduzindo e estudando a Palavra de Deus. E quando foi a Deus com tudo isso nos braços — a obra da vida inteira, o fruto do esforço de décadas — recebeu uma resposta que deveria parar qualquer coração: <em>eu que te dei tudo isso. Não é teu para oferecer.</em></p>
-      <p>E então perguntou — o que posso Te dar? A resposta foi: <em>dá-me os teus pecados.</em> O único bem genuinamente nosso — o único que produzimos por conta própria, sem nenhuma graça — é o pecado. E é exatamente isso que Deus quer receber.</p>
-      <div class="d-hom-destaque">Oséias chegou séculos antes e disse a mesma coisa: quero misericórdia e não sacrifício. Os sacrifícios eram pedagógicos — ensinavam que o pecado tem peso. Mas o destino sempre foi o coração aberto que reconhece que precisa de Deus.</div>
+      <p>Oséias fala de um povo que conhece as palavras da conversão mas não conhece a conversão. <em>Vinde, voltemos ao Senhor</em> — mas o amor deles é como nuvem da manhã e como orvalho matinal que logo desaparece. É uma espiritualidade de aparência que não penetra. Uma religião que sabe os ritos mas não transformou o coração.</p>
+      <div class="d-hom-destaque">E então perguntou — o que posso Te dar? A resposta foi: <em>dá-me os teus pecados.</em> O único bem genuinamente nosso — o único que produzimos por conta própria, sem nenhuma graça — é o pecado. E é exatamente isso que Deus quer receber.</div>
       <p>O Salmo 50 nos deu hoje as palavras exatas para fazer essa entrega. Não começa com bênção — começa com misericórdia. Porque a primeira necessidade humana diante de Deus não é receber mais. É ser perdoado pelo que se fez com o que já se recebeu.</p>
       <div class="d-hom-destaque-purpura">O fariseu entrou no templo e orou para si mesmo. O publicano entrou e encontrou Deus. A diferença não era o lugar — era a postura do coração. Um chegou cheio de si. O outro chegou vazio. E Deus só entra onde há espaço.</div>
-      <p>O fariseu tinha as práticas corretas. Observava, dava, cumpria. Mas transformou tudo isso em espelho em vez de janela. Entrou no templo e viu a si mesmo. Não pediu perdão — porque não se reconhecia pecador. É o endurecimento em seu estágio mais grave.</p>
       <p>O publicano chegou sem nada. Com o único bem que tinha — os próprios pecados. Bateu no peito. Disse a verdade. E Deus declara: <em>este voltou para casa justificado.</em></p>
-      <p>Hoje esta reflexão fecha a terceira semana da Quaresma com uma profecia que o sábado guarda com precisão — seremos levantados ao terceiro dia. E lemos isso no sábado, no silêncio que precede o domingo. É a posição do solo fértil — que plantou, que esperou, que não vê ainda o fruto, mas sabe que a aurora vem. Certa. Fiel. Imerecida.</p>
       <div class="d-hom-fecho">Desde o início da humanidade até a nossa partida para a casa do Pai —<br>é a mesma história contada de formas diferentes.<br>Deus buscando o coração que se fechou.<br>Enviando a Palavra todos os dias, sem cessar.<br><br>E nós — com os nossos pecados nas mãos,<br>batendo no peito,<br>voltando para casa justificados.</div>
     </div>
   </div>
@@ -917,53 +957,6 @@ eu saiba que esse dia não é rotina.
 É a aurora certa cumprindo-se mais uma vez.</p>
       <div class="d-or-amen">AMÉM</div>
     </div>
-  </div>
-</div>
-
-<div class="d-secao">
-  <div class="d-secao-topo"><span class="d-secao-icone">🧵</span><h2 class="d-secao-label">Fio da Semana — Encerramento</h2><div class="d-secao-fio"></div></div>
-  <div class="d-palavra"><div class="d-palavra-inner">Esvaziar para Receber</div></div>
-  <div class="d-fio-arco">
-    <div class="d-fio-dia"><div class="d-fio-dia-label">Segunda — 09/03</div><div class="d-fio-dia-palavra">Descer</div><div class="d-fio-dia-texto">Naamã no Jordão. O orgulho que quase perdeu a cura. O critério de Deus é a sede, não o prestígio.</div></div>
-    <div class="d-fio-dia"><div class="d-fio-dia-label">Terça — 10/03</div><div class="d-fio-dia-palavra">Perdoar</div><div class="d-fio-dia-texto">A dívida impagável perdoada. Setenta vezes sete. Reconhecer o tamanho do que foi perdoado.</div></div>
-    <div class="d-fio-dia"><div class="d-fio-dia-label">Quarta — 11/03</div><div class="d-fio-dia-palavra">Cumprir</div><div class="d-fio-dia-texto">Não a casca do sacrifício — o núcleo do amor. Fazer e transmitir. As duas asas do mesmo voo.</div></div>
-    <div class="d-fio-dia"><div class="d-fio-dia-label">Quinta — 12/03</div><div class="d-fio-dia-palavra">Escutar</div><div class="d-fio-dia-texto">A Palavra enviada todos os dias sem cessar. Arrancar os espinhos. Abrir o solo. Aos poucos, mas sempre.</div></div>
-    <div class="d-fio-dia"><div class="d-fio-dia-label">Sexta — 13/03</div><div class="d-fio-dia-palavra">Amar</div><div class="d-fio-dia-texto">Com todo o coração, alma e forças. O banquete preparado para quem renunciou aos substitutos.</div></div>
-    <div class="d-fio-dia hoje"><div class="d-fio-dia-label">Hoje — Sábado 14/03</div><div class="d-fio-dia-palavra">Esvaziar</div><div class="d-fio-dia-texto">Os pecados entregues. O coração criado de novo. O publicano que voltou para casa justificado.</div></div>
-  </div>
-  <div class="d-fio-convergencia">
-    <p>Do início da humanidade até a nossa partida para a casa do Pai — <strong>é a mesma história.</strong><br>
-    Deus buscando o coração que se fechou.<br>
-    A Palavra enviada todos os dias, sem cessar.<br>
-    E nós — <strong>o solo que escolhemos ser</strong> — escavando o tesouro dia a dia,<br>
-    sedentes pela próxima revelação,<br>
-    voltando para casa justificados.</p>
-  </div>
-</div>
-
-<div class="d-secao">
-  <div class="d-secao-topo"><span class="d-secao-icone">🌱</span><h2 class="d-secao-label">Para Nossa Vida Hoje</h2><div class="d-secao-fio"></div></div>
-  <div class="d-vida-grupo">
-    <div class="d-vida-titulo">Na oração</div>
-    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Antes de qualquer outra oração — uma frase só: <em>tende piedade de mim, que sou pecador.</em> Não como fórmula. Como primeiro movimento do coração que se abre.</p></div>
-    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Entregue os seus pecados — nomeie-os. Coloque-os nas mãos de Deus. É o único bem genuinamente seu para oferecer.</p></div>
-  </div>
-  <div class="d-vida-grupo">
-    <div class="d-vida-titulo">No exame da semana</div>
-    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Olhe para os dias que passaram. Em qual solo você viveu mais — o que fecha ou o que abre? Para saber onde trabalhar na próxima semana.</p></div>
-    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Identifique o momento em que orou para si mesmo — quando a prática serviu de espelho em vez de janela. Nomeie. Entregue.</p></div>
-  </div>
-  <div class="d-vida-grupo">
-    <div class="d-vida-titulo">No lar e nas relações</div>
-    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Quem está em casa vai sentir a diferença de alguém que voltou da oração transformado. A misericórdia recebida precisa transbordar para quem está ao lado.</p></div>
-  </div>
-  <div class="d-vida-grupo">
-    <div class="d-vida-titulo">No trabalho</div>
-    <div class="d-pratica"><div class="d-pratica-dot"></div><p>O testemunho de quem voltou justificado é visível sem palavras. A serenidade, a paciência e a integridade são os sinais que fazem os outros perguntarem.</p></div>
-  </div>
-  <div class="d-vida-grupo">
-    <div class="d-vida-titulo">Preparação para o domingo</div>
-    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Amanhã é o terceiro dia de Oséias cumprindo-se mais uma vez. Vá como o publicano — com os pecados nas mãos, coração aberto para receber o que só Deus pode dar.</p></div>
   </div>
 </div>
 
