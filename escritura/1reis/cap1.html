@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 Reis 1 — O início conturbado do reinado de Salomão | Luis Thiago</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noite:#0e1520; --noite-med:#1a2535; --verde:#1e4a30; --verde-med:#2a6e48;
+    --verde-cl:#e8f4ee; --ouro:#c9a84c; --ouro-cl:#fdf6e3; --ouro-br:#e8c96a;
+    --creme:#f9f6f0; --texto:#1e1a14; --suave:#6b5f4e; --branco:#fefefc;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--creme); font-family:'Crimson Pro',Georgia,serif; color:var(--texto); }
+  .nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(14,21,32,0.96); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.1); height:56px; padding:0 32px; display:flex; align-items:center; justify-content:space-between; }
+  .nav-logo { font-family:'Cinzel',serif; font-size:12px; letter-spacing:3px; color:var(--ouro); opacity:0.8; text-decoration:none; text-transform:uppercase; }
+  .nav-voltar { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:rgba(240,236,224,0.5); text-transform:uppercase; text-decoration:none; transition:color 0.2s; }
+  .nav-voltar:hover { color:var(--ouro); }
+  .header { background:linear-gradient(160deg, #0a1a10 0%, #1a3a20 50%, #2a5a30 100%); padding:80px 32px 64px; text-align:center; position:relative; overflow:hidden; margin-top:56px; }
+  .header::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:32px 32px; pointer-events:none; }
+  .header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--creme), transparent); pointer-events:none; }
+  .header-glow { position:absolute; width:500px; height:280px; background:radial-gradient(ellipse, rgba(42,110,72,0.25) 0%, transparent 65%); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; }
+  .header-conteudo { position:relative; z-index:2; }
+  .header-serie { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(255,255,255,0.45); text-transform:uppercase; margin-bottom:16px; }
+  .header-livro { font-family:'Cormorant',serif; font-size:clamp(1rem,2.5vw,1.3rem); font-style:italic; color:rgba(255,255,255,0.4); margin-bottom:8px; }
+  .header-titulo { font-family:'Cormorant',serif; font-size:clamp(2rem,6vw,3.6rem); font-style:italic; font-weight:300; color:#f0ece0; line-height:1.2; margin-bottom:10px; }
+  .header-subtitulo { font-size:17px; font-style:italic; color:rgba(240,236,224,0.5); line-height:1.7; margin-bottom:6px; }
+  .header-linha { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:22px; }
+  .header-linha .l { width:70px; height:1px; background:linear-gradient(to right, transparent, rgba(201,168,76,0.4)); }
+  .header-linha .l.r { background:linear-gradient(to left, transparent, rgba(201,168,76,0.4)); }
+  .header-linha span { color:rgba(201,168,76,0.5); font-size:12px; }
+  .container { max-width:800px; margin:0 auto; padding:56px 32px 100px; animation:subir 0.5s ease both; }
+  .versiculo { background:var(--noite); border-left:5px solid var(--verde-med); border-radius:0 8px 8px 0; padding:28px 36px; margin-bottom:56px; position:relative; overflow:hidden; }
+  .versiculo::before { content:'\201C'; font-family:'Cormorant',serif; font-size:130px; color:var(--verde-med); opacity:0.07; position:absolute; top:-28px; left:8px; line-height:1; pointer-events:none; }
+  .versiculo p { font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:#f2ede0; line-height:1.75; }
+  .versiculo .ref { margin-top:12px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--verde-med); opacity:0.7; }
+  .secao-topo { display:flex; align-items:center; gap:12px; margin-bottom:28px; padding-bottom:12px; border-bottom:1px solid rgba(42,110,72,0.15); }
+  .secao-icone { font-size:17px; flex-shrink:0; }
+  .secao-label { font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; color:var(--noite-med); text-transform:uppercase; font-weight:600; }
+  .secao-fio { flex:1; height:1px; background:linear-gradient(to right, var(--verde-med), transparent); opacity:0.2; }
+  .med-titulo { font-family:'Cormorant',serif; font-size:21px; font-style:italic; font-weight:600; color:var(--noite-med); margin-bottom:16px; padding-left:16px; border-left:3px solid var(--verde-med); line-height:1.3; margin-top:32px; }
+  .med-titulo:first-child { margin-top:0; }
+  p { font-size:17px; line-height:2; color:var(--texto); margin-bottom:14px; text-align:justify; }
+  .citacao { background:var(--verde-cl); border-left:4px solid var(--verde-med); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+  .prayer { background:var(--noite); border-left:5px solid var(--verde-med); border-radius:0 8px 8px 0; padding:28px 36px; margin:40px 0; font-style:italic; color:rgba(240,236,224,0.8); font-family:'Cormorant',serif; font-size:17px; line-height:2; }
+  .nav-caps { background:var(--noite-med); border-radius:8px; padding:28px 36px; margin-top:64px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+  .nav-cap-btn { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:var(--ouro); text-transform:uppercase; text-decoration:none; opacity:0.65; transition:opacity 0.2s; display:flex; align-items:center; gap:8px; }
+  .nav-cap-btn:hover { opacity:1; }
+  .nav-cap-btn.prev::before { content:'\2190 '; }
+  .nav-cap-btn.next::after { content:' \2192'; }
+  .nav-cap-btn.voltar { color:rgba(240,236,224,0.4); }
+  .rodape { text-align:center; padding:48px 0 20px; border-top:1px solid rgba(42,110,72,0.12); margin-top:20px; }
+  .rodape-orn { font-size:13px; color:var(--verde-med); letter-spacing:14px; margin-bottom:14px; opacity:0.45; }
+  .rodape p { font-family:'Cormorant',serif; font-size:17px; font-style:italic; color:var(--suave); }
+  @keyframes subir { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../../index.html" class="nav-logo">✦ Diário Litúrgico</a>
+  <a href="../../index.html" class="nav-voltar">← Voltar ao Portal</a>
+</nav>
+
+<header class="header">
+  <div class="header-glow"></div>
+  <div class="header-conteudo">
+    <div class="header-serie">✦ Estudo da Escritura ✦</div>
+    <div class="header-livro">1 Reis — Série de Reflexões</div>
+    <h1 class="header-titulo">Capítulo 1</h1>
+    <p class="header-subtitulo">O início conturbado do reinado de Salomão</p>
+    <div class="header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="versiculo">
+    <p>"A soberania de Deus não depende da nossa perfeição ou pontualidade — mas nos convida a estarmos alinhados com Sua vontade, não contra ela."</p>
+    <div class="ref">— 1 Reis 1</div>
+  </div>
+
+  <div class="secao-topo">
+    <span class="secao-icone">🙏</span>
+    <h2 class="secao-label">Reflexão do Capítulo</h2>
+    <div class="secao-fio"></div>
+  </div>
+
+  <div class="med-titulo">Contexto Histórico</div>
+            <p>O primeiro capítulo de 1 Reis marca uma transição crucial na história de Israel. Davi, o grande rei guerreiro, agora está velho e fragilizado, incapaz até mesmo de se aquecer. A presença de Abisague, a sunamita, é simbólica - mostra um rei que já não tem mais vigor, nem mesmo para as funções mais básicas. O contraste é marcante com o guerreiro poderoso que conhecemos anteriormente.</p>
+
+            <p>É nesse momento de vulnerabilidade que Adonias age. Ele segue o padrão que já vimos antes com Absalão - se exalta, prepara carros e cavaleiros, busca apoio de figuras importantes como Joabe e Abiatar. É interessante notar que ele faz tudo isso "sem consultar" - nem ao pai Davi, nem ao profeta Natã, nem ao sacerdote Zadoque, nem a Benaia. É uma tentativa de tomar o que não lhe foi dado.</p>
+
+            <p>Sem benção, sem unção, ele se autoproclama rei. A ganância toma conta da família de Davi, fruto de tudo que Davi fez e que Deus disse que aconteceria. As consequências do pecado com Bate-Seba continuam se manifestando - Deus havia dito através de Natã que a espada não se apartaria de sua casa.</p>
+
+            <p>Mas Deus havia determinado que Salomão seria rei. Embora Davi conhecesse a promessa e a vontade de Deus, permaneceu em silêncio - talvez por velhice, fraqueza ou mesmo negligência. E é aí que vemos a soberania de Deus operando através de instrumentos humanos. A providência divina age através de Bate-Seba e do profeta Natã. Natã orienta Bate-Seba a ir primeiro até Davi, lembrando-o do juramento. Enquanto ela ainda estava falando, Natã entra e confirma tudo, acrescentando a urgência da situação.</p>
+
+            <p>Quando Davi finalmente age, as coisas acontecem rapidamente: Salomão é ungido em Giom, montado na mula do próprio Davi, consagrado por Zadoque e Natã, aclamado pelo povo. E a festa de Adonias desmorona instantaneamente ao ouvirem o som da proclamação. Adonias, tomado de medo, corre e se agarra aos chifres do altar buscando misericórdia.</p>
+<div class="med-titulo">Reflexão Teológica</div>
+            <p>A soberania de Deus se manifesta claramente aqui. Ele havia escolhido Salomão, e nenhuma manobra humana, por mais bem articulada que fosse, poderia frustrar esse propósito. Adonias tinha tudo a seu favor do ponto de vista humano - era o filho mais velho sobrevivente, tinha o apoio de Joabe (comandante do exército) e de Abiatar (sacerdote importante), já estava fazendo sacrifícios e reunindo seguidores. Parecia que o reino era dele. Mas Deus havia determinado Salomão.</p>
+
+            <p>Quando Deus determina algo, irá acontecer. Os propósitos de Deus não dependem da nossa perfeição ou pontualidade, mas também é desafiador - nos lembra que devemos estar alinhados com Sua vontade, não contra ela. Como está escrito: "O meu conselho permanecerá, e farei toda a minha vontade" (Isaías 46:10).</p>
+
+            <p>Há uma prefiguração profunda e belíssima aqui: Salomão, o filho prometido de Davi, descendo para Giom montado na mula do rei, sendo ungido e aclamado enquanto entra em Jerusalém ao som de júbilo do povo - é uma imagem que aponta para Cristo. Séculos depois, Jesus, o Filho de Davi por excelência, entra em Jerusalém montado num jumentinho, cumprindo a profecia de Zacarias 9:9. Ambos são reis legítimos, escolhidos e ungidos por Deus. Ambos enfrentam oposição de quem busca usurpar o reino. Ambos são recebidos com alegria pelo povo. Mas enquanto Salomão trouxe um reino temporal de paz e prosperidade, Jesus traz o Reino eterno.</p>
+
+            <p>A resposta de Salomão a Adonias revela sabedoria já desde o início: "Se ele se houver como homem de bem, nem um de seus cabelos cairá em terra; porém, se nele se achar maldade, morrerá." Salomão não age por vingança imediata. Ele oferece a Adonias uma chance - misericórdia condicional. É um ato de sabedoria antes mesmo de pedir sabedoria a Deus - mostrando que Deus capacita quem Ele chama.</p>
+
+            <p>É interessante observar que Deus usa justamente Bate-Seba - aquela que estava no centro do maior pecado de Davi - como instrumento para garantir o cumprimento da promessa divina. E Natã, o mesmo profeta que confrontou Davi sobre esse pecado, agora trabalha para assegurar que o filho dessa união seja estabelecido como rei. A providência divina não depende da perfeição humana.</p>
+<div class="med-titulo">Aplicação Prática</div>
+            <p>A vontade de Deus prevaleceu, não pela força de Adonias, mas pela intervenção discreta e estratégica daqueles que conheciam os propósitos divinos. Isso nos ensina que mesmo quando as circunstâncias parecem favorecer o mal, quando vemos pessoas ímpias prosperando temporariamente, podemos confiar que os propósitos de Deus prevalecerão.</p>
+
+            <p>Deus não apenas chama, mas capacita aqueles que escolhe. Salomão já demonstrava discernimento e prudência. Isso se aplica a todos nós em nossas vocações - no trabalho, na família, no ministério. Quando Deus nos chama para algo, Ele nos capacita para isso. Não dependemos da nossa suficiência, mas da suficiência Dele.</p>
+
+            <p>Adonias queria o trono, mas não queria a vontade de Deus. Sua ambição o levou à destruição. Precisamos examinar nossas ambições e desejos à luz da vontade divina. O perigo da ambição não consagrada é real - ela nos leva a agir sem consultar a Deus, a buscar nosso próprio caminho em vez do caminho dEle.</p>
+
+            <p>A exclusão deliberada de certas pessoas da festa de Adonias revela que ele sabia que estava agindo contra a vontade estabelecida. Não foi ignorância, foi rebelião consciente. Quando sabemos qual é a vontade de Deus e escolhemos deliberadamente outro caminho, estamos em rebelião - e as consequências virão.</p>
+
+            <p>Por fim, a graça de Deus em usar vasos imperfeitos nos encoraja. Davi falhou em agir no momento certo, mas Deus despertou quem precisava ser despertado. Bate-Seba tinha um passado marcado por pecado, mas foi usada para garantir o propósito divino. Isso nos lembra que Deus não espera nossa perfeição para nos usar - Ele nos usa apesar de nossas falhas, transformando até mesmo nossas histórias quebradas em instrumentos de Sua glória.</p>
+
+
+  <div class="prayer">Senhor, que eu confie em Tua soberania mesmo quando as circunstâncias parecem contrárias. Que eu busque Tua vontade acima de minhas ambições pessoais. Capacita-me para cumprir o propósito para o qual me chamaste. E que eu reconheça que Teus caminhos são sempre perfeitos, mesmo quando não compreendo o tempo e a forma como ages. Em nome de Jesus, o verdadeiro Rei. Amém.</div>
+
+  <!-- PARA OS DIAS DE HOJE -->
+  <div style="margin-top:64px;">
+    <div class="secao-topo">
+      <span class="secao-icone">🌎</span>
+      <h2 class="secao-label">Para os Dias de Hoje</h2>
+      <div class="secao-fio"></div>
+    </div>
+    <div style="margin-bottom:36px;"><div class="med-titulo">A soberania de Deus — quando tudo parece favorecer o errado</div><p>Adonias tinha tudo a seu favor humanamente — era o filho mais velho, tinha apoio do comandante do exército e de um sacerdote importante, já estava celebrando como rei. Do ponto de vista humano o reino era dele. Mas Deus havia determinado Salomão.</p><p>Para hoje: quantas vezes vemos situações onde o errado parece prevalecer — no trabalho, nas relações, na sociedade? O capítulo 1 de 1 Reis nos lembra que os propósitos de Deus não dependem das circunstâncias favoráveis. Quando Deus determina algo, irá acontecer.</p><div class="citacao">"Não é a força da posição que garante o resultado — é o propósito de Deus. Podemos confiar que mesmo quando as circunstâncias parecem favorecer o errado, os propósitos de Deus prevalecerão."</div></div><div style="margin-bottom:36px;"><div class="med-titulo">Adonias — a ambição sem consulta</div><p>O texto diz que Adonias fez tudo sem consultar — nem ao pai, nem ao profeta, nem ao sacerdote. Agiu por iniciativa própria, seguindo a própria vontade. A ambição não consagrada é um dos perigos mais reais da vida espiritual. Não é errado ter objetivos e sonhos. É errado persegui-los sem verificar se estão alinhados com a vontade de Deus.</p></div><div style="margin-bottom:36px;"><div class="med-titulo">Deus usa vasos imperfeitos</div><p>Deus usou Bate-Seba — que estava no centro do maior pecado de Davi — para garantir o cumprimento de Sua promessa. E Natã — o mesmo profeta que confrontou Davi — agora trabalha para assegurar que o filho dessa união seja rei.</p><div class="citacao">"Deus não espera nossa perfeição para nos usar. Ele nos usa apesar de nossas histórias quebradas — e às vezes é exatamente através delas que Sua glória mais resplandece."</div></div><div style="background:var(--noite);border-radius:8px;padding:32px 40px;margin-top:8px;"><p style="font-family:'Cormorant',serif;font-size:18px;font-style:italic;color:rgba(240,236,224,0.7);line-height:1.9;text-align:center;">1 Reis 1 nos pergunta:<br>Suas ambições passam pelo filtro da consulta a Deus?<br>Ou você age por iniciativa própria?<br><br><strong style="color:var(--ouro);font-weight:400;">A vontade de Deus prevalece —<br>a questão é se estamos com ela ou contra ela.</strong></p></div>
+  </div>
+
+  <div class="nav-caps">
+    <span></span>
+    <a href="../../index.html" class="nav-cap-btn voltar">↑ Todos os Capítulos</a>
+    <a href="cap2.html" class="nav-cap-btn next">Capítulo 2</a>
+  </div>
+
+  <div class="rodape">
+    <div class="rodape-orn">✦ ✦ ✦</div>
+    <p>1 Reis 1 — Série de reflexões por Luis Thiago</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 Reis 3 — O dom da sabedoria | Luis Thiago</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noite:#0e1520; --noite-med:#1a2535; --verde:#1e4a30; --verde-med:#2a6e48;
+    --verde-cl:#e8f4ee; --ouro:#c9a84c; --ouro-cl:#fdf6e3; --ouro-br:#e8c96a;
+    --creme:#f9f6f0; --texto:#1e1a14; --suave:#6b5f4e; --branco:#fefefc;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--creme); font-family:'Crimson Pro',Georgia,serif; color:var(--texto); }
+  .nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(14,21,32,0.96); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.1); height:56px; padding:0 32px; display:flex; align-items:center; justify-content:space-between; }
+  .nav-logo { font-family:'Cinzel',serif; font-size:12px; letter-spacing:3px; color:var(--ouro); opacity:0.8; text-decoration:none; text-transform:uppercase; }
+  .nav-voltar { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:rgba(240,236,224,0.5); text-transform:uppercase; text-decoration:none; transition:color 0.2s; }
+  .nav-voltar:hover { color:var(--ouro); }
+  .header { background:linear-gradient(160deg, #0a1a10 0%, #1a3a20 50%, #2a5a30 100%); padding:80px 32px 64px; text-align:center; position:relative; overflow:hidden; margin-top:56px; }
+  .header::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:32px 32px; pointer-events:none; }
+  .header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--creme), transparent); pointer-events:none; }
+  .header-glow { position:absolute; width:500px; height:280px; background:radial-gradient(ellipse, rgba(42,110,72,0.25) 0%, transparent 65%); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; }
+  .header-conteudo { position:relative; z-index:2; }
+  .header-serie { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(255,255,255,0.45); text-transform:uppercase; margin-bottom:16px; }
+  .header-livro { font-family:'Cormorant',serif; font-size:clamp(1rem,2.5vw,1.3rem); font-style:italic; color:rgba(255,255,255,0.4); margin-bottom:8px; }
+  .header-titulo { font-family:'Cormorant',serif; font-size:clamp(2rem,6vw,3.6rem); font-style:italic; font-weight:300; color:#f0ece0; line-height:1.2; margin-bottom:10px; }
+  .header-subtitulo { font-size:17px; font-style:italic; color:rgba(240,236,224,0.5); line-height:1.7; margin-bottom:6px; }
+  .header-linha { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:22px; }
+  .header-linha .l { width:70px; height:1px; background:linear-gradient(to right, transparent, rgba(201,168,76,0.4)); }
+  .header-linha .l.r { background:linear-gradient(to left, transparent, rgba(201,168,76,0.4)); }
+  .header-linha span { color:rgba(201,168,76,0.5); font-size:12px; }
+  .container { max-width:800px; margin:0 auto; padding:56px 32px 100px; animation:subir 0.5s ease both; }
+  .versiculo { background:var(--noite); border-left:5px solid var(--verde-med); border-radius:0 8px 8px 0; padding:28px 36px; margin-bottom:56px; position:relative; overflow:hidden; }
+  .versiculo::before { content:'\201C'; font-family:'Cormorant',serif; font-size:130px; color:var(--verde-med); opacity:0.07; position:absolute; top:-28px; left:8px; line-height:1; pointer-events:none; }
+  .versiculo p { font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:#f2ede0; line-height:1.75; }
+  .versiculo .ref { margin-top:12px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--verde-med); opacity:0.7; }
+  .secao-topo { display:flex; align-items:center; gap:12px; margin-bottom:28px; padding-bottom:12px; border-bottom:1px solid rgba(42,110,72,0.15); }
+  .secao-icone { font-size:17px; flex-shrink:0; }
+  .secao-label { font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; color:var(--noite-med); text-transform:uppercase; font-weight:600; }
+  .secao-fio { flex:1; height:1px; background:linear-gradient(to right, var(--verde-med), transparent); opacity:0.2; }
+  .med-titulo { font-family:'Cormorant',serif; font-size:21px; font-style:italic; font-weight:600; color:var(--noite-med); margin-bottom:16px; padding-left:16px; border-left:3px solid var(--verde-med); line-height:1.3; margin-top:32px; }
+  .med-titulo:first-child { margin-top:0; }
+  p { font-size:17px; line-height:2; color:var(--texto); margin-bottom:14px; text-align:justify; }
+  .citacao { background:var(--verde-cl); border-left:4px solid var(--verde-med); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+  .prayer { background:var(--noite); border-left:5px solid var(--verde-med); border-radius:0 8px 8px 0; padding:28px 36px; margin:40px 0; font-style:italic; color:rgba(240,236,224,0.8); font-family:'Cormorant',serif; font-size:17px; line-height:2; }
+  .nav-caps { background:var(--noite-med); border-radius:8px; padding:28px 36px; margin-top:64px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+  .nav-cap-btn { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:var(--ouro); text-transform:uppercase; text-decoration:none; opacity:0.65; transition:opacity 0.2s; display:flex; align-items:center; gap:8px; }
+  .nav-cap-btn:hover { opacity:1; }
+  .nav-cap-btn.prev::before { content:'\2190 '; }
+  .nav-cap-btn.next::after { content:' \2192'; }
+  .nav-cap-btn.voltar { color:rgba(240,236,224,0.4); }
+  .rodape { text-align:center; padding:48px 0 20px; border-top:1px solid rgba(42,110,72,0.12); margin-top:20px; }
+  .rodape-orn { font-size:13px; color:var(--verde-med); letter-spacing:14px; margin-bottom:14px; opacity:0.45; }
+  .rodape p { font-family:'Cormorant',serif; font-size:17px; font-style:italic; color:var(--suave); }
+  @keyframes subir { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../../index.html" class="nav-logo">✦ Diário Litúrgico</a>
+  <a href="../../index.html" class="nav-voltar">← Voltar ao Portal</a>
+</nav>
+
+<header class="header">
+  <div class="header-glow"></div>
+  <div class="header-conteudo">
+    <div class="header-serie">✦ Estudo da Escritura ✦</div>
+    <div class="header-livro">1 Reis — Série de Reflexões</div>
+    <h1 class="header-titulo">Capítulo 3</h1>
+    <p class="header-subtitulo">O dom da sabedoria</p>
+    <div class="header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="versiculo">
+    <p>"A sabedoria de Deus não é teórica — é prática, discerne situações reais, toca o coração das questões e traz justiça verdadeira."</p>
+    <div class="ref">— 1 Reis 3</div>
+  </div>
+
+  <div class="secao-topo">
+    <span class="secao-icone">🙏</span>
+    <h2 class="secao-label">Reflexão do Capítulo</h2>
+    <div class="secao-fio"></div>
+  </div>
+
+  <div class="med-titulo">📖 Contexto e Tensões Iniciais</div>
+            
+            <p>O capítulo 3 de 1 Reis é complexo e cheio de nuances. Logo no início vemos tensões aparentes:</p>
+
+            <ul style="margin-left: 40px; margin-bottom: 20px;">
+                <li>Salomão se aliou com um povo pagão, casando-se com a filha do Faraó</li>
+                <li>Sacrificava nos lugares altos, o que parecia incorreto</li>
+            </ul>
+
+            <p>Mas então vem aquela frase tocante que revela o coração de Salomão:</p>
+
+            <div class="citacao">
+                "Salomão amava ao Senhor, andando nos estatutos de Davi, seu pai; exceto que sacrificava e queimava incenso nos lugares altos." (1 Reis 3:3)
+            </div>
+
+            <div class="citacao">
+                <strong>Observação Importante:</strong> O texto diz "estatutos de Davi", não diretamente "mandamentos de Deus". É como se houvesse uma mediação, uma transmissão de fé de pai para filho. Salomão amava a Deus através do exemplo e ensino que recebeu de Davi.
+            </div>
+
+            <p>E note: mesmo com essas imperfeições e contradições, Deus aparece a Salomão em Gibeão (um lugar alto!) e lhe oferece o que quiser. Deus trabalha com a sinceridade do coração, mesmo quando a prática ainda está sendo refinada.</p>
+<div class="med-titulo">✨ O Encontro Divino em Gibeão</div>
+            
+            <div class="med-titulo">Mil Holocaustos</div>
+            <p>O capítulo começa com um detalhe impressionante: Salomão ofereceu mil holocaustos em Gibeão (v. 4). Mil! Isso não é um número casual ou simbólico - é uma expressão concreta de devoção extravagante.</p>
+
+            <p>Imagine a magnitude desse ato de adoração: o tempo, os recursos, a intenção por trás disso. Salomão não estava apenas cumprindo um ritual formal - estava derramando seu coração diante de Deus.</p>
+
+            <p>E é naquela noite, após esse ato de adoração tremenda, que Deus aparece a ele em sonho.</p>
+
+            <div class="citacao">
+                <strong>Reflexão:</strong> Salomão buscou a Deus intensamente, e Deus respondeu. Não foi uma oração rápida ou casual - foi uma entrega profunda, sacrificial. "Buscar-me-eis e me achareis quando me buscardes de todo o vosso coração" (Jeremias 29:13).
+            </div>
+
+            <div class="med-titulo">O Pedido Humilde</div>
+            <p>Deus diz a Salomão: "Pede o que queres que eu te dê." Que oferta extraordinária! E o pedido de Salomão revela seu coração:</p>
+
+            <div class="citacao">
+                "Dá, pois, ao teu servo um coração entendido para julgar o teu povo, para que prudentemente discirna entre o bem e o mal; porque quem poderia julgar a este teu grande povo?" (1 Reis 3:9)
+            </div>
+
+            <p>Salomão:</p>
+            <ul style="margin-left: 40px; margin-bottom: 20px;">
+                <li>Reconhece-se como "menino pequeno" que não sabe como entrar ou sair</li>
+                <li>Reconhece que está diante de um "povo tão grande que não se pode contar"</li>
+                <li>Não pede longa vida, riquezas ou morte dos inimigos</li>
+                <li>Pede "um coração entendido para julgar teu povo e discernir entre o bem e o mal"</li>
+            </ul>
+
+            <p>É um pedido de humildade, reconhecendo sua dependência de Deus e sua responsabilidade pelo povo.</p>
+<div class="med-titulo">🎁 A Resposta Generosa de Deus</div>
+            
+            <p>A resposta de Deus foi extraordinária:</p>
+
+            <div class="citacao">
+                "Porque pediste isso, e não pediste para ti muitos dias de vida, nem pediste para ti riquezas, nem pediste a vida de teus inimigos; mas pediste para ti entendimento, para discernires o que é justo; eis que faço segundo as tuas palavras: eis que te dou um coração tão sábio e entendido, que antes de ti teu igual não houve, e depois de ti teu igual não se levantará. E também até o que não pediste te dou, tanto riquezas como glória, de modo que não haverá teu igual entre os reis, por todos os teus dias." (1 Reis 3:11-13)
+            </div>
+
+            <p>Deus não apenas concedeu o que Salomão pediu, mas acrescentou:</p>
+            <ul style="margin-left: 40px; margin-bottom: 20px;">
+                <li>Sabedoria sem igual na história</li>
+                <li>Riquezas que não pediu</li>
+                <li>Glória entre todos os reis</li>
+                <li>E longa vida, condicionada à obediência</li>
+            </ul>
+
+            <p>Quando buscamos primeiro o Reino de Deus e Sua sabedoria, tudo mais nos é acrescentado (Mateus 6:33).</p>
+
+            <div class="med-titulo">O Despertar e a Celebração</div>
+            <p>Salomão acordou e percebeu que era um sonho - mas não era apenas um sonho, era uma revelação real. E ele volta para Jerusalém, adora diante da arca, e celebra com seus servos.</p>
+
+            <p>Depois dos mil holocaustos em Gibeão, após receber a promessa de sabedoria, Salomão oferece mais holocaustos e ofertas pacíficas, e faz um banquete para todos os seus servos. É celebração, gratidão, reconhecimento.</p>
+<div class="med-titulo">⚖️ A Demonstração Imediata da Sabedoria</div>
+            
+            <p>O capítulo encerra com a demonstração imediata da sabedoria que Deus acabara de conceder - o famoso julgamento das duas mães.</p>
+
+            <div class="med-titulo">O Caso Impossível</div>
+            <p>A situação era humanamente impossível de resolver: duas mulheres, nenhuma testemunha, histórias conflitantes, ambas afirmando ser a mãe verdadeira. Não havia DNA, não havia provas materiais. Como julgar?</p>
+
+            <p>Mas Salomão, com a sabedoria divina, toca no coração da questão - literalmente. Ele cria uma situação que revela o que há dentro de cada mulher.</p>
+
+            <div class="med-titulo">A Solução Reveladora</div>
+            <p>Salomão ordena: "Dividi em duas partes o menino vivo e dai a metade a uma e a metade a outra."</p>
+
+            <p><strong>A mãe verdadeira:</strong> "Suas entranhas se comoveram por seu filho" - o amor materno genuíno prefere perder a criança para outra pessoa do que vê-la morrer. "Dai-lhe o menino vivo e de modo nenhum o mateis!"</p>
+
+            <p><strong>A falsa mãe:</strong> Amarga, ressentida pela perda do próprio filho, prefere que nenhuma tenha - "Nem meu, nem teu seja; divida-se!" Que frieza assustadora.</p>
+
+            <div class="citacao">
+                <strong>Sabedoria Divina:</strong> Salomão nem precisou da espada - ela foi apenas o instrumento para revelar a verdade. A sabedoria divina enxerga o coração. A sabedoria que Deus dá não é teórica - é prática, discerne situações reais, traz justiça verdadeira.
+            </div>
+
+            <p>E o resultado? "Todo o Israel ouviu o juízo que o rei julgara e temeram o rei, porque viram que havia nele sabedoria de Deus para fazer justiça" (v. 28).</p>
+<div class="med-titulo">💡 Aplicação Prática</div>
+
+            <div class="citacao">
+                <div class="med-titulo">Para Nossa Vida</div>
+                
+                <p><strong>Buscar a Deus Intensamente:</strong> Salomão ofereceu mil holocaustos. Não era adoração casual. Nossa busca por Deus deve ser intensa, não morna ou superficial. "Buscar-me-eis e me achareis quando me buscardes de todo o vosso coração."</p>
+
+                <p><strong>Pedir as Coisas Certas:</strong> Quando Deus nos dá oportunidade de pedir, o que pedimos? Salomão poderia ter pedido qualquer coisa, mas pediu sabedoria para servir bem. Isso agradou a Deus. Nossas orações refletem nosso coração.</p>
+
+                <p><strong>Reconhecer Nossa Dependência:</strong> "Sou um menino pequeno; não sei como entrar ou sair." Salomão reconheceu sua limitação. A verdadeira sabedoria começa com humildade - reconhecer que precisamos de Deus.</p>
+
+                <p><strong>Sabedoria Prática, Não Teórica:</strong> A sabedoria de Deus não é apenas conhecimento abstrato - é a capacidade de aplicar a verdade de Deus em situações complexas e reais. Tiago 1:5 nos promete: "Se algum de vós tem falta de sabedoria, peça-a a Deus, que a todos dá liberalmente."</p>
+
+                <p><strong>Deus Acrescenta Bênçãos:</strong> Quando buscamos primeiro as coisas de Deus, Ele acrescenta o que precisamos. Salomão pediu sabedoria, e Deus deu também riquezas e glória. Mateus 6:33: "Buscai primeiro o Reino de Deus e a sua justiça, e todas essas coisas vos serão acrescentadas."</p>
+
+                <p><strong>Para o Educador:</strong> Como professor, a sabedoria para discernir entre alunos, situações, necessidades diferentes é essencial. Não é autoritarismo, mas discernimento amoroso que toca o coração das questões e traz justiça e crescimento.</p>
+            </div>
+
+
+  <div class="prayer">Senhor, como Salomão em Gibeão, venho diante de Ti reconhecendo minha pequenez.
+
+            Não sei como entrar ou sair em tantas situações da vida.
+
+            Dá-me um coração sábio e entendido,
+
+            Que discirna entre o bem e o mal,
+
+            Que enxergue além das aparências,
+
+            Que toque o coração das questões.
+
+            Que eu busque primeiro Teu reino e Tua sabedoria,
+
+            Confiando que acrescentarás tudo o que preciso.
+
+            Em nome de Jesus, a Sabedoria de Deus encarnada. Amém.</div>
+
+  <!-- PARA OS DIAS DE HOJE -->
+  <div style="margin-top:64px;">
+    <div class="secao-topo">
+      <span class="secao-icone">🌎</span>
+      <h2 class="secao-label">Para os Dias de Hoje</h2>
+      <div class="secao-fio"></div>
+    </div>
+    <div style="margin-bottom:36px;"><div class="med-titulo">Mil holocaustos — quando a adoração é extravagante</div><p>Salomão ofereceu mil holocaustos — não um ritual formal, mas uma entrega extravagante que custou tempo, recursos e atenção. E é exatamente nessa noite que Deus aparece a ele.</p><p>Para hoje: vivemos numa cultura de adoração eficiente — orações rápidas, devocionais de cinco minutos. O capítulo 3 nos desafia: quando foi a última vez que nossa adoração foi custosa? Que implicou em algo além do conveniente?</p><div class="citacao">"Deus responde à intensidade da busca, não à qualidade das palavras. Salomão não tinha o discurso perfeito — tinha o coração entregue."</div></div><div style="margin-bottom:36px;"><div class="med-titulo">O pedido de Salomão — pedir as coisas certas</div><p>Quando Deus disse <em>pede o que queres</em> — Salomão escolheu sabedoria para servir bem. Não para si mesmo, mas para o povo que Deus lhe havia confiado.</p><p>Para hoje: nossas orações revelam nosso coração. Se Deus dissesse hoje <em>pede o que queres</em> — qual seria seu primeiro pedido? A resposta a essa pergunta é um diagnóstico espiritual honesto.</p></div><div style="margin-bottom:36px;"><div class="med-titulo">O julgamento das duas mães — sabedoria que enxerga o coração</div><p>Salomão não precisou de provas materiais. Criou uma situação que revelou o que havia dentro de cada mulher. A mãe verdadeira preferiu perder a criança a vê-la morrer. A falsa preferiu que nenhuma tivesse.</p><div class="citacao">"A sabedoria que Deus dá não resolve problemas com fórmulas — ela enxerga além das aparências, toca o coração das questões e revela a verdade que estava escondida."</div></div><div style="background:var(--noite);border-radius:8px;padding:32px 40px;margin-top:8px;"><p style="font-family:'Cormorant',serif;font-size:18px;font-style:italic;color:rgba(240,236,224,0.7);line-height:1.9;text-align:center;">1 Reis 3 nos pergunta:<br>Sua adoração é custosa ou apenas conveniente?<br>Quando você ora, o que pede primeiro?<br><br><strong style="color:var(--ouro);font-weight:400;">A sabedoria começa quando reconhecemos<br>que somos pequenos — e pedimos a Deus que nos guie.</strong></p></div>
+  </div>
+
+  <div class="nav-caps">
+    <a href="cap2.html" class="nav-cap-btn prev">Capítulo 2</a>
+    <a href="../../index.html" class="nav-cap-btn voltar">↑ Todos os Capítulos</a>
+    <a href="cap4.html" class="nav-cap-btn next">Capítulo 4</a>
+  </div>
+
+  <div class="rodape">
+    <div class="rodape-orn">✦ ✦ ✦</div>
+    <p>1 Reis 3 — Série de reflexões por Luis Thiago</p>
+  </div>
+
+</div>
+</body>
+</html>

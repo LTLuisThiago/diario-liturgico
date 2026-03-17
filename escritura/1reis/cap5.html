@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 Reis 5 — A sabedoria de Salomão e a preparação do Templo | Luis Thiago</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noite:#0e1520; --noite-med:#1a2535; --verde:#1e4a30; --verde-med:#2a6e48;
+    --verde-cl:#e8f4ee; --ouro:#c9a84c; --ouro-cl:#fdf6e3; --ouro-br:#e8c96a;
+    --creme:#f9f6f0; --texto:#1e1a14; --suave:#6b5f4e; --branco:#fefefc;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--creme); font-family:'Crimson Pro',Georgia,serif; color:var(--texto); }
+  .nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(14,21,32,0.96); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.1); height:56px; padding:0 32px; display:flex; align-items:center; justify-content:space-between; }
+  .nav-logo { font-family:'Cinzel',serif; font-size:12px; letter-spacing:3px; color:var(--ouro); opacity:0.8; text-decoration:none; text-transform:uppercase; }
+  .nav-voltar { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:rgba(240,236,224,0.5); text-transform:uppercase; text-decoration:none; transition:color 0.2s; }
+  .nav-voltar:hover { color:var(--ouro); }
+  .header { background:linear-gradient(160deg, #0a1a10 0%, #1a3a20 50%, #2a5a30 100%); padding:80px 32px 64px; text-align:center; position:relative; overflow:hidden; margin-top:56px; }
+  .header::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:32px 32px; pointer-events:none; }
+  .header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--creme), transparent); pointer-events:none; }
+  .header-glow { position:absolute; width:500px; height:280px; background:radial-gradient(ellipse, rgba(42,110,72,0.25) 0%, transparent 65%); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; }
+  .header-conteudo { position:relative; z-index:2; }
+  .header-serie { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(255,255,255,0.45); text-transform:uppercase; margin-bottom:16px; }
+  .header-livro { font-family:'Cormorant',serif; font-size:clamp(1rem,2.5vw,1.3rem); font-style:italic; color:rgba(255,255,255,0.4); margin-bottom:8px; }
+  .header-titulo { font-family:'Cormorant',serif; font-size:clamp(2rem,6vw,3.6rem); font-style:italic; font-weight:300; color:#f0ece0; line-height:1.2; margin-bottom:10px; }
+  .header-subtitulo { font-size:17px; font-style:italic; color:rgba(240,236,224,0.5); line-height:1.7; margin-bottom:6px; }
+  .header-linha { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:22px; }
+  .header-linha .l { width:70px; height:1px; background:linear-gradient(to right, transparent, rgba(201,168,76,0.4)); }
+  .header-linha .l.r { background:linear-gradient(to left, transparent, rgba(201,168,76,0.4)); }
+  .header-linha span { color:rgba(201,168,76,0.5); font-size:12px; }
+  .container { max-width:800px; margin:0 auto; padding:56px 32px 100px; animation:subir 0.5s ease both; }
+  .versiculo { background:var(--noite); border-left:5px solid var(--verde-med); border-radius:0 8px 8px 0; padding:28px 36px; margin-bottom:56px; position:relative; overflow:hidden; }
+  .versiculo::before { content:'\201C'; font-family:'Cormorant',serif; font-size:130px; color:var(--verde-med); opacity:0.07; position:absolute; top:-28px; left:8px; line-height:1; pointer-events:none; }
+  .versiculo p { font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:#f2ede0; line-height:1.75; }
+  .versiculo .ref { margin-top:12px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--verde-med); opacity:0.7; }
+  .secao-topo { display:flex; align-items:center; gap:12px; margin-bottom:28px; padding-bottom:12px; border-bottom:1px solid rgba(42,110,72,0.15); }
+  .secao-icone { font-size:17px; flex-shrink:0; }
+  .secao-label { font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; color:var(--noite-med); text-transform:uppercase; font-weight:600; }
+  .secao-fio { flex:1; height:1px; background:linear-gradient(to right, var(--verde-med), transparent); opacity:0.2; }
+  .med-titulo { font-family:'Cormorant',serif; font-size:21px; font-style:italic; font-weight:600; color:var(--noite-med); margin-bottom:16px; padding-left:16px; border-left:3px solid var(--verde-med); line-height:1.3; margin-top:32px; }
+  .med-titulo:first-child { margin-top:0; }
+  p { font-size:17px; line-height:2; color:var(--texto); margin-bottom:14px; text-align:justify; }
+  .citacao { background:var(--verde-cl); border-left:4px solid var(--verde-med); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+  .prayer { background:var(--noite); border-left:5px solid var(--verde-med); border-radius:0 8px 8px 0; padding:28px 36px; margin:40px 0; font-style:italic; color:rgba(240,236,224,0.8); font-family:'Cormorant',serif; font-size:17px; line-height:2; }
+  .nav-caps { background:var(--noite-med); border-radius:8px; padding:28px 36px; margin-top:64px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+  .nav-cap-btn { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:var(--ouro); text-transform:uppercase; text-decoration:none; opacity:0.65; transition:opacity 0.2s; display:flex; align-items:center; gap:8px; }
+  .nav-cap-btn:hover { opacity:1; }
+  .nav-cap-btn.prev::before { content:'\2190 '; }
+  .nav-cap-btn.next::after { content:' \2192'; }
+  .nav-cap-btn.voltar { color:rgba(240,236,224,0.4); }
+  .rodape { text-align:center; padding:48px 0 20px; border-top:1px solid rgba(42,110,72,0.12); margin-top:20px; }
+  .rodape-orn { font-size:13px; color:var(--verde-med); letter-spacing:14px; margin-bottom:14px; opacity:0.45; }
+  .rodape p { font-family:'Cormorant',serif; font-size:17px; font-style:italic; color:var(--suave); }
+  @keyframes subir { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../../index.html" class="nav-logo">✦ Diário Litúrgico</a>
+  <a href="../../index.html" class="nav-voltar">← Voltar ao Portal</a>
+</nav>
+
+<header class="header">
+  <div class="header-glow"></div>
+  <div class="header-conteudo">
+    <div class="header-serie">✦ Estudo da Escritura ✦</div>
+    <div class="header-livro">1 Reis — Série de Reflexões</div>
+    <h1 class="header-titulo">Capítulo 5</h1>
+    <p class="header-subtitulo">A sabedoria de Salomão e a preparação do Templo</p>
+    <div class="header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="versiculo">
+    <p>"A sabedoria que vem de Deus não precisa aparentar saber tudo. Ela sabe o que sabe, reconhece o que não sabe, e busca quem pode completar o que falta."</p>
+    <div class="ref">— 1 Reis 5</div>
+  </div>
+
+  <div class="secao-topo">
+    <span class="secao-icone">🙏</span>
+    <h2 class="secao-label">Reflexão do Capítulo</h2>
+    <div class="secao-fio"></div>
+  </div>
+
+  <div class="med-titulo">Contexto Histórico</div>
+            <p>O capítulo 5 de 1 Reis nos mostra a extensão da riqueza e sabedoria de Salomão dada por Deus. Salomão dominava sobre todos os reinos desde o rio Eufrates até a terra dos filisteus e até o termo do Egito. Todos lhe pagavam tributos e lhe obedeciam durante todo seu reinado. Este é exatamente o território da promessa feita a Abraão em Gênesis 15:18 - o único momento na história de Israel em que todas as promessas territoriais se concretizam plenamente.</p>
+
+            <p>A casa de Salomão consumia muitos viveres por dia, numa quantidade enorme. A provisão diária incluía trinta coros de flor de farinha, sessenta coros de farinha comum, dez bois cevados, vinte bois de pasto, cem carneiros, além de veados, gazelas, corços e aves. Salomão com sua sabedoria havia determinado que cada tribo de Israel era responsável por essa manutenção por cada mês do ano, através dos doze intendentes.</p>
+
+            <p>Aqui vemos as consequências do pedido dos líderes de Israel quando pediram um rei a Samuel. Deus disse que haveriam de manter todo esse reinado. Quando o povo pediu um rei "como as outras nações", Deus advertiu através de Samuel que o rei tomaria seus filhos, suas filhas, o melhor de suas terras, e o dízimo de suas colheitas. E agora vemos isso materializado. Mas aqui está a diferença crucial: sob Salomão, com a sabedoria de Deus, esse sistema funcionava! O povo ainda "comia, bebia e alegrava-se". Havia paz, prosperidade, organização justa.</p>
+
+            <p>Deus deu paz a Salomão em toda região. Tanto que Judá e Israel viviam tranquilos, cada um debaixo da sua videira e debaixo da sua figueira - símbolo bíblico de paz, segurança e prosperidade. Sob o comando de Salomão e sob as orientações de Deus a seu rei, o povo floresceu.</p>
+<div class="med-titulo">Reflexão Teológica</div>
+            <p>A paz que Deus deu a Salomão cria as condições para o templo. Davi, o guerreiro, não pôde construir o templo porque havia derramado muito sangue em guerras. Mas Salomão, cujo nome significa "paz" (Shalom), reina em tempo de paz - o momento perfeito para construir a casa de Deus. Tanto que Salomão resolve construir a casa de Deus na terra, o templo, que depois será chamado templo de Salomão.</p>
+
+            <p>A sabedoria de Salomão em ação se manifesta na negociação com Hirão, rei de Tiro. Salomão pede madeira de cedro e cipreste do Líbano, reconhecendo que "não há entre nós quem saiba cortar a madeira como os sidônios". Ele reconhece a expertise de outros povos e faz aliança com sabedoria. Em troca, Salomão daria mantimentos - trigo e azeite em abundância. É uma parceria mutuamente benéfica. Hirão tinha o que Salomão precisava, e Salomão tinha o que Hirão necessitava.</p>
+
+            <p>O texto destaca: "O Senhor deu sabedoria a Salomão, como lhe tinha falado; e houve paz entre Hirão e Salomão, e ambos fizeram aliança." A sabedoria divina produz paz e cooperação, não conflito. O templo seria construído não apenas com recursos de Israel, mas com a cooperação de nações vizinhas.</p>
+
+            <p>A sabedoria de Salomão era tão grande que é cantada até os dias de hoje. O texto descreve uma inteligência penetrante e um espírito de uma visão tão vasta como as areias do mar - "largueza de coração como a areia que está na praia do mar". Não era apenas inteligência técnica, mas uma amplitude de espírito, uma capacidade de compreender profundamente a criação de Deus em toda sua diversidade.</p>
+
+            <p>O legado acadêmico de Salomão é impressionante: três mil provérbios de sabedoria prática para a vida, mil e cinco cânticos de adoração e poesia. Ele dissertou sobre botânica, desde o cedro do Líbano até ao hissopo que nasce na parede. Dissertou sobre zoologia - animais, aves, répteis e peixes. Ele foi o primeiro "cientista natural" de Israel! A sabedoria de Deus não despreza o conhecimento da criação - pelo contrário, glorifica o Criador através do estudo da criação.</p>
+
+            <p>E veja a consequência: "De todos os povos vinham ouvir a sabedoria de Salomão, enviados por todos os reis da terra que tinham ouvido falar da sua sabedoria." A verdadeira sabedoria atrai, influencia, abençoa outros. Quem segue a Deus, quem segue as bem-aventuranças ditas por Cristo, alcança prosperidade através de Deus - paz de espírito, sabedoria, inteligência, mansidão. Tudo isso corrobora para coisas boas acontecerem.</p>
+<div class="med-titulo">Aplicação Prática</div>
+            <p>A organização sábia de Salomão para a construção do templo nos ensina princípios importantes. Ele escolheu os melhores operários, tanto no corte de pedras quanto no cuidado dos trabalhos. Havia trinta mil homens que iam ao Líbano em turnos - dez mil por mês, trabalhando um mês e descansando dois em casa. Isso mantinha as famílias unidas e os trabalhadores descansados. Setenta mil carregadores, oitenta mil cortadores de pedra nas montanhas, e três mil e trezentos supervisores sobre os trabalhos.</p>
+
+            <p>Um líder sábio e conhecedor das necessidades sabe observar e cuidar para que os trabalhos andem da melhor forma. Conhece sua equipe e sabe fazer acontecer. Salomão não agiu com autoritarismo - todos o seguiam e o respeitavam. Sua sabedoria inspirava confiança e cooperação voluntária. As pessoas queriam seguir um líder assim. Liderança por respeito, não por medo.</p>
+
+            <p>A escolha de operários qualificados para um serviço tão importante - afinal era a casa de Deus - mostra que quando construímos para Deus, a excelência importa. Não é qualquer trabalho malfeito. É o melhor que podemos oferecer. As pedras eram tão bem cortadas que se encaixavam perfeitamente, sem necessidade de ajustes no local.</p>
+
+            <p>O espírito de Deus quando repousa sobre nós, através de nossas boas ações, Sua graça resplandece a todos ao nosso redor. A sabedoria não é apenas conhecimento abstrato, mas capacidade de aplicar a verdade de Deus em situações complexas e reais, no trabalho, na família, no ministério. E essa sabedoria está disponível a todos que a buscam: "Se algum de vós tem falta de sabedoria, peça-a a Deus, que a todos dá liberalmente" (Tiago 1:5).</p>
+
+            <p>A sabedoria de Salomão estava a serviço de todos. Ele não a guardou para si, mas a usou para abençoar o povo, fazer alianças sábias, construir a casa de Deus, e ensinar às nações. Da mesma forma, quando Deus nos capacita em nossas vocações, é para servir aos outros, não apenas para nosso próprio benefício.</p>
+
+            <p>Como educador, vemos aqui princípios fundamentais: organização inteligente, delegação sábia, respeito pelos que servem, valorização da expertise, e o compromisso com a excelência. Quando aplicamos a sabedoria de Deus em nossa área de atuação, os resultados glorificam a Ele e abençoam a muitos.</p>
+
+
+  <div class="prayer">Senhor, que eu busque de Ti a sabedoria que vem do alto. Não apenas conhecimento, mas discernimento para aplicar Tua verdade em cada situação. Que eu seja um líder que inspira respeito, não medo. Que eu valorize a excelência em tudo que faço, sabendo que Te sirvo. E que Tua graça, manifestada através de minhas ações, resplandeça a todos ao meu redor, atraindo outros a Ti. Capacita-me para servir bem em minha vocação, sempre para Tua glória. Em nome de Jesus, a Sabedoria de Deus. Amém.</div>
+
+  <!-- PARA OS DIAS DE HOJE -->
+  <div style="margin-top:64px;">
+    <div class="secao-topo">
+      <span class="secao-icone">🌎</span>
+      <h2 class="secao-label">Para os Dias de Hoje</h2>
+      <div class="secao-fio"></div>
+    </div>
+    <div style="margin-bottom:36px;"><div class="med-titulo">A sabedoria que colabora — reconhecer a expertise do outro</div><p>Salomão tinha sabedoria suficiente para reconhecer o que não sabia. <em>Não há entre nós quem saiba cortar a madeira como os sidônios.</em> Em vez de fingir competência que não tinha, buscou quem tinha — e fez uma aliança mutuamente benéfica.</p><p>Para hoje: uma das marcas da insegurança é a incapacidade de reconhecer a competência alheia. A verdadeira sabedoria não tem medo de dizer "você sabe mais que eu nisto" e buscar colaboração genuína.</p><div class="citacao">"A sabedoria que vem de Deus não precisa aparentar saber tudo. Ela sabe o que sabe, reconhece o que não sabe, e busca quem pode completar o que falta."</div></div><div style="margin-bottom:36px;"><div class="med-titulo">Os turnos de trabalho — liderança que cuida das pessoas</div><p>Os trinta mil homens trabalhavam um mês e descansavam dois em casa. Isso mantinha as famílias unidas e os trabalhadores descansados. Salomão poderia ter exigido trabalho contínuo — mas a sabedoria reconhece que pessoas não são máquinas.</p><p>Para hoje: a forma como tratamos as pessoas que servem sob nossa responsabilidade revela o caráter da nossa liderança. Explorar é fácil. Cuidar exige sabedoria e intenção deliberada.</p></div><div style="margin-bottom:36px;"><div class="med-titulo">A sabedoria que atrai</div><p>De todos os povos vinham ouvir Salomão. A sabedoria que Deus deu não ficou guardada — transbordou para o mundo ao redor, atraindo e abençoando além das fronteiras de Israel.</p><div class="citacao">"A sabedoria de Deus não foi dada para guardar — foi dada para transbordar. Quando vivemos segundo os princípios de Deus, isso é visível. E o que é visível atrai quem tem sede."</div></div><div style="background:var(--noite);border-radius:8px;padding:32px 40px;margin-top:8px;"><p style="font-family:'Cormorant',serif;font-size:18px;font-style:italic;color:rgba(240,236,224,0.7);line-height:1.9;text-align:center;">1 Reis 5 nos pergunta:<br>Você consegue reconhecer a competência alheia<br>sem sentir ameaça?<br>Sua liderança cuida — ou apenas usa?<br><br><strong style="color:var(--ouro);font-weight:400;">A sabedoria que vem de Deus<br>não precisa de holofote para brilhar —<br>ela simplesmente atrai quem tem sede.</strong></p></div>
+  </div>
+
+  <div class="nav-caps">
+    <a href="cap4.html" class="nav-cap-btn prev">Capítulo 4</a>
+    <a href="../../index.html" class="nav-cap-btn voltar">↑ Todos os Capítulos</a>
+    <a href="cap6.html" class="nav-cap-btn next">Capítulo 6</a>
+  </div>
+
+  <div class="rodape">
+    <div class="rodape-orn">✦ ✦ ✦</div>
+    <p>1 Reis 5 — Série de reflexões por Luis Thiago</p>
+  </div>
+
+</div>
+</body>
+</html>

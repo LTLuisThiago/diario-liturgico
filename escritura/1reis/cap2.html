@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 Reis 2 — O testamento de Davi e a consolidação do reino | Luis Thiago</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noite:#0e1520; --noite-med:#1a2535; --verde:#1e4a30; --verde-med:#2a6e48;
+    --verde-cl:#e8f4ee; --ouro:#c9a84c; --ouro-cl:#fdf6e3; --ouro-br:#e8c96a;
+    --creme:#f9f6f0; --texto:#1e1a14; --suave:#6b5f4e; --branco:#fefefc;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--creme); font-family:'Crimson Pro',Georgia,serif; color:var(--texto); }
+  .nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(14,21,32,0.96); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.1); height:56px; padding:0 32px; display:flex; align-items:center; justify-content:space-between; }
+  .nav-logo { font-family:'Cinzel',serif; font-size:12px; letter-spacing:3px; color:var(--ouro); opacity:0.8; text-decoration:none; text-transform:uppercase; }
+  .nav-voltar { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:rgba(240,236,224,0.5); text-transform:uppercase; text-decoration:none; transition:color 0.2s; }
+  .nav-voltar:hover { color:var(--ouro); }
+  .header { background:linear-gradient(160deg, #0a1a10 0%, #1a3a20 50%, #2a5a30 100%); padding:80px 32px 64px; text-align:center; position:relative; overflow:hidden; margin-top:56px; }
+  .header::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:32px 32px; pointer-events:none; }
+  .header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--creme), transparent); pointer-events:none; }
+  .header-glow { position:absolute; width:500px; height:280px; background:radial-gradient(ellipse, rgba(42,110,72,0.25) 0%, transparent 65%); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; }
+  .header-conteudo { position:relative; z-index:2; }
+  .header-serie { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(255,255,255,0.45); text-transform:uppercase; margin-bottom:16px; }
+  .header-livro { font-family:'Cormorant',serif; font-size:clamp(1rem,2.5vw,1.3rem); font-style:italic; color:rgba(255,255,255,0.4); margin-bottom:8px; }
+  .header-titulo { font-family:'Cormorant',serif; font-size:clamp(2rem,6vw,3.6rem); font-style:italic; font-weight:300; color:#f0ece0; line-height:1.2; margin-bottom:10px; }
+  .header-subtitulo { font-size:17px; font-style:italic; color:rgba(240,236,224,0.5); line-height:1.7; margin-bottom:6px; }
+  .header-linha { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:22px; }
+  .header-linha .l { width:70px; height:1px; background:linear-gradient(to right, transparent, rgba(201,168,76,0.4)); }
+  .header-linha .l.r { background:linear-gradient(to left, transparent, rgba(201,168,76,0.4)); }
+  .header-linha span { color:rgba(201,168,76,0.5); font-size:12px; }
+  .container { max-width:800px; margin:0 auto; padding:56px 32px 100px; animation:subir 0.5s ease both; }
+  .versiculo { background:var(--noite); border-left:5px solid var(--verde-med); border-radius:0 8px 8px 0; padding:28px 36px; margin-bottom:56px; position:relative; overflow:hidden; }
+  .versiculo::before { content:'\201C'; font-family:'Cormorant',serif; font-size:130px; color:var(--verde-med); opacity:0.07; position:absolute; top:-28px; left:8px; line-height:1; pointer-events:none; }
+  .versiculo p { font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:#f2ede0; line-height:1.75; }
+  .versiculo .ref { margin-top:12px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--verde-med); opacity:0.7; }
+  .secao-topo { display:flex; align-items:center; gap:12px; margin-bottom:28px; padding-bottom:12px; border-bottom:1px solid rgba(42,110,72,0.15); }
+  .secao-icone { font-size:17px; flex-shrink:0; }
+  .secao-label { font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; color:var(--noite-med); text-transform:uppercase; font-weight:600; }
+  .secao-fio { flex:1; height:1px; background:linear-gradient(to right, var(--verde-med), transparent); opacity:0.2; }
+  .med-titulo { font-family:'Cormorant',serif; font-size:21px; font-style:italic; font-weight:600; color:var(--noite-med); margin-bottom:16px; padding-left:16px; border-left:3px solid var(--verde-med); line-height:1.3; margin-top:32px; }
+  .med-titulo:first-child { margin-top:0; }
+  p { font-size:17px; line-height:2; color:var(--texto); margin-bottom:14px; text-align:justify; }
+  .citacao { background:var(--verde-cl); border-left:4px solid var(--verde-med); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+  .prayer { background:var(--noite); border-left:5px solid var(--verde-med); border-radius:0 8px 8px 0; padding:28px 36px; margin:40px 0; font-style:italic; color:rgba(240,236,224,0.8); font-family:'Cormorant',serif; font-size:17px; line-height:2; }
+  .nav-caps { background:var(--noite-med); border-radius:8px; padding:28px 36px; margin-top:64px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+  .nav-cap-btn { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:var(--ouro); text-transform:uppercase; text-decoration:none; opacity:0.65; transition:opacity 0.2s; display:flex; align-items:center; gap:8px; }
+  .nav-cap-btn:hover { opacity:1; }
+  .nav-cap-btn.prev::before { content:'\2190 '; }
+  .nav-cap-btn.next::after { content:' \2192'; }
+  .nav-cap-btn.voltar { color:rgba(240,236,224,0.4); }
+  .rodape { text-align:center; padding:48px 0 20px; border-top:1px solid rgba(42,110,72,0.12); margin-top:20px; }
+  .rodape-orn { font-size:13px; color:var(--verde-med); letter-spacing:14px; margin-bottom:14px; opacity:0.45; }
+  .rodape p { font-family:'Cormorant',serif; font-size:17px; font-style:italic; color:var(--suave); }
+  @keyframes subir { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../../index.html" class="nav-logo">✦ Diário Litúrgico</a>
+  <a href="../../index.html" class="nav-voltar">← Voltar ao Portal</a>
+</nav>
+
+<header class="header">
+  <div class="header-glow"></div>
+  <div class="header-conteudo">
+    <div class="header-serie">✦ Estudo da Escritura ✦</div>
+    <div class="header-livro">1 Reis — Série de Reflexões</div>
+    <h1 class="header-titulo">Capítulo 2</h1>
+    <p class="header-subtitulo">O testamento de Davi e a consolidação do reino</p>
+    <div class="header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="versiculo">
+    <p>"Às vezes a nova geração completa o que a anterior não pôde. A fidelidade passada não é esquecida — mesmo na disciplina."</p>
+    <div class="ref">— 1 Reis 2</div>
+  </div>
+
+  <div class="secao-topo">
+    <span class="secao-icone">🙏</span>
+    <h2 class="secao-label">Reflexão do Capítulo</h2>
+    <div class="secao-fio"></div>
+  </div>
+
+  <div class="med-titulo">📜 O Testamento de Davi</div>
+            
+            <p>O capítulo 2 de 1 Reis traz as últimas palavras de Davi - um testamento poderoso e, ao mesmo tempo, complexo. São instruções de um pai que aprendeu, muitas vezes da forma difícil, que a obediência a Deus é o fundamento de tudo.</p>
+
+            <div class="citacao">
+                "Esforça-te, e sê homem. Guarda os preceitos do Senhor teu Deus, andando nos seus caminhos, e guardando os seus estatutos, e os seus mandamentos, e os seus juízos, e os seus testemunhos... para que prosperes em tudo quanto fizeres e para onde quer que fores." (1 Reis 2:2-3)
+            </div>
+
+            <p>Esta é a sabedoria de um pai que aprendeu que a obediência a Deus é o fundamento de tudo. Davi vincula isso à promessa davídica - se os descendentes guardarem o caminho de Deus, nunca faltará sucessor no trono.</p>
+
+            <div class="med-titulo">As Questões Pendentes</div>
+            <p>Depois vêm as instruções mais difíceis de processar:</p>
+            <ul style="margin-left: 40px; margin-bottom: 20px;">
+                <li><strong>Joabe:</strong> que derramou sangue em tempo de paz</li>
+                <li><strong>Barzilai:</strong> que deve ser honrado por sua lealdade</li>
+                <li><strong>Simei:</strong> que amaldiçoou Davi</li>
+            </ul>
+
+            <p>São questões de justiça pendente, lealdade a ser recompensada, e até questões políticas que Davi, o guerreiro, deixou para Salomão, o homem de paz, resolver.</p>
+<div class="med-titulo">⚖️ O Destino de Adonias</div>
+            
+            <p>Adonias, inescrupulosamente, pede à mãe de Salomão que interceda para que ele possa ter Abisague como esposa. Mas isso não era um simples pedido romântico - era uma segunda conspiração velada.</p>
+
+            <div class="citacao">
+                <strong>Contexto Cultural:</strong> No Antigo Oriente Médio, tomar as esposas ou concubinas do rei anterior era um ato político explícito de reivindicação do trono. Vimos isso quando Absalão possuiu publicamente as concubinas de Davi (2 Samuel 16:21-22).
+            </div>
+
+            <p>Adonias usa Bate-Seba como intermediária, provavelmente esperando que Salomão não negasse um pedido da própria mãe. E ele começa dizendo "tu sabes que o reino era meu" - já mostrando que não havia verdadeiramente aceitado a vontade de Deus.</p>
+
+            <p>Salomão percebe imediatamente a traição: "Por que pedes a Abisague, a sunamita, para Adonias? Pede também para ele o reino!" A sabedoria divina se manifesta em discernir que aquilo era uma conspiração, não um pedido inocente.</p>
+
+            <p>Adonias teve misericórdia no capítulo 1, mas agora "se acha maldade nele" - exatamente a condição que Salomão havia estabelecido. E assim é executado por Benaia.</p>
+<div class="med-titulo">⚔️ A Justiça Sobre Joabe</div>
+            
+            <p>Joabe percebe que após Adonias, seria o próximo. Ele corre e se agarra aos chifres do altar, assim como Adonias havia feito. Mas há uma diferença crucial: Joabe tinha sangue culpado nas mãos.</p>
+
+            <p>Ele matou Abner e Amasa traiçoeiramente, em tempo de paz, derramando sangue de guerra sem causa. Quando Salomão manda Benaia executá-lo, mesmo no altar, está cumprindo justiça. O altar não protege o culpado de homicídio premeditado (Êxodo 21:14).</p>
+
+            <div class="citacao">
+                "E tornou o Senhor o sangue dele sobre a sua cabeça, porquanto deu sobre dois homens mais justos e melhores do que ele, e os matou à espada, sem que meu pai Davi o soubesse." (1 Reis 2:32)
+            </div>
+
+            <p>Note a sabedoria política: Salomão remove "de mim e da casa de meu pai o sangue que Joabe derramou sem causa" - ele está limpando a casa de Davi de culpa acumulada.</p>
+<div class="med-titulo">🚪 O Teste de Simei</div>
+            
+            <p>Com Simei, a sabedoria de Salomão brilha ainda mais. Ele não o mata imediatamente, mas estabelece um limite claro: "Edifica uma casa em Jerusalém e habita aí; não saias dali para parte alguma."</p>
+
+            <p>Simei concorda: "Boa é essa palavra... como disse meu senhor, assim fará teu servo." Por três anos Simei obedece. Mas quando seus servos fogem para Gate, ele vai atrás deles - cruza o ribeiro de Cedrom.</p>
+
+            <p>Uma escolha aparentemente razoável do ponto de vista prático, mas desobediência clara ao juramento que fez. E Salomão executa a sentença: "Tu sabes toda a maldade... o Senhor fez recair sobre a tua cabeça a tua maldade."</p>
+
+            <div class="citacao">
+                <strong>Reflexão:</strong> Simei teve paz condicionada à obediência simples - e não conseguiu cumprir. Três anos de obediência não apagam um ato de desobediência. A fidelidade a Deus não é sobre perfeição em um momento, mas perseverança ao longo do tempo.
+            </div>
+<div class="med-titulo">👑 A Consolidação do Reino</div>
+            
+            <p>O versículo final é significativo: "Assim foi confirmado o reino na mão de Salomão" (1 Reis 2:46). Mas observe como isso aconteceu - não por brutalidade indiscriminada ou paranoia de um tirano, mas através de sabedoria para discernir, justiça para julgar, e firmeza para executar.</p>
+
+            <p>Salomão:</p>
+            <ul style="margin-left: 40px; margin-bottom: 20px;">
+                <li>Discerniu a conspiração velada de Adonias</li>
+                <li>Aplicou justiça ao culpado Joabe, mesmo no altar</li>
+                <li>Deu oportunidade a Simei, que se condenou por sua própria escolha</li>
+                <li>Honrou Barzilai (como Davi havia pedido)</li>
+                <li>Removeu Abiatar do sacerdócio com misericórdia (apenas o exilou, não o matou)</li>
+            </ul>
+
+            <p>Cada ação foi medida, justa e estratégica.</p>
+<div class="med-titulo">🔍 Camadas Profundas</div>
+
+            <div class="med-titulo">A Transição do Sacerdócio</div>
+            <p>Quando Salomão remove Abiatar e coloca Zadoque como único sumo sacerdote, o texto diz: "para que se cumprisse a palavra do Senhor, que falara contra a casa de Eli em Siló" (1 Reis 2:27). Isso conecta com uma profecia feita décadas antes (1 Samuel 2:27-36), mostrando que Deus cumpre Suas palavras, mesmo que leve gerações. Abiatar era descendente de Eli.</p>
+
+            <div class="med-titulo">O Contraste Entre Dois Reis</div>
+            <p>Davi, o guerreiro, deixa questões de justiça pendentes - talvez por lealdade pessoal complicada (Joabe o serviu por anos) ou por fragilidade política. Salomão, o homem de paz (seu nome significa paz), é quem estabelece a justiça. Às vezes a nova geração completa o que a anterior não pôde.</p>
+
+            <div class="med-titulo">A Misericórdia na Justiça</div>
+            <p>Abiatar conspirou com Adonias, mas Salomão não o mata - apenas o exila. Por quê? "Porque levaste a arca do Senhor Deus diante de meu pai Davi, e porque foste aflito em tudo em que meu pai foi aflito." A fidelidade passada não foi esquecida, mesmo na disciplina.</p>
+<div class="med-titulo">💡 Aplicação Prática</div>
+
+            <div class="citacao">
+                <div class="med-titulo">Para Nossa Vida</div>
+                <p><strong>Sabedoria para Situações Complexas:</strong> A vida frequentemente nos apresenta situações difíceis que exigem discernimento. Assim como Salomão, precisamos buscar sabedoria de Deus para lidar com questões complexas em nosso trabalho, família e relacionamentos.</p>
+
+                <p><strong>Obediência como Fundamento:</strong> A primeira e mais importante instrução de Davi foi sobre obediência a Deus. Tudo o mais - prosperidade, sucesso, bênçãos - flui dessa obediência fundamental. "Guarda os preceitos do Senhor teu Deus... para que prosperes."</p>
+
+                <p><strong>Justiça Sem Vingança:</strong> Salomão não agiu por vingança pessoal, mas por justiça. Há uma diferença crucial entre buscar vingança e estabelecer justiça. A sabedoria nos ensina a discernir essa diferença.</p>
+
+                <p><strong>Delegação com Sabedoria:</strong> Salomão não tentou fazer tudo sozinho. Ele delegou - Benaia executava as sentenças, Zadoque liderava o sacerdócio. Um líder sábio reconhece os dons de cada um e organiza para que todos trabalhem em harmonia.</p>
+
+                <p><strong>Perseverança na Fidelidade:</strong> O caso de Simei nos ensina que não basta começar bem - precisamos perseverar. Três anos de obediência não compensam um ato de desobediência.</p>
+            </div>
+
+
+  <div class="prayer">Senhor, concede-me sabedoria para lidar com as situações complexas da vida.
+
+            Que eu busque justiça, não vingança.
+
+            Que eu persevere na obediência, não apenas por momentos, mas ao longo da jornada.
+
+            Capacita-me a discernir entre o bem e o mal,
+
+            E a agir com firmeza quando necessário, mas sempre com misericórdia quando possível.
+
+            Que minha vida seja confirmada em Ti, assim como o reino foi confirmado na mão de Salomão.
+
+            Em nome de Jesus. Amém.</div>
+
+  <!-- PARA OS DIAS DE HOJE -->
+  <div style="margin-top:64px;">
+    <div class="secao-topo">
+      <span class="secao-icone">🌎</span>
+      <h2 class="secao-label">Para os Dias de Hoje</h2>
+      <div class="secao-fio"></div>
+    </div>
+    <div style="margin-bottom:36px;"><div class="med-titulo">O testamento de Davi — o que passamos para as próximas gerações</div><p>As últimas palavras de Davi não foram sobre conquistas ou riquezas. Foram sobre obediência. <em>Guarda os preceitos do Senhor teu Deus... para que prosperes.</em> Essa foi a herança mais valiosa que um pai poderia transmitir.</p><p>Para hoje: o que estamos transmitindo para os que vêm depois de nós? As conversas que temos, os valores que demonstramos, a forma como tratamos a Palavra de Deus — tudo isso é testamento vivo que as próximas gerações herdam.</p><div class="citacao">"A herança espiritual mais poderosa não é o que deixamos em dinheiro ou posição — é o padrão de obediência que demonstramos ao longo da vida."</div></div><div style="margin-bottom:36px;"><div class="med-titulo">Simei — a obediência parcial que não conta</div><p>Simei obedeceu por três anos. Mas quando a conveniência falou mais alto foi atrás dos servos que haviam fugido. Uma escolha aparentemente razoável. E se condenou.</p><p>Para hoje: a obediência não é negociável quando a situação fica inconveniente. É fácil obedecer quando não custa nada. A fidelidade verdadeira se revela quando seguir o acordo implica em custo real.</p></div><div style="margin-bottom:36px;"><div class="med-titulo">Salomão — justiça sem vingança</div><p>Cada ação de Salomão neste capítulo foi medida — não foi brutalidade, mas discernimento. Com Abiatar exerceu misericórdia dentro da disciplina — exilou em vez de matar, porque reconheceu a fidelidade passada.</p><div class="citacao">"Há uma diferença fundamental entre buscar vingança e estabelecer justiça. A vingança nasce do ego ferido. A justiça nasce do compromisso com o que é certo — independentemente do custo pessoal."</div></div><div style="background:var(--noite);border-radius:8px;padding:32px 40px;margin-top:8px;"><p style="font-family:'Cormorant',serif;font-size:18px;font-style:italic;color:rgba(240,236,224,0.7);line-height:1.9;text-align:center;">1 Reis 2 nos pergunta:<br>Que testamento você está escrevendo<br>com sua vida cotidiana?<br>Sua obediência resiste quando se torna inconveniente?<br><br><strong style="color:var(--ouro);font-weight:400;">A fidelidade não é um momento —<br>é uma direção sustentada ao longo do tempo.</strong></p></div>
+  </div>
+
+  <div class="nav-caps">
+    <a href="cap1.html" class="nav-cap-btn prev">Capítulo 1</a>
+    <a href="../../index.html" class="nav-cap-btn voltar">↑ Todos os Capítulos</a>
+    <a href="cap3.html" class="nav-cap-btn next">Capítulo 3</a>
+  </div>
+
+  <div class="rodape">
+    <div class="rodape-orn">✦ ✦ ✦</div>
+    <p>1 Reis 2 — Série de reflexões por Luis Thiago</p>
+  </div>
+
+</div>
+</body>
+</html>
