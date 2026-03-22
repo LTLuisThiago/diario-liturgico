@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estudos de Escritura | Diário Litúrgico</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noite:#0e1520; --noite-med:#1a2535; --verde:#1e4a30; --verde-med:#2a6e48;
+    --verde-cl:#e8f4ee; --ouro:#c9a84c; --ouro-cl:#fdf6e3; --ouro-br:#e8c96a;
+    --creme:#f9f6f0; --texto:#1e1a14; --suave:#6b5f4e; --branco:#fefefc;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--creme); font-family:'Crimson Pro',Georgia,serif; color:var(--texto); }
+  .nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(14,21,32,0.96); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.1); height:56px; padding:0 32px; display:flex; align-items:center; justify-content:space-between; }
+  .nav-logo { font-family:'Cinzel',serif; font-size:12px; letter-spacing:3px; color:var(--ouro); opacity:0.8; text-decoration:none; text-transform:uppercase; cursor:pointer; }
+  .nav-voltar { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:rgba(240,236,224,0.5); text-transform:uppercase; text-decoration:none; transition:color 0.2s; cursor:pointer; }
+  .nav-voltar:hover { color:var(--ouro); }
+  
+  .header { background:linear-gradient(160deg, #0a1a10 0%, #1a3a20 50%, #2a5a30 100%); padding:80px 32px 64px; text-align:center; position:relative; overflow:hidden; margin-top:56px; }
+  .header::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:32px 32px; pointer-events:none; }
+  .header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--creme), transparent); pointer-events:none; }
+  .header-glow { position:absolute; width:500px; height:280px; background:radial-gradient(ellipse, rgba(42,110,72,0.25) 0%, transparent 65%); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; }
+  .header-conteudo { position:relative; z-index:2; }
+  .header-serie { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(255,255,255,0.45); text-transform:uppercase; margin-bottom:16px; }
+  .header-titulo { font-family:'Cormorant',serif; font-size:clamp(2rem,6vw,3.6rem); font-style:italic; font-weight:300; color:#f0ece0; line-height:1.2; margin-bottom:10px; }
+  .header-subtitulo { font-size:17px; font-style:italic; color:rgba(240,236,224,0.5); line-height:1.7; }
+  
+  .container { max-width:960px; margin:0 auto; padding:56px 32px 100px; animation:subir 0.5s ease both; }
+  
+  .secao-topo { display:flex; align-items:center; gap:12px; margin-bottom:36px; padding-bottom:12px; border-bottom:1px solid rgba(42,110,72,0.15); }
+  .secao-icone { font-size:17px; flex-shrink:0; }
+  .secao-label { font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; color:var(--noite-med); text-transform:uppercase; font-weight:600; }
+  .secao-fio { flex:1; height:1px; background:linear-gradient(to right, var(--verde-med), transparent); opacity:0.2; }
+  
+  .livros-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:28px; margin-bottom:64px; }
+  
+  .livro-card { background:var(--branco); border-radius:8px; border:1px solid rgba(42,110,72,0.1); border-top:4px solid var(--verde-med); padding:32px; transition:transform 0.2s, box-shadow 0.2s; }
+  .livro-card:hover { transform:translateY(-4px); box-shadow:0 10px 30px rgba(14,21,32,0.12); }
+  
+  .livro-badge { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:var(--noite); background:var(--ouro); padding:4px 12px; display:inline-block; margin-bottom:12px; text-transform:uppercase; border-radius:1px; }
+  .livro-nome { font-family:'Cormorant',serif; font-size:28px; font-style:italic; font-weight:300; color:var(--noite-med); margin-bottom:10px; }
+  .livro-desc { font-size:15px; font-style:italic; color:var(--suave); line-height:1.7; margin-bottom:24px; }
+  
+  .capitulos-list { display:flex; flex-direction:column; gap:10px; }
+  .cap-link { text-decoration:none; display:flex; align-items:center; gap:12px; padding:12px 16px; background:var(--verde-cl); border-radius:4px; border-left:3px solid var(--verde-med); transition:all 0.2s; color:var(--noite); }
+  .cap-link:hover { background:var(--verde-med); color:var(--branco); border-left-color:var(--ouro); }
+  .cap-link-num { font-family:'Cinzel',serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; font-weight:600; min-width:80px; }
+  .cap-link-titulo { font-family:'Cormorant',serif; font-size:16px; font-style:italic; }
+  
+  .rodape { text-align:center; padding:48px 0 20px; border-top:1px solid rgba(42,110,72,0.12); margin-top:20px; }
+  .rodape-orn { font-size:13px; color:var(--verde-med); letter-spacing:14px; margin-bottom:14px; opacity:0.45; }
+  .rodape p { font-family:'Cormorant',serif; font-size:17px; font-style:italic; color:var(--suave); }
+  
+  @keyframes subir { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+  @media(max-width:768px) { .container { padding:40px 20px 80px; } .header { padding:60px 20px 48px; } .livros-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo">Diário Litúrgico</a>
+  <a href="../index.html" class="nav-voltar">↑ VOLTAR</a>
+</nav>
+
+<header class="header">
+  <div class="header-glow"></div>
+  <div class="header-conteudo">
+    <div class="header-serie">Reflexões Escriturísticas</div>
+    <h1 class="header-titulo">Estudos de Escritura</h1>
+    <p class="header-subtitulo">Exploração teológica e meditação profunda de livros bíblicos</p>
+  </div>
+</header>
+
+<div class="container">
+
+<div class="secao-topo">
+  <span class="secao-icone">📚</span>
+  <h2 class="secao-label">Livros Disponíveis</h2>
+  <div class="secao-fio"></div>
+</div>
+
+<div class="livros-grid">
+
+  <!-- 1 REIS - VERDE -->
+  <div class="livro-card" style="border-top-color: #2a6e48;">
+    <span class="livro-badge" style="background:#2a6e48; color:white;">Antigo Testamento</span>
+    <h3 class="livro-nome" style="color: #1e4a30;">1 Reis</h3>
+    <p class="livro-desc">A história da monarquia unida sob Salomão e sua divisão sob Roboão, incluindo a soberania divina e o juízo sobre a rebeldia.</p>
+    <div class="capitulos-list">
+      <a href="1reis/cap1.html" class="cap-link" style="background: #e8f4ee; border-left-color: #2a6e48; color: #1e4a30;">
+        <span class="cap-link-num" style="color: #2a6e48;">Cap. 1</span>
+        <span class="cap-link-titulo">O Início Conturbado do Reinado de Salomão</span>
+      </a>
+      <a href="1reis/cap2.html" class="cap-link" style="background: #e8f4ee; border-left-color: #2a6e48; color: #1e4a30;">
+        <span class="cap-link-num" style="color: #2a6e48;">Cap. 2</span>
+        <span class="cap-link-titulo">A Consolidação do Reino</span>
+      </a>
+      <a href="1reis/cap3.html" class="cap-link" style="background: #e8f4ee; border-left-color: #2a6e48; color: #1e4a30;">
+        <span class="cap-link-num" style="color: #2a6e48;">Cap. 3</span>
+        <span class="cap-link-titulo">Sabedoria e Riqueza</span>
+      </a>
+      <a href="1reis/cap4.html" class="cap-link" style="background: #e8f4ee; border-left-color: #2a6e48; color: #1e4a30;">
+        <span class="cap-link-num" style="color: #2a6e48;">Cap. 4</span>
+        <span class="cap-link-titulo">Os Magistrados e a Provisão</span>
+      </a>
+      <a href="1reis/cap5.html" class="cap-link" style="background: #e8f4ee; border-left-color: #2a6e48; color: #1e4a30;">
+        <span class="cap-link-num" style="color: #2a6e48;">Cap. 5</span>
+        <span class="cap-link-titulo">Preparativos para o Templo</span>
+      </a>
+      <a href="1reis/cap6.html" class="cap-link" style="background: #e8f4ee; border-left-color: #2a6e48; color: #1e4a30;">
+        <span class="cap-link-num" style="color: #2a6e48;">Cap. 6</span>
+        <span class="cap-link-titulo">Construção do Templo</span>
+      </a>
+      <a href="1reis/cap7.html" class="cap-link" style="background: #e8f4ee; border-left-color: #2a6e48; color: #1e4a30;">
+        <span class="cap-link-num" style="color: #2a6e48;">Cap. 7</span>
+        <span class="cap-link-titulo">Palácio e Mobiliário do Templo</span>
+      </a>
+      <a href="1reis/cap8.html" class="cap-link" style="background: #e8f4ee; border-left-color: #2a6e48; color: #1e4a30;">
+        <span class="cap-link-num" style="color: #2a6e48;">Cap. 8</span>
+        <span class="cap-link-titulo">Dedicação do Templo</span>
+      </a>
+      <a href="1reis/cap9.html" class="cap-link" style="background: #e8f4ee; border-left-color: #2a6e48; color: #1e4a30;">
+        <span class="cap-link-num" style="color: #2a6e48;">Cap. 9</span>
+        <span class="cap-link-titulo">Promessa Divina a Salomão</span>
+      </a>
+      <a href="1reis/cap10.html" class="cap-link" style="background: #e8f4ee; border-left-color: #2a6e48; color: #1e4a30;">
+        <span class="cap-link-num" style="color: #2a6e48;">Cap. 10</span>
+        <span class="cap-link-titulo">A Rainha de Sabá</span>
+      </a>
+      <a href="1reis/cap11.html" class="cap-link" style="background: #e8f4ee; border-left-color: #2a6e48; color: #1e4a30;">
+        <span class="cap-link-num" style="color: #2a6e48;">Cap. 11</span>
+        <span class="cap-link-titulo">Queda de Salomão</span>
+      </a>
+      <a href="1reis/cap12.html" class="cap-link" style="background: #e8f4ee; border-left-color: #2a6e48; color: #1e4a30;">
+        <span class="cap-link-num" style="color: #2a6e48;">Cap. 12</span>
+        <span class="cap-link-titulo">Cisma do Reino</span>
+      </a>
+      <a href="1reis/cap13.html" class="cap-link" style="background: #e8f4ee; border-left-color: #2a6e48; color: #1e4a30;">
+        <span class="cap-link-num" style="color: #2a6e48;">Cap. 13</span>
+        <span class="cap-link-titulo">Profeta de Judá em Betel</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 1 SAMUEL - AURORA -->
+  <div class="livro-card" style="border-top-color: #c45c2a;">
+    <span class="livro-badge" style="background:#c45c2a; color:white;">Antigo Testamento</span>
+    <h3 class="livro-nome" style="color: #c45c2a;">1 Samuel</h3>
+    <p class="livro-desc">A transição de Israel do período dos juízes para a monarquia, através das narrativas de Samuel, Saul e o jovem Davi.</p>
+    <div class="capitulos-list">
+      <a href="1samuel/cap1.html" class="cap-link" style="background: #fdf0e8; border-left-color: #c45c2a; color: #5a2820;">
+        <span class="cap-link-num" style="color: #c45c2a;">Cap. 1</span>
+        <span class="cap-link-titulo">A Oração que Muda Destinos</span>
+      </a>
+      <a href="1samuel/cap2.html" class="cap-link" style="background: #fdf0e8; border-left-color: #c45c2a; color: #5a2820;">
+        <span class="cap-link-num" style="color: #c45c2a;">Cap. 2</span>
+        <span class="cap-link-titulo">O Cântico de Ana e a Casa de Eli</span>
+      </a>
+      <a href="1samuel/cap3.html" class="cap-link" style="background: #fdf0e8; border-left-color: #c45c2a; color: #5a2820;">
+        <span class="cap-link-num" style="color: #c45c2a;">Cap. 3</span>
+        <span class="cap-link-titulo">Fala, Senhor, Que Teu Servo Ouve</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="rodape">
+  <div class="rodape-orn">✦ ✦ ✦</div>
+  <p>Estudos de Escritura — Série de reflexões por Luis Thiago</p>
+</div>
+
+</div>
+
+<script>
+document.querySelector('.nav-logo').addEventListener('click', function(e) {
+  e.preventDefault();
+  window.location.href = '../index.html';
+});
+</script>
+
+</body>
+</html>
