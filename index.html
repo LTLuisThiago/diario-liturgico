@@ -102,7 +102,7 @@
   .destaque-badge { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:var(--noite); background:var(--ouro); padding:5px 14px; display:inline-block; margin-bottom:14px; text-transform:uppercase; border-radius:1px; position:relative; }
   .destaque-tempo { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:rgba(253,248,240,0.5); text-transform:uppercase; margin-bottom:10px; position:relative; }
   .destaque-titulo { font-family:'Cormorant',serif; font-size:clamp(1.6rem,4vw,2.6rem); font-style:italic; font-weight:300; color:#fdf8f0; line-height:1.25; margin-bottom:10px; position:relative; }
-  .destaque-data { font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:rgba(253,248,240,0.4); text-transform:uppercase; position:relative; }
+  .destaque-data { font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--noite); background:var(--ouro); padding:4px 14px; border-radius:2px; display:inline-block; text-transform:uppercase; position:relative; margin-top:8px; }
   .destaque-icone { font-size:56px; color:rgba(255,255,255,0.08); font-family:'Cormorant',serif; position:relative; line-height:1; }
   .destaque-corpo { padding:40px 52px; }
   @media(max-width:600px){ .destaque-corpo{padding:28px 24px;} }
@@ -120,7 +120,7 @@
   .diario-card { background:var(--branco); border-radius:4px; border:1px solid rgba(201,168,76,0.1); border-top:3px solid var(--ouro); padding:24px 22px; cursor:pointer; transition:transform 0.2s, box-shadow 0.2s; }
   .diario-card:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(14,21,32,0.1); }
   .card-tempo { font-family:'Cinzel',serif; font-size:9px; letter-spacing:2px; color:var(--ouro); text-transform:uppercase; margin-bottom:8px; opacity:0.75; }
-  .card-data { font-family:'Cinzel',serif; font-size:10px; letter-spacing:1px; color:var(--texto-suave); margin-bottom:10px; opacity:0.6; }
+  .card-data { font-family:'Cinzel',serif; font-size:10px; letter-spacing:1px; color:var(--noite); background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); padding:3px 10px; border-radius:2px; display:inline-block; margin-bottom:10px; }
   .card-titulo { font-family:'Cormorant',serif; font-size:20px; font-style:italic; font-weight:600; color:var(--noite); line-height:1.3; margin-bottom:10px; }
   .card-versiculo { font-size:13px; font-style:italic; color:var(--texto-suave); line-height:1.6; margin-bottom:16px; padding-left:10px; border-left:2px solid rgba(201,168,76,0.35); }
   .card-tags { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:16px; }
@@ -130,6 +130,25 @@
   .card-ler::after { content:'→'; }
 
   /* SOBRE */
+  /* ══ REVELAÇÃO PROGRESSIVA ══ */
+  .revelacao-secao { background:linear-gradient(170deg, var(--noite) 0%, #0a1428 60%, #1a0a28 100%); padding:80px 32px; }
+  .revelacao-inner { max-width:960px; margin:0 auto; }
+  .revelacao-intro { font-size:17px; font-style:italic; color:rgba(240,236,224,0.5); line-height:1.85; text-align:center; max-width:660px; margin:0 auto 52px; }
+  .revelacao-linha { display:flex; flex-direction:column; gap:0; position:relative; }
+  .revelacao-linha::before { content:''; position:absolute; left:28px; top:0; bottom:0; width:1px; background:linear-gradient(to bottom, transparent, var(--ouro), var(--aurora), var(--ouro), transparent); opacity:0.2; }
+  .rev-item { display:grid; grid-template-columns:56px 1fr; gap:20px; align-items:start; padding:24px 0; border-bottom:1px solid rgba(201,168,76,0.06); }
+  .rev-item:last-child { border-bottom:none; }
+  .rev-dot { width:56px; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:4px; position:relative; z-index:1; }
+  .rev-circulo { width:14px; height:14px; border-radius:50%; background:var(--ouro); opacity:0.7; flex-shrink:0; }
+  .rev-livro { font-family:'Cinzel',serif; font-size:8px; letter-spacing:1px; color:var(--ouro); opacity:0.5; text-align:center; text-transform:uppercase; }
+  .rev-conteudo { padding-bottom:4px; }
+  .rev-ref { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:var(--ouro); text-transform:uppercase; margin-bottom:8px; opacity:0.7; }
+  .rev-titulo { font-family:'Cormorant',serif; font-size:20px; font-style:italic; font-weight:600; color:#f0ece0; margin-bottom:8px; line-height:1.3; }
+  .rev-texto { font-size:15px; line-height:1.85; color:rgba(240,236,224,0.55); margin-bottom:8px; }
+  .rev-verso { font-family:'Cormorant',serif; font-size:16px; font-style:italic; color:var(--ouro-claro); background:rgba(201,168,76,0.07); border-left:3px solid var(--ouro); padding:10px 18px; border-radius:0 4px 4px 0; margin-bottom:6px; opacity:0.85; }
+  .rev-cumprimento { font-size:13px; font-style:italic; color:var(--aurora-suave); opacity:0.7; }
+  @media(max-width:600px){ .revelacao-secao{padding:60px 20px;} .rev-item{grid-template-columns:40px 1fr; gap:14px;} }
+
   .sobre { background:var(--noite); padding:80px 32px; text-align:center; }
   .sobre-inner { max-width:600px; margin:0 auto; }
   .sobre-rotulo { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:var(--ouro); text-transform:uppercase; margin-bottom:18px; opacity:0.6; }
@@ -309,34 +328,35 @@
   </section>
 
   <div class="versiculo-fixo">
-    <p>"Quando tiverdes levantado o Filho do Homem, então sabereis que Eu Sou."</p>
-    <div class="ref">João 8,28</div>
+    <p>"Eis aqui a serva do Senhor — faça-se em mim segundo a tua palavra."</p>
+    <div class="ref">Lucas 1,38</div>
   </div>
 
   <section class="diarios-secao" id="diarios" role="region" aria-labelledby="diarios-titulo-id">
     <div class="secao-topo">
-      <div class="secao-rotulo">✦ 5.ª Semana da Quaresma ✦</div>
+      <div class="secao-rotulo">✦ 5.ª Semana da Quaresma — Anunciação ✦</div>
       <h2 class="secao-titulo" id="diarios-titulo-id">Reflexão em Destaque</h2>
       <div class="secao-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
     </div>
 
-    <!-- HOJE — Terça 5.ª Semana -->
-    <article class="destaque-hoje" onclick="abrirDiario('d_24mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Terça-feira da 5.ª Semana — 24 de março de 2026">
+    <!-- HOJE — Quarta 5.ª Semana — Anunciação -->
+    <article class="destaque-hoje" onclick="abrirDiario('d_25mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Solenidade da Anunciação — 25 de março de 2026">
       <div class="destaque-topo">
         <div>
-          <div class="destaque-badge">✦ Reflexão de Hoje</div>
-          <div class="destaque-tempo">Terça-feira — 5.ª Semana da Quaresma</div>
-          <div class="destaque-titulo">"Quando tiverdes levantado o Filho do Homem"</div>
-          <div class="destaque-data">24 de março de 2026</div>
+          <div class="destaque-badge">✦ Solenidade da Anunciação</div>
+          <div class="destaque-tempo">Quarta-feira — 5.ª Semana da Quaresma</div>
+          <div class="destaque-titulo">"Eis aqui a serva do Senhor — faça-se em mim segundo a tua palavra"</div>
+          <div class="destaque-data">25 de março de 2026</div>
         </div>
         <div class="destaque-icone">✦</div>
       </div>
       <div class="destaque-corpo">
-        <div class="destaque-versiculo">"Quando tiverdes levantado o Filho do Homem, então sabereis que Eu Sou." — Jo 8,28</div>
+        <div class="destaque-versiculo">"Eis aqui a serva do Senhor — faça-se em mim segundo a tua palavra." — Lc 1,38</div>
         <div class="destaque-leituras">
-          <span class="destaque-tag">Números 21,4-9</span>
-          <span class="destaque-tag">Salmo 101 (102)</span>
-          <span class="destaque-tag">João 8,21-30</span>
+          <span class="destaque-tag">Isaías 7,10-14</span>
+          <span class="destaque-tag">Salmo 39 (40)</span>
+          <span class="destaque-tag">Hebreus 10,4-10</span>
+          <span class="destaque-tag">Lucas 1,26-38</span>
         </div>
         <div class="destaque-ler">Ler a reflexão completa</div>
       </div>
@@ -346,11 +366,19 @@
     <div class="grid-secao">
       <div class="grid-rotulo">✦ Dias Anteriores — 5.ª Semana</div>
       <div class="diarios-grid">
+        <article class="diario-card" onclick="abrirDiario('d_24mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Terça-feira da 5.ª Semana — 24 de março de 2026">
+          <div class="card-tempo">Terça-feira — 5.ª Semana</div>
+          <div class="card-data">24 de março de 2026</div>
+          <div class="card-titulo">"Quando tiverdes levantado o Filho do Homem"</div>
+          <div class="card-versiculo">"Então sabereis que Eu Sou." — Jo 8,28</div>
+          <div class="card-tags"><span class="card-tag">Números 21</span><span class="card-tag">Salmo 101</span><span class="card-tag">João 8</span></div>
+          <div class="card-ler">Ler reflexão</div>
+        </article>
         <article class="diario-card" onclick="abrirDiario('d_23mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Segunda-feira da 5.ª Semana — 23 de março de 2026">
           <div class="card-tempo">Segunda-feira — 5.ª Semana</div>
           <div class="card-data">23 de março de 2026</div>
           <div class="card-titulo">"Nem eu te condeno — vai"</div>
-          <div class="card-versiculo">"Nem eu te condeno — vai e não tornes a pecar." — Jo 8,11</div>
+          <div class="card-versiculo">"Vai e não tornes a pecar." — Jo 8,11</div>
           <div class="card-tags"><span class="card-tag">Daniel 13</span><span class="card-tag">Salmo 22</span><span class="card-tag">João 8</span></div>
           <div class="card-ler">Ler reflexão</div>
         </article>
@@ -360,29 +388,6 @@
           <div class="card-titulo">"Lázaro, vem para fora"</div>
           <div class="card-versiculo">"Eu sou a ressurreição e a vida." — Jo 11,25</div>
           <div class="card-tags"><span class="card-tag">Ezequiel 37</span><span class="card-tag">Salmo 129</span><span class="card-tag">Romanos 8</span><span class="card-tag">João 11</span></div>
-          <div class="card-ler">Ler reflexão</div>
-        </article>
-      </div>
-    </div>
-
-    <!-- ARQUIVO — 4.ª SEMANA -->
-    <div class="grid-secao" style="margin-top:52px;">
-      <div class="grid-rotulo">✦ 4.ª Semana da Quaresma — Arquivo</div>
-      <div class="diarios-grid">
-        <article class="diario-card" onclick="abrirDiario('d_21mar')" role="button" tabindex="0" aria-label="Abrir reflexão do Sábado da 4.ª Semana — 21 de março de 2026">
-          <div class="card-tempo">Sábado — 4.ª Semana</div>
-          <div class="card-data">21 de março de 2026</div>
-          <div class="card-titulo">"A árvore que o mal quer arrancar — e Deus replanta"</div>
-          <div class="card-versiculo">"A Ti confiei a minha causa." — Jr 11,20</div>
-          <div class="card-tags"><span class="card-tag">Jeremias 11</span><span class="card-tag">Salmo 7</span><span class="card-tag">João 7</span></div>
-          <div class="card-ler">Ler reflexão</div>
-        </article>
-        <article class="diario-card" onclick="abrirDiario('d_20mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Sexta-feira da 4.ª Semana — 20 de março de 2026">
-          <div class="card-tempo">Sexta-feira — 4.ª Semana</div>
-          <div class="card-data">20 de março de 2026</div>
-          <div class="card-titulo">"Cerquemos o Justo — e o Justo cantou"</div>
-          <div class="card-versiculo">"Procurei ao Senhor e ele me atendeu." — Sl 34,5</div>
-          <div class="card-tags"><span class="card-tag">Sabedoria 2</span><span class="card-tag">Salmo 34</span><span class="card-tag">João 7</span></div>
           <div class="card-ler">Ler reflexão</div>
         </article>
       </div>
@@ -648,6 +653,121 @@
     </div>
   </section>
 
+  <!-- REVELAÇÃO PROGRESSIVA DE CRISTO -->
+  <section class="revelacao-secao" id="revelacao" role="region" aria-labelledby="revelacao-titulo-id">
+    <div class="revelacao-inner">
+      <div class="secao-topo">
+        <div class="secao-rotulo">✦ A Maravilha da Palavra ✦</div>
+        <h2 class="secao-titulo" id="revelacao-titulo-id" style="color:#f0ece0;">A Revelação Progressiva do Nascimento de Cristo</h2>
+        <div class="secao-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+      </div>
+      <p class="revelacao-intro">Quem busca com atenção vai enxergando — a Escritura inteira aponta para Cristo. Não de uma vez, mas em camadas, progressivamente, de geração em geração. Aqui o fio que atravessa toda a história sagrada.</p>
+
+      <div class="revelacao-linha">
+
+        <div class="rev-item">
+          <div class="rev-dot"><div class="rev-circulo"></div><div class="rev-livro">Gênesis</div></div>
+          <div class="rev-conteudo">
+            <div class="rev-ref">Gênesis 3,15 — O Proto-Evangelho</div>
+            <div class="rev-titulo">A semente da mulher</div>
+            <div class="rev-texto">Imediatamente após a queda, antes de qualquer outra promessa, Deus anuncia a vitória sobre a serpente. A descendência da mulher esmagará a cabeça da serpente — a primeira profecia messiânica da história.</div>
+            <div class="rev-verso">"Porei inimizade entre ti e a mulher, entre a tua descendência e a dela — ela te esmagará a cabeça."</div>
+            <div class="rev-cumprimento">→ Cumprido em Cristo, semente de Maria, que vence o mal pela Cruz e ressurreição</div>
+          </div>
+        </div>
+
+        <div class="rev-item">
+          <div class="rev-dot"><div class="rev-circulo"></div><div class="rev-livro">Gênesis</div></div>
+          <div class="rev-conteudo">
+            <div class="rev-ref">Gênesis 12 e 22 — Abraão</div>
+            <div class="rev-titulo">Pai de grandes nações — e a ressurreição prefigurada</div>
+            <div class="rev-texto">A Abraão foi prometido que em sua descendência seriam benditas todas as nações. E quando aceitou sacrificar Isaque, sua fé era tão enraizada que tinha certeza que Deus o ressuscitaria — a certeza da ressurreição que muitos não tiveram diante de Cristo, mas que Abraão já vivia pela fé.</div>
+            <div class="rev-verso">"Nele serão benditas todas as nações da terra, porque obedeceste à minha voz."</div>
+            <div class="rev-cumprimento">→ Cumprido em Cristo, descendência de Abraão, em quem todas as nações são abençoadas (Gl 3,16)</div>
+          </div>
+        </div>
+
+        <div class="rev-item">
+          <div class="rev-dot"><div class="rev-circulo"></div><div class="rev-livro">2 Samuel</div></div>
+          <div class="rev-conteudo">
+            <div class="rev-ref">2 Samuel 7,12-16 — A Davi</div>
+            <div class="rev-titulo">O trono eterno da descendência de Davi</div>
+            <div class="rev-texto">A Davi foi prometido que sua descendência se sentaria no trono de Israel para sempre — não um reino político passageiro, mas um trono eterno. O anjo Gabriel citará esta promessa a Maria ao anunciar Jesus.</div>
+            <div class="rev-verso">"Estabelecerei para sempre o trono do seu reino — eu serei pai para ele e ele será filho para mim."</div>
+            <div class="rev-cumprimento">→ Cumprido em Cristo, filho de Davi por José (Mt 1), rei eterno cujo reino não terá fim (Lc 1,33)</div>
+          </div>
+        </div>
+
+        <div class="rev-item">
+          <div class="rev-dot"><div class="rev-circulo"></div><div class="rev-livro">Isaías</div></div>
+          <div class="rev-conteudo">
+            <div class="rev-ref">Isaías 7,14 — A Acaz</div>
+            <div class="rev-titulo">A virgem que conceberá — Emmanuel</div>
+            <div class="rev-texto">O sinal dado mesmo sem ser pedido — a Deus que oferece o sinal a quem recusou receber. Uma virgem conceberá e dará à luz um filho cujo nome será Emmanuel — Deus conosco. O sinal dado a toda a casa de Davi e a toda a humanidade.</div>
+            <div class="rev-verso">"Eis que a virgem conceberá e dará à luz um filho e chamará o seu nome Emmanuel."</div>
+            <div class="rev-cumprimento">→ Cumprido em Maria de Nazaré — citado por Mateus 1,23 ao narrar o nascimento de Jesus</div>
+          </div>
+        </div>
+
+        <div class="rev-item">
+          <div class="rev-dot"><div class="rev-circulo"></div><div class="rev-livro">Isaías</div></div>
+          <div class="rev-conteudo">
+            <div class="rev-ref">Isaías 9,5-6 — Os títulos do Prometido</div>
+            <div class="rev-titulo">Admirável Conselheiro, Príncipe da Paz</div>
+            <div class="rev-texto">A profecia nomeia os títulos do filho que nascerá — títulos que confirmam a sua natureza divina e o seu reinado eterno. Não um rei humano — o Filho dado, o Menino nascido que carrega sobre os ombros o governo do mundo.</div>
+            <div class="rev-verso">"Um menino nos nasceu, um filho nos foi dado — e o seu nome será: Admirável Conselheiro, Deus Forte, Pai Eterno, Príncipe da Paz."</div>
+            <div class="rev-cumprimento">→ Cumprido em Jesus — cada título revelando uma dimensão da sua identidade divina</div>
+          </div>
+        </div>
+
+        <div class="rev-item">
+          <div class="rev-dot"><div class="rev-circulo"></div><div class="rev-livro">Miquéias</div></div>
+          <div class="rev-conteudo">
+            <div class="rev-ref">Miquéias 5,1 — O lugar do nascimento</div>
+            <div class="rev-titulo">De Belém sairá o governante de Israel</div>
+            <div class="rev-texto">A profecia nomeia não apenas o que viria — mas de onde viria. Belém, pequena entre as cidades de Judá, seria o lugar do nascimento. Os escribas de Herodes conheciam esta profecia de cor — e foi ela que guiou os magos.</div>
+            <div class="rev-verso">"E tu, Belém Efrata, embora pequena entre os clãs de Judá, de ti sairá aquele que há de governar Israel."</div>
+            <div class="rev-cumprimento">→ Cumprido no nascimento de Jesus em Belém — o censo de Augusto, decreto romano, foi o instrumento da providência</div>
+          </div>
+        </div>
+
+        <div class="rev-item">
+          <div class="rev-dot"><div class="rev-circulo"></div><div class="rev-livro">Isaías</div></div>
+          <div class="rev-conteudo">
+            <div class="rev-ref">Isaías 53 — O Servo Sofredor</div>
+            <div class="rev-titulo">Desprezado e rejeitado — homem de dores</div>
+            <div class="rev-texto">A prefiguração mais completa da Paixão no Antigo Testamento. O Servo que carrega as iniquidades de todos, que é levado como cordeiro ao matadouro, que não abre a boca — e cuja ferida nos cura.</div>
+            <div class="rev-verso">"Ele foi traspassado pelas nossas transgressões — o castigo que nos traz a paz estava sobre ele, e pelas suas chagas fomos curados."</div>
+            <div class="rev-cumprimento">→ Cumprido na Paixão de Cristo — citado em Mateus, Marcos, Lucas, João e nos Atos dos Apóstolos</div>
+          </div>
+        </div>
+
+        <div class="rev-item">
+          <div class="rev-dot"><div class="rev-circulo"></div><div class="rev-livro">Salmo 39</div></div>
+          <div class="rev-conteudo">
+            <div class="rev-ref">Salmo 39 (40) — No rolo do livro</div>
+            <div class="rev-titulo">Eis que venho para fazer a tua vontade</div>
+            <div class="rev-texto">O salmista descobre que está escrito no rolo do livro — e Hebreus 10 aplica esse versículo à boca de Cristo ao entrar no mundo. É o Filho dizendo ao Pai: sacrifícios não quiseste, mas um corpo me preparaste — eis que venho.</div>
+            <div class="rev-verso">"Sacrifício e oblação não quiseste — então disse: eis que venho para fazer a tua vontade, ó Deus."</div>
+            <div class="rev-cumprimento">→ Citado em Hebreus 10,5-7 como palavra de Cristo ao entrar no mundo — o sacrifício definitivo</div>
+          </div>
+        </div>
+
+        <div class="rev-item">
+          <div class="rev-dot"><div class="rev-circulo" style="background:var(--aurora);opacity:1;width:18px;height:18px;"></div><div class="rev-livro">Lucas</div></div>
+          <div class="rev-conteudo">
+            <div class="rev-ref">Lucas 1,26-38 — O Cumprimento</div>
+            <div class="rev-titulo">Ave Maria, cheia de graça — faça-se em mim segundo a tua palavra</div>
+            <div class="rev-texto">Toda a história anterior convergiu para este momento. O anjo Gabriel enviado a uma jovem simples de Nazaré. O sinal que Acaz recusou pedindo — dado a Maria que não pediu. A profecia de Isaías cumprida. A promessa a Davi cumprida. O fio que percorre toda a Escritura chegando ao seu nó central.</div>
+            <div class="rev-verso">"Eis aqui a serva do Senhor — faça-se em mim segundo a tua palavra."</div>
+            <div class="rev-cumprimento">→ O sim de Maria que encerra séculos de espera e abre a era da redenção</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <section class="sobre" role="region" aria-label="Sobre o Diário Litúrgico">
     <div class="sobre-inner">
       <div class="sobre-rotulo">✦ Sobre ✦</div>
@@ -708,8 +828,174 @@ function abrirDiario(id) {
 const diarios = {
 
 /* ═══════════════════════════════════════════════════
-   TERÇA-FEIRA — 5.ª SEMANA — 24 DE MARÇO DE 2026
+   ANUNCIAÇÃO DO SENHOR — 25 DE MARÇO DE 2026
    ═══════════════════════════════════════════════════ */
+'d_25mar': `
+<div class="d-header">
+  <div class="d-header-grade"></div><div class="d-header-glow"></div>
+  <div class="d-header-conteudo">
+    <div class="d-header-emblema">✦ ✝ ✦</div>
+    <div class="d-header-tempo">Solenidade da Anunciação do Senhor</div>
+    <h1 class="d-header-titulo">Diário Litúrgico</h1>
+    <p class="d-header-subtitulo">Eis aqui a serva do Senhor — faça-se em mim segundo a tua palavra</p>
+    <div class="d-header-data">Quarta-feira, 25 de março de 2026</div>
+    <div class="d-header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">📖</span><h2 class="d-secao-label">A Palavra de Hoje</h2><div class="d-secao-fio"></div></div>
+  <div class="d-leituras">
+    <div class="d-leitura"><div class="d-leitura-tipo">Primeira Leitura</div><div class="d-leitura-ref">Isaías 7,10-14.8,10</div><div class="d-leitura-desc">O sinal oferecido a Acaz — uma virgem conceberá e chamará o seu nome Emmanuel</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Salmo Responsorial</div><div class="d-leitura-ref">Salmo 39 (40)</div><div class="d-leitura-desc">Esperei no Senhor com toda a confiança — no rolo do livro está escrito de mim</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Segunda Leitura</div><div class="d-leitura-ref">Hebreus 10,4-10</div><div class="d-leitura-desc">Impossível que sangue de touros tire pecados — eis que venho para fazer a tua vontade</div></div>
+    <div class="d-leitura evang"><div class="d-leitura-tipo">Evangelho</div><div class="d-leitura-ref">Lucas 1,26-38</div><div class="d-leitura-desc">Ave Maria, cheia de graça — faça-se em mim segundo a tua palavra</div></div>
+  </div>
+  <div class="d-versiculo">
+    <p>"Eis aqui a serva do Senhor — faça-se em mim segundo a tua palavra."</p>
+    <div class="ref">— Lucas 1,38</div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🙏</span><h2 class="d-secao-label">Meu Coração Responde</h2><div class="d-secao-fio"></div></div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Isaías 7,10-14 — O sinal dado a quem não pediu</div>
+    <p>Deus oferece a Acaz um sinal — generosamente, sem condições. E Acaz recusa. Não por humildade — a piedade que invoca é máscara da desconfiança. Acaz havia decidido buscar a aliança com a Assíria em vez de confiar em Deus. E Deus, mesmo sem o pedido, dá o sinal. Não para Acaz apenas — para toda a casa de Davi e para toda a humanidade. É a graça que transborda além da recusa humana.</p>
+    <div class="d-citacao"><em>Uma virgem conceberá e dará à luz um filho e chamará o seu nome Emmanuel.</em> E Emmanuel não é apenas nome próprio — é declaração de missão e programa teológico completo. Deus conosco. Não visita — habita. Não observa — entra. É o salto qualitativo que toda a história anterior prefigurava. E Jesus que não nascerá em berço de ouro, que se alimentará do necessário para viver bem — revela que a encarnação é real, não disfarce. O Filho de Deus percorre genuinamente o desenvolvimento humano de dentro.</div>
+    <p><em>Preparai um plano e ele malograr — dai uma ordem e não será executada — porque Deus está conosco.</em> É a lei da providência que percorre toda a Escritura. O plano de Acaz de se aliar com a Assíria malogrou. O plano do Sinédrio de eliminar Jesus malogrou. O plano dos que tramavam contra Susana malogrou. O que é tramado contra o plano de Deus encontra sempre o limite da soberania divina.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Salmo 39 (40) — A espera confiante e o livro que contém Cristo</div>
+    <p><em>Esperei no Senhor com toda a confiança.</em> O verbo hebraico — qavah — não é espera passiva. É espera tensionada, como uma corda esticada em direção ao alvo. É exatamente o oposto de Acaz — que recusou esperar e escolheu a solução humana imediata. E Deus respondeu à espera: <em>inclinou-se para mim, ouviu os meus brados.</em> O gesto de quem se abaixa para ouvir uma criança — Deus que não espera que o salmista chegue ao seu nível, mas desce ao nível de quem está caído.</p>
+    <div class="d-citacao-purpura"><em>Sacrifício e oblação não quiseste — então disse: eis que venho para fazer a tua vontade.</em> E Hebreus 10 cita esse versículo e o coloca na boca de Cristo ao entrar no mundo. É o Filho dizendo ao Pai — o corpo que me preparaste, aceito. A missão que me deste, cumpro. Os sacrifícios dos animais eram sombra. Eu sou a realidade. <em>No rolo do livro está escrito de mim</em> — toda a Escritura contém Cristo. De Gênesis a Malaquias, o fio aponta para o Evangelho.</div>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Hebreus 10,4-10 — O sacrifício definitivo que cumpre todas as sombras</div>
+    <p><em>É impossível que sangue de touros e de carneiros tire pecados.</em> O sistema sacrificial não era errado — era insuficiente. Era o dedo apontando para a lua. Era a pedagogia que deveria ensinar que o pecado tem peso — mas tornou-se para muitos mecanismo de quitação: peco, pago, recomeço sem transformação. A distorção que você identificou — o errado que se normaliza. E Cristo vem abolir a primeira economia para estabelecer a nova.</p>
+    <div class="d-citacao"><em>Ephapax</em> — uma vez por todas. Os sacrifícios do Templo precisavam ser repetidos a cada pecado, a cada Yom Kippur. O sacrifício de Cristo não precisa de repetição — porque não é símbolo do que deveria acontecer, mas o próprio acontecimento. A lei escrevia nos tablets de pedra. A nova aliança escreve no coração. É Ezequiel 37 de novo — o sopro não sobre, mas dentro. A santificação interior que os animais não podiam produzir.</div>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Lucas 1,26-38 — O fio que atravessa tudo chegando ao seu nó</div>
+    <p>O anjo Gabriel enviado a uma jovem simples de Nazaré. E começa com uma identidade, não com uma missão: <em>cheia de graça.</em> A graça não é consequência da missão — precede a missão. Maria foi preparada antes de saber que seria Mãe. E se perturbou — não com a aparição, mas com as palavras. A humildade que não consegue receber o elogio divino sem questionar. O coração simples que não entende por que foi escolhido.</p>
+    <div class="d-citacao">Maria pergunta — <em>como se fará isso?</em> É a pergunta da fé que quer entender o como para poder cooperar — não da incredulidade que pede prova antes de crer. É Acaz invertido. E o anjo oferece o sinal que Acaz recusou: Isabel tua parenta concebeu. Para Deus nada é impossível. E Maria recebe o programa completo — nome, missão, identidade. Porque a missão de Maria é completa: não apenas gestar, mas nomear, criar, acompanhar até a Cruz.</div>
+    <p>E então — a frase mais corajosa de toda a história humana. <em>Eis aqui a serva do Senhor — faça-se em mim segundo a tua palavra.</em> Maria não sabia tudo o que viria. Não sabia da fuga para o Egito, da espada que atravessaria a sua alma, da Cruz. Disse sim sem saber o tamanho do sim. É a fé mais pura — não a que calcula os custos antes de aceitar, mas a que confia no Deus que chama mais do que nos próprios limites. E nós, que pensamos mil vezes antes de dizer o sim a Cristo.</p>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">✝</span><h2 class="d-secao-label">Homilia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-homilia">
+    <div class="d-hom-topo">
+      <div class="d-hom-rotulo">✦ Solenidade da Anunciação ✦</div>
+      <div class="d-hom-titulo">"Eis aqui a serva do Senhor — faça-se em mim segundo a tua palavra"</div>
+    </div>
+    <div class="d-hom-corpo">
+      <p>Hoje, 25 de março — exatamente nove meses antes do Natal — a liturgia nos coloca diante do momento em que toda a história bíblica converge num único ponto. Um anjo. Uma jovem. Uma pergunta. Uma resposta. E o Verbo começa a habitar o ventre de Maria.</p>
+      <p>Isaías 7 abre com Acaz — o rei que tinha o sinal disponível e recusou. Não por humildade — por desconfiança disfarçada de piedade. Preferia a aliança com a Assíria à confiança em Deus. E Deus, mesmo sem o pedido, pronuncia o sinal que mudará a história: <em>uma virgem conceberá e dará à luz um filho e chamará o seu nome Emmanuel.</em> O sinal dado a quem recusou pedir — oferecido a toda a humanidade. É a graça que transborda além da recusa humana.</p>
+      <div class="d-hom-destaque">O Salmo 39 (40) é a resposta que Acaz não deu — e que Cristo dará. <em>Esperei no Senhor com toda a confiança.</em> E Hebreus revela que o versículo central do Salmo — <em>sacrifício e oblação não quiseste, mas um corpo me preparaste — eis que venho para fazer a tua vontade</em> — é a palavra de Cristo ao entrar no mundo. É o Filho aceitando o que Acaz recusou. É o sim que Acaz não disse — dito pelo próprio Filho de Deus ao Pai.</div>
+      <p>E Hebreus 10 revela por que esse sim era necessário. O sangue de touros e carneiros não podia tirar pecados — era sombra, não realidade. Era pedagogia que deveria produzir conversão mas tornou-se rotina burocrática. E Cristo vem não para reformar o sistema — para cumpri-lo e superá-lo. Uma vez por todas. <em>Ephapax.</em> O sacrifício que não precisa de repetição porque não é símbolo — é o próprio acontecimento.</p>
+      <div class="d-hom-destaque-purpura">E então Gabriel entra em Nazaré. E diz à jovem Maria não uma missão — uma identidade: <em>cheia de graça.</em> A graça precede a missão. Deus não escolhe os que estão prontos — prepara os que escolhe. Maria se perturbou com as palavras — a humildade que não consegue receber o elogio divino sem questionar. E perguntou — não como Zacarias que pediu prova, mas como quem quer entender o caminho para poder percorrê-lo. A pergunta da fé, não da incredulidade.</div>
+      <p>O anjo oferece o sinal que Acaz recusou: Isabel concebeu. Para Deus nada é impossível. E Maria recebe tudo — nome, missão, identidade. Porque a missão de Maria seria completa: não apenas gestar, mas nomear, criar, acompanhar. Até a Cruz onde a espada atravessaria a sua alma que Simeão anunciaria.</p>
+      <div class="d-hom-destaque">E então — a frase mais corajosa de toda a história humana. <em>Eis aqui a serva do Senhor — faça-se em mim segundo a tua palavra.</em> Maria não sabia o tamanho do sim que dizia. E disse assim mesmo. É a fé mais pura que existe — não a que calcula os custos antes de aceitar, mas a que confia no Deus que chama mais do que nos próprios limites. O cálice da vida humana imaculado — que gerará o cálice da vida eterna.</div>
+      <p>E nós, que pensamos mil vezes antes de dizer o sim a Cristo, o sim à Igreja, o sim à comunidade. Temos o que Maria não tinha — a história inteira do que Deus fez depois do sim dela. Sabemos o que veio. Sabemos a ressurreição. Sabemos que o Pai não abandona. E ainda assim adiamos o sim.</p>
+      <div class="d-hom-fecho">Toda a Escritura estava apontando para este momento.<br>De Gênesis a Malaquias — o fio progressivo,<br>a revelação camada a camada,<br>para quem busca com atenção.<br><br>E o fio chegou ao seu nó:<br>uma jovem simples de Nazaré<br>que disse sim sem saber o tamanho do sim.<br><br>Faça-se em mim segundo a tua palavra.<br>A frase mais corajosa da história.<br>E o convite que Deus nos faz — a cada um de nós — hoje.</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🌿</span><h2 class="d-secao-label">Para Levar no Dia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-oracao">
+    <div class="d-or-topo"><div class="d-or-rotulo">✦ Oração do Dia ✦</div></div>
+    <div class="d-or-corpo">
+      <p>Senhor e Deus,
+Tu que ofereceste o sinal a Acaz
+mesmo sem ele pedir —
+que pronunciaste Emmanuel
+para toda a humanidade
+antes que a humanidade soubesse pedir —
+
+obrigado por não esperares
+que estejamos prontos.
+Obrigado por preparares antes de chamar.
+Obrigado por enviares o Filho
+quando a plenitude dos tempos chegou —
+não quando merecemos.
+
+Que sejamos como Maria —
+perturbados pelas tuas palavras
+antes de sermos movidos pela tua missão.
+Que a graça preceda a tarefa.
+Que a identidade preceda o serviço.
+
+Quando perguntarmos como —
+que seja a pergunta da fé que quer caminhar,
+não da incredulidade que exige prova.
+
+E quando o anjo trouxer o impossível —
+que respondamos com a frase
+mais corajosa da história:
+
+Eis aqui a serva.
+Eis aqui o servo.
+Faça-se em mim segundo a tua palavra.
+
+Não porque sabemos o tamanho do sim.
+Mas porque conhecemos
+o tamanho de quem pede.</p>
+      <div class="d-or-amen">AMÉM</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🧵</span><h2 class="d-secao-label">Fio da Semana</h2><div class="d-secao-fio"></div></div>
+  <div class="d-palavra"><div class="d-palavra-inner">Deus Socorreu</div></div>
+  <div class="d-fio-arco">
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Domingo — 22/03</div><div class="d-fio-dia-palavra">Ressurgir</div><div class="d-fio-dia-texto">Lázaro, vem para fora. A humanidade inteira chamada à vida.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Segunda — 23/03</div><div class="d-fio-dia-palavra">Perdoar</div><div class="d-fio-dia-texto">Nem eu te condeno — vai. O perdão que impulsiona.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Terça — 24/03</div><div class="d-fio-dia-palavra">Olhar</div><div class="d-fio-dia-texto">Todo aquele que olhar, viverá. A serpente levantada e o Filho levantado.</div></div>
+    <div class="d-fio-dia hoje"><div class="d-fio-dia-label">Hoje — Quarta 25/03</div><div class="d-fio-dia-palavra">Sim</div><div class="d-fio-dia-texto">Faça-se em mim segundo a tua palavra. O sim de Maria que encerra séculos de espera. O sim que cada um de nós é convidado a dizer.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Quinta — 26/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
+    <div class="d-fio-dia"><div class="d-fio-dia-label">Sexta — 27/03</div><div class="d-fio-dia-palavra">A revelar</div><div class="d-fio-dia-texto">A Palavra do dia continuará o caminho desta semana.</div></div>
+  </div>
+  <div class="d-fio-convergencia">
+    <p>Ressurgir, perdoar, olhar, dizer sim —<br>
+    <strong>quatro movimentos do mesmo amor.</strong><br>
+    A semana caminha para a Paixão<br>
+    com a certeza que o sim de Maria inaugurou:<br>
+    Deus está conosco.<br>
+    Emmanuel.</p>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🌱</span><h2 class="d-secao-label">Para Nossa Vida Hoje</h2><div class="d-secao-fio"></div></div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">Na oração</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Maria se perturbou com as palavras antes de receber a missão. Há uma palavra de Deus que te perturbou recentemente — que você ainda não conseguiu receber completamente? Sente-se com ela hoje. Deixa que perturbe antes de resolver.</p></div>
+  </div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">Na vida interior</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Acaz recusou o sinal que Deus oferecia porque havia escolhido outro caminho. Há algum sinal de Deus na sua vida que você está recusando — não por humildade, mas porque já escolheu o seu próprio plano? Nomeie.</p></div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>Maria disse sim sem saber o tamanho do sim. Há um sim que você tem adiado — à comunidade, à missão, ao perdão, à conversão? Hoje é o dia da Anunciação. Diga o sim.</p></div>
+  </div>
+  <div class="d-vida-grupo">
+    <div class="d-vida-titulo">Na família</div>
+    <div class="d-pratica"><div class="d-pratica-dot"></div><p>O Emmanuel — Deus conosco — começou numa família. José como protetor, Maria como Mãe, Jesus como filho que cresceu em sabedoria e graça. Que estrutura você está construindo na sua família para que Cristo possa crescer dentro dela?</p></div>
+  </div>
+</div>
+
+<div class="d-rodape">
+  <div class="orn">✦ ✦ ✦</div>
+  <p>"O Verbo se fez carne e habitou entre nós — e contemplámos a sua glória." — Jo 1,14</p>
+</div>
+`,
 'd_24mar': `
 <div class="d-header">
   <div class="d-header-grade"></div><div class="d-header-glow"></div>
