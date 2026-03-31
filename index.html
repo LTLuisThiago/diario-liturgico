@@ -334,28 +334,29 @@
 
   <section class="diarios-secao" id="diarios" role="region" aria-labelledby="diarios-titulo-id">
     <div class="secao-topo">
-      <div class="secao-rotulo">✦ 5.ª Semana da Quaresma — Encerramento ✦</div>
+      <div class="secao-rotulo">✦ Semana Santa — Início ✦</div>
       <h2 class="secao-titulo" id="diarios-titulo-id">Reflexão em Destaque</h2>
       <div class="secao-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
     </div>
 
-    <!-- HOJE — Sexta 5.ª Semana -->
-    <article class="destaque-hoje" onclick="abrirDiario('d_27mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Sexta-feira da 5.ª Semana — 27 de março de 2026">
+    <!-- HOJE — Domingo de Ramos -->
+    <article class="destaque-hoje" onclick="abrirDiario('d_29mar')" role="button" tabindex="0" aria-label="Abrir reflexão do Domingo de Ramos — 29 de março de 2026">
       <div class="destaque-topo">
         <div>
           <div class="destaque-badge">✦ Reflexão de Hoje</div>
-          <div class="destaque-tempo">Sexta-feira — 5.ª Semana da Quaresma</div>
-          <div class="destaque-titulo">"Por qual das boas obras me apedrejais?"</div>
-          <div class="destaque-data">27 de março de 2026</div>
+          <div class="destaque-tempo">Domingo de Ramos — Semana Santa</div>
+          <div class="destaque-titulo">"Deus meu, por que me abandonaste?"</div>
+          <div class="destaque-data">29 de março de 2026</div>
         </div>
-        <div class="destaque-icone">✦</div>
+        <div class="destaque-icone">✝</div>
       </div>
       <div class="destaque-corpo">
-        <div class="destaque-versiculo">"O Senhor está comigo como poderoso guerreiro — a Ti confiei a minha causa." — Jr 20,11.12</div>
+        <div class="destaque-versiculo">"Esvaziou-se a si mesmo, tomando a condição de servo — obediente até à morte, e morte de cruz." — Fl 2,7-8</div>
         <div class="destaque-leituras">
-          <span class="destaque-tag">Jeremias 20,10-13</span>
-          <span class="destaque-tag">Salmo 17 (18)</span>
-          <span class="destaque-tag">João 10,31-42</span>
+          <span class="destaque-tag">Isaías 50,4-7</span>
+          <span class="destaque-tag">Salmo 21</span>
+          <span class="destaque-tag">Filipenses 2,6-11</span>
+          <span class="destaque-tag">Mateus 26,14—27,66</span>
         </div>
         <div class="destaque-ler">Ler a reflexão completa</div>
       </div>
@@ -363,8 +364,16 @@
 
     <!-- DIAS ANTERIORES — 5.ª SEMANA -->
     <div class="grid-secao">
-      <div class="grid-rotulo">✦ Dias Anteriores — 5.ª Semana</div>
+      <div class="grid-rotulo">✦ Semana Anterior — 5.ª Semana da Quaresma</div>
       <div class="diarios-grid">
+        <article class="diario-card" onclick="abrirDiario('d_27mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Sexta-feira da 5.ª Semana — 27 de março de 2026">
+          <div class="card-tempo">Sexta-feira — 5.ª Semana</div>
+          <div class="card-data">27 de março de 2026</div>
+          <div class="card-titulo">"Por qual das boas obras me apedrejais?"</div>
+          <div class="card-versiculo">"O Senhor está comigo como poderoso guerreiro." — Jr 20,11</div>
+          <div class="card-tags"><span class="card-tag">Jeremias 20</span><span class="card-tag">Salmo 17</span><span class="card-tag">João 10</span></div>
+          <div class="card-ler">Ler reflexão</div>
+        </article>
         <article class="diario-card" onclick="abrirDiario('d_26mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Quinta-feira da 5.ª Semana — 26 de março de 2026">
           <div class="card-tempo">Quinta-feira — 5.ª Semana</div>
           <div class="card-data">26 de março de 2026</div>
@@ -381,7 +390,7 @@
           <div class="card-tags"><span class="card-tag">Isaías 7</span><span class="card-tag">Hebreus 10</span><span class="card-tag">Lucas 1</span></div>
           <div class="card-ler">Ler reflexão</div>
         </article>
-        <article class="diario-card" onclick="abrirDiario('d_24mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Terça-feira da 5.ª Semana — 26 de março de 2026">
+        <article class="diario-card" onclick="abrirDiario('d_24mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Terça-feira da 5.ª Semana — 24 de março de 2026">
           <div class="card-tempo">Terça-feira — 5.ª Semana</div>
           <div class="card-data">24 de março de 2026</div>
           <div class="card-titulo">"Quando tiverdes levantado o Filho do Homem"</div>
@@ -825,6 +834,153 @@ function abrirDiario(id) {
 }
 
 const diarios = {
+
+/* ═══════════════════════════════════════════════════
+   DOMINGO DE RAMOS — 29 DE MARÇO DE 2026
+   ═══════════════════════════════════════════════════ */
+'d_29mar': `
+<div class="d-header">
+  <div class="d-header-grade"></div><div class="d-header-glow"></div>
+  <div class="d-header-conteudo">
+    <div class="d-header-emblema">✦ ✝ ✦</div>
+    <div class="d-header-tempo">Domingo de Ramos — Semana Santa</div>
+    <h1 class="d-header-titulo">Diário Litúrgico</h1>
+    <p class="d-header-subtitulo">O Deus que desceu até onde ninguém ousaria</p>
+    <div class="d-header-data">Domingo, 29 de março de 2026</div>
+    <div class="d-header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">📖</span><h2 class="d-secao-label">A Palavra de Hoje</h2><div class="d-secao-fio"></div></div>
+  <div class="d-leituras">
+    <div class="d-leitura"><div class="d-leitura-tipo">Primeira Leitura</div><div class="d-leitura-ref">Isaías 50,4-7</div><div class="d-leitura-desc">O Servo que não recuou — coloquei meu rosto como pedra de sílex</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Salmo Responsorial</div><div class="d-leitura-ref">Salmo 21</div><div class="d-leitura-desc">Deus meu, Deus meu, por que me abandonaste? — prefigura os sofrimentos do Servo</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Segunda Leitura</div><div class="d-leitura-ref">Filipenses 2,6-11</div><div class="d-leitura-desc">O hino da kenosis — esvaziou-se a si mesmo, obediente até à morte de cruz</div></div>
+    <div class="d-leitura evang"><div class="d-leitura-tipo">Evangelho da Paixão</div><div class="d-leitura-ref">Mateus 26,14 — 27,66</div><div class="d-leitura-desc">A traição de Judas, a Última Ceia, o Getsêmani, o julgamento e a morte de Jesus</div></div>
+  </div>
+  <div class="d-versiculo">
+    <p>"Esvaziou-se a si mesmo, tomando a condição de servo — obediente até à morte, e morte de cruz."</p>
+    <div class="ref">— Filipenses 2,7-8</div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🙏</span><h2 class="d-secao-label">Meu Coração Responde</h2><div class="d-secao-fio"></div></div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Isaías 50,4-7 — A língua do discípulo e o rosto como pedra de sílex</div>
+    <p>O Senhor que nos dá a língua de um discípulo — não para impressionar, mas para reconfortar. Não qualquer palavra: a palavra certa para o cansado. E essa língua nasce de uma escuta anterior — o Senhor desperta os ouvidos a cada manhã, antes de qualquer missão. É uma espiritualidade da escuta antes da palavra. Quantas vezes queremos falar de Deus sem antes tê-Lo ouvido?</p>
+    <div class="d-citacao">E então a decisão — <em>não recusei, não me voltei para trás.</em> Há uma liberdade enorme nessa frase. O Servo não é vítima passiva: ele escolhe permanecer. Aceita não apenas a dor física, mas a desumanização — a barba arrancada era, na cultura semítica, a humilhação pública mais devastadora, a destruição da honra diante de todos. E mesmo assim: <em>coloquei meu rosto como pedra de sílex.</em> É o mesmo rosto, primeiro aberto ao sofrimento, depois firme na missão. Não são contradições — é a sequência da Páscoa.</div>
+    <p>A certeza que sustenta tudo não é ingenuidade — é certeza jurídica, nascida da intimidade: <em>o Senhor Deus me ajuda, por isso não serei confundido.</em> Quem me condenará? O Servo sabe que será vindicado. E é exatamente essa certeza que nos permite andar firmes quando somos feridos — não nos escondamos, não tenhamos medo de proclamar a palavra do Senhor.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Salmo 21 — O grito que convoca o salmo inteiro</div>
+    <p><em>Deus meu, Deus meu, por que me abandonaste?</em> Não é desespero sem fé — é a forma mais exigente de fé: o salmista grita ao mesmo Deus de quem se sente abandonado. Não fecha a boca. Não encerra a oração. Permanece no diálogo mesmo quando o outro lado parece mudo. Orar sem resposta não é falha de fé — é muitas vezes a sua forma mais pura.</p>
+    <div class="d-citacao-purpura">O salmo não resolve o abandono — ele o habita. Há oscilação entre o grito e a memória: <em>nossos pais confiaram e foram salvos… mas eu sou um verme, não um homem.</em> Na antropologia semítica, o verme era o ser sem dignidade, sem voz, sem lugar. E é exatamente aí, no ponto de máxima desumanização, que Deus está. A Encarnação não para na manjedoura — ela desce até o verme. Deus se faz verme para que o verme saiba que é filho. Pense nos rostos da assembleia que se sentem verme. Este salmo foi escrito para eles.</div>
+    <p>E então o final que ninguém espera — do grito individual, o salmo abre para a missão universal: <em>anunciarão a sua justiça ao povo que vai nascer.</em> O sofrimento do Servo não é ponto final — é ponto de irradiação. O que cada um de nós atravessa com fé, sem fechar a boca, vira testemunho para alguém que ainda não nasceu na fé. O sofrimento redimido sempre tem endereço futuro.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Filipenses 2,6-11 — O hino que a Igreja cantava antes de Paulo</div>
+    <p>Este é provavelmente o texto mais denso teologicamente de todo Paulo — e quase certamente um hino pré-paulino. A Igreja cantava isso antes mesmo de Paulo escrever. É liturgia antes de ser teologia. E o centro é uma palavra que nenhuma língua traduz perfeitamente: <em>ekenosen</em> — esvaziou-se. Paulo não explica. Não pode. O esvaziamento de Deus é o mistério que a linguagem não alcança.</p>
+    <div class="d-citacao">O hino tem uma arquitetura precisa de descida progressiva — era Deus, não reteve, esvaziou-se, tomou forma de servo, tornou-se semelhante aos homens, humilhou-se, fez-se obediente, até a morte — <em>morte de cruz.</em> A morte de cruz não é apenas o último degrau: é o mais baixo possível. Na cultura romana, a cruz era reservada aos escravos e aos que não mereciam nem a dignidade de uma morte honrada. Deus desceu até onde nenhum deus ousaria. O contraste com Adão é intencional — Adão quis agarrar a igualdade com Deus e perdeu tudo. Jesus soltou a igualdade com Deus e salvou tudo. O pecado original é o gesto de fechar a mão. A redenção é o gesto de abrir a mão.</div>
+    <p>E o <em>por isso</em> que vira o hino — <em>por isso Deus o exaltou.</em> Não é recompensa: é consequência ontológica. A kenosis e a exaltação não são opostos — são o mesmo gesto visto de dois ângulos. Quem se esvazia completamente cria espaço para ser preenchido completamente por Deus. É a lógica do grão de trigo.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Mateus 26,14—27,66 — A casa aberta, a ceia, o traidor e o grito</div>
+    <p>O Evangelho começa com Judas sendo nomeado <em>um dos doze.</em> Mateus faz questão de não omitir isso — é um grito de dor. Não era um estranho infiltrado. Era parte do povo de Deus. E havia caminhado com Jesus durante toda a peregrinação — ouviu os mesmos discursos, viu os mesmos milagres, partilhou o mesmo pão. E nada disso o transformou. Porque Judas nunca esteve de coração verdadeiramente aberto. A traição não aconteceu de repente: o coração que endurece não endurece de uma vez. Vai fechando, gradualmente, o que Jesus tentava abrir. A pergunta para a assembleia não é <em>serei capaz de trair?</em> — é <em>estou verdadeiramente aberto?</em></p>
+    <div class="d-citacao">Mas antes da ceia, há um homem sem nome. Jesus envia os discípulos a uma casa — <em>dizei ao dono da casa: é na tua casa que celebrarei a Páscoa.</em> O anonimato não é descuido de Mateus: é teologia. Qualquer um pode ser esse homem. Você pode ser esse homem. A única qualificação do dono da casa era ter dito sim, ter aberto a porta. Não um templo, não um palácio. Uma casa comum, de um homem comum, disponível. Quantos de nós somos convidados e não ouvimos? E vamos fazer outras coisas, do mundo.</div>
+    <p>À mesa, Jesus revela que um deles o trairá — e cada discípulo pergunta: <em>serei eu, Senhor?</em> Todos disseram <em>Senhor.</em> Judas também pergunta, mas chama Jesus de <em>Rabi</em> — mestre, um entre outros. Um detalhe pequeno. Uma distância enorme. Como chamamos Jesus? Rabi — um entre outros mestres? Ou Senhor — aquele a quem pertencemos?</p>
+    <div class="d-citacao-ouro">E então, nesse clima de traição iminente, com o traidor ainda à mesa, Jesus parte o pão e oferece o cálice. Não esperou um momento mais limpo. Não esperou que Judas saísse. Instituiu a Eucaristia com o traidor à mesa. Isso é a misericórdia em sua forma mais radical — Deus se entrega antes mesmo de ser traído, sabendo que será traído. <em>Isto é o meu corpo entregue por vós.</em> O verbo está no presente. Não será entregue — é entregue agora, a estes homens frágeis e assustados.</div>
+    <p>No Getsêmani, Filipenses se torna carne. <em>Pai, se possível, passa de mim este cálice.</em> Jesus não quer morrer. A obediência não é insensibilidade — ele sente o peso total, treme, sua angústia é física. E mesmo assim: <em>não como eu quero, mas como tu queres.</em> É o anti-Adão em carne viva. Adão no jardim escolheu a sua vontade. Jesus no jardim escolhe a vontade do Pai. Dois jardins, duas escolhas, dois destinos opostos. E na cruz, o círculo da liturgia se fecha: Jesus grita o Salmo 21 na língua da infância — aramaico, no meio de um texto grego. O momento mais nu, mais íntimo, mais humano de todo o Evangelho. Deus grita na língua da infância.</p>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">✝</span><h2 class="d-secao-label">Homilia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-homilia">
+    <div class="d-hom-topo">
+      <div class="d-hom-rotulo">✦ Reflexão do Dia ✦</div>
+      <div class="d-hom-titulo">"O Deus que abriu a mão"</div>
+    </div>
+    <div class="d-hom-corpo">
+      <p>Há dois jardins na história da salvação. No primeiro, um homem fecha a mão para agarrar aquilo que não lhe pertence — quer ser como Deus, quer reter, possuir, subir. No segundo, um homem abre a mão para entregar aquilo que é completamente seu — e sendo Deus, desce, esvazia, obedece, morre. O pecado original é o gesto de fechar a mão. A redenção é o gesto de abrir a mão. E a Semana Santa começa aqui, nessa diferença de gesto, para que ao chegarmos à cruz saibamos o que estamos vendo.</p>
+      <div class="d-hom-destaque">Isaías anuncia o Servo que desperta a cada manhã para ouvir — antes de falar, escuta. E da escuta nasce a missão: a língua capaz de reconfortar o cansado, de mostrar Deus aos excluídos, de ir ao encontro dos que buscam sem saber a quem buscam. Este Servo é ferido — não apenas perseguido, mas desumanizado, a barba arrancada, o rosto cuspido. E mesmo assim: não recuou. Coloca o rosto como pedra de sílex — não para não sentir, mas porque sabe que o Senhor o sustenta. A firmeza não nasce da ausência de dor. Nasce da certeza de quem caminha ao lado.</div>
+      <p>O Salmo 21 é o grito que esse Servo solta quando o silêncio de Deus parece definitivo. <em>Deus meu, Deus meu, por que me abandonaste?</em> Há algo perturbador nessa oração: ela é dirigida ao mesmo Deus de quem o salmista se sente abandonado. Não para de orar. Não fecha a boca. Permanece no diálogo mesmo quando o outro lado cala. Isso define uma espiritualidade que poucos entendem: a fé não é a ausência de crise — é a recusa de encerrar a conversa no meio da crise.</p>
+      <div class="d-hom-destaque-purpura">E Paulo em Filipenses revela quem é esse Servo. O hino que a Igreja já cantava — esvaziou-se, desceu, obedeceu, morreu. Desceu degrau por degrau até o mais baixo de todos: a morte de cruz, reservada aos escravos, aos que não tinham cidadania nem dignidade. Deus foi até onde nenhum deus ousaria ir. E foi por livre escolha. Não por obrigação, não por fraqueza — pela mesma lógica do grão de trigo: quem se esvazia completamente cria espaço para ser preenchido completamente. A kenosis e a ressurreição não são opostos. São o mesmo movimento.</div>
+      <p>E então o Evangelho nos traz um homem sem nome. Jesus manda os discípulos a uma casa — não ao templo, não ao palácio — e diz ao dono: <em>é na tua casa que celebrarei a Páscoa.</em> O anonimato não é lapso de Mateus. É um convite deliberado. Você pode ser esse homem. A única qualificação dele era estar disponível. Ter aberto a porta. Quantos de nós são convidados e não ouvem, porque estão ocupados com as coisas do mundo?</p>
+      <p>À mesa dessa casa, com o traidor ainda sentado, Jesus parte o pão. Judas estava presente — mas nunca estava verdadeiramente presente. Havia caminhado com Jesus durante anos e nada o transformou, porque o coração nunca se abriu de verdade. Chamava Jesus de <em>Rabi</em> — um mestre entre outros — enquanto os demais diziam <em>Senhor.</em> Uma palavra. Uma distância abissal. O coração que vai fechando o que Jesus tenta abrir, gradualmente, sem drama visível — esse é o perigo real. Não a traição espetacular. A indiferença progressiva.</p>
+      <div class="d-hom-destaque">E Jesus, sabendo de tudo isso, parte o pão mesmo assim. <em>Isto é o meu corpo entregue por vós.</em> Não: será entregue. É entregue agora, aqui, a estes homens frágeis, com o traidor à mesa. A Eucaristia não espera que sejamos perfeitos para nos dar o perfeito. Deus se entrega antes de ser traído. A misericórdia não reage ao pecado — ela o antecipa.</div>
+      <p>No Getsêmani, a kenosis de Filipenses se torna carne e sangue. Jesus treme. Sente o peso. E diz: <em>não como eu quero, mas como Tu queres.</em> Não é resignação — é a vontade mais livre que já existiu. Quem ama tanto que o querer do amado vira o seu próprio querer não perdeu a liberdade: chegou ao seu cume. É o eis-me aqui de Maria, é o a Ti confiei a minha causa de Jeremias, é o não recusei, não me voltei de Isaías — o mesmo gesto em bocas diferentes ao longo da história.</p>
+      <div class="d-hom-fecho">E na cruz, os dois fios finalmente se tocam.<br>Jesus grita o Salmo 21 na língua da infância — aramaico,<br>nu, sem nada — e o círculo da liturgia se fecha.<br>O salmo que cantamos como resposta era o grito Dele.<br>Não do salmista anônimo. D'Ele.<br><br>Dois jardins.<br>Adão fechou a mão para agarrar — e perdeu tudo.<br>Jesus abriu a mão para entregar — e salvou tudo.<br><br>Esta semana somos convidados a sentar à mesa<br>do homem sem nome que abriu a casa.<br>A partilhar o pão com os que ainda não estão completamente abertos.<br>A permanecer acordados quando Jesus precisar de nós.<br>A não chamarmos Jesus de Rabi quando ele quer ser Senhor.<br><br>Que o nosso coração de pedra<br>se torne, finalmente, coração de carne.<br>Que a nossa mão fechada<br>aprenda, nesta semana, a abrir.</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🌿</span><h2 class="d-secao-label">Para Levar no Dia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-oracao">
+    <div class="d-or-topo"><div class="d-or-rotulo">✦ Oração do Domingo de Ramos ✦</div></div>
+    <div class="d-or-corpo">
+      <p>Senhor Jesus,
+Tu que não te agarraste à tua condição divina
+mas abriste a mão e te esvaziaste por nós —
+
+Ensina-me o gesto de abrir a mão.
+O que fecho por medo, abre.
+O que retenho por orgulho, liberta.
+O que guardo por insegurança, entrega.
+
+Que esta semana não passe por mim
+como passa pelo coração fechado de Judas —
+presente no corpo, ausente no espírito.
+
+Faz de mim o homem sem nome
+que abre a porta da casa
+e te diz: entra, celebra aqui.
+
+Que eu não adormeça quando precisas de mim.
+Que não te chame de Rabi quando queres ser Senhor.
+Que não recue quando me ferirem por Teu nome.
+
+Coloca o meu rosto como pedra de sílex —
+firme não por arrogância,
+mas pela certeza de que Tu caminhas ao lado.
+
+E quando vier o silêncio —
+e virá —
+que eu não feche a boca.
+Que eu continue clamando ao mesmo Deus
+de quem me sinto abandonado.
+Porque é exatamente aí que Estás.</p>
+      <div class="d-or-amen">AMÉM</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;">
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">Na oração desta semana</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>Cada dia da Semana Santa tem uma cena da Paixão. Escolha uma — o Getsêmani, a traição, o julgamento, a caminhada — e fique nela. Não tente cobrir tudo. Fique num único momento até que ele fale.</p></div>
+    </div>
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">No exame de consciência</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>Como chamo Jesus no interior da minha vida — Rabi, um mestre entre outros que consulto quando me convém? Ou Senhor, aquele a quem pertenço? A resposta honesta a essa pergunta revela o estado real do coração.</p></div>
+    </div>
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">No gesto concreto</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>O dono da casa anônimo abriu a porta. Há alguém na sua vida que precisa que você abra a porta esta semana — uma visita, uma palavra, uma presença? A disponibilidade não exige grandeza. Exige que a porta esteja destrancada.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="d-rodape">
+  <div class="orn">✦ ✦ ✦</div>
+  <p>"Não como eu quero, mas como Tu queres." — Mt 26,39</p>
+</div>
+`,
 
 /* ═══════════════════════════════════════════════════
    SEXTA-FEIRA — 5.ª SEMANA — 27 DE MARÇO DE 2026
