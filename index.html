@@ -274,6 +274,15 @@
   .d-rodape .orn { font-size:13px; color:var(--ouro); letter-spacing:14px; margin-bottom:14px; opacity:0.45; }
   .d-rodape p { font-family:'Cormorant',serif; font-size:17px; font-style:italic; color:var(--texto-suave); }
 
+  /* ══ IMAGEM NO DIÁRIO ══ */
+  .d-imagem { margin:0 -28px 56px; position:relative; overflow:hidden; max-height:500px; }
+  .d-imagem img { width:100%; object-fit:cover; object-position:center top; display:block; filter:sepia(0.2) contrast(1.05); }
+  .d-imagem::after { content:''; position:absolute; bottom:0; left:0; right:0; height:140px; background:linear-gradient(to top, var(--creme), transparent); pointer-events:none; }
+  .d-imagem-legenda { position:absolute; bottom:18px; left:0; right:0; text-align:center; font-family:'Cinzel',serif; font-size:9px; letter-spacing:2px; color:rgba(30,21,20,0.5); z-index:2; }
+  .d-cruz-vazia { margin:0 -28px 56px; background:linear-gradient(170deg, var(--noite) 0%, #0a1020 60%, rgba(196,92,42,0.15) 100%); padding:72px 28px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; position:relative; overflow:hidden; }
+  .d-cruz-vazia::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:36px 36px; pointer-events:none; }
+  .d-cruz-vazia-legenda { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:rgba(232,192,74,0.4); text-transform:uppercase; text-align:center; position:relative; z-index:1; }
+
   @keyframes subir { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
   /* ══ ACORDEÃO CANÔNICO ══ */
@@ -339,23 +348,24 @@
       <div class="secao-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
     </div>
 
-    <!-- HOJE — Segunda-feira da Semana Santa -->
-    <article class="destaque-hoje" onclick="abrirDiario('d_30mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Segunda-feira da Semana Santa — 30 de março de 2026">
+    <!-- HOJE — Sábado Santo -->
+    <article class="destaque-hoje" onclick="abrirDiario('d_04abr')" role="button" tabindex="0" aria-label="Abrir reflexão do Sábado Santo — 4 de abril de 2026">
       <div class="destaque-topo">
         <div>
           <div class="destaque-badge">✦ Reflexão de Hoje</div>
-          <div class="destaque-tempo">Segunda-feira — Semana Santa</div>
-          <div class="destaque-titulo">"A casa ficou toda perfumada"</div>
-          <div class="destaque-data">30 de março de 2026</div>
+          <div class="destaque-tempo">Sábado Santo — Vigília Pascal</div>
+          <div class="destaque-titulo">"No princípio a mesma Palavra — e no fim, Aleluia"</div>
+          <div class="destaque-data">4 de abril de 2026</div>
         </div>
         <div class="destaque-icone">✝</div>
       </div>
       <div class="destaque-corpo">
-        <div class="destaque-versiculo">"O Senhor é minha luz e minha salvação — a quem temerei?" — Sl 26,1</div>
+        <div class="destaque-versiculo">"Não temais. Sei que buscais Jesus, o crucificado. Não está aqui — ressuscitou." — Mt 28,5-6</div>
         <div class="destaque-leituras">
-          <span class="destaque-tag">Isaías 42,1-7</span>
-          <span class="destaque-tag">Salmo 26</span>
-          <span class="destaque-tag">João 12,1-11</span>
+          <span class="destaque-tag">Génesis 1,1—2,2</span>
+          <span class="destaque-tag">Salmo 103</span>
+          <span class="destaque-tag">Génesis 22,1-18</span>
+          <span class="destaque-tag">Mateus 28,1-10</span>
         </div>
         <div class="destaque-ler">Ler a reflexão completa</div>
       </div>
@@ -363,9 +373,49 @@
 
     <!-- DIAS ANTERIORES — SEMANA SANTA -->
     <div class="grid-secao">
-      <div class="grid-rotulo">✦ Dias Anteriores — Semana Santa</div>
+      <div class="grid-rotulo">✦ Semana Santa — Dias Anteriores</div>
       <div class="diarios-grid">
-        <article class="diario-card" onclick="abrirDiario('d_29mar')" role="button" tabindex="0" aria-label="Abrir reflexão do Domingo de Ramos — 29 de março de 2026">
+        <article class="diario-card" onclick="abrirDiario('d_03abr')" role="button" tabindex="0">
+          <div class="card-tempo">Sexta-feira Santa</div>
+          <div class="card-data">3 de abril de 2026</div>
+          <div class="card-titulo">"Na cruz não foram os pregos — foi o amor"</div>
+          <div class="card-versiculo">"Pela sua ferida fomos curados." — Is 53,5</div>
+          <div class="card-tags"><span class="card-tag">Isaías 52—53</span><span class="card-tag">Salmo 30</span><span class="card-tag">Hebreus 4</span><span class="card-tag">João 18—19</span></div>
+          <div class="card-ler">Ler reflexão</div>
+        </article>
+        <article class="diario-card" style="opacity:0.55;cursor:default;">
+          <div class="card-tempo">Quinta-feira Santa</div>
+          <div class="card-data">2 de abril de 2026</div>
+          <div class="card-titulo">"Fazei isto em memória de mim"</div>
+          <div class="card-versiculo">"Eu vos dei o exemplo para que façais como eu fiz." — Jo 13,15</div>
+          <div class="card-tags"><span class="card-tag">Êxodo 12</span><span class="card-tag">Salmo 115</span><span class="card-tag">1 Cor 11</span><span class="card-tag">João 13</span></div>
+          <div class="card-ler" style="opacity:0.4;">Em breve</div>
+        </article>
+        <article class="diario-card" style="opacity:0.55;cursor:default;">
+          <div class="card-tempo">Quarta-feira — Semana Santa</div>
+          <div class="card-data">1 de abril de 2026</div>
+          <div class="card-titulo">"Senhor, serei eu?"</div>
+          <div class="card-versiculo">"Um de vós me trairá." — Mt 26,21</div>
+          <div class="card-tags"><span class="card-tag">Isaías 50</span><span class="card-tag">Salmo 68</span><span class="card-tag">Mateus 26</span></div>
+          <div class="card-ler" style="opacity:0.4;">Em breve</div>
+        </article>
+        <article class="diario-card" style="opacity:0.55;cursor:default;">
+          <div class="card-tempo">Terça-feira — Semana Santa</div>
+          <div class="card-data">31 de março de 2026</div>
+          <div class="card-titulo">"Agora é glorificado o Filho do Homem"</div>
+          <div class="card-versiculo">"Para onde eu vou, não podes seguir-me agora." — Jo 13,36</div>
+          <div class="card-tags"><span class="card-tag">Isaías 49</span><span class="card-tag">Salmo 70</span><span class="card-tag">João 13</span></div>
+          <div class="card-ler" style="opacity:0.4;">Em breve</div>
+        </article>
+        <article class="diario-card" onclick="abrirDiario('d_30mar')" role="button" tabindex="0">
+          <div class="card-tempo">Segunda-feira — Semana Santa</div>
+          <div class="card-data">30 de março de 2026</div>
+          <div class="card-titulo">"A casa ficou toda perfumada"</div>
+          <div class="card-versiculo">"O Senhor é minha luz e minha salvação." — Sl 26,1</div>
+          <div class="card-tags"><span class="card-tag">Isaías 42</span><span class="card-tag">Salmo 26</span><span class="card-tag">João 12</span></div>
+          <div class="card-ler">Ler reflexão</div>
+        </article>
+        <article class="diario-card" onclick="abrirDiario('d_29mar')" role="button" tabindex="0">
           <div class="card-tempo">Domingo de Ramos</div>
           <div class="card-data">29 de março de 2026</div>
           <div class="card-titulo">"O Deus que abriu a mão"</div>
@@ -373,7 +423,13 @@
           <div class="card-tags"><span class="card-tag">Isaías 50</span><span class="card-tag">Salmo 21</span><span class="card-tag">Filipenses 2</span><span class="card-tag">Mateus 26—27</span></div>
           <div class="card-ler">Ler reflexão</div>
         </article>
-        <article class="diario-card" onclick="abrirDiario('d_27mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Sexta-feira da 5.ª Semana — 27 de março de 2026">
+      </div>
+    </div>
+
+    <div class="grid-secao" style="margin-top:40px;">
+      <div class="grid-rotulo">✦ 5.ª Semana da Quaresma</div>
+      <div class="diarios-grid">
+        <article class="diario-card" onclick="abrirDiario('d_27mar')" role="button" tabindex="0">
           <div class="card-tempo">Sexta-feira — 5.ª Semana</div>
           <div class="card-data">27 de março de 2026</div>
           <div class="card-titulo">"Por qual das boas obras me apedrejais?"</div>
@@ -381,12 +437,36 @@
           <div class="card-tags"><span class="card-tag">Jeremias 20</span><span class="card-tag">Salmo 17</span><span class="card-tag">João 10</span></div>
           <div class="card-ler">Ler reflexão</div>
         </article>
-        <article class="diario-card" onclick="abrirDiario('d_26mar')" role="button" tabindex="0" aria-label="Abrir reflexão da Quinta-feira da 5.ª Semana — 26 de março de 2026">
+        <article class="diario-card" onclick="abrirDiario('d_26mar')" role="button" tabindex="0">
           <div class="card-tempo">Quinta-feira — 5.ª Semana</div>
           <div class="card-data">26 de março de 2026</div>
           <div class="card-titulo">"Antes de Abraão fosse, Eu Sou"</div>
           <div class="card-versiculo">"Antes de Abraão fosse, Eu Sou." — Jo 8,58</div>
           <div class="card-tags"><span class="card-tag">Génesis 17</span><span class="card-tag">Salmo 104</span><span class="card-tag">João 8</span></div>
+          <div class="card-ler">Ler reflexão</div>
+        </article>
+        <article class="diario-card" onclick="abrirDiario('d_25mar')" role="button" tabindex="0">
+          <div class="card-tempo">Quarta-feira — Anunciação</div>
+          <div class="card-data">25 de março de 2026</div>
+          <div class="card-titulo">"Faça-se em mim segundo a tua palavra"</div>
+          <div class="card-versiculo">"Eis aqui a serva do Senhor." — Lc 1,38</div>
+          <div class="card-tags"><span class="card-tag">Isaías 7</span><span class="card-tag">Hebreus 10</span><span class="card-tag">Lucas 1</span></div>
+          <div class="card-ler">Ler reflexão</div>
+        </article>
+        <article class="diario-card" onclick="abrirDiario('d_24mar')" role="button" tabindex="0">
+          <div class="card-tempo">Terça-feira — 5.ª Semana</div>
+          <div class="card-data">24 de março de 2026</div>
+          <div class="card-titulo">"Quando tiverdes levantado o Filho do Homem"</div>
+          <div class="card-versiculo">"Então sabereis que Eu Sou." — Jo 8,28</div>
+          <div class="card-tags"><span class="card-tag">Números 21</span><span class="card-tag">Salmo 101</span><span class="card-tag">João 8</span></div>
+          <div class="card-ler">Ler reflexão</div>
+        </article>
+        <article class="diario-card" onclick="abrirDiario('d_15mar')" role="button" tabindex="0">
+          <div class="card-tempo">4.º Domingo da Quaresma</div>
+          <div class="card-data">15 de março de 2026</div>
+          <div class="card-titulo">"Deus vê o que o homem não consegue ver"</div>
+          <div class="card-versiculo">"O Senhor vê o coração." — 1 Sm 16,7</div>
+          <div class="card-tags"><span class="card-tag">1 Samuel 16</span><span class="card-tag">Efésios 5</span><span class="card-tag">João 9</span></div>
           <div class="card-ler">Ler reflexão</div>
         </article>
       </div>
@@ -825,6 +905,299 @@ function abrirDiario(id) {
 }
 
 const diarios = {
+
+/* ═══════════════════════════════════════════════════
+   SÁBADO SANTO — VIGÍLIA PASCAL — 4 DE ABRIL DE 2026
+   ═══════════════════════════════════════════════════ */
+'d_04abr': `
+<div class="d-header">
+  <div class="d-header-grade"></div><div class="d-header-glow"></div>
+  <div class="d-header-conteudo">
+    <div class="d-header-emblema">✦ ✝ ✦</div>
+    <div class="d-header-tempo">Sábado Santo — Vigília Pascal</div>
+    <h1 class="d-header-titulo">Diário Litúrgico</h1>
+    <p class="d-header-subtitulo">No princípio a mesma Palavra — e no fim, Aleluia</p>
+    <div class="d-header-data">Sábado, 4 de abril de 2026</div>
+    <div class="d-header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">📖</span><h2 class="d-secao-label">A Palavra de Hoje</h2><div class="d-secao-fio"></div></div>
+  <div class="d-leituras">
+    <div class="d-leitura"><div class="d-leitura-tipo">Primeira Leitura</div><div class="d-leitura-ref">Génesis 1,1 — 2,2</div><div class="d-leitura-desc">A criação do mundo — no princípio Deus criou o céu e a terra, e viu que era muito bom</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Salmo Responsorial</div><div class="d-leitura-ref">Salmo 103</div><div class="d-leitura-desc">Hino ao Criador — envias o teu Espírito e são criadas, renova a face da terra</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Segunda Leitura</div><div class="d-leitura-ref">Génesis 22,1-18</div><div class="d-leitura-desc">O sacrifício de Isaac — a fé inabalável de Abraão e a providência de Deus</div></div>
+    <div class="d-leitura evang"><div class="d-leitura-tipo">Evangelho</div><div class="d-leitura-ref">Mateus 28,1-10</div><div class="d-leitura-desc">A ressurreição — antes do sol, a luz. O anjo sobre a pedra. Não temais — ressuscitou</div></div>
+  </div>
+  <div class="d-versiculo">
+    <p>"Não temais. Sei que buscais Jesus, o crucificado. Não está aqui — ressuscitou, como havia dito."</p>
+    <div class="ref">— Mateus 28,5-6</div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🙏</span><h2 class="d-secao-label">Meu Coração Responde</h2><div class="d-secao-fio"></div></div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Génesis 1,1—2,2 — O Espírito que incuba o caos</div>
+    <p>A Vigília Pascal começa no escuro. Sem forma e vazia — como a terra antes da criação. E é exactamente este o texto que a Igreja proclama nesta noite: não por hábito litúrgico, mas porque sabe que o que acontece nesta noite é da mesma ordem do que aconteceu no princípio. A mesma Palavra. O mesmo Espírito. O mesmo gesto de tirar do caos algo que ainda não existia.</p>
+    <div class="d-citacao">O Espírito de Deus que pairava sobre as águas — em hebraico <em>merachefet</em> — significa também <em>chocava</em>, como uma ave que choca os ovos. O Espírito não flutuava passivamente sobre o caos: incubava. Aquecia. Preparava o nascimento. A criação não surgiu por explosão fria — nasceu de um amor que aquece o que ainda não tem forma. E o Sábado Santo é exactamente isso: o Espírito incuba o sepulcro fechado na noite de silêncio. Algo está a ser gestado no escuro que o mundo ainda não vê.</div>
+    <p>A luz foi criada no primeiro dia — o sol apenas no quarto. Deus não depende do sol para iluminar o que existe. A sua própria presença é a luz. É a luz que ilumina mesmo quando o sol se apaga — mesmo quando as trevas cobrem a terra na tarde da Sexta-feira Santa. E a ressurreição acontecerá antes do amanhecer. Antes do sol. Como a luz do primeiro dia. E a cada criação Deus viu e declarou <em>era bom</em>. Mas ao criar o homem — não avaliou. Abençoou. Deus não contemplou o homem como obra acabada. Entrou em relação com ele. É a diferença entre o artista que admira a obra e o pai que abraça o filho.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Salmo 103 — A criação que respira porque Deus respira nela</div>
+    <p>O salmista revela Deus revestido de esplendor e de luz como a um manto. Não habita a luz — usa-a como roupa. O Deus que criou a luz no primeiro dia de Génesis veste-a agora. E vem até nós pelas nuvens, pelo vento, pelo trovão — em hebraico vento e Espírito são a mesma palavra, <em>ruach</em>. A criação inteira é veículo da presença divina. Deus mora acima do firmamento e ao mesmo tempo está perturbadoramente próximo.</p>
+    <div class="d-citacao-purpura">E estendeu os limites das águas para que não gerem o caos novamente. O mundo não se sustenta sozinho — a criação existe porque Deus continua a dizer <em>sim</em> a ela a cada momento. Se Deus retirasse a palavra, o caos voltaria. Na Sexta-feira Santa, quando Jesus morre, parece que o caos voltou — as trevas cobrem a terra, o templo rasga-se, a terra treme. E no silêncio do Sábado, o cosmos aguarda — como as águas que esperam a fronteira que as contém. Até que o salmista proclama a promessa que a Vigília Pascal espera: <em>envias o teu Espírito e são criadas — renova a face da terra.</em> O mesmo Espírito que criou no princípio renova agora. A ressurreição não é um milagre isolado — é o Espírito a fazer de novo o que sempre fez.</div>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Génesis 22,1-18 — "Eu e o menino iremos e voltaremos"</div>
+    <p>Deus provou Abraão — e o texto deixa isso bem claro. Em hebraico <em>nissah</em> — provar, testar, como o fogo prova o metal precioso. O fogo não destrói o ouro. Revela o que o ouro é. A prova não foi para informar Deus — foi para revelar a Abraão o que ele mesmo era, e para revelar à humanidade o que a fé radical parece quando encontra o impossível. Somos provados ao longo da vida. Não como punição — como revelação. Cada dificuldade é o cinzel que define os contornos do que ainda estamos a tornar-nos.</p>
+    <div class="d-citacao">E Abraão levantou-se de manhã cedo e foi. Não hesitou, não consultou, não pediu segunda confirmação. Porque conhecia Deus há décadas — cada experiência anterior era depósito de fé acumulada. A fé que sustenta nos momentos extremos não nasce do momento extremo. Nasce da fidelidade acumulada nos momentos ordinários. E ao subir o monte, disse aos servos: <em>eu e o menino iremos e voltaremos.</em> Plural. Os dois voltariam. Não era ilusão — era fé que calculou: se Deus prometeu que através de Isaac as nações seriam abençoadas, então ou Deus impedirá o sacrifício ou ressuscitará Isaac. Hebreus 11 confirma: Abraão é o primeiro a crer na ressurreição — séculos antes de haver uma palavra para isso.</div>
+    <p>Isaac pergunta: <em>onde está o cordeiro?</em> É a pergunta mais perturbadora de toda a Escritura — e fica sem resposta completa durante séculos. Abraão responde: <em>Deus providenciará.</em> O lugar recebe o nome <em>O Senhor vê e providencia</em>. O mesmo monte onde séculos depois João Baptista apontará para Jesus e dirá: <em>eis o Cordeiro de Deus.</em> A pergunta de Isaac encontrou a sua resposta na Sexta-feira Santa. E esta noite celebra que o Cordeiro que foi imolado vive para sempre.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Mateus 28,1-10 — A luz antes do sol e o "não temais" eterno</div>
+    <p>Mateus diz <em>ao raiar do primeiro dia da semana.</em> Ainda escuro. A ressurreição acontece antes do sol — como a luz do primeiro dia de Génesis. A luz do Senhor precede a luz criada. As mulheres vão ao sepulcro na hora em que a noite ainda não cedeu completamente ao dia — e encontram o que o mundo ainda não sabia: que a morte já havia cedido à vida.</p>
+    <div class="d-citacao">E o anjo — resplandecente como relâmpago, vestes brancas como a neve, como a luz pura da criação — rola a pedra e senta-se sobre ela. Não apenas a abre: senta-se sobre ela. A pedra que o Império Romano selou com todo o seu poder, que os sumos sacerdotes pediram especificamente para garantir o fechamento do sepulcro — o anjo senta-se sobre ela como num banco de jardim. Os guardas, soldados treinados, ficaram como mortos. A ironia perfeita: os que guardavam o morto ficaram como mortos, e o morto ressuscitou.</div>
+    <p>E então as palavras que atravessam toda a história da salvação: <em>não temais.</em> As mesmas ditas pelo anjo a Maria na Anunciação. As mesmas ditas a Abraão — <em>não temas, eu sou o teu escudo.</em> A frase mais repetida de toda a Bíblia — uma para cada dia do ano. E você tirou a conclusão pastoral mais bela: assim devemos acordar todos os dias e dormir sem medo. Levantar para trabalhar sabendo que Deus proverá. Dormir sabendo que Deus nos dará força para levantar amanhã. O <em>não temais</em> da ressurreição não é apenas para aquela manhã. É a palavra que Jesus ressuscitado dirige a toda manhã que ainda virá.</p>
+    <p>As mulheres são as primeiras testemunhas — no mundo do primeiro século, o testemunho de mulheres não tinha valor jurídico. Se os discípulos quisessem inventar a ressurreição, nunca escolheriam mulheres como primeiras testemunhas. O facto de todas as tradições concordarem é ele mesmo argumento de autenticidade. Deus escolhe o que o mundo descarta para ser veículo das suas revelações mais importantes. E Jesus ressuscitado, antes de qualquer outra coisa, envia: <em>ide e dizei aos meus discípulos.</em> Acabou de nascer para a eternidade — e já inicia o trabalho. O amor que não recuou na morte não descansa na vitória.</p>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">✝</span><h2 class="d-secao-label">Homilia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-homilia">
+    <div class="d-hom-topo">
+      <div class="d-hom-rotulo">✦ Reflexão do Dia ✦</div>
+      <div class="d-hom-titulo">"No princípio a mesma Palavra — e no fim, Aleluia"</div>
+    </div>
+    <div class="d-hom-corpo">
+      <p>Esta noite começa no escuro. Sem forma e vazia — como a terra antes da criação. E é exactamente este o texto que a Igreja proclama na Vigília Pascal: não por hábito litúrgico, mas porque sabe que o que acontece nesta noite é da mesma ordem do que aconteceu no princípio. A mesma Palavra que disse <em>faça-se a luz</em> fará esta noite outra coisa que o mundo ainda não viu — e que toda a criação já estava a anunciar desde o início.</p>
+      <div class="d-hom-destaque">No princípio, o Espírito de Deus pairava sobre as águas do caos. Em hebraico, o verbo significa também <em>chocava</em> — como uma ave que aquece os ovos antes do nascimento. O Espírito não flutuava passivamente: incubava. Preparava. E o Sábado Santo é exactamente este momento — o Espírito a incubar o sepulcro fechado no silêncio da noite. O mundo vê uma pedra selada. O Espírito vê um ovo antes de eclodir. O que parece o fim de tudo é a gestação de algo que ainda não tem nome.</div>
+      <p>E Génesis revela algo que a maioria não percebe — a luz foi criada no primeiro dia, o sol apenas no quarto. Deus não depende do sol para iluminar. A sua presença é a luz. Por isso a ressurreição acontece antes do amanhecer. Antes do sol. Como a luz do primeiro dia. As mulheres vão ao sepulcro na hora em que a noite ainda não cedeu ao dia — e encontram o que o mundo ainda não sabia. Não é coincidência. É teologia com o relógio. A luz do Senhor sempre precede a luz criada.</p>
+      <div class="d-hom-destaque-purpura">Abraão subiu o monte com o filho e disse aos servos que esperavam: <em>eu e o menino iremos e voltaremos.</em> Plural. Os dois voltariam. Não era ilusão — era fé que havia calculado: se Deus prometeu vida através de Isaac, então Deus tem poder sobre a morte. Hebreus confirmará: Abraão creu na ressurreição séculos antes de haver uma palavra para ela. E Isaac perguntou: <em>onde está o cordeiro?</em> A pergunta ficou sem resposta completa durante séculos. Na Sexta-feira Santa, no mesmo monte, a resposta foi dada. E nesta noite de Sábado Santo, celebramos que o Cordeiro que foi imolado não ficou morto. Vive para sempre — e a sua pergunta não voltará sem resposta.</div>
+      <p>O Salmo 103 revelou-nos que a criação respira porque Deus respira nela. Se Deus retirasse a palavra, o caos voltaria. E quando Jesus morreu na Sexta-feira Santa, parecia exactamente isso — o Criador a retirar a palavra. As trevas às três da tarde. O templo a rasgar-se. A terra a tremer. O cosmos a sentir que algo fundamental havia partido. Mas o Sábado Santo ensina que o silêncio de Deus não é ausência. É gestação. É o sétimo dia — o dia em que Deus descansou da criação — sendo vivido agora pelo Criador encarnado no sepulcro. E como o sétimo dia não era o fim mas a preparação para o oitavo, o silêncio do Sábado não é o fim. É o ventre do Aleluia.</p>
+      <div class="d-hom-destaque">E então as mulheres chegam — antes do sol, na aurora. E ouvem o que toda a criação estava a anunciar desde o primeiro dia: <em>não temais.</em> As mesmas palavras ditas a Maria na Anunciação. As mesmas ditas a Abraão. A frase mais repetida de toda a Bíblia — uma para cada dia do ano. Porque o medo é a primeira consequência do pecado — Adão escondeu-se com medo. E a ressurreição desfaz exactamente isso. <em>Não temais</em> — não apenas naquela manhã. Para toda manhã que ainda virá. Para toda noite que ainda chegará. Para toda prova que ainda nos aguarda no monte.</div>
+      <p>Jesus ressuscitado envia imediatamente. Não descansa na vitória. Não celebra em privado. A primeira palavra do ressuscitado é uma missão — <em>ide e dizei.</em> A guerra espiritual não pausou nem para a ressurreição. O amor que desceu ao sepulcro sobe e já envia. E espera os seus discípulos na Galileia — não em Jerusalém, não no Templo, não no centro do poder religioso. Na periferia. Onde sempre esteve. Onde os seus sempre estiveram.</p>
+      <div class="d-hom-destaque-purpura">A Semana Santa percorreu o arco inteiro — da criação à nova criação, da queda à redenção, do caos ao cosmos e de volta ao caos e ao cosmos. Génesis 1 e Mateus 28 são o mesmo texto vistos de dois lados do tempo. A mesma Palavra. O mesmo Espírito. O mesmo gesto de tirar do vazio algo que ainda não existia. E a cada nova criação — da luz, dos mares, das criaturas, do homem — Deus viu que era bom. Mas ao homem não avaliou: abençoou. Entrou em relação. E a ressurreição é essa relação levada ao seu cumprimento — Deus que não avalia o homem pecador, mas abençoa o homem redimido. Que não abandona o homem na morte, mas desce com ele e sobe antes dele para preparar o caminho.</div>
+      <div class="d-hom-fecho">No princípio, as trevas cobriam o abismo.<br>E o Espírito de Deus pairava sobre as águas.<br>E Deus disse — faça-se a luz.<br><br>No Sábado Santo, as trevas cobrem o sepulcro.<br>E o Espírito de Deus paira sobre a pedra.<br>E Deus diz — levanta-te.<br><br>É a mesma Palavra.<br>O mesmo Espírito.<br>O mesmo amor que não aceita<br>que o caos tenha a última palavra.<br><br>Abraão soube disso no monte.<br>As mulheres souberam disso na aurora.<br>E nós soubemos disso esta noite —<br>quando a luz do círio pascal<br>rasgou o escuro da igreja<br>antes do sol nascer.<br><br>Não temais.<br>Ele não está aqui.<br>Ressuscitou — como havia dito.<br><br>Aleluia.</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🌿</span><h2 class="d-secao-label">Para Levar no Dia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-oracao">
+    <div class="d-or-topo"><div class="d-or-rotulo">✦ Oração do Sábado Santo ✦</div></div>
+    <div class="d-or-corpo">
+      <p>Senhor Deus,
+Tu que no princípio falaste ao caos
+e o caos se tornou criação —
+fala ao caos que há em mim.
+
+Tu que incubaste o sepulcro fechado
+com o mesmo Espírito que incubou as águas do abismo —
+incuba o que em mim ainda está sem forma e vazio.
+
+Tu que disseste a Abraão não temas
+e a ele, e ao seu filho, deste vida do impossível —
+dize-me não temas
+nos montes que ainda tenho de subir.
+
+Esta noite aprendo que o teu silêncio
+não é ausência.
+É gestação.
+É o sétimo dia antes do oitavo.
+É o sepulcro antes da aurora.
+
+Faça-se a luz.
+Em mim.
+No mundo.
+Em todos os que ainda vivem no escuro
+sem saber que Tu já estás lá,
+a incubar o que ainda não nasceu.
+
+Aleluia — que eu possa dizê-lo
+não apenas esta noite,
+mas em cada manhã que vier,
+em cada noite que assustar,
+em cada monte que pedir
+tudo o que tenho.</p>
+      <div class="d-or-amen">ALELUIA · AMÉM</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;">
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">No silêncio desta noite</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>O Sábado Santo é o dia do silêncio — o único dia em que Deus, em carne humana, descansou. Antes da Vigília, encontre um momento de silêncio real. Não para rezar palavras — para habitar o silêncio do sepulcro. É lá que a ressurreição começa.</p></div>
+    </div>
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">Na fé que acumula</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>Abraão obedeceu no impossível porque havia fidelidades acumuladas. A fé que sustenta nos momentos extremos nasce da fidelidade nos momentos ordinários. Qual é o monte que você tem de subir? E qual é o depósito de fé acumulada que você traz consigo para subir?</p></div>
+    </div>
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">No Aleluia que volta</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>Desde a Quarta-feira de Cinzas o Aleluia calou. Esta noite volta. Deixe que volte também no coração — não apenas na boca. O que há na sua vida que ainda está no Sábado Santo, esperando o Aleluia? Traga isso para a Vigília e deixe a luz do círio tocar também esse lugar.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="d-rodape">
+  <div class="orn">✦ ✦ ✦</div>
+  <p>"Não está aqui — ressuscitou, como havia dito." — Mt 28,6</p>
+</div>
+`,
+
+/* ═══════════════════════════════════════════════════
+   SEXTA-FEIRA SANTA — 3 DE ABRIL DE 2026
+   ═══════════════════════════════════════════════════ */
+'d_03abr': `
+<div class="d-header">
+  <div class="d-header-grade"></div><div class="d-header-glow"></div>
+  <div class="d-header-conteudo">
+    <div class="d-header-emblema">✦ ✝ ✦</div>
+    <div class="d-header-tempo">Sexta-feira Santa — Paixão do Senhor</div>
+    <h1 class="d-header-titulo">Diário Litúrgico</h1>
+    <p class="d-header-subtitulo">Na cruz não foram os pregos — foi o amor</p>
+    <div class="d-header-data">Sexta-feira, 3 de abril de 2026</div>
+    <div class="d-header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">📖</span><h2 class="d-secao-label">A Palavra de Hoje</h2><div class="d-secao-fio"></div></div>
+  <div class="d-leituras">
+    <div class="d-leitura"><div class="d-leitura-tipo">Primeira Leitura</div><div class="d-leitura-ref">Isaías 52,13 — 53,12</div><div class="d-leitura-desc">O quarto Cântico do Servo — desfigurado, silencioso, ferido por nós, exaltado por Deus</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Salmo Responsorial</div><div class="d-leitura-ref">Salmo 30</div><div class="d-leitura-desc">Pai, nas tuas mãos entrego o meu espírito — apelo nas aflições da vida</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Segunda Leitura</div><div class="d-leitura-ref">Hebreus 4,14-16</div><div class="d-leitura-desc">Jesus, nosso Sumo Sacerdote — passou pelas mesmas provações, com exceção do pecado</div></div>
+    <div class="d-leitura evang"><div class="d-leitura-tipo">Evangelho da Paixão</div><div class="d-leitura-ref">João 18,1 — 19,42</div><div class="d-leitura-desc">Do jardim do Getsêmani ao jardim do sepulcro — a Paixão segundo João</div></div>
+  </div>
+  <div class="d-versiculo">
+    <p>"Ele foi transpassado por causa das nossas revoltas, esmagado pelas nossas iniquidades — pela sua ferida fomos curados."</p>
+    <div class="ref">— Isaías 53,5</div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🙏</span><h2 class="d-secao-label">Meu Coração Responde</h2><div class="d-secao-fio"></div></div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Isaías 52,13—53,12 — O Servo desfigurado e o triunfo escondido</div>
+    <p>Quem lê este texto com atenção, não só com os olhos mas com o coração, sente as lágrimas chegarem antes das palavras. Isaías escreve séculos antes — e descreve com uma precisão que a história não explica — cada detalhe da Paixão de Jesus. O cântico começa e termina com o triunfo do Servo. O sofrimento está no centro, envolvido pela glória. Como se o próprio texto dissesse: não leias a dor sem a moldura da vitória.</p>
+    <div class="d-citacao">A palavra hebraica usada para descrever o rosto desfigurado do Servo — <em>mishhat</em> — é a mesma raiz de <em>ungido</em>, de <em>Messias</em>. O rosto irreconhecível é o rosto do Ungido. A desfiguração não contradiz a unção — é o seu cumprimento mais radical. Muitos ficarão embaraçados. A multidão no calvário ficou embaraçada. A humanidade que celebra a Paixão a cada ano fica embaraçada. Porque a cruz não é fácil de olhar. Exige que aceitemos que Deus escolheu este caminho — não por impotência, mas por amor.</div>
+    <p>Por um julgamento desonesto foi arrebatado — em hebraico <em>otser umishpat</em>, literalmente prisão e sentença, sem processo legal, sem defensor, sem testemunha de defesa. E ninguém dos seus pensou em defender a sua causa. Não apenas ninguém agiu — ninguém sequer considerou. O abandono mais fundo não é de presença, mas de pensamento. E ao morrer, achava-se entre malfeitores — o Filho de Deus classificado como criminoso, contado entre os transgressores. Não por acidente. Por escolha deliberada de solidariedade total com os descartados da terra.</p>
+    <div class="d-citacao-purpura">José de Arimateia aparece quando o perigo já passou — discípulo secreto, por medo. Dá o que tem: o sepulcro. É o retrato da fé pela metade. Não é a hipocrisia calculada de Caifás. É a omissão envergonhada que depois tenta compensar. E se cada um de nós olhar para dentro de si, verá um pouco de Pedro ao negar, um pouco de Judas ao trair, um pouco de Caifás ao justificar para não perder o poder, um pouco de Pilatos ao lavar as mãos dizendo que não é responsável — mas nada fazendo com o poder que tem. Um pouco dos guardas que se repartem nas vestes de Jesus, dando-se aos pedaços para ter mais tempo com o que acham mais importante. A Paixão não é espelho apenas de Cristo — é espelho de nós.</div>
+    <p>E no final do cântico, depois de toda a descida — <em>verá a luz e ficará saciado.</em> O verbo saciado é o mesmo da fome satisfeita depois do jejum longo. O Servo que foi esvaziado completamente será preenchido completamente. A ferida que curou não ficará sem resposta. O corpo enterrado na terra — na terra que Adão cultivou, na terra para qual voltamos na morte — ressuscitará de dentro da condição humana mais radical, não de fora dela.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Salmo 30 — A oração da hora de dormir na boca de quem morre</div>
+    <p>Este salmo era a oração da hora nona — a oração que todo judeu piedoso rezava ao fim do dia, ao deitar. Aprendida na infância, rezada a vida inteira. Quando Jesus na cruz diz <em>Pai, nas tuas mãos entrego o meu espírito</em> — está a rezar a oração da hora de dormir. O Filho de Deus morre como uma criança que se deita confiante nos braços do Pai. O grito do abandono do Salmo 21 e a entrega serena do Salmo 30 — os dois na mesma cruz, na mesma boca, na mesma tarde. Não são contradição. São os dois pólos da fé mais honesta que já existiu.</p>
+    <div class="d-citacao">Jesus nos ensinou que podemos suportar as aflições da vida e também como colocá-las nas mãos de Deus. Não negando o sofrimento — atravessando-o sem fechar a boca. Assim como Jesus na cruz, bebendo até ao fim o cálice que o Pai lhe deu, também nós nos disponibilizemos por inteiro — sem omissão, abertos ao seu amor. E o salmo termina com uma exaltação: <em>animai-vos e sede fortes de coração, todos vós que esperais no Senhor.</em> O salmista se encoraja a si mesmo — e encoraja a nós. Não é ingenuidade. É a voz de quem conhece o abismo e sabe de onde vem a força para atravessá-lo.</div>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Hebreus 4,14-16 — O Sumo Sacerdote que foi tentado por dentro</div>
+    <p>A revelação de Hebreus é suprema: Jesus Cristo como nosso Sumo Sacerdote. Ao se elevar aos céus após a ressurreição, penetrou no templo celestial como intercessor junto ao Pai. Mas o que torna este sacerdócio absolutamente único é uma frase que deve parar o coração de quem a lê: <em>passou pelas mesmas provações que nós, com excepção do pecado.</em> Não é que Jesus fingiu ser tentado. Foi realmente tentado — no deserto, no Getsêmani, na cruz quando gritaram <em>desce se és Filho de Deus.</em></p>
+    <div class="d-citacao-purpura">O contraste com o sacerdócio terreno é devastador. Caifás e Anás julgavam para condenar — Jesus intercede para salvar. Agiam por medo do poder romano e da perda de privilégios — Jesus age por amor e obediência ao Pai. Impunham fardos pesados — Jesus carrega o fardo da cruz. O Sinédrio usava a Lei para esmagar — Jesus revela que a justiça divina está ao serviço da misericórdia. No Calvário, o Juiz torna-se o Réu para que os réus sejam absolvidos. O trono de Deus é chamado de <em>trono da graça</em> — não trono da condenação. Os guardiões da justiça tornaram-se injustos. O acusado inocente tornou-se o Juiz justo. A cruz é o tribunal onde Deus condena o pecado sem condenar o pecador.</div>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">João 18,1—19,42 — Dois jardins e um amor que não recuou</div>
+    <p>João abre e fecha a Paixão com jardins. O Getsêmani e o jardim do sepulcro são espelhos do Éden. No Éden, o homem escondeu-se de Deus entre as árvores. No Getsêmani, Deus foi ao encontro dos homens entre as árvores. Adão respondeu à pergunta de Deus fugindo. Jesus respondeu à pergunta dos guardas avançando: <em>sou eu.</em> E ao dizer <em>Eu Sou</em> — o nome sagrado de Deus — os guardas recuaram e caíram por terra. Reconheceram antes de prender. Como nós, que tantas vezes reconhecemos e mesmo assim avançamos para o que sabemos ser errado.</p>
+    <div class="d-citacao">Anás e Caifás representam o poder religioso que se corrompeu — cinco filhos e um genro ocupando sucessivamente o cargo de sumo sacerdote, a religião tornada instrumento de dominação, o julgamento nocturno ilegal, as testemunhas falsas, a condenação decidida antes do amanhecer. A Lei usada não para libertar mas para prender. E Jesus, diante de tudo isso, silencioso como cordeiro — não por fraqueza, mas porque a liberdade mais radical que já existiu se expressou em forma de silêncio escolhido.</div>
+    <p>Pedro nega três vezes — e cada negação é um espelho. Não percebemos os detalhes que escondem o mal nos nossos corações. Lemos a Bíblia, ouvimos os padres, sabemos tudo — e ainda assim fraquejamos. Mas não fracassamos, enquanto o Espírito de Deus nos rodeia. Há tempo para o arrependimento. Pilatos diz que tem o poder de salvar ou condenar — e não usa nenhum dos dois. Cede à chantagem, lava as mãos, declara a inocência e assina a sentença. Como o povo de Israel que queria um rei humano em vez de Deus — os anciãos declaram como seu rei a César. Escolhem o mundo quando tinham Deus diante de si.</p>
+    <div class="d-citacao-ouro">Jesus crucificado revela a sua força humana — não a divina. Na cruz perdoou os que o julgaram injustamente. Perdoou o malfeitor ao seu lado, revelando que temos até ao último suspiro para pedir perdão e que Deus ouve e salva. Recusou o vinagre que aliviaria a dor — não queria de forma alguma afastar de si o cálice da Paixão. E ainda cuidou da mãe: <em>mulher, eis o teu filho. Eis a tua mãe.</em> A Igreja de Cristo ali se formava. Cristo ensinava até na morte, em cruz, sofrendo, que devemos unir-nos contra o mal do mundo.</div>
+    <p>E então — <em>tudo está consumado.</em> Em grego <em>tetelestai</em> — verbo comercial usado para indicar que uma dívida foi paga por inteiro. É a palavra que se escrevia nos recibos quando a dívida estava saldada. Jesus na cruz não está a desistir — está a declarar vitória. A dívida da humanidade com Deus: paga. O plano da salvação: cumprido. A promessa de Isaías 53: realizada. Pai, nas tuas mãos entrego o meu espírito — e a oração da hora de dormir torna-se a última palavra de Deus encarnado antes do silêncio do sábado.</p>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">✝</span><h2 class="d-secao-label">Homilia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-homilia">
+    <div class="d-hom-topo">
+      <div class="d-hom-rotulo">✦ Reflexão do Dia ✦</div>
+      <div class="d-hom-titulo">"Na cruz não foram os pregos — foi o amor"</div>
+    </div>
+    <div class="d-hom-corpo">
+      <p>Há um texto que, lido com atenção — não só com os olhos, mas com o coração — enche de lágrimas antes que qualquer palavra seja pronunciada. Isaías 53 foi escrito séculos antes da cruz. E quem o lê hoje, na Sexta-feira Santa, sente que foi escrito ontem, de dentro da Paixão, por alguém que estava lá. Porque estava — não no corpo, mas no Espírito que atravessa o tempo e vê o que o tempo ainda não viveu.</p>
+      <div class="d-hom-destaque">O cântico começa e termina com o triunfo do Servo. O sofrimento está no centro — envolvido pela glória. A liturgia recusa que a dor seja a última palavra, mesmo antes de chegarmos à ressurreição. Muitos ficarão embaraçados de tão desfigurado que ficou — praticamente perdendo a aparência humana. A humanidade que hoje se reúne para celebrar a Paixão fica embaraçada. Porque a cruz não é fácil de olhar. Exige que aceitemos que Deus escolheu este caminho — não por fraqueza, não por impotência, mas porque o amor que desce não tem limite de profundidade.</div>
+      <p>Isaías já tinha visto os reis mudos diante do Servo. E hoje vemos o cumprimento: Jesus diante de Caifás, diante de Anás, diante de Pilatos — silencioso como cordeiro levado ao matadouro. Não porque não tivesse palavras. Porque a liberdade mais radical que alguma vez existiu se expressou em forma de silêncio escolhido. Quem deveria falar — os guardiões da Lei, os sumos sacerdotes, os juízes — fica sem palavras diante da inocência que não se defende. E quem deveria calar fala pelo silêncio que condena todo o sistema.</p>
+      <div class="d-hom-destaque-purpura">Há um espelho perturbador nestas leituras. Se cada um de nós olhar para dentro de si com honestidade, verá um pouco de Pedro — que amava Jesus de verdade e mesmo assim negou, porque o custo era alto demais naquele momento. Um pouco de Judas — que esteve ao lado de Jesus anos inteiros e nunca se abriu de verdade. Um pouco de Caifás — que justificava as suas atitudes para não perder o poder e a posição. Um pouco de Pilatos — que sabia a verdade, declarou a inocência, e mesmo assim lavou as mãos e assinou a sentença. Um pouco de José de Arimateia — que era discípulo secreto por medo, que não esteve na defesa nem na cruz, e apareceu apenas quando o perigo passou para dar o que podia sem risco. A Paixão não é apenas o retrato de Cristo — é o espelho de toda a humanidade.</div>
+      <p>E Hebreus revela o que este espelho significa. O Sinédrio — os guardiões da justiça — tornaram-se injustos. Usaram a Lei para prender em vez de libertar, para condenar o inocente em vez de absolver o culpado, para preservar o poder em vez de servir a verdade. E Jesus, ao ser condenado por esse sistema corrompido, revelou que o verdadeiro sacerdócio não se impõe de cima para baixo mas se oferece de baixo para cima — em serviço e sacrifício. O Juiz tornou-se o Réu para que os réus fossem absolvidos. O trono de Deus não é trono de condenação — é trono da graça. E o Sumo Sacerdote celestial que hoje intercede por nós conhece por dentro o que é ser tentado, o que é ter medo, o que é sentir o peso. Não de fora, com distância. De dentro, com cicatrizes.</p>
+      <div class="d-hom-destaque">João abre e fecha a Paixão com jardins. No jardim do Éden, o homem fechou a mão para agarrar o que não era seu — e fugiu de Deus entre as árvores. No jardim do Getsêmani, Deus abriu a mão para entregar o que era completamente seu — e avançou ao encontro dos homens entre as árvores. Adão disse <em>onde estou</em> escondendo-se. Jesus disse <em>sou eu</em> entregando-se. E no jardim do sepulcro, Maria Madalena confundirá Jesus ressuscitado com o jardineiro — e não será confusão. É o novo Adão tomando posse do jardim de onde o primeiro Adão fugiu.</div>
+      <p>Na cruz, Jesus não revelou a sua força divina. Revelou a sua força humana — e mostrou-nos como devemos atravessar as tribulações, as tentações, o sofrimento. Perdoou os que o julgaram injustamente. Perdoou o malfeitor ao seu lado, revelando que temos até ao último suspiro para pedir perdão e que Deus ouve e salva. Recusou o vinagre que aliviaria a dor — não queria afastar de si o cálice. Cuidou da mãe. Formou a Igreja de dentro da cruz, sofrendo, ensinando até ao fim que devemos unir-nos contra o mal do mundo.</p>
+      <div class="d-hom-destaque-purpura">E então — <em>tudo está consumado.</em> Em grego <em>tetelestai</em> — a palavra que se escrevia nos recibos quando a dívida estava paga por inteiro. Jesus não estava a desistir. Estava a declarar vitória. A dívida da humanidade com Deus: paga. O plano da salvação: cumprido. A promessa de Isaías: realizada. E a última palavra foi a oração da hora de dormir — aquela que aprendera em criança nos braços de Maria: <em>Pai, nas tuas mãos entrego o meu espírito.</em> O Filho de Deus morreu como uma criança que se deita confiante nos braços do Pai.</div>
+      <p>A Semana Santa não nos traz apenas a morte de Jesus. Traz-nos o arco inteiro da Bíblia e da vida — a alegria do nascimento humano, a alegria do nascimento para com Deus, o sofrimento que faz parte do crescimento espiritual constante. Jesus não veio mostrar que a vida é só alegria. Veio mostrar que a vida completa — com alegria, sofrimento, perseguição, tribulação — tem sentido, tem destino, tem ressurreição.</p>
+      <div class="d-hom-fecho">Hoje ficamos em silêncio diante da cruz.<br>Não para explicar.<br>Para ver.<br><br>O rosto desfigurado que é o rosto do Ungido.<br>O silêncio que é a palavra mais poderosa já pronunciada.<br>A ferida que cura.<br>O julgamento injusto que absolve os culpados.<br>O corpo enterrado na terra dos viventes<br>para ressuscitar de dentro dela.<br><br>Se cada um de nós olhar para dentro de si<br>verá Pedro, Judas, Caifás, Pilatos, José de Arimateia.<br>Verá a fé pela metade, o coração pela metade, o amor pela metade.<br><br>E verá Jesus — que sabia de tudo isso,<br>que conhecia cada rosto antes de cada rosto nascer,<br>e mesmo assim avançou.<br>Disse sou eu.<br>Entregou-se.<br>Ficou.<br><br>Na cruz não foram apenas os pregos que O prenderam.<br>Foi o amor a todos nós.<br>Todos ali O rejeitavam — e Ele pensava em nós.<br>Escolheu ficar até morrer, por nós.<br><br>A cruz não foi derrota.<br>Foi o abraço de Deus a toda a humanidade.<br>Foi o amor que não tem limite de profundidade.<br>Foi Deus a dizer — com os braços abertos e os pregos fincados —<br>que não nos soltará.<br>Nunca.</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🌿</span><h2 class="d-secao-label">Para Levar no Dia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-oracao">
+    <div class="d-or-topo"><div class="d-or-rotulo">✦ Oração da Sexta-feira Santa ✦</div></div>
+    <div class="d-or-corpo">
+      <p>Senhor Jesus,
+hoje não tenho palavras.
+Só tenho os olhos — e o coração que não aguenta olhar
+e não consegue desviar o olhar.
+
+Reconheço em mim Pedro, que amava e negou.
+Reconheço Judas, que esteve presente e nunca se abriu.
+Reconheço Pilatos, que sabia a verdade e lavou as mãos.
+Reconheço José de Arimateia, que apareceu quando o risco passou.
+
+Perdoa a minha fé pela metade.
+Perdoa o meu amor calculado.
+Perdoa as vezes que soube a verdade
+e mesmo assim escolhi o mundo.
+
+Tu que passaste pelas mesmas provações que nós —
+e não recuaste —
+ensina-me a não recuar.
+
+Tu que disseste sou eu
+e avançaste para o que te esperava —
+ensina-me a avançar.
+
+Tu que na cruz ainda pensavas nos outros
+quando todos pensavam em si —
+ensina-me a pensar nos outros.
+
+Pai, nas tuas mãos entrego o meu espírito.
+Hoje. Amanhã. Sempre.</p>
+      <div class="d-or-amen">AMÉM</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;">
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">No silêncio de hoje</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>A Sexta-feira Santa pede silêncio antes de pedir reflexão. Antes de ler, antes de rezar — fique um momento em silêncio diante da cruz. Não tente explicar. Apenas olhe. O que sente quando olha sem fugir?</p></div>
+    </div>
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">No exame honesto</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>Em qual dos rostos da Paixão você mais se reconhece hoje — Pedro, Judas, Pilatos, Caifás, José de Arimateia? Não para se condenar. Para ver com clareza onde o coração ainda está pela metade — e entregar exactamente isso a Jesus na oração.</p></div>
+    </div>
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">No gesto concreto</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>Jesus na cruz ainda pensou na mãe, ainda perdoou o malfeitor, ainda cuidou dos discípulos. No meio do seu sofrimento máximo, pensou nos outros. Há alguém hoje que precisa que você pense nele — uma palavra, uma presença, um perdão oferecido? O amor que não recua começa em gestos pequenos e concretos.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="d-rodape">
+  <div class="orn">✦ ✦ ✦</div>
+  <p>"Tudo está consumado." — Jo 19,30</p>
+</div>
+`,
 
 /* ═══════════════════════════════════════════════════
    SEGUNDA-FEIRA DA SEMANA SANTA — 30 DE MARÇO DE 2026
