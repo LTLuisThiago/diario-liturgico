@@ -343,29 +343,29 @@
 
   <section class="diarios-secao" id="diarios" role="region" aria-labelledby="diarios-titulo-id">
     <div class="secao-topo">
-      <div class="secao-rotulo">✦ Semana Santa ✦</div>
+      <div class="secao-rotulo">✦ Tempo Pascal ✦</div>
       <h2 class="secao-titulo" id="diarios-titulo-id">Reflexão em Destaque</h2>
       <div class="secao-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
     </div>
 
-    <!-- HOJE — Sábado Santo -->
-    <article class="destaque-hoje" onclick="abrirDiario('d_04abr')" role="button" tabindex="0" aria-label="Abrir reflexão do Sábado Santo — 4 de abril de 2026">
+    <!-- HOJE — Domingo de Páscoa -->
+    <article class="destaque-hoje" onclick="abrirDiario('d_05abr')" role="button" tabindex="0" aria-label="Abrir reflexão do Domingo de Páscoa — 5 de abril de 2026">
       <div class="destaque-topo">
         <div>
           <div class="destaque-badge">✦ Reflexão de Hoje</div>
-          <div class="destaque-tempo">Sábado Santo — Vigília Pascal</div>
-          <div class="destaque-titulo">"No princípio a mesma Palavra — e no fim, Aleluia"</div>
-          <div class="destaque-data">4 de abril de 2026</div>
+          <div class="destaque-tempo">Domingo de Páscoa — Ressurreição do Senhor</div>
+          <div class="destaque-titulo">"Viu e creu"</div>
+          <div class="destaque-data">5 de abril de 2026</div>
         </div>
-        <div class="destaque-icone">✝</div>
+        <div class="destaque-icone">✦</div>
       </div>
       <div class="destaque-corpo">
-        <div class="destaque-versiculo">"Não temais. Sei que buscais Jesus, o crucificado. Não está aqui — ressuscitou." — Mt 28,5-6</div>
+        <div class="destaque-versiculo">"Este é o dia que o Senhor fez — alegremo-nos e exultemos nele." — Sl 117,24</div>
         <div class="destaque-leituras">
-          <span class="destaque-tag">Génesis 1,1—2,2</span>
-          <span class="destaque-tag">Salmo 103</span>
-          <span class="destaque-tag">Génesis 22,1-18</span>
-          <span class="destaque-tag">Mateus 28,1-10</span>
+          <span class="destaque-tag">Atos 10,34.37-43</span>
+          <span class="destaque-tag">Salmo 117</span>
+          <span class="destaque-tag">Colossenses 3,1-4</span>
+          <span class="destaque-tag">João 20,1-9</span>
         </div>
         <div class="destaque-ler">Ler a reflexão completa</div>
       </div>
@@ -375,6 +375,14 @@
     <div class="grid-secao">
       <div class="grid-rotulo">✦ Semana Santa — Dias Anteriores</div>
       <div class="diarios-grid">
+        <article class="diario-card" onclick="abrirDiario('d_04abr')" role="button" tabindex="0">
+          <div class="card-tempo">Sábado Santo — Vigília Pascal</div>
+          <div class="card-data">4 de abril de 2026</div>
+          <div class="card-titulo">"No princípio a mesma Palavra — e no fim, Aleluia"</div>
+          <div class="card-versiculo">"Não está aqui — ressuscitou, como havia dito." — Mt 28,6</div>
+          <div class="card-tags"><span class="card-tag">Génesis 1</span><span class="card-tag">Salmo 103</span><span class="card-tag">Génesis 22</span><span class="card-tag">Mateus 28</span></div>
+          <div class="card-ler">Ler reflexão</div>
+        </article>
         <article class="diario-card" onclick="abrirDiario('d_03abr')" role="button" tabindex="0">
           <div class="card-tempo">Sexta-feira Santa</div>
           <div class="card-data">3 de abril de 2026</div>
@@ -905,6 +913,150 @@ function abrirDiario(id) {
 }
 
 const diarios = {
+
+/* ═══════════════════════════════════════════════════
+   DOMINGO DE PÁSCOA — 5 DE ABRIL DE 2026
+   ═══════════════════════════════════════════════════ */
+'d_05abr': `
+<div class="d-header">
+  <div class="d-header-grade"></div><div class="d-header-glow"></div>
+  <div class="d-header-conteudo">
+    <div class="d-header-emblema">✦ ✝ ✦</div>
+    <div class="d-header-tempo">Domingo de Páscoa — Ressurreição do Senhor</div>
+    <h1 class="d-header-titulo">Diário Litúrgico</h1>
+    <p class="d-header-subtitulo">Viu e creu</p>
+    <div class="d-header-data">Domingo, 5 de abril de 2026</div>
+    <div class="d-header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">📖</span><h2 class="d-secao-label">A Palavra de Hoje</h2><div class="d-secao-fio"></div></div>
+  <div class="d-leituras">
+    <div class="d-leitura"><div class="d-leitura-tipo">Primeira Leitura</div><div class="d-leitura-ref">Atos 10,34.37-43</div><div class="d-leitura-desc">Pedro anuncia a Cornélio — Deus não faz distinção de pessoas, Jesus constituído juiz dos vivos e dos mortos</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Salmo Responsorial</div><div class="d-leitura-ref">Salmo 117</div><div class="d-leitura-desc">Este é o dia que o Senhor fez — a pedra rejeitada tornou-se a pedra angular</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Segunda Leitura</div><div class="d-leitura-ref">Colossenses 3,1-4</div><div class="d-leitura-desc">Buscai as coisas do alto — morrestes e a vossa vida está escondida com Cristo em Deus</div></div>
+    <div class="d-leitura evang"><div class="d-leitura-tipo">Evangelho</div><div class="d-leitura-ref">João 20,1-9</div><div class="d-leitura-desc">Maria Madalena, Pedro e o discípulo amado — viu as faixas no chão e creu</div></div>
+  </div>
+  <div class="d-versiculo">
+    <p>"Este é o dia que o Senhor fez — alegremo-nos e exultemos nele."</p>
+    <div class="ref">— Salmo 117,24</div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🙏</span><h2 class="d-secao-label">Meu Coração Responde</h2><div class="d-secao-fio"></div></div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Atos 10,34.37-43 — Pedro a um romano: Deus não faz distinção</div>
+    <p>Pedro está na casa de Cornélio — um centurião romano, pagão. Algo impensável para um judeu piedoso. E está lá porque Deus o corrigiu com uma visão: <em>não chames impuro o que Deus purificou.</em> O discurso de Pedro não é apenas teologia — é a confissão pública de um homem que acabou de ter a sua visão de mundo completamente virada pelo avesso. E começa com o que acabou de aprender: <em>reconheço verdadeiramente que Deus não faz distinção de pessoas.</em> Não é doutrina abstracta — é autobiografia de conversão.</p>
+    <div class="d-citacao">Pedro resume toda a vida pública de Jesus em três palavras — <em>passou fazendo o bem.</em> Não passou legislando, não passou seleccionando quem merecia. Passou fazendo o bem, curando todos os que estavam sob o poder do que os oprimia. E quando Pedro diz <em>Deus o ungiu com o Espírito Santo e com poder</em> — aponta para o baptismo no Jordão como a unção messiânica. Assim como os reis de Israel recebiam o Espírito pela unção do profeta, Jesus foi ungido pelo próprio Espírito de Deus. A forma é similar. A missão é completamente diferente — os reis ungidos reinaram com poder humano, muitos falhando. Jesus ungido serviu, curou, libertou e morreu pelos outros.</div>
+    <p>E Pedro termina com o que nenhum Sinédrio poderia aceitar — <em>Deus constituiu Jesus juiz dos vivos e dos mortos.</em> O Réu da Sexta-feira Santa é o Juiz do Domingo de Páscoa. E que juiz — aquele que, quando era réu, pediu perdão para os seus juízes. O único Juiz legítimo da história é aquele que conhece o que é ser condenado injustamente.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Salmo 117 — O salmo que Jesus cantou antes de morrer</div>
+    <p>Este é o salmo mais citado de todo o Novo Testamento — e é o salmo que Jesus cantou na Última Ceia antes de ir ao Getsêmani. O Grande Hallel pascal, cantado no fim da refeição pascal judaica. Jesus cantou <em>não morrerei, mas viverei</em> a caminho da sua morte. Cantou <em>a pedra rejeitada tornou-se a pedra angular</em> sabendo que seria rejeitado horas depois. Cantou <em>este é o dia que o Senhor fez</em> na véspera da cruz. É uma das imagens mais perturbadoras e belas de toda a Paixão — o Filho de Deus cantando a sua própria ressurreição antes de morrer.</p>
+    <div class="d-citacao-purpura">E você tocou numa verdade que a liturgia carrega desde sempre — <em>mais vale refugiar-se no Senhor que confiar nos homens, nos grandes da terra.</em> Os grandes da terra que julgaram Jesus foram Caifás, Pilatos, Herodes — o poder humano em todas as suas formas. E falharam. A pedra que rejeitaram tornou-se a pedra angular. Em hebraico há um jogo de palavras que em português desaparece — <em>ben</em> significa filho e <em>eben</em> significa pedra. O filho rejeitado tornou-se a pedra angular. A linguagem hebraica já carregava a profecia dentro de si.</div>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Colossenses 3,1-4 — Mortos para o mundo, vivos em Cristo</div>
+    <p>Paulo usa uma linguagem que choca — <em>morrestes.</em> Mas a morte de que fala não é fim — é libertação. Quem morre para o mundo não pode ser ameaçado pelo mundo. O que o mundo usa para controlar as pessoas — o medo, a opinião alheia, a conveniência, o status — perde o poder sobre quem já morreu para isso. É a resposta directa ao povo que condenou Jesus por pressão social. Quem está morto em Cristo não pode ser pressionado pela multidão que grita. Porque já não tem nada a perder neste mundo.</p>
+    <div class="d-citacao">E a frase mais bela da carta: <em>a vossa vida está escondida com Cristo em Deus.</em> Escondida — em grego <em>kekryptai</em> — guardada em segurança, como tesouro que o ladrão não encontra porque não sabe onde procurar. A vida verdadeira do cristão não é visível ao mundo. O mundo vê apenas a renúncia, a humildade, a cruz carregada. A vida que pulsa por baixo está escondida onde o mundo não alcança. E quando Cristo — que é a nossa vida — se manifestar, então também nós nos manifestaremos com ele na glória.</div>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">João 20,1-9 — O sudário dobrado e a fé que nasce da ausência</div>
+    <p>Maria Madalena chega antes do amanhecer — ainda escuro, como a ressurreição que acontece antes do sol. Vê a pedra removida e corre a avisar Pedro e o discípulo amado. Os dois correm. O discípulo amado chega primeiro mas não entra — espera. Pedro entra primeiro e vê as faixas no chão, o sudário dobrado separado. O texto não diz que creu. O discípulo amado entra depois, vê — e <em>creu.</em></p>
+    <div class="d-citacao-ouro">Sem ver Jesus ressuscitado. Apenas vendo a ausência organizada. Porque num sepulcro saqueado às pressas não se dobra o sudário. A serenidade do que ficou era a assinatura de quem saiu por livre vontade — não arrebatado, não roubado. Ressuscitado. O discípulo amado leu os sinais da ausência e creu. E João acrescenta a confissão mais honesta de todo o Evangelho: <em>pois ainda não tinham compreendido as Escrituras, que era necessário ele ressuscitar dos mortos.</em> Três anos com Jesus. E ainda não tinham entendido. Porque certas verdades só se entendem do outro lado da experiência — e a fé não é a soma do que sabemos, mas a disponibilidade de crer com o que temos.</div>
+    <p>Jesus não está mais no sepulcro — está entre nós. O pobre com fome, o andarilho doente, o oprimido sem teto. Jesus nos mostrou em vida quem ele é para que pudéssemos dar continuidade ao que fazia. Temos a Bíblia que nos ensina tudo isso — e cabe a cada um de nós pedir a Deus que abra os nossos olhos, os nossos ouvidos, e coloque na nossa boca as palavras de amor que Ele nos ensinou.</p>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">✝</span><h2 class="d-secao-label">Homilia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-homilia">
+    <div class="d-hom-topo">
+      <div class="d-hom-rotulo">✦ Reflexão do Dia ✦</div>
+      <div class="d-hom-titulo">"Viu e creu"</div>
+    </div>
+    <div class="d-hom-corpo">
+      <p>Hoje é o oitavo dia. O dia que não existia no calendário da criação — o dia além do sétimo, o dia novo que Deus abriu do outro lado da morte. E a Igreja reúne-se neste dia não apenas para recordar um evento passado — mas para proclamar uma realidade presente que muda tudo: <em>Cristo ressuscitou dos mortos e nós somos testemunhas disso.</em></p>
+      <p>Pedro diz exactamente estas palavras a Cornélio — a um romano, a um pagão, a alguém que a Lei judaica dizia não poder receber. E antes de dizê-las, Pedro confessa o que Deus acabou de lhe ensinar na própria pele: <em>reconheço verdadeiramente que Deus não faz distinção de pessoas.</em> Não é doutrina abstracta — é autobiografia de conversão. Pedro estava a aprender o que Jesus havia vivido — que o amor de Deus não cabe dentro das fronteiras que os homens constroem em nome de Deus.</p>
+      <div class="d-hom-destaque">Pedro resume toda a vida pública de Jesus em três palavras — <em>passou fazendo o bem.</em> Não passou legislando, não passou julgando, não passou seleccionando quem merecia a cura. Passou fazendo o bem. É a definição mais simples e mais radical do ministério de Jesus. E é a definição do que significa ser cristão depois da ressurreição — não um conjunto de crenças a defender, mas uma forma de passar pela vida: fazendo o bem, curando, libertando os que estão sob o poder do que os oprime.</div>
+      <p>O Salmo 117 que cantamos hoje é o salmo que Jesus cantou na Última Ceia antes de morrer. <em>A pedra rejeitada pelos construtores tornou-se a pedra angular.</em> Jesus cantou a sua própria ressurreição antes de morrer — e morreu cantando. E no Domingo de Ramos, a multidão cantou este mesmo salmo ao recebê-lo. O mesmo povo que o aclamou, dias depois gritou <em>crucifica-o.</em> Não necessariamente por maldade — mas por conveniência, por pressão, por não ter voz própria quando o ambiente gritava mais alto. É o pecado social de deixar que o ambiente decida o que o coração deveria decidir.</p>
+      <div class="d-hom-destaque-purpura">Paulo em Colossenses responde a esse perigo com uma linguagem que choca: <em>morrestes.</em> Quem está morto em Cristo não pode ser ameaçado pelo mundo. O que o mundo usa para controlar — o medo, a opinião dos outros, a conveniência — perde o poder sobre quem já morreu para isso. <em>A vossa vida está escondida com Cristo em Deus</em> — guardada onde o ladrão não encontra porque não sabe onde procurar. O cristão que busca as coisas do alto não é o que foge do mundo — é o que vive no mundo com uma ancoragem que o mundo não consegue cortar.</div>
+      <p>E então João 20 — Pedro e o discípulo amado correm ao sepulcro. Pedro entra primeiro e vê as faixas no chão, o sudário dobrado separado. O texto não diz que creu. O discípulo amado entra, vê — e <em>creu.</em> Sem ver Jesus ressuscitado. Apenas vendo a ausência organizada. Porque num sepulcro saqueado às pressas não se dobra o sudário. A serenidade do que ficou era a assinatura de quem saiu por livre vontade. O discípulo amado leu os sinais da ausência e creu.</p>
+      <div class="d-hom-destaque">E João acrescenta a confissão mais honesta de todo o Evangelho: <em>pois ainda não tinham compreendido as Escrituras.</em> Três anos com Jesus. A Última Ceia. Os anúncios da paixão e ressurreição. E ainda não tinham entendido. Não porque fossem ignorantes — mas porque certas verdades só se entendem do outro lado da experiência. A fé não é a soma do que sabemos. É a disponibilidade de crer com o que temos — de ver os sinais que estão diante de nós e deixar que isso seja suficiente.</div>
+      <p>E os sinais estão diante de nós. O pobre com fome, o andarilho doente, o oprimido sem teto — Jesus está entre nós. A ressurreição não é apenas evento a celebrar no domingo de manhã. É presença a reconhecer na segunda-feira, na terça, em cada rosto que o mundo descarta. O discípulo amado creu ao ver o sepulcro vazio. Nós somos chamados a crer vendo o rosto de Cristo nos que o mundo deixa de lado. Temos a Bíblia que nos ensina tudo isso — e cabe a cada um de nós pedir a Deus que abra os nossos olhos, os nossos ouvidos, e coloque na nossa boca as palavras de amor que Ele nos ensinou.</p>
+      <div class="d-hom-fecho">Cristo ressuscitou.<br>A pedra rejeitada tornou-se a pedra angular.<br>O Réu foi constituído Juiz dos vivos e dos mortos.<br>O que estava escondido no sepulcro<br>está agora escondido em nós —<br>a vida que o mundo não vê,<br>guardada com Cristo em Deus.<br><br>Não somos chamados a entender tudo.<br>Somos chamados a ver o que está à nossa frente<br>e crer.<br><br>Ver o sudário dobrado — e crer.<br>Ver o rosto do pobre — e crer.<br>Ver a pedra removida — e entrar.<br><br>Este é o dia que o Senhor fez.<br>Alegremo-nos e exultemos nele.<br><br>Aleluia.</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🌿</span><h2 class="d-secao-label">Para Levar no Dia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-oracao">
+    <div class="d-or-topo"><div class="d-or-rotulo">✦ Oração do Domingo de Páscoa ✦</div></div>
+    <div class="d-or-corpo">
+      <p>Senhor Jesus ressuscitado,
+Tu que saíste do sepulcro antes do sol —
+antes que qualquer olho humano te visse,
+antes que qualquer voz humana te proclamasse —
+
+Abre os meus olhos para ver os sinais da Tua presença
+onde o mundo vê apenas ausência.
+O sudário dobrado onde há ordem no caos.
+O rosto do pobre onde há o Teu rosto.
+A pedra removida onde havia clausura.
+
+Ensina-me a passar fazendo o bem —
+não com grandeza visível,
+mas com fidelidade silenciosa
+ao que está diante de mim cada dia.
+
+Que a minha vida escondida com Cristo em Deus
+não me afaste do mundo —
+mas me livre do medo do mundo.
+Que não seja a multidão que decide
+o que o meu coração sabe que é verdade.
+
+Tu que constituíste juiz dos vivos e dos mortos
+o mesmo que foi julgado injustamente —
+tem misericórdia de mim
+que tantas vezes fui o povo que gritou
+e o discípulo que ainda não entendia.
+
+Este é o dia que fizeste.
+Alegro-me e exulto nele.
+
+Aleluia.</p>
+      <div class="d-or-amen">ALELUIA · AMÉM</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;">
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">Na fé do dia a dia</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>O discípulo amado creu sem ver Jesus — apenas vendo os sinais da ausência organizada. Onde na sua vida há sinais que Deus já passou e você ainda não reconheceu? A Páscoa não pede certeza — pede disponibilidade de olhar e crer.</p></div>
+    </div>
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">Na missão concreta</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>Pedro resumiu Jesus em três palavras: passou fazendo o bem. Como seria o resumo da sua semana? Há alguém — o pobre, o doente, o excluído — em quem o rosto de Cristo espera ser reconhecido esta semana? A ressurreição começa nesse reconhecimento.</p></div>
+    </div>
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">Na liberdade pascal</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>Colossenses diz: morrestes. Quem morreu para o mundo não pode ser controlado pelo medo da opinião alheia. Há alguma decisão que você adiou por medo do que os outros dirão? A Páscoa é o dia de morrer para esse medo — e viver para o que realmente importa.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="d-rodape">
+  <div class="orn">✦ ✦ ✦</div>
+  <p>"Viu e creu." — Jo 20,8</p>
+</div>
+`,
 
 /* ═══════════════════════════════════════════════════
    SÁBADO SANTO — VIGÍLIA PASCAL — 4 DE ABRIL DE 2026
