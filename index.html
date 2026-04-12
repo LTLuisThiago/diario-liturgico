@@ -6,22 +6,45 @@
 <title>Diário Litúrgico — Luis Thiago</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 <style>
+  /* ═══ OPÇÃO A — BASE FIXA ═══ */
   :root {
-    --noite:         #0e1520;
-    --noite-med:     #1a2535;
-    --noite-claro:   #1e2d50;
-    --ouro:          #c9a84c;
-    --ouro-brilho:   #e8c96a;
-    --ouro-claro:    #fdf6e3;
-    --aurora:        #c45c2a;
-    --aurora-suave:  #e8956a;
-    --aurora-claro:  #fdf0e8;
-    --purpura:       #4a2060;
-    --creme:         #f9f6f0;
-    --texto:         #1e1a14;
-    --texto-suave:   #6b5f4e;
-    --branco:        #fefefc;
-    --verde:         #1e4a30;
+    /* Base — Azul Índigo Profundo */
+    --noite:         #0d1b3e;
+    --noite-med:     #162040;
+    --noite-claro:   #1e2d5a;
+
+    /* Ouro Vivo — Identidade permanente */
+    --ouro:          #d4a843;
+    --ouro-brilho:   #e8c86a;
+    --ouro-claro:    #faf3e0;
+
+    /* Creme Luminoso */
+    --creme:         #faf8f2;
+    --branco:        #fefefe;
+    --texto:         #1a1610;
+    --texto-suave:   #5a5040;
+
+    /* ═══ ACENTO LITÚRGICO — trocar por tempo ═══
+       Páscoa / Natal:    #d4a843 / #e8c86a / #faf3e0   (Ouro)
+       Quaresma / Advento:#7a40a0 / #a87ed4 / #f5eefa   (Roxo)
+       Tempo Comum:       #2a6e48 / #4cad6e / #e8f4ee   (Verde)
+       Semana Santa:      #c03020 / #e05a40 / #faece7   (Vermelho)
+    ═══════════════════════════════════════════ */
+    --acento:        #d4a843;   /* Tempo Pascal — Ouro */
+    --acento-brilho: #e8c86a;
+    --acento-claro:  #faf3e0;
+    --acento-texto:  #7a5c00;
+
+    /* Compatibilidade — aurora mapeia para acento no Pascal */
+    --aurora:        var(--acento);
+    --aurora-suave:  var(--acento-brilho);
+    --aurora-claro:  var(--acento-claro);
+
+    /* Púrpura mantida para elementos específicos */
+    --purpura:       #3a1a5c;
+
+    /* Verde mantido */
+    --verde:         #1a3a20;
     --verde-claro:   #e8f4ee;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -32,7 +55,7 @@
   .nav {
     position:fixed; top:0; left:0; right:0; z-index:100;
     background:rgba(14,21,32,0.96); backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(201,168,76,0.1);
+    border-bottom:1px solid rgba(212,168,67,0.12);
     height:56px; padding:0 32px;
     display:flex; align-items:center; justify-content:space-between;
     transform:translateY(-100%); transition:transform 0.3s ease;
@@ -49,14 +72,14 @@
 
   /* ══ PORTAL ══ */
   .hero {
-    background:linear-gradient(170deg, var(--purpura) 0%, var(--noite-med) 40%, var(--aurora) 80%, #e8a050 100%);
+    background:linear-gradient(170deg, var(--noite) 0%, var(--noite-med) 35%, #1a2850 60%, var(--acento) 100%);
     min-height:100vh; display:flex; flex-direction:column;
     align-items:center; justify-content:center;
     text-align:center; padding:60px 32px;
     position:relative; overflow:hidden;
   }
   .hero-grade { position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px); background-size:40px 40px; pointer-events:none; }
-  .hero-glow { position:absolute; width:600px; height:300px; background:radial-gradient(ellipse, rgba(232,149,106,0.2) 0%, transparent 60%); bottom:80px; left:50%; transform:translateX(-50%); pointer-events:none; }
+  .hero-glow { position:absolute; width:600px; height:300px; background:radial-gradient(ellipse, rgba(212,168,67,0.15) 0%, transparent 60%); bottom:80px; left:50%; transform:translateX(-50%); pointer-events:none; }
   .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:100px; background:linear-gradient(to top, var(--creme), transparent); pointer-events:none; }
   .hero-conteudo { position:relative; z-index:2; max-width:680px; animation:subir 1s ease both; }
   .hero-emblema { font-size:28px; color:rgba(255,255,255,0.4); letter-spacing:16px; margin-bottom:28px; }
@@ -64,20 +87,20 @@
   .hero-titulo { font-family:'Cormorant',serif; font-size:clamp(2.2rem,7vw,4rem); font-style:italic; font-weight:300; color:#fdf8f0; line-height:1.15; margin-bottom:14px; }
   .hero-subtitulo { font-family:'Crimson Pro',serif; font-size:clamp(1rem,2.5vw,1.3rem); font-style:italic; color:rgba(253,248,240,0.5); line-height:1.75; margin-bottom:36px; }
   .hero-autor { font-family:'Cinzel',serif; font-size:11px; letter-spacing:4px; color:rgba(232,192,74,0.6); text-transform:uppercase; margin-bottom:44px; }
-  .hero-btn { display:inline-block; font-family:'Cinzel',serif; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--noite); background:var(--ouro); padding:15px 36px; border:none; cursor:pointer; border-radius:2px; transition:background 0.2s, transform 0.2s, box-shadow 0.2s; }
-  .hero-btn:hover { background:var(--ouro-brilho); transform:translateY(-2px); box-shadow:0 8px 24px rgba(201,168,76,0.3); }
+  .hero-btn { display:inline-block; font-family:'Cinzel',serif; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--noite); background:var(--acento); padding:15px 36px; border:none; cursor:pointer; border-radius:2px; transition:background 0.2s, transform 0.2s, box-shadow 0.2s; }
+  .hero-btn:hover { background:var(--acento-brilho); transform:translateY(-2px); box-shadow:0 8px 24px rgba(201,168,76,0.3); }
   .hero-scroll { position:absolute; bottom:28px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; opacity:0.25; z-index:2; }
   .hero-scroll span { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:var(--ouro); text-transform:uppercase; }
   .hero-scroll .seta { width:1px; height:32px; background:linear-gradient(to bottom, var(--ouro), transparent); animation:descer 1.5s ease-in-out infinite; }
   @keyframes descer { 0%,100%{opacity:0.3} 50%{opacity:0.8} }
 
-  .versiculo-fixo { background:var(--noite-med); padding:48px 32px; text-align:center; border-top:1px solid rgba(201,168,76,0.08); border-bottom:1px solid rgba(201,168,76,0.08); }
-  .versiculo-fixo p { font-family:'Cormorant',serif; font-size:clamp(1.05rem,2.5vw,1.45rem); font-style:italic; color:rgba(240,236,224,0.7); line-height:1.8; max-width:700px; margin:0 auto 12px; }
+  .versiculo-fixo { background:var(--noite); padding:48px 32px; text-align:center; border-top:1px solid rgba(201,168,76,0.08); border-bottom:1px solid rgba(212,168,67,0.08); }
+  .versiculo-fixo p { font-family:'Cormorant',serif; font-size:clamp(1.05rem,2.5vw,1.45rem); font-style:italic; color:rgba(250,248,242,0.75); line-height:1.8; max-width:700px; margin:0 auto 12px; }
   .versiculo-fixo .ref { font-family:'Cinzel',serif; font-size:11px; letter-spacing:2px; color:var(--ouro); opacity:0.55; }
 
   .diarios-secao { max-width:960px; margin:0 auto; padding:80px 32px 100px; }
   .secao-topo { text-align:center; margin-bottom:52px; }
-  .secao-rotulo { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:var(--ouro); text-transform:uppercase; margin-bottom:10px; opacity:0.65; }
+  .secao-rotulo { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:var(--acento); text-transform:uppercase; margin-bottom:10px; opacity:0.65; }
   .secao-titulo { font-family:'Cormorant',serif; font-size:clamp(1.5rem,3.5vw,2.2rem); font-style:italic; font-weight:300; color:var(--noite); }
   .secao-linha { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:18px; }
   .secao-linha .l { width:60px; height:1px; background:linear-gradient(to right, transparent, var(--ouro)); opacity:0.3; }
@@ -85,9 +108,9 @@
   .secao-linha span { color:var(--ouro); opacity:0.4; font-size:12px; }
 
   /* DESTAQUE */
-  .destaque-hoje { background:var(--branco); border-radius:8px; overflow:hidden; box-shadow:0 16px 56px rgba(14,21,32,0.12); margin-bottom:52px; cursor:pointer; transition:transform 0.25s, box-shadow 0.25s; border-top:5px solid var(--aurora); }
+  .destaque-hoje { background:var(--branco); border-radius:8px; overflow:hidden; box-shadow:0 16px 56px rgba(14,21,32,0.12); margin-bottom:52px; cursor:pointer; transition:transform 0.25s, box-shadow 0.25s; border-top:5px solid var(--acento); }
   .destaque-hoje:hover { transform:translateY(-4px); box-shadow:0 24px 64px rgba(14,21,32,0.18); }
-  .destaque-topo { background:linear-gradient(135deg, var(--purpura), var(--noite-med), var(--aurora)); padding:40px 52px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; position:relative; overflow:hidden; }
+  .destaque-topo { background:linear-gradient(135deg, var(--noite), var(--noite-med), #1a2850); padding:40px 52px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; position:relative; overflow:hidden; }
   .destaque-topo::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:24px 24px; pointer-events:none; }
   @media(max-width:768px){
     .diarios-secao { padding:60px 20px 80px; }
@@ -99,7 +122,7 @@
     .d-or-corpo { padding:14px 28px 40px; }
   }
   @media(max-width:600px){ .destaque-topo{grid-template-columns:1fr; padding:28px 24px;} }
-  .destaque-badge { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:var(--noite); background:var(--ouro); padding:5px 14px; display:inline-block; margin-bottom:14px; text-transform:uppercase; border-radius:1px; position:relative; }
+  .destaque-badge { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:var(--noite); background:var(--acento); padding:5px 14px; display:inline-block; margin-bottom:14px; text-transform:uppercase; border-radius:1px; position:relative; }
   .destaque-tempo { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:rgba(253,248,240,0.5); text-transform:uppercase; margin-bottom:10px; position:relative; }
   .destaque-titulo { font-family:'Cormorant',serif; font-size:clamp(1.6rem,4vw,2.6rem); font-style:italic; font-weight:300; color:#fdf8f0; line-height:1.25; margin-bottom:10px; position:relative; }
   .destaque-data { font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--noite); background:var(--ouro); padding:4px 14px; border-radius:2px; display:inline-block; text-transform:uppercase; position:relative; margin-top:8px; }
@@ -109,7 +132,7 @@
   .destaque-versiculo { font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:var(--noite); line-height:1.75; margin-bottom:20px; padding-left:20px; border-left:4px solid var(--aurora); }
   .destaque-leituras { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
   .destaque-tag { font-family:'Cinzel',serif; font-size:9px; letter-spacing:1px; color:var(--noite); background:var(--aurora-claro); border:1px solid rgba(196,92,42,0.2); padding:4px 12px; border-radius:2px; }
-  .destaque-ler { font-family:'Cinzel',serif; font-size:11px; letter-spacing:3px; color:var(--aurora); text-transform:uppercase; display:flex; align-items:center; gap:8px; transition:gap 0.2s; }
+  .destaque-ler { font-family:'Cinzel',serif; font-size:11px; letter-spacing:3px; color:var(--acento); text-transform:uppercase; display:flex; align-items:center; gap:8px; transition:gap 0.2s; }
   .destaque-hoje:hover .destaque-ler { gap:14px; }
   .destaque-ler::after { content:'→'; }
 
@@ -117,21 +140,21 @@
   .grid-secao { margin-top:8px; }
   .grid-rotulo { font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; color:var(--texto-suave); text-transform:uppercase; margin-bottom:22px; opacity:0.6; }
   .diarios-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:20px; }
-  .diario-card { background:var(--branco); border-radius:4px; border:1px solid rgba(201,168,76,0.1); border-top:3px solid var(--ouro); padding:24px 22px; cursor:pointer; transition:transform 0.2s, box-shadow 0.2s; }
+  .diario-card { background:var(--branco); border-radius:4px; border:1px solid rgba(201,168,76,0.1); border-top:3px solid var(--acento); padding:24px 22px; cursor:pointer; transition:transform 0.2s, box-shadow 0.2s; }
   .diario-card:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(14,21,32,0.1); }
   .card-tempo { font-family:'Cinzel',serif; font-size:9px; letter-spacing:2px; color:var(--ouro); text-transform:uppercase; margin-bottom:8px; opacity:0.75; }
-  .card-data { font-family:'Cinzel',serif; font-size:10px; letter-spacing:1px; color:var(--noite); background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); padding:3px 10px; border-radius:2px; display:inline-block; margin-bottom:10px; }
+  .card-data { font-family:'Cinzel',serif; font-size:10px; letter-spacing:1px; color:var(--noite); background:rgba(212,168,67,0.12); border:1px solid rgba(212,168,67,0.25); padding:3px 10px; border-radius:2px; display:inline-block; margin-bottom:10px; }
   .card-titulo { font-family:'Cormorant',serif; font-size:20px; font-style:italic; font-weight:600; color:var(--noite); line-height:1.3; margin-bottom:10px; }
   .card-versiculo { font-size:13px; font-style:italic; color:var(--texto-suave); line-height:1.6; margin-bottom:16px; padding-left:10px; border-left:2px solid rgba(201,168,76,0.35); }
   .card-tags { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:16px; }
   .card-tag { font-family:'Cinzel',serif; font-size:9px; letter-spacing:1px; color:var(--noite); background:var(--ouro-claro); border:1px solid rgba(201,168,76,0.2); padding:3px 8px; border-radius:2px; }
-  .card-ler { font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--ouro); text-transform:uppercase; opacity:0.65; display:flex; align-items:center; gap:6px; transition:gap 0.2s, opacity 0.2s; }
+  .card-ler { font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--acento); text-transform:uppercase; opacity:0.65; display:flex; align-items:center; gap:6px; transition:gap 0.2s, opacity 0.2s; }
   .diario-card:hover .card-ler { gap:12px; opacity:1; }
   .card-ler::after { content:'→'; }
 
   /* SOBRE */
   /* ══ REVELAÇÃO PROGRESSIVA ══ */
-  .revelacao-secao { background:linear-gradient(170deg, var(--noite) 0%, #0a1428 60%, #1a0a28 100%); padding:80px 32px; }
+  .revelacao-secao { background:linear-gradient(170deg, var(--noite) 0%, #0a1428 60%, #0a0f28 100%); padding:80px 32px; }
   .revelacao-inner { max-width:960px; margin:0 auto; }
   .revelacao-intro { font-size:17px; font-style:italic; color:rgba(240,236,224,0.5); line-height:1.85; text-align:center; max-width:660px; margin:0 auto 52px; }
   .revelacao-linha { display:flex; flex-direction:column; gap:0; position:relative; }
@@ -139,7 +162,7 @@
   .rev-item { display:grid; grid-template-columns:56px 1fr; gap:20px; align-items:start; padding:24px 0; border-bottom:1px solid rgba(201,168,76,0.06); }
   .rev-item:last-child { border-bottom:none; }
   .rev-dot { width:56px; display:flex; flex-direction:column; align-items:center; gap:6px; padding-top:4px; position:relative; z-index:1; }
-  .rev-circulo { width:14px; height:14px; border-radius:50%; background:var(--ouro); opacity:0.7; flex-shrink:0; }
+  .rev-circulo { width:14px; height:14px; border-radius:50%; background:var(--acento); opacity:0.7; flex-shrink:0; }
   .rev-livro { font-family:'Cinzel',serif; font-size:8px; letter-spacing:1px; color:var(--ouro); opacity:0.5; text-align:center; text-transform:uppercase; }
   .rev-conteudo { padding-bottom:4px; }
   .rev-ref { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:var(--ouro); text-transform:uppercase; margin-bottom:8px; opacity:0.7; }
@@ -160,11 +183,11 @@
   .sobre-div span { color:var(--ouro); opacity:0.3; }
   .sobre-autor { font-family:'Cinzel',serif; font-size:12px; letter-spacing:4px; color:var(--ouro); opacity:0.55; text-transform:uppercase; }
 
-  .rodape { background:#080c14; padding:36px 32px; text-align:center; border-top:1px solid rgba(201,168,76,0.06); }
+  .rodape { background:#070c1e; padding:36px 32px; text-align:center; border-top:1px solid rgba(201,168,76,0.06); }
   .rodape p { font-family:'Cormorant',serif; font-size:14px; font-style:italic; color:rgba(240,236,224,0.2); }
 
   /* ══ ESCRITURA ══ */
-  .escritura-secao { background:var(--noite-med); padding:80px 32px; }
+  .escritura-secao { background:var(--noite); padding:80px 32px; }
   .escritura-inner { max-width:960px; margin:0 auto; }
   .escritura-intro { font-size:17px; font-style:italic; color:rgba(240,236,224,0.55); line-height:1.85; text-align:center; max-width:640px; margin:0 auto 52px; }
   .livro-atual { background:var(--noite); border-radius:8px; overflow:hidden; box-shadow:0 12px 40px rgba(14,21,32,0.3); }
@@ -175,7 +198,7 @@
   .livro-desc { font-size:15px; font-style:italic; color:rgba(240,236,224,0.5); line-height:1.7; max-width:560px; position:relative; }
   .capitulos-grid { padding:36px 44px; display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:16px; }
   @media(max-width:520px){ .capitulos-grid{padding:24px 20px;} }
-  .capitulo-card { text-decoration:none; display:block; background:var(--noite-med); border-radius:4px; border:1px solid rgba(201,168,76,0.1); border-left:3px solid #2a6e48; padding:20px 18px; cursor:pointer; transition:transform 0.2s, box-shadow 0.2s, border-left-color 0.2s; }
+  .capitulo-card { text-decoration:none; display:block; background:var(--noite-med); border-radius:4px; border:1px solid rgba(212,168,67,0.1); border-left:3px solid var(--verde); padding:20px 18px; cursor:pointer; transition:transform 0.2s, box-shadow 0.2s, border-left-color 0.2s; }
   .capitulo-card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(14,21,32,0.3); border-left-color:var(--ouro); }
   .cap-numero { font-family:'Cinzel',serif; font-size:9px; letter-spacing:2px; color:var(--ouro); text-transform:uppercase; margin-bottom:7px; opacity:0.7; }
   .cap-titulo { font-family:'Cormorant',serif; font-size:18px; font-weight:600; font-style:italic; color:#f0ece0; line-height:1.3; margin-bottom:8px; }
@@ -187,16 +210,16 @@
   #view-diario { padding-top:56px; }
   .diario-wrap { max-width:800px; margin:0 auto; padding:0 28px 100px; }
 
-  .d-header { background:linear-gradient(170deg, var(--purpura) 0%, var(--noite-med) 40%, var(--aurora) 80%, #e8a050 100%); margin:0 -28px 56px; padding:64px 28px 56px; text-align:center; position:relative; overflow:hidden; }
+  .d-header { background:linear-gradient(170deg, var(--noite) 0%, var(--noite-med) 35%, #1a2850 60%, var(--acento) 100%); margin:0 -28px 56px; padding:64px 28px 56px; text-align:center; position:relative; overflow:hidden; }
   .d-header-grade { position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size:36px 36px; pointer-events:none; }
-  .d-header-glow { position:absolute; width:500px; height:280px; background:radial-gradient(ellipse, rgba(232,149,106,0.2) 0%, transparent 60%); bottom:40px; left:50%; transform:translateX(-50%); pointer-events:none; }
+  .d-header-glow { position:absolute; width:500px; height:280px; background:radial-gradient(ellipse, rgba(212,168,67,0.15) 0%, transparent 60%); bottom:40px; left:50%; transform:translateX(-50%); pointer-events:none; }
   .d-header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--creme), transparent); pointer-events:none; }
   .d-header-conteudo { position:relative; z-index:2; }
   .d-header-emblema { font-size:20px; color:rgba(255,255,255,0.35); letter-spacing:14px; margin-bottom:22px; }
   .d-header-tempo { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:rgba(255,255,255,0.55); text-transform:uppercase; margin-bottom:14px; }
   .d-header-titulo { font-family:'Cormorant',serif; font-size:clamp(1.8rem,6vw,3.4rem); font-style:italic; font-weight:300; color:#fdf8f0; line-height:1.2; margin-bottom:10px; }
   .d-header-subtitulo { font-family:'Crimson Pro',serif; font-size:18px; font-style:italic; color:rgba(253,248,240,0.5); margin-bottom:10px; }
-  .d-header-data { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:rgba(232,192,74,0.5); text-transform:uppercase; }
+  .d-header-data { font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:rgba(212,168,67,0.6); text-transform:uppercase; }
   .d-header-linha { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:24px; }
   .d-header-linha .l { width:70px; height:1px; background:linear-gradient(to right, transparent, rgba(255,255,255,0.2)); }
   .d-header-linha .l.r { background:linear-gradient(to left, transparent, rgba(255,255,255,0.2)); }
@@ -210,43 +233,43 @@
 
   .d-leituras { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:24px; }
   @media(max-width:500px){ .d-leituras{grid-template-columns:1fr} }
-  .d-leitura { background:var(--noite); padding:18px 20px; border-radius:3px; border-top:3px solid var(--aurora); transition:transform 0.2s; }
+  .d-leitura { background:var(--noite); padding:18px 20px; border-radius:3px; border-top:3px solid var(--acento); transition:transform 0.2s; }
   .d-leitura:hover { transform:translateY(-2px); }
   .d-leitura.evang { grid-column:1/-1; border-top-color:var(--ouro-brilho); background:linear-gradient(135deg, var(--noite), var(--noite-med)); }
-  .d-leitura-tipo { font-family:'Cinzel',serif; font-size:9px; letter-spacing:2px; color:var(--aurora-suave); text-transform:uppercase; margin-bottom:6px; opacity:0.8; }
+  .d-leitura-tipo { font-family:'Cinzel',serif; font-size:9px; letter-spacing:2px; color:var(--acento-brilho); text-transform:uppercase; margin-bottom:6px; opacity:0.8; }
   .d-leitura.evang .d-leitura-tipo { color:var(--ouro-brilho); }
   .d-leitura-ref { font-family:'Cormorant',serif; font-size:19px; font-weight:600; color:#f2ede0; margin-bottom:4px; }
   .d-leitura-desc { font-size:12.5px; font-style:italic; color:rgba(242,237,224,0.45); line-height:1.5; }
 
-  .d-versiculo { background:var(--noite); border-left:5px solid var(--aurora); border-radius:0 8px 8px 0; padding:28px 36px; position:relative; overflow:hidden; }
+  .d-versiculo { background:var(--noite); border-left:5px solid var(--acento); border-radius:0 8px 8px 0; padding:28px 36px; position:relative; overflow:hidden; }
   .d-versiculo::before { content:'\201C'; font-family:'Cormorant',serif; font-size:130px; color:var(--aurora); opacity:0.06; position:absolute; top:-28px; left:8px; line-height:1; pointer-events:none; }
   .d-versiculo p { font-family:'Cormorant',serif; font-size:19px; font-style:italic; color:#f2ede0; line-height:1.75; }
-  .d-versiculo .ref { margin-top:12px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--aurora-suave); opacity:0.7; }
+  .d-versiculo .ref { margin-top:12px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--acento-brilho); opacity:0.7; }
 
   .d-meditacao { margin-bottom:40px; padding-bottom:40px; border-bottom:1px solid rgba(201,168,76,0.1); }
   .d-meditacao:last-child { border-bottom:none; padding-bottom:0; margin-bottom:0; }
-  .d-med-titulo { font-family:'Cormorant',serif; font-size:21px; font-style:italic; font-weight:600; color:var(--noite-claro); margin-bottom:18px; padding-left:16px; border-left:3px solid var(--aurora); line-height:1.3; }
+  .d-med-titulo { font-family:'Cormorant',serif; font-size:21px; font-style:italic; font-weight:600; color:var(--noite-claro); margin-bottom:18px; padding-left:16px; border-left:3px solid var(--acento); line-height:1.3; }
   .d-meditacao p { font-size:17px; line-height:2; color:var(--texto); margin-bottom:14px; text-align:justify; }
-  .d-citacao { background:var(--aurora-claro); border-left:4px solid var(--aurora); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+  .d-citacao { background:var(--acento-claro); border-left:4px solid var(--acento); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
   .d-citacao-purpura { background:#f5eefa; border-left:4px solid #7a40a0; border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
   .d-citacao-ouro { background:var(--ouro-claro); border-left:4px solid var(--ouro); border-radius:0 6px 6px 0; padding:18px 26px; margin:20px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
 
   .d-homilia { background:var(--branco); border-radius:8px; overflow:hidden; box-shadow:0 8px 32px rgba(14,21,32,0.08); border-top:4px solid var(--purpura); }
-  .d-hom-topo { background:linear-gradient(135deg, var(--purpura), var(--noite-med)); padding:28px 44px; }
+  .d-hom-topo { background:linear-gradient(135deg, var(--purpura), var(--noite)); padding:28px 44px; }
   .d-hom-rotulo { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:rgba(253,248,240,0.5); text-transform:uppercase; margin-bottom:8px; }
   .d-hom-titulo { font-family:'Cormorant',serif; font-size:clamp(1.3rem,3vw,1.9rem); font-style:italic; font-weight:300; color:#fdf8f0; line-height:1.3; }
   .d-hom-corpo { padding:40px 44px; }
   .d-hom-corpo p { font-size:17px; line-height:2; color:var(--texto); margin-bottom:16px; text-align:justify; }
-  .d-hom-destaque { background:var(--aurora-claro); border-left:4px solid var(--aurora); border-radius:0 6px 6px 0; padding:18px 26px; margin:24px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
+  .d-hom-destaque { background:var(--acento-claro); border-left:4px solid var(--acento); border-radius:0 6px 6px 0; padding:18px 26px; margin:24px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
   .d-hom-destaque-purpura { background:#f5eefa; border-left:4px solid #7a40a0; border-radius:0 6px 6px 0; padding:18px 26px; margin:24px 0; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:var(--noite); line-height:1.7; }
   .d-hom-fecho { background:var(--noite); border-radius:6px; padding:28px 36px; margin-top:28px; font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:rgba(253,248,240,0.75); line-height:2; text-align:center; }
 
   .d-oracao { background:var(--noite); border-radius:8px; overflow:hidden; }
-  .d-or-topo { background:linear-gradient(135deg, var(--noite-claro), var(--noite-med)); padding:20px 44px; border-bottom:1px solid rgba(201,168,76,0.1); }
+  .d-or-topo { background:linear-gradient(135deg, var(--noite-med), var(--noite)); padding:20px 44px; border-bottom:1px solid rgba(201,168,76,0.1); }
   .d-or-rotulo { font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; color:var(--ouro); text-transform:uppercase; opacity:0.7; text-align:center; }
   .d-or-corpo { padding:32px 44px 44px; }
   .d-or-corpo p { font-family:'Cormorant',serif; font-size:18px; font-style:italic; color:rgba(253,248,240,0.75); line-height:2.1; white-space:pre-line; }
-  .d-or-amen { font-family:'Cinzel',serif; font-size:11px; letter-spacing:5px; color:var(--ouro); text-align:center; margin-top:24px; opacity:0.7; }
+  .d-or-amen { font-family:'Cinzel',serif; font-size:11px; letter-spacing:5px; color:var(--acento); text-align:center; margin-top:24px; opacity:0.7; }
 
   .d-fio-arco { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; margin:24px 0; }
   .d-fio-dia { background:var(--branco); border-radius:4px; border:1px solid rgba(201,168,76,0.1); border-top:3px solid rgba(201,168,76,0.3); padding:16px 14px; }
@@ -284,12 +307,45 @@
   .d-cruz-vazia-legenda { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:rgba(232,192,74,0.4); text-transform:uppercase; text-align:center; position:relative; z-index:1; }
 
   @keyframes subir { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  /* ══ SEMANA SANTA ARQUIVO ══ */
+  .ss-arquivo { background:linear-gradient(170deg, var(--purpura) 0%, var(--noite-med) 50%, #1a1020 100%); padding:64px 32px; position:relative; overflow:hidden; }
+  .ss-arquivo::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:32px 32px; pointer-events:none; }
+  .ss-arquivo-inner { max-width:960px; margin:0 auto; position:relative; z-index:1; }
+  .ss-arquivo-topo { text-align:center; margin-bottom:40px; }
+  .ss-arquivo-rotulo { font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; color:var(--ouro); text-transform:uppercase; margin-bottom:12px; opacity:0.7; }
+  .ss-arquivo-titulo { font-family:'Cormorant',serif; font-size:clamp(1.6rem,4vw,2.4rem); font-style:italic; font-weight:300; color:#fdf8f0; line-height:1.25; margin-bottom:8px; }
+  .ss-arquivo-sub { font-family:'Crimson Pro',serif; font-size:15px; font-style:italic; color:rgba(253,248,240,0.45); }
+  .ss-arquivo-linha { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:16px; margin-bottom:40px; }
+  .ss-arquivo-linha .l { width:60px; height:1px; background:linear-gradient(to right, transparent, rgba(201,168,76,0.4)); }
+  .ss-arquivo-linha .l.r { background:linear-gradient(to left, transparent, rgba(201,168,76,0.4)); }
+  .ss-arquivo-linha span { color:var(--ouro); opacity:0.5; font-size:13px; }
+  .ss-timeline { display:flex; flex-direction:column; gap:0; position:relative; }
+  .ss-timeline::before { content:''; position:absolute; left:20px; top:0; bottom:0; width:1px; background:linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), var(--aurora), rgba(201,168,76,0.3), transparent); }
+  .ss-dia { display:grid; grid-template-columns:42px 1fr; gap:16px; align-items:start; padding:14px 0; border-bottom:1px solid rgba(201,168,76,0.06); }
+  .ss-dia:last-child { border-bottom:none; }
+  .ss-dot-wrap { display:flex; flex-direction:column; align-items:center; padding-top:6px; position:relative; z-index:1; }
+  .ss-dot { width:12px; height:12px; border-radius:50%; background:var(--ouro); opacity:0.7; flex-shrink:0; transition:opacity 0.2s, transform 0.2s; }
+  .ss-dot.inativo { background:rgba(255,255,255,0.15); opacity:1; }
+  .ss-dot.pascal { background:var(--ouro-brilho); opacity:1; box-shadow:0 0 8px rgba(232,201,106,0.5); }
+  .ss-dia-conteudo { padding-bottom:4px; }
+  .ss-dia-data { font-family:'Cinzel',serif; font-size:9px; letter-spacing:2px; color:rgba(253,248,240,0.4); text-transform:uppercase; margin-bottom:5px; }
+  .ss-dia-titulo { font-family:'Cormorant',serif; font-size:17px; font-style:italic; font-weight:600; color:#f0ece0; line-height:1.3; margin-bottom:4px; }
+  .ss-dia-verso { font-size:12px; font-style:italic; color:rgba(240,236,224,0.4); line-height:1.5; margin-bottom:8px; }
+  .ss-dia-tags { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:8px; }
+  .ss-dia-tag { font-family:'Cinzel',serif; font-size:8px; letter-spacing:1px; color:rgba(240,236,224,0.5); background:rgba(255,255,255,0.05); border:1px solid rgba(201,168,76,0.15); padding:2px 8px; border-radius:2px; }
+  .ss-dia-ler { font-family:'Cinzel',serif; font-size:9px; letter-spacing:2px; color:var(--ouro); text-transform:uppercase; opacity:0.7; display:inline-flex; align-items:center; gap:5px; cursor:pointer; transition:gap 0.2s, opacity 0.2s; }
+  .ss-dia-ler::after { content:'→'; }
+  .ss-dia-ler:hover { gap:10px; opacity:1; }
+  .ss-dia-ler.inativo { color:rgba(255,255,255,0.2); cursor:default; pointer-events:none; }
+  .ss-dia-ler.inativo::after { content:''; }
+  .ss-dia.clicavel:hover .ss-dot { opacity:1; transform:scale(1.2); }
+  @media(max-width:600px){ .ss-arquivo{padding:48px 20px;} .ss-timeline::before{left:16px;} .ss-dia{grid-template-columns:36px 1fr; gap:12px;} }
 
   /* ══ ACORDEÃO CANÔNICO ══ */
   .can-acordeao { display:flex; flex-direction:column; gap:8px; }
   .can-div { background:var(--noite); border-radius:6px; border:1px solid rgba(201,168,76,0.1); overflow:hidden; transition:border-color 0.2s; }
   .can-div:hover { border-color:rgba(201,168,76,0.25); }
-  .can-div.ativa { border-color:rgba(201,168,76,0.4); border-top:3px solid var(--ouro); }
+  .can-div.ativa { border-color:rgba(201,168,76,0.4); border-top:3px solid var(--acento); }
   .can-div-header { padding:16px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; cursor:pointer; }
   .can-div-badge { font-family:'Cinzel',serif; font-size:8px; letter-spacing:2px; color:var(--noite); background:var(--ouro); padding:3px 10px; display:inline-block; margin-bottom:5px; text-transform:uppercase; border-radius:1px; }
   .can-div-info { flex:1; }
@@ -341,6 +397,134 @@
     <div class="ref">Jeremias 20,11.12</div>
   </div>
 
+  <!-- ══ SEMANA SANTA — CARD EXPANSÍVEL ══ -->
+  <section style="background:var(--noite-med); padding:48px 32px; border-top:1px solid rgba(201,168,76,0.08); border-bottom:1px solid rgba(212,168,67,0.08);">
+    <div style="max-width:960px; margin:0 auto;">
+      <!-- Card principal clicável -->
+      <div onclick="toggleSemana()" role="button" tabindex="0" id="ss-card" style="background:linear-gradient(135deg, var(--noite) 0%, var(--noite-med) 45%, #1a2850 80%, var(--acento) 100%); border-radius:8px 8px 0 0; overflow:hidden; box-shadow:0 16px 56px rgba(14,21,32,0.35); cursor:pointer; transition:box-shadow 0.25s; position:relative; user-select:none;">
+        <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;"></div>
+        <div style="padding:40px 52px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; position:relative;">
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--ouro);text-transform:uppercase;margin-bottom:12px;opacity:0.8;">✦ Arquivo Litúrgico ✦</div>
+            <div style="font-family:'Cormorant',serif;font-size:clamp(1.6rem,4vw,2.5rem);font-style:italic;font-weight:300;color:#fdf8f0;line-height:1.2;margin-bottom:10px;">Semana Santa 2026</div>
+            <div style="font-family:'Crimson Pro',serif;font-size:16px;font-style:italic;color:rgba(253,248,240,0.5);margin-bottom:20px;">Do Domingo de Ramos ao Domingo da Ressurreição — homilias e reflexões</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
+              <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;color:var(--noite);background:var(--aurora-claro);border:1px solid rgba(196,92,42,0.2);padding:4px 12px;border-radius:2px;">29 Mar — Ramos</span>
+              <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;color:var(--noite);background:var(--aurora-claro);border:1px solid rgba(196,92,42,0.2);padding:4px 12px;border-radius:2px;">3 Abr — Sexta-feira Santa</span>
+              <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;color:var(--noite);background:var(--aurora-claro);border:1px solid rgba(196,92,42,0.2);padding:4px 12px;border-radius:2px;">4 Abr — Vigília Pascal</span>
+              <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.3);padding:4px 12px;border-radius:2px;">5 Abr — Páscoa ✦</span>
+            </div>
+            <div id="ss-label" style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--aurora-suave);text-transform:uppercase;display:flex;align-items:center;gap:8px;">Ver as liturgias <span id="ss-seta" style="transition:transform 0.35s;display:inline-block;">↓</span></div>
+          </div>
+          <div style="font-size:64px;color:rgba(255,255,255,0.07);font-family:'Cormorant',serif;line-height:1;">✝</div>
+        </div>
+      </div>
+
+      <!-- Painel expansível com os dias -->
+      <div id="ss-painel" style="max-height:0;overflow:hidden;transition:max-height 0.55s cubic-bezier(0.4,0,0.2,1);background:var(--noite);border-radius:0 0 8px 8px;box-shadow:0 16px 56px rgba(14,21,32,0.35);">
+        <div style="padding:40px 44px 48px; position:relative;">
+          <div style="position:absolute;left:64px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(201,168,76,0.3),var(--aurora),rgba(201,168,76,0.3),transparent);"></div>
+
+          <!-- Domingo de Páscoa -->
+          <div onclick="abrirDiario('d_05abr')" role="button" tabindex="0" style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(212,168,67,0.08);cursor:pointer;" onmouseover="this.querySelector('.ss-v-titulo').style.color='var(--ouro)'" onmouseout="this.querySelector('.ss-v-titulo').style.color='#f0ece0'">
+            <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+              <div style="width:14px;height:14px;border-radius:50%;background:var(--ouro-brilho);box-shadow:0 0 10px rgba(232,201,106,0.6);flex-shrink:0;"></div>
+            </div>
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;margin-bottom:6px;opacity:0.8;">Domingo, 5 de Abril · Domingo de Páscoa ✦</div>
+              <div class="ss-v-titulo" style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:#f0ece0;line-height:1.3;margin-bottom:6px;transition:color 0.2s;">"Viu e creu"</div>
+              <div style="font-size:13px;font-style:italic;color:rgba(240,236,224,0.45);line-height:1.6;margin-bottom:10px;">"Este é o dia que o Senhor fez — alegremo-nos e exultemos nele." — Sl 117,24</div>
+              <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
+                <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Atos 10</span>
+                <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Salmo 117</span>
+                <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">João 20</span>
+              </div>
+              <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;opacity:0.75;">Ler homilia →</div>
+            </div>
+          </div>
+
+          <!-- Sábado Santo -->
+          <div onclick="abrirDiario('d_04abr')" role="button" tabindex="0" style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(212,168,67,0.08);cursor:pointer;" onmouseover="this.querySelector('.ss-v-titulo').style.color='var(--ouro)'" onmouseout="this.querySelector('.ss-v-titulo').style.color='#f0ece0'">
+            <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+              <div style="width:12px;height:12px;border-radius:50%;background:var(--ouro);opacity:0.7;flex-shrink:0;"></div>
+            </div>
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;margin-bottom:6px;opacity:0.7;">Sábado, 4 de Abril · Vigília Pascal</div>
+              <div class="ss-v-titulo" style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:#f0ece0;line-height:1.3;margin-bottom:6px;transition:color 0.2s;">"No princípio a mesma Palavra — e no fim, Aleluia"</div>
+              <div style="font-size:13px;font-style:italic;color:rgba(240,236,224,0.45);line-height:1.6;margin-bottom:10px;">"Não está aqui — ressuscitou, como havia dito." — Mt 28,6</div>
+              <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;opacity:0.75;">Ler homilia →</div>
+            </div>
+          </div>
+
+          <!-- Sexta-feira Santa -->
+          <div onclick="abrirDiario('d_03abr')" role="button" tabindex="0" style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(212,168,67,0.08);cursor:pointer;" onmouseover="this.querySelector('.ss-v-titulo').style.color='var(--aurora)'" onmouseout="this.querySelector('.ss-v-titulo').style.color='#f0ece0'">
+            <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+              <div style="width:12px;height:12px;border-radius:50%;background:var(--aurora);opacity:0.8;flex-shrink:0;"></div>
+            </div>
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--aurora-suave);text-transform:uppercase;margin-bottom:6px;opacity:0.8;">Sexta-feira, 3 de Abril · Sexta-feira Santa</div>
+              <div class="ss-v-titulo" style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:#f0ece0;line-height:1.3;margin-bottom:6px;transition:color 0.2s;">"Na cruz não foram os pregos — foi o amor"</div>
+              <div style="font-size:13px;font-style:italic;color:rgba(240,236,224,0.45);line-height:1.6;margin-bottom:10px;">"Pela sua ferida fomos curados." — Is 53,5</div>
+              <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--aurora);text-transform:uppercase;opacity:0.75;">Ler homilia →</div>
+            </div>
+          </div>
+
+          <!-- Quinta-feira Santa -->
+          <div style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(201,168,76,0.06);opacity:0.4;">
+            <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+              <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.2);flex-shrink:0;"></div>
+            </div>
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:6px;">Quinta-feira, 2 de Abril · Quinta-feira Santa</div>
+              <div style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:rgba(240,236,224,0.5);line-height:1.3;margin-bottom:6px;">"Fazei isto em memória de mim"</div>
+              <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.2);text-transform:uppercase;">Em breve</div>
+            </div>
+          </div>
+
+          <!-- Quarta-feira Santa -->
+          <div style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(201,168,76,0.06);opacity:0.4;">
+            <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+              <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.2);flex-shrink:0;"></div>
+            </div>
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:6px;">Quarta-feira, 1 de Abril · Quarta-feira Santa</div>
+              <div style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:rgba(240,236,224,0.5);line-height:1.3;margin-bottom:6px;">"Senhor, serei eu?"</div>
+              <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.2);text-transform:uppercase;">Em breve</div>
+            </div>
+          </div>
+
+          <!-- Segunda-feira Santa -->
+          <div onclick="abrirDiario('d_30mar')" role="button" tabindex="0" style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(212,168,67,0.08);cursor:pointer;" onmouseover="this.querySelector('.ss-v-titulo').style.color='var(--ouro)'" onmouseout="this.querySelector('.ss-v-titulo').style.color='#f0ece0'">
+            <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+              <div style="width:12px;height:12px;border-radius:50%;background:var(--ouro);opacity:0.7;flex-shrink:0;"></div>
+            </div>
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;margin-bottom:6px;opacity:0.7;">Segunda-feira, 30 de Março · Segunda-feira Santa</div>
+              <div class="ss-v-titulo" style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:#f0ece0;line-height:1.3;margin-bottom:6px;transition:color 0.2s;">"A casa ficou toda perfumada"</div>
+              <div style="font-size:13px;font-style:italic;color:rgba(240,236,224,0.45);line-height:1.6;margin-bottom:10px;">"O Senhor é minha luz e minha salvação." — Sl 26,1</div>
+              <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;opacity:0.75;">Ler homilia →</div>
+            </div>
+          </div>
+
+          <!-- Domingo de Ramos -->
+          <div onclick="abrirDiario('d_29mar')" role="button" tabindex="0" style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;cursor:pointer;" onmouseover="this.querySelector('.ss-v-titulo').style.color='var(--ouro)'" onmouseout="this.querySelector('.ss-v-titulo').style.color='#f0ece0'">
+            <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+              <div style="width:12px;height:12px;border-radius:50%;background:var(--ouro);opacity:0.7;flex-shrink:0;"></div>
+            </div>
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;margin-bottom:6px;opacity:0.7;">Domingo, 29 de Março · Domingo de Ramos</div>
+              <div class="ss-v-titulo" style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:#f0ece0;line-height:1.3;margin-bottom:6px;transition:color 0.2s;">"O Deus que abriu a mão"</div>
+              <div style="font-size:13px;font-style:italic;color:rgba(240,236,224,0.45);line-height:1.6;margin-bottom:10px;">"Esvaziou-se a si mesmo, obediente até à morte de cruz." — Fl 2,7-8</div>
+              <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;opacity:0.75;">Ler homilia →</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <section class="diarios-secao" id="diarios" role="region" aria-labelledby="diarios-titulo-id">
     <div class="secao-topo">
       <div class="secao-rotulo">✦ Tempo Pascal ✦</div>
@@ -348,135 +532,48 @@
       <div class="secao-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
     </div>
 
-    <!-- HOJE — Domingo de Páscoa -->
-    <article class="destaque-hoje" onclick="abrirDiario('d_05abr')" role="button" tabindex="0" aria-label="Abrir reflexão do Domingo de Páscoa — 5 de abril de 2026">
+    <!-- HOJE — 2º Domingo de Páscoa -->
+    <article class="destaque-hoje" onclick="abrirDiario('d_12abr')" role="button" tabindex="0" aria-label="Abrir reflexão do 2º Domingo de Páscoa — 12 de abril de 2026">
       <div class="destaque-topo">
         <div>
           <div class="destaque-badge">✦ Reflexão de Hoje</div>
-          <div class="destaque-tempo">Domingo de Páscoa — Ressurreição do Senhor</div>
-          <div class="destaque-titulo">"Viu e creu"</div>
-          <div class="destaque-data">5 de abril de 2026</div>
+          <div class="destaque-tempo">2.º Domingo de Páscoa — Divina Misericórdia</div>
+          <div class="destaque-titulo">"Felizes os que creem sem ver"</div>
+          <div class="destaque-data">12 de abril de 2026</div>
         </div>
         <div class="destaque-icone">✦</div>
       </div>
       <div class="destaque-corpo">
-        <div class="destaque-versiculo">"Este é o dia que o Senhor fez — alegremo-nos e exultemos nele." — Sl 117,24</div>
+        <div class="destaque-versiculo">"Meu Senhor e meu Deus." — Jo 20,28</div>
         <div class="destaque-leituras">
-          <span class="destaque-tag">Atos 10,34.37-43</span>
-          <span class="destaque-tag">Salmo 117</span>
-          <span class="destaque-tag">Colossenses 3,1-4</span>
-          <span class="destaque-tag">João 20,1-9</span>
+          <span class="destaque-tag">Atos 2,42-47</span>
+          <span class="destaque-tag">Salmo 117 (118)</span>
+          <span class="destaque-tag">1 Pedro 1,3-9</span>
+          <span class="destaque-tag">João 20,19-31</span>
         </div>
         <div class="destaque-ler">Ler a reflexão completa</div>
       </div>
     </article>
 
-    <!-- DIAS ANTERIORES — SEMANA SANTA -->
-    <div class="grid-secao">
-      <div class="grid-rotulo">✦ Semana Santa — Dias Anteriores</div>
-      <div class="diarios-grid">
-        <article class="diario-card" onclick="abrirDiario('d_04abr')" role="button" tabindex="0">
-          <div class="card-tempo">Sábado Santo — Vigília Pascal</div>
-          <div class="card-data">4 de abril de 2026</div>
-          <div class="card-titulo">"No princípio a mesma Palavra — e no fim, Aleluia"</div>
-          <div class="card-versiculo">"Não está aqui — ressuscitou, como havia dito." — Mt 28,6</div>
-          <div class="card-tags"><span class="card-tag">Génesis 1</span><span class="card-tag">Salmo 103</span><span class="card-tag">Génesis 22</span><span class="card-tag">Mateus 28</span></div>
-          <div class="card-ler">Ler reflexão</div>
-        </article>
-        <article class="diario-card" onclick="abrirDiario('d_03abr')" role="button" tabindex="0">
-          <div class="card-tempo">Sexta-feira Santa</div>
-          <div class="card-data">3 de abril de 2026</div>
-          <div class="card-titulo">"Na cruz não foram os pregos — foi o amor"</div>
-          <div class="card-versiculo">"Pela sua ferida fomos curados." — Is 53,5</div>
-          <div class="card-tags"><span class="card-tag">Isaías 52—53</span><span class="card-tag">Salmo 30</span><span class="card-tag">Hebreus 4</span><span class="card-tag">João 18—19</span></div>
-          <div class="card-ler">Ler reflexão</div>
-        </article>
-        <article class="diario-card" style="opacity:0.55;cursor:default;">
-          <div class="card-tempo">Quinta-feira Santa</div>
-          <div class="card-data">2 de abril de 2026</div>
-          <div class="card-titulo">"Fazei isto em memória de mim"</div>
-          <div class="card-versiculo">"Eu vos dei o exemplo para que façais como eu fiz." — Jo 13,15</div>
-          <div class="card-tags"><span class="card-tag">Êxodo 12</span><span class="card-tag">Salmo 115</span><span class="card-tag">1 Cor 11</span><span class="card-tag">João 13</span></div>
-          <div class="card-ler" style="opacity:0.4;">Em breve</div>
-        </article>
-        <article class="diario-card" style="opacity:0.55;cursor:default;">
-          <div class="card-tempo">Quarta-feira — Semana Santa</div>
-          <div class="card-data">1 de abril de 2026</div>
-          <div class="card-titulo">"Senhor, serei eu?"</div>
-          <div class="card-versiculo">"Um de vós me trairá." — Mt 26,21</div>
-          <div class="card-tags"><span class="card-tag">Isaías 50</span><span class="card-tag">Salmo 68</span><span class="card-tag">Mateus 26</span></div>
-          <div class="card-ler" style="opacity:0.4;">Em breve</div>
-        </article>
-        <article class="diario-card" style="opacity:0.55;cursor:default;">
-          <div class="card-tempo">Terça-feira — Semana Santa</div>
-          <div class="card-data">31 de março de 2026</div>
-          <div class="card-titulo">"Agora é glorificado o Filho do Homem"</div>
-          <div class="card-versiculo">"Para onde eu vou, não podes seguir-me agora." — Jo 13,36</div>
-          <div class="card-tags"><span class="card-tag">Isaías 49</span><span class="card-tag">Salmo 70</span><span class="card-tag">João 13</span></div>
-          <div class="card-ler" style="opacity:0.4;">Em breve</div>
-        </article>
-        <article class="diario-card" onclick="abrirDiario('d_30mar')" role="button" tabindex="0">
-          <div class="card-tempo">Segunda-feira — Semana Santa</div>
-          <div class="card-data">30 de março de 2026</div>
-          <div class="card-titulo">"A casa ficou toda perfumada"</div>
-          <div class="card-versiculo">"O Senhor é minha luz e minha salvação." — Sl 26,1</div>
-          <div class="card-tags"><span class="card-tag">Isaías 42</span><span class="card-tag">Salmo 26</span><span class="card-tag">João 12</span></div>
-          <div class="card-ler">Ler reflexão</div>
-        </article>
-        <article class="diario-card" onclick="abrirDiario('d_29mar')" role="button" tabindex="0">
-          <div class="card-tempo">Domingo de Ramos</div>
-          <div class="card-data">29 de março de 2026</div>
-          <div class="card-titulo">"O Deus que abriu a mão"</div>
-          <div class="card-versiculo">"Esvaziou-se a si mesmo, obediente até à morte de cruz." — Fl 2,7-8</div>
-          <div class="card-tags"><span class="card-tag">Isaías 50</span><span class="card-tag">Salmo 21</span><span class="card-tag">Filipenses 2</span><span class="card-tag">Mateus 26—27</span></div>
-          <div class="card-ler">Ler reflexão</div>
-        </article>
-      </div>
-    </div>
-
+    <!-- GRID — reflexões recentes -->
     <div class="grid-secao" style="margin-top:40px;">
-      <div class="grid-rotulo">✦ 5.ª Semana da Quaresma</div>
+      <div class="grid-rotulo">Reflexões Recentes</div>
       <div class="diarios-grid">
-        <article class="diario-card" onclick="abrirDiario('d_27mar')" role="button" tabindex="0">
-          <div class="card-tempo">Sexta-feira — 5.ª Semana</div>
-          <div class="card-data">27 de março de 2026</div>
-          <div class="card-titulo">"Por qual das boas obras me apedrejais?"</div>
-          <div class="card-versiculo">"O Senhor está comigo como poderoso guerreiro." — Jr 20,11</div>
-          <div class="card-tags"><span class="card-tag">Jeremias 20</span><span class="card-tag">Salmo 17</span><span class="card-tag">João 10</span></div>
+
+        <!-- Sábado da Oitava Pascal -->
+        <div class="diario-card" onclick="abrirDiario('d_11abr')" role="button" tabindex="0">
+          <div class="card-tempo">Sábado · Oitava da Páscoa</div>
+          <div class="card-data">11 de abril de 2026</div>
+          <div class="card-titulo">"Não podemos deixar de falar"</div>
+          <div class="card-versiculo">"Nós não podemos deixar de falar do que vimos e ouvimos." — At 4,20</div>
+          <div class="card-tags">
+            <span class="card-tag">Atos 4</span>
+            <span class="card-tag">Salmo 117</span>
+            <span class="card-tag">Marcos 16</span>
+          </div>
           <div class="card-ler">Ler reflexão</div>
-        </article>
-        <article class="diario-card" onclick="abrirDiario('d_26mar')" role="button" tabindex="0">
-          <div class="card-tempo">Quinta-feira — 5.ª Semana</div>
-          <div class="card-data">26 de março de 2026</div>
-          <div class="card-titulo">"Antes de Abraão fosse, Eu Sou"</div>
-          <div class="card-versiculo">"Antes de Abraão fosse, Eu Sou." — Jo 8,58</div>
-          <div class="card-tags"><span class="card-tag">Génesis 17</span><span class="card-tag">Salmo 104</span><span class="card-tag">João 8</span></div>
-          <div class="card-ler">Ler reflexão</div>
-        </article>
-        <article class="diario-card" onclick="abrirDiario('d_25mar')" role="button" tabindex="0">
-          <div class="card-tempo">Quarta-feira — Anunciação</div>
-          <div class="card-data">25 de março de 2026</div>
-          <div class="card-titulo">"Faça-se em mim segundo a tua palavra"</div>
-          <div class="card-versiculo">"Eis aqui a serva do Senhor." — Lc 1,38</div>
-          <div class="card-tags"><span class="card-tag">Isaías 7</span><span class="card-tag">Hebreus 10</span><span class="card-tag">Lucas 1</span></div>
-          <div class="card-ler">Ler reflexão</div>
-        </article>
-        <article class="diario-card" onclick="abrirDiario('d_24mar')" role="button" tabindex="0">
-          <div class="card-tempo">Terça-feira — 5.ª Semana</div>
-          <div class="card-data">24 de março de 2026</div>
-          <div class="card-titulo">"Quando tiverdes levantado o Filho do Homem"</div>
-          <div class="card-versiculo">"Então sabereis que Eu Sou." — Jo 8,28</div>
-          <div class="card-tags"><span class="card-tag">Números 21</span><span class="card-tag">Salmo 101</span><span class="card-tag">João 8</span></div>
-          <div class="card-ler">Ler reflexão</div>
-        </article>
-        <article class="diario-card" onclick="abrirDiario('d_15mar')" role="button" tabindex="0">
-          <div class="card-tempo">4.º Domingo da Quaresma</div>
-          <div class="card-data">15 de março de 2026</div>
-          <div class="card-titulo">"Deus vê o que o homem não consegue ver"</div>
-          <div class="card-versiculo">"O Senhor vê o coração." — 1 Sm 16,7</div>
-          <div class="card-tags"><span class="card-tag">1 Samuel 16</span><span class="card-tag">Efésios 5</span><span class="card-tag">João 9</span></div>
-          <div class="card-ler">Ler reflexão</div>
-        </article>
+        </div>
+
       </div>
     </div>
 
@@ -740,17 +837,29 @@
     </div>
   </section>
 
-  <!-- REVELAÇÃO PROGRESSIVA DE CRISTO -->
-  <section class="revelacao-secao" id="revelacao" role="region" aria-labelledby="revelacao-titulo-id">
+  <!-- REVELAÇÕES — DOIS CARDS EXPANSÍVEIS -->
+  <section class="revelacao-secao" id="revelacao" role="region">
     <div class="revelacao-inner">
       <div class="secao-topo">
         <div class="secao-rotulo">✦ A Maravilha da Palavra ✦</div>
-        <h2 class="secao-titulo" id="revelacao-titulo-id" style="color:#f0ece0;">A Revelação Progressiva do Nascimento de Cristo</h2>
+        <h2 class="secao-titulo" style="color:#f0ece0;">Revelações da Escritura</h2>
         <div class="secao-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
       </div>
-      <p class="revelacao-intro">Quem busca com atenção vai enxergando — a Escritura inteira aponta para Cristo. Não de uma vez, mas em camadas, progressivamente, de geração em geração. Aqui o fio que atravessa toda a história sagrada.</p>
+      <p class="revelacao-intro">Camadas que aguardam quem busca com paciência. Clique em cada revelação para abri-la.</p>
 
-      <div class="revelacao-linha">
+      <!-- CARD 1 — REVELAÇÃO PROGRESSIVA DO NASCIMENTO DE CRISTO -->
+      <div style="margin-bottom:20px;">
+        <div onclick="toggleRev('rev1')" role="button" tabindex="0" style="background:linear-gradient(135deg,#1a2535,#2a1040,#1a2535);border-radius:8px 8px 0 0;padding:32px 44px;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;user-select:none;border:1px solid rgba(201,168,76,0.1);border-bottom:none;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;color:var(--ouro);text-transform:uppercase;margin-bottom:10px;opacity:0.75;">✦ Profecia e Cumprimento ✦</div>
+            <div style="font-family:'Cormorant',serif;font-size:clamp(1.3rem,3vw,1.9rem);font-style:italic;font-weight:300;color:#fdf8f0;line-height:1.3;margin-bottom:8px;">A Revelação Progressiva do Nascimento de Cristo</div>
+            <div style="font-family:'Crimson Pro',serif;font-size:15px;font-style:italic;color:rgba(253,248,240,0.45);">De Gênesis ao fiat de Maria — o fio que percorre toda a Escritura</div>
+          </div>
+          <div style="font-size:28px;color:var(--ouro);opacity:0.5;transition:transform 0.35s;" id="seta-rev1">▾</div>
+        </div>
+        <div id="painel-rev1" style="max-height:0;overflow:hidden;transition:max-height 0.6s cubic-bezier(0.4,0,0.2,1);background:rgba(14,21,32,0.6);border:1px solid rgba(201,168,76,0.1);border-top:none;border-radius:0 0 8px 8px;">
+          <div style="padding:8px 0 20px;">
+            <div class="revelacao-linha">
 
         <div class="rev-item">
           <div class="rev-dot"><div class="rev-circulo"></div><div class="rev-livro">Gênesis</div></div>
@@ -851,8 +960,114 @@
           </div>
         </div>
 
-      </div>
-    </div>
+            </div><!-- fim revelacao-linha card1 -->
+          </div>
+        </div><!-- fim painel-rev1 -->
+      </div><!-- fim card1 wrapper -->
+
+      <!-- CARD 2 — SALMO 117 COMO AUTOBIOGRAFIA PROFÉTICA DE CRISTO -->
+      <div style="margin-bottom:20px;">
+        <div onclick="toggleRev('rev2')" role="button" tabindex="0" style="background:linear-gradient(135deg,#1a2010,#2a3510,#1a2010);border-radius:8px 8px 0 0;padding:32px 44px;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;user-select:none;border:1px solid rgba(201,168,76,0.1);border-bottom:none;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;color:var(--ouro);text-transform:uppercase;margin-bottom:10px;opacity:0.75;">✦ O Salmo Profético ✦</div>
+            <div style="font-family:'Cormorant',serif;font-size:clamp(1.3rem,3vw,1.9rem);font-style:italic;font-weight:300;color:#fdf8f0;line-height:1.3;margin-bottom:8px;">O Salmo 117 (118) como Autobiografia Profética de Cristo</div>
+            <div style="font-family:'Crimson Pro',serif;font-size:15px;font-style:italic;color:rgba(253,248,240,0.45);">A paixão, morte e ressurreição narradas em primeira pessoa — séculos antes</div>
+          </div>
+          <div style="font-size:28px;color:var(--ouro);opacity:0.5;transition:transform 0.35s;" id="seta-rev2">▾</div>
+        </div>
+        <div id="painel-rev2" style="max-height:0;overflow:hidden;transition:max-height 0.6s cubic-bezier(0.4,0,0.2,1);background:rgba(14,21,32,0.6);border:1px solid rgba(201,168,76,0.1);border-top:none;border-radius:0 0 8px 8px;">
+          <div style="padding:32px 44px;">
+
+            <p style="font-size:16px;font-style:italic;color:rgba(240,236,224,0.55);line-height:1.9;margin-bottom:28px;">Os Padres da Igreja — em especial Agostinho — liam o Salmo 117 (118) inteiro como a voz de Cristo falando em primeira pessoa através de Davi. Não como profecia sobre Cristo. Como Cristo mesmo falando antecipadamente pela boca do salmista. Leia com essa chave:</p>
+
+            <div class="revelacao-linha">
+
+              <div class="rev-item">
+                <div class="rev-dot"><div class="rev-circulo" style="background:var(--aurora);"></div><div class="rev-livro">Sl 117</div></div>
+                <div class="rev-conteudo">
+                  <div class="rev-ref">Versículo — "Na minha angústia clamei ao Senhor"</div>
+                  <div class="rev-titulo">Getsêmani</div>
+                  <div class="rev-texto">A angústia que precede a paixão. O mesmo verbo hebraico <em>tzarar</em> — ser apertado, comprimido, cercado de todos os lados sem saída. A oração de Jesus no jardim antes do sacrifício.</div>
+                  <div class="rev-cumprimento">→ Cumprido em Mateus 26,36-39 — "A minha alma está triste até à morte"</div>
+                </div>
+              </div>
+
+              <div class="rev-item">
+                <div class="rev-dot"><div class="rev-circulo" style="background:var(--aurora);"></div><div class="rev-livro">Sl 117</div></div>
+                <div class="rev-conteudo">
+                  <div class="rev-ref">Versículo — "O Senhor me respondeu e me libertou"</div>
+                  <div class="rev-titulo">A Ressurreição</div>
+                  <div class="rev-texto">A resposta de Deus à angústia do Filho. A libertação que o Pai opera sobre aquele que confiou totalmente — não escapando da morte, mas passando através dela e sendo libertado do outro lado.</div>
+                  <div class="rev-cumprimento">→ Cumprido em Atos 2,24 — "Deus o ressuscitou, rompendo os laços da morte"</div>
+                </div>
+              </div>
+
+              <div class="rev-item">
+                <div class="rev-dot"><div class="rev-circulo" style="background:var(--aurora);"></div><div class="rev-livro">Sl 117</div></div>
+                <div class="rev-conteudo">
+                  <div class="rev-ref">Versículo — "É melhor refugiar-se no Senhor do que confiar nos homens"</div>
+                  <div class="rev-titulo">O Abandono dos Discípulos</div>
+                  <div class="rev-texto">Pedro que nega. Judas que trai. Os onze que fogem. A coalizão de romanos, sacerdotes e multidão que se forma contra o Justo. Jesus cantou esse versículo na Última Ceia, horas antes de ser abandonado por todos.</div>
+                  <div class="rev-cumprimento">→ Cumprido em Marcos 14,50 — "Todos o abandonaram e fugiram"</div>
+                </div>
+              </div>
+
+              <div class="rev-item">
+                <div class="rev-dot"><div class="rev-circulo" style="background:var(--aurora);"></div><div class="rev-livro">Sl 117</div></div>
+                <div class="rev-conteudo">
+                  <div class="rev-ref">Versículo — "Todas as nações me cercaram"</div>
+                  <div class="rev-titulo">A Paixão</div>
+                  <div class="rev-texto">A coalização sem precedentes na história de Israel: romanos e judeus unidos, sacerdotes e povo, poder político e poder religioso — todos convergindo sobre um único homem. A descrição do cerco é perfeita para o processo que levou ao Calvário.</div>
+                  <div class="rev-cumprimento">→ Cumprido em Lucas 23 — Herodes e Pilatos tornaram-se amigos naquele dia</div>
+                </div>
+              </div>
+
+              <div class="rev-item">
+                <div class="rev-dot"><div class="rev-circulo" style="background:var(--ouro-brilho);opacity:1;width:16px;height:16px;"></div><div class="rev-livro">Sl 117</div></div>
+                <div class="rev-conteudo">
+                  <div class="rev-ref">Centro do Salmo — "A pedra rejeitada tornou-se a pedra angular"</div>
+                  <div class="rev-titulo">A Cruz que se torna Fundamento</div>
+                  <div class="rev-texto">O centro absoluto do Salmo — em estrutura quiástica, tudo gira em torno desse versículo. A rejeição não foi acidente. Foi o fundamento. <em>Rosh pinnah</em> — cabeça do canto — a pedra que no alto trava duas paredes e determina o alinhamento de toda a construção. Jesus a cita sobre si mesmo. Pedro a cita em Atos. Paulo a cita. É a profecia mais repetida no Novo Testamento.</div>
+                  <div class="rev-cumprimento">→ Citado por Jesus (Mt 21,42), por Pedro (At 4,11; 1Pd 2,7) e por Paulo (Rm 9,33)</div>
+                </div>
+              </div>
+
+              <div class="rev-item">
+                <div class="rev-dot"><div class="rev-circulo" style="background:var(--aurora);"></div><div class="rev-livro">Sl 117</div></div>
+                <div class="rev-conteudo">
+                  <div class="rev-ref">Versículo — "Não morrerei, mas viverei — e contarei as obras do Senhor"</div>
+                  <div class="rev-titulo">A Declaração Pascal por Excelência</div>
+                  <div class="rev-texto">Jesus cantou essa linha na noite da Última Ceia, sabendo o que estava prestes a acontecer. Não por desconhecimento — cantou sabendo. E "contarei as obras do Senhor" revela que a sobrevivência não é para si mesmo. É para o testemunho. Maria Madalena saiu do túmulo para contar. Os de Emaús voltaram para contar. A ressurreição gera testemunho compulsivo.</div>
+                  <div class="rev-cumprimento">→ Cumprido em João 20,17 — "Vai dizer aos meus irmãos que subo"</div>
+                </div>
+              </div>
+
+              <div class="rev-item">
+                <div class="rev-dot"><div class="rev-circulo" style="background:var(--ouro);opacity:0.9;"></div><div class="rev-livro">Sl 117</div></div>
+                <div class="rev-conteudo">
+                  <div class="rev-ref">Versículo — "Benedito o que vem em nome do Senhor"</div>
+                  <div class="rev-titulo">O Domingo de Ramos — e a Identidade Revelada</div>
+                  <div class="rev-texto">As multidões cantaram esse versículo exato quando Jesus entrou em Jerusalém — usando a liturgia do Templo para receber o próprio Senhor do Templo sem saber completamente o que estavam dizendo. Em hebraico <em>beshem</em> — em nome — não é apenas referência. É quase identificação. Vir em nome do Pai significa trazer a presença do Pai. O Salmo antecipa a encarnação numa única preposição.</div>
+                  <div class="rev-cumprimento">→ Cumprido em Mateus 21,9 — as multidões clamavam "Hosana ao filho de Davi!"</div>
+                </div>
+              </div>
+
+              <div class="rev-item">
+                <div class="rev-dot"><div class="rev-circulo" style="background:var(--ouro-brilho);opacity:1;"></div><div class="rev-livro">Sl 117</div></div>
+                <div class="rev-conteudo">
+                  <div class="rev-ref">A Estrutura Completa — O Salmo como Microcosmo</div>
+                  <div class="rev-titulo">A Paixão e Ressurreição em Poesia</div>
+                  <div class="rev-texto">O Salmo 117 (118) é o último dos Salmos do Hallel pascal — cantado por Jesus e os discípulos na noite da Última Ceia antes de ir ao Getsêmani. A estrutura completa traça o arco pascal: Proclamação → Angústia → Cerco → Vitória → Pedra Angular → O Dia que o Senhor fez → Hosana → Bênção → Ação de Graças. É a estrutura da Missa. É a estrutura da vida cristã. É a estrutura da história da salvação inteira — num único Salmo.</div>
+                  <div class="rev-cumprimento">→ Quando a assembleia canta este Salmo, canta com a voz de Cristo que o entoou na noite em que foi entregue</div>
+                </div>
+              </div>
+
+            </div><!-- fim revelacao-linha card2 -->
+          </div>
+        </div><!-- fim painel-rev2 -->
+      </div><!-- fim card2 wrapper -->
+
+    </div><!-- fim revelacao-inner -->
   </section>
 
   <section class="sobre" role="region" aria-label="Sobre o Diário Litúrgico">
@@ -877,6 +1092,169 @@
   <div class="diario-wrap" id="diario-conteudo"></div>
 </div>
 
+<div class="view" id="view-semana-santa">
+  <div style="padding-top:56px; background:var(--creme); min-height:100vh;">
+
+    <!-- Header -->
+    <div style="background:linear-gradient(170deg,var(--noite) 0%,var(--noite-med) 35%,#1a2850 65%,var(--acento) 100%); padding:64px 32px 56px; text-align:center; position:relative; overflow:hidden;">
+      <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:36px 36px;pointer-events:none;"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to top,var(--creme),transparent);pointer-events:none;"></div>
+      <div style="position:relative;z-index:2;">
+        <div style="font-size:20px;color:rgba(255,255,255,0.3);letter-spacing:14px;margin-bottom:20px;">✦ ✝ ✦</div>
+        <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-bottom:14px;">Arquivo Litúrgico</div>
+        <h1 style="font-family:'Cormorant',serif;font-size:clamp(1.8rem,6vw,3.2rem);font-style:italic;font-weight:300;color:#fdf8f0;line-height:1.2;margin-bottom:10px;">Semana Santa 2026</h1>
+        <p style="font-family:'Crimson Pro',serif;font-size:17px;font-style:italic;color:rgba(253,248,240,0.5);">Do Domingo de Ramos ao Domingo da Ressurreição</p>
+        <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-top:24px;">
+          <div style="width:70px;height:1px;background:linear-gradient(to right,transparent,rgba(255,255,255,0.2));"></div>
+          <span style="color:rgba(255,255,255,0.25);font-size:12px;">✦</span>
+          <div style="width:70px;height:1px;background:linear-gradient(to left,transparent,rgba(255,255,255,0.2));"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div style="max-width:760px;margin:0 auto;padding:56px 28px 80px;">
+      <div style="display:flex;flex-direction:column;gap:0;position:relative;">
+        <div style="position:absolute;left:20px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(201,168,76,0.3),var(--aurora),rgba(201,168,76,0.3),transparent);"></div>
+
+        <!-- Domingo de Páscoa -->
+        <div onclick="abrirDiario('d_05abr')" role="button" tabindex="0" style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(212,168,67,0.08);cursor:pointer;" onmouseover="this.querySelector('.ss-v-titulo').style.color='var(--ouro)'" onmouseout="this.querySelector('.ss-v-titulo').style.color='var(--noite)'">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+            <div style="width:14px;height:14px;border-radius:50%;background:var(--ouro-brilho);box-shadow:0 0 10px rgba(232,201,106,0.6);flex-shrink:0;"></div>
+          </div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;margin-bottom:6px;opacity:0.8;">Domingo, 5 de Abril · Domingo de Páscoa ✦</div>
+            <div class="ss-v-titulo" style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:var(--noite);line-height:1.3;margin-bottom:6px;transition:color 0.2s;">"Viu e creu"</div>
+            <div style="font-size:13px;font-style:italic;color:var(--texto-suave);line-height:1.6;margin-bottom:10px;">"Este é o dia que o Senhor fez — alegremo-nos e exultemos nele." — Sl 117,24</div>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Atos 10</span>
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Salmo 117</span>
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Colossenses 3</span>
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">João 20</span>
+            </div>
+            <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;opacity:0.75;">Ler homilia →</div>
+          </div>
+        </div>
+
+        <!-- Sábado Santo -->
+        <div onclick="abrirDiario('d_04abr')" role="button" tabindex="0" style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(212,168,67,0.08);cursor:pointer;" onmouseover="this.querySelector('.ss-v-titulo').style.color='var(--ouro)'" onmouseout="this.querySelector('.ss-v-titulo').style.color='var(--noite)'">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+            <div style="width:12px;height:12px;border-radius:50%;background:var(--ouro);opacity:0.7;flex-shrink:0;"></div>
+          </div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;margin-bottom:6px;opacity:0.7;">Sábado, 4 de Abril · Sábado Santo — Vigília Pascal</div>
+            <div class="ss-v-titulo" style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:var(--noite);line-height:1.3;margin-bottom:6px;transition:color 0.2s;">"No princípio a mesma Palavra — e no fim, Aleluia"</div>
+            <div style="font-size:13px;font-style:italic;color:var(--texto-suave);line-height:1.6;margin-bottom:10px;">"Não está aqui — ressuscitou, como havia dito." — Mt 28,6</div>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Génesis 1</span>
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Salmo 103</span>
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Génesis 22</span>
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Mateus 28</span>
+            </div>
+            <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;opacity:0.75;">Ler homilia →</div>
+          </div>
+        </div>
+
+        <!-- Sexta-feira Santa -->
+        <div onclick="abrirDiario('d_03abr')" role="button" tabindex="0" style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(212,168,67,0.08);cursor:pointer;" onmouseover="this.querySelector('.ss-v-titulo').style.color='var(--aurora)'" onmouseout="this.querySelector('.ss-v-titulo').style.color='var(--noite)'">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+            <div style="width:12px;height:12px;border-radius:50%;background:var(--aurora);opacity:0.8;flex-shrink:0;"></div>
+          </div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--aurora-suave);text-transform:uppercase;margin-bottom:6px;opacity:0.8;">Sexta-feira, 3 de Abril · Sexta-feira Santa</div>
+            <div class="ss-v-titulo" style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:var(--noite);line-height:1.3;margin-bottom:6px;transition:color 0.2s;">"Na cruz não foram os pregos — foi o amor"</div>
+            <div style="font-size:13px;font-style:italic;color:var(--texto-suave);line-height:1.6;margin-bottom:10px;">"Pela sua ferida fomos curados." — Is 53,5</div>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--aurora-claro);border:1px solid rgba(196,92,42,0.15);padding:3px 8px;border-radius:2px;">Isaías 52—53</span>
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--aurora-claro);border:1px solid rgba(196,92,42,0.15);padding:3px 8px;border-radius:2px;">Salmo 30</span>
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--aurora-claro);border:1px solid rgba(196,92,42,0.15);padding:3px 8px;border-radius:2px;">Hebreus 4</span>
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--aurora-claro);border:1px solid rgba(196,92,42,0.15);padding:3px 8px;border-radius:2px;">João 18—19</span>
+            </div>
+            <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--aurora);text-transform:uppercase;opacity:0.75;">Ler homilia →</div>
+          </div>
+        </div>
+
+        <!-- Quinta-feira Santa — sem homilia -->
+        <div style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(201,168,76,0.06);opacity:0.4;">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.2);flex-shrink:0;"></div>
+          </div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:6px;">Quinta-feira, 2 de Abril · Quinta-feira Santa</div>
+            <div style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:var(--noite);line-height:1.3;margin-bottom:6px;">"Fazei isto em memória de mim"</div>
+            <div style="font-size:13px;font-style:italic;color:var(--texto-suave);line-height:1.6;margin-bottom:10px;">"Eu vos dei o exemplo para que façais como eu fiz." — Jo 13,15</div>
+            <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--texto-suave);text-transform:uppercase;opacity:0.5;">Em breve</div>
+          </div>
+        </div>
+
+        <!-- Quarta-feira Santa — sem homilia -->
+        <div style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(201,168,76,0.06);opacity:0.4;">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.2);flex-shrink:0;"></div>
+          </div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:6px;">Quarta-feira, 1 de Abril · Quarta-feira Santa</div>
+            <div style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:var(--noite);line-height:1.3;margin-bottom:6px;">"Senhor, serei eu?"</div>
+            <div style="font-size:13px;font-style:italic;color:var(--texto-suave);line-height:1.6;margin-bottom:10px;">"Um de vós me trairá." — Mt 26,21</div>
+            <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--texto-suave);text-transform:uppercase;opacity:0.5;">Em breve</div>
+          </div>
+        </div>
+
+        <!-- Terça-feira Santa — sem homilia -->
+        <div style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(201,168,76,0.06);opacity:0.4;">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.2);flex-shrink:0;"></div>
+          </div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:6px;">Terça-feira, 31 de Março · Terça-feira Santa</div>
+            <div style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:var(--noite);line-height:1.3;margin-bottom:6px;">"Agora é glorificado o Filho do Homem"</div>
+            <div style="font-size:13px;font-style:italic;color:var(--texto-suave);line-height:1.6;margin-bottom:10px;">"Para onde eu vou, não podes seguir-me agora." — Jo 13,36</div>
+            <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--texto-suave);text-transform:uppercase;opacity:0.5;">Em breve</div>
+          </div>
+        </div>
+
+        <!-- Segunda-feira Santa -->
+        <div onclick="abrirDiario('d_30mar')" role="button" tabindex="0" style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;border-bottom:1px solid rgba(212,168,67,0.08);cursor:pointer;" onmouseover="this.querySelector('.ss-v-titulo').style.color='var(--ouro)'" onmouseout="this.querySelector('.ss-v-titulo').style.color='var(--noite)'">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+            <div style="width:12px;height:12px;border-radius:50%;background:var(--ouro);opacity:0.7;flex-shrink:0;"></div>
+          </div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;margin-bottom:6px;opacity:0.7;">Segunda-feira, 30 de Março · Segunda-feira Santa</div>
+            <div class="ss-v-titulo" style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:var(--noite);line-height:1.3;margin-bottom:6px;transition:color 0.2s;">"A casa ficou toda perfumada"</div>
+            <div style="font-size:13px;font-style:italic;color:var(--texto-suave);line-height:1.6;margin-bottom:10px;">"O Senhor é minha luz e minha salvação." — Sl 26,1</div>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Isaías 42</span>
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Salmo 26</span>
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">João 12</span>
+            </div>
+            <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;opacity:0.75;">Ler homilia →</div>
+          </div>
+        </div>
+
+        <!-- Domingo de Ramos -->
+        <div onclick="abrirDiario('d_29mar')" role="button" tabindex="0" style="display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start;padding:20px 0;cursor:pointer;" onmouseover="this.querySelector('.ss-v-titulo').style.color='var(--ouro)'" onmouseout="this.querySelector('.ss-v-titulo').style.color='var(--noite)'">
+          <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;">
+            <div style="width:12px;height:12px;border-radius:50%;background:var(--ouro);opacity:0.7;flex-shrink:0;"></div>
+          </div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;margin-bottom:6px;opacity:0.7;">Domingo, 29 de Março · Domingo de Ramos</div>
+            <div class="ss-v-titulo" style="font-family:'Cormorant',serif;font-size:20px;font-style:italic;font-weight:600;color:var(--noite);line-height:1.3;margin-bottom:6px;transition:color 0.2s;">"O Deus que abriu a mão"</div>
+            <div style="font-size:13px;font-style:italic;color:var(--texto-suave);line-height:1.6;margin-bottom:10px;">"Esvaziou-se a si mesmo, obediente até à morte de cruz." — Fl 2,7-8</div>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Isaías 50</span>
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Salmo 21</span>
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Filipenses 2</span>
+              <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:1px;color:var(--noite);background:var(--ouro-claro);border:1px solid rgba(201,168,76,0.2);padding:3px 8px;border-radius:2px;">Mateus 26—27</span>
+            </div>
+            <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--ouro);text-transform:uppercase;opacity:0.75;">Ler homilia →</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 function toggleCan(id) {
   const div = document.getElementById('div-' + id);
@@ -896,23 +1274,438 @@ function toggleLivro(id) {
 window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('visivel', window.scrollY > 80);
 });
+/* ═══════════════════════════════════════════
+   CALENDÁRIO LITÚRGICO AUTOMÁTICO
+   O acento muda sozinho conforme a data.
+   Algoritmo de Meeus para Páscoa móvel.
+═══════════════════════════════════════════ */
+
+function calcularPascoa(ano) {
+  const a = ano % 19;
+  const b = Math.floor(ano / 100);
+  const c = ano % 100;
+  const d = Math.floor(b / 4);
+  const e = b % 4;
+  const f = Math.floor((b + 8) / 25);
+  const g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30;
+  const i = Math.floor(c / 4);
+  const k = c % 4;
+  const l = (32 + 2 * e + 2 * i - h - k) % 7;
+  const m = Math.floor((a + 11 * h + 22 * l) / 451);
+  const mes = Math.floor((h + l - 7 * m + 114) / 31);
+  const dia = ((h + l - 7 * m + 114) % 31) + 1;
+  return new Date(ano, mes - 1, dia);
+}
+
+function primeiroDomingoAdvento(ano) {
+  const natal = new Date(ano, 11, 25);
+  const diaSemana = natal.getDay();
+  const diasAteDomingo = diaSemana === 0 ? 0 : diaSemana;
+  const ultimoDomingoAntesNatal = new Date(natal.getTime() - diasAteDomingo * 86400000);
+  return new Date(ultimoDomingoAntesNatal.getTime() - 21 * 86400000);
+}
+
+function detectarTempoLiturgico() {
+  const hoje = new Date();
+  const ano = hoje.getFullYear();
+  const t = hoje.getTime();
+
+  const pascoa       = calcularPascoa(ano);
+  const cinerasMerc  = new Date(pascoa.getTime() - 46 * 86400000);
+  const domingoRamos = new Date(pascoa.getTime() - 7  * 86400000);
+  const pentecostes  = new Date(pascoa.getTime() + 49 * 86400000);
+  const batismoSenhor= new Date(ano, 0, 13);
+  const natal        = new Date(ano, 11, 25);
+  const adventoAtual = primeiroDomingoAdvento(ano);
+  const adventoAnterior = primeiroDomingoAdvento(ano - 1);
+  const natalAnterior= new Date(ano - 1, 11, 25);
+
+  // Semana Santa (Domingo de Ramos até Sábado Santo)
+  if (t >= domingoRamos.getTime() && t < pascoa.getTime())
+    return 'semana-santa';
+
+  // Tempo Pascal (Páscoa até Pentecostes inclusive)
+  if (t >= pascoa.getTime() && t <= pentecostes.getTime() + 86400000)
+    return 'pascoa';
+
+  // Quaresma (Quarta de Cinzas até Domingo de Ramos)
+  if (t >= cinerasMerc.getTime() && t < domingoRamos.getTime())
+    return 'quaresma';
+
+  // Advento (1.º Domingo do Advento até 24 Dez)
+  const vespera = new Date(ano, 11, 24, 23, 59, 59);
+  if (t >= adventoAtual.getTime() && t <= vespera.getTime())
+    return 'advento';
+
+  // Natal (25 Dez até Batismo do Senhor ~13 Jan)
+  if (t >= natal.getTime() || t <= batismoSenhor.getTime()) {
+    const janBatismo = new Date(ano, 0, 13);
+    if (t >= natalAnterior.getTime() || t <= janBatismo.getTime())
+      return 'natal';
+  }
+
+  // Tempo Comum
+  return 'comum';
+}
+
+function aplicarAcento() {
+  const tempo = detectarTempoLiturgico();
+  const paletas = {
+    'pascoa':       ['#d4a843','#e8c86a','#faf3e0','#7a5c00'],
+    'natal':        ['#d4a843','#e8c86a','#faf3e0','#7a5c00'],
+    'quaresma':     ['#7a40a0','#a87ed4','#f5eefa','#4a1a70'],
+    'advento':      ['#7a40a0','#a87ed4','#f5eefa','#4a1a70'],
+    'semana-santa': ['#c03020','#e05a40','#faece7','#7a1a0a'],
+    'comum':        ['#2a6e48','#4cad6e','#e8f4ee','#1e4a30'],
+  };
+  const [ac, ab, acl, at] = paletas[tempo] || paletas['comum'];
+  const r = document.documentElement.style;
+  r.setProperty('--acento',        ac);
+  r.setProperty('--acento-brilho', ab);
+  r.setProperty('--acento-claro',  acl);
+  r.setProperty('--acento-texto',  at);
+  // aurora também segue acento
+  r.setProperty('--aurora',        ac);
+  r.setProperty('--aurora-suave',  ab);
+  r.setProperty('--aurora-claro',  acl);
+  // salvar tempo no body para referência
+  document.body.dataset.tempo = tempo;
+}
+
+aplicarAcento();
+
+function toggleRev(id) {
+  const painel = document.getElementById('painel-' + id);
+  const seta = document.getElementById('seta-' + id);
+  const isAberto = painel.style.maxHeight && painel.style.maxHeight !== '0px';
+  if (isAberto) {
+    painel.style.maxHeight = '0px';
+    seta.style.transform = 'rotate(0deg)';
+  } else {
+    painel.style.maxHeight = painel.scrollHeight + 300 + 'px';
+    seta.style.transform = 'rotate(180deg)';
+  }
+}
+function toggleSemana() {
+  const painel = document.getElementById('ss-painel');
+  const seta = document.getElementById('ss-seta');
+  const label = document.getElementById('ss-label');
+  const isAberto = painel.style.maxHeight && painel.style.maxHeight !== '0px';
+  if (isAberto) {
+    painel.style.maxHeight = '0px';
+    seta.style.transform = 'rotate(0deg)';
+    label.childNodes[0].textContent = 'Ver as liturgias ';
+  } else {
+    painel.style.maxHeight = painel.scrollHeight + 200 + 'px';
+    seta.style.transform = 'rotate(180deg)';
+    label.childNodes[0].textContent = 'Fechar liturgias ';
+  }
+}
 function irPortal() {
   document.getElementById('view-diario').classList.remove('ativa');
+  document.getElementById('view-semana-santa').classList.remove('ativa');
   document.getElementById('view-portal').classList.add('ativa');
   document.getElementById('nav-voltar').classList.remove('visivel');
   window.scrollTo({ top:0, behavior:'smooth' });
+}
+function abrirSemana() {
+  document.getElementById('view-portal').classList.remove('ativa');
+  document.getElementById('view-diario').classList.remove('ativa');
+  document.getElementById('view-semana-santa').classList.add('ativa');
+  document.getElementById('nav-voltar').classList.add('visivel');
+  window.scrollTo({ top:0, behavior:'instant' });
 }
 function abrirDiario(id) {
   const c = diarios[id];
   if (!c) return;
   document.getElementById('diario-conteudo').innerHTML = c;
   document.getElementById('view-portal').classList.remove('ativa');
+  document.getElementById('view-semana-santa').classList.remove('ativa');
   document.getElementById('view-diario').classList.add('ativa');
   document.getElementById('nav-voltar').classList.add('visivel');
   window.scrollTo({ top:0, behavior:'instant' });
 }
 
 const diarios = {
+
+/* ═══════════════════════════════════════════════════
+   2.º DOMINGO DE PÁSCOA — DIVINA MISERICÓRDIA — 12 DE ABRIL DE 2026
+   ═══════════════════════════════════════════════════ */
+'d_12abr': `
+<div class="d-header">
+  <div class="d-header-grade"></div><div class="d-header-glow"></div>
+  <div class="d-header-conteudo">
+    <div class="d-header-emblema">✦ ✝ ✦</div>
+    <div class="d-header-tempo">2.º Domingo de Páscoa — Divina Misericórdia</div>
+    <h1 class="d-header-titulo">Diário Litúrgico</h1>
+    <p class="d-header-subtitulo">Felizes os que creem sem ver</p>
+    <div class="d-header-data">Domingo, 12 de abril de 2026</div>
+    <div class="d-header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">📖</span><h2 class="d-secao-label">A Palavra de Hoje</h2><div class="d-secao-fio"></div></div>
+  <div class="d-leituras">
+    <div class="d-leitura"><div class="d-leitura-tipo">Primeira Leitura</div><div class="d-leitura-ref">Atos 2,42-47</div><div class="d-leitura-desc">A primeira comunidade — perseverantes na doutrina, na fração do pão, na comunhão e na oração</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Salmo Responsorial</div><div class="d-leitura-ref">Salmo 117 (118),2-4.13-15.22-24</div><div class="d-leitura-desc">Eterna é a sua misericórdia — a pedra rejeitada tornou-se a pedra angular — este é o dia que o Senhor fez</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Segunda Leitura</div><div class="d-leitura-ref">1 Pedro 1,3-9</div><div class="d-leitura-desc">Renascidos pela ressurreição para uma viva esperança — herança incorruptível — alegria inefável pela fé</div></div>
+    <div class="d-leitura evang"><div class="d-leitura-tipo">Evangelho</div><div class="d-leitura-ref">João 20,19-31</div><div class="d-leitura-desc">As portas fechadas por medo, o sopro do Espírito, a confissão de Tomé — Meu Senhor e meu Deus</div></div>
+  </div>
+  <div class="d-versiculo">
+    <p>"Meu Senhor e meu Deus."</p>
+    <div class="ref">— João 20,28</div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🙏</span><h2 class="d-secao-label">Meu Coração Responde</h2><div class="d-secao-fio"></div></div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Atos 2,42-47 — A comunidade que nasceu do sopro</div>
+    <p>Lucas descreve a primeira comunidade com quatro palavras gregas que não são sugestões — são os quatro pilares de tudo o que a Igreja é ou deveria ser: <em>didaché</em> — o ensinamento dos apóstolos; <em>koinonia</em> — a comunhão fraterna; <em>klasis tou artou</em> — a fração do pão; <em>proseuché</em> — a oração contínua. Quatro pulmões. Uma comunidade que abandona qualquer um deles começa a sufocar.</p>
+    <div class="d-citacao">E ali estava o temor — não o medo. O texto distingue com precisão: o medo é o que fechou as portas do cenáculo, o que paralisou Adão no Éden quando respondeu a Deus com as palavras mais tristes da Escritura: <em>ouvi a tua voz e tive medo.</em> O temor de que falam os Atos é o <em>phobos</em> que nasce do reconhecimento da presença de Deus — é o que abre, não o que fecha. A partilha de bens que acontecia ali não era decreto ideológico. Era consequência ontológica: quem acredita de verdade que Cristo ressuscitou muda a sua relação com a propriedade — porque percebe que nada lhe pertence. A casa aberta, o pão dividido, a alegria que transborda. O resultado de quem reconhece que foi alcançado pelo Ressuscitado.</div>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Salmo 117 (118),2-4.13-15.22-24 — O canto que Cristo entoou</div>
+    <p>Há uma verdade que poucas vezes é dita: este Salmo foi cantado por Jesus e os discípulos na noite da Última Ceia, imediatamente antes de ir ao Getsêmani. Era o último Salmo do Hallel egípcio, cantado em toda a Páscoa judaica. E Jesus cantou <em>não morrerei, mas viverei</em> sabendo o que estava prestes a acontecer. Cantou <em>ainda que o mal me envolva, eu o esmagaria em nome do Senhor</em> horas antes de ser preso. Cantou <em>a pedra rejeitada tornou-se angular</em> horas antes de ser rejeitado. Não por desconhecimento — cantou sabendo. E cantou mesmo assim.</p>
+    <div class="d-citacao-ouro">A pedra angular em hebraico é <em>rosh pinnah</em> — literalmente a cabeça do canto. Na arquitetura antiga não ficava embaixo da construção como imaginamos — ficava no alto, no encontro de duas paredes, travando-as. É simultaneamente fundamento e coroamento. Começo e fim. E o Salmo tem uma estrutura quiástica — espelhada — onde o centro absoluto de toda a composição é exatamente esse versículo. Tudo gira em torno da pedra rejeitada que se torna angular. Os três grupos que proclamam — Israel, Arão, os que temem ao Senhor — antecipam a universalidade da Páscoa: o povo da aliança, o sacerdócio cumprido em Cristo, e os gentios — todos nós — chamados a proclamar que eterna é a sua misericórdia.</div>
+    <p>E <em>Hosana</em> — palavra que pronunciamos todas as semanas na liturgia — é em hebraico <em>hoshiana</em>: salva agora, salva urgentemente. Era um grito de desespero. Tornou-se canção de festa porque o grito foi ouvido. A assembleia que canta este Salmo canta ao mesmo tempo o antes e o depois da salvação. Canta com a voz de Cristo, que se sobrepõe à nossa voz através dos séculos.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">1 Pedro 1,3-9 — A herança que ninguém pode tocar</div>
+    <p>Pedro escolhe três palavras para descrever a herança reservada nos céus e cada uma nega uma forma de perda que os destinatários da carta conheciam muito bem. <em>Incorruptível</em> — não se corrompe por dentro. <em>Incontaminável</em> — não se corrompe por fora. <em>Imarcescível</em> — do latim <em>marcescere</em>, murchar — o que não definha com o tempo. Três negações para dizer que o que Deus reserva é o oposto de tudo o que o mundo oferece e depois tira.</p>
+    <div class="d-citacao-purpura">A herança em grego é <em>kleronomia</em> — e tem um peso jurídico preciso. Não se ganha. Não se merece. Herda-se por ser filho. Pedro está dizendo que o cristão não recebe a vida eterna como recompensa por boas obras — recebe como herança porque renasceu. E esse renascimento — <em>anagennesas</em>, gerar de novo — é a mesma palavra do diálogo de Jesus com Nicodemos. Pedro escreve provavelmente para recém-batizados que ouviam essa carta ainda úmidos da água da vigília pascal. Cada palavra era tecida sobre a experiência que acabavam de viver.<br><br>As provações são como o fogo do ourives — que derrete o ouro até que o artesão possa ver o próprio rosto refletido no metal. Esse era o sinal de que o ouro estava puro. As tribulações não apagam a fé — purificam-na até que o rosto de Deus se reflita no fiel. Amar a Jesus sem o ter visto, crer nele sem o ver agora — Pedro nomeia isso com a palavra <em>agalliasthe</em>, a alegria que transborda e não cabe dentro. A mesma palavra do Magnificat. Não é contentamento tranquilo. É alegria que explode. E Pedro diz algo que raramente é notado: as gerações que nunca viram Jesus têm acesso a uma forma de amor que os próprios apóstolos não experimentaram — o amor sem ver.</div>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">João 20,19-31 — Do quarto fechado à confissão mais alta</div>
+    <p>As portas estavam fechadas por medo. E Jesus entrou. João não descreve como — e esse silêncio é teológico. O que importa é o contraste: o medo fecha, a ressurreição atravessa. E o primeiro gesto de Jesus não é um discurso. É mostrar as chagas. O Ressuscitado se identifica pelas feridas — não pela glória, não pelo poder. Pelas marcas do sofrimento que permanecem no corpo glorificado. O sofrimento não foi apagado. Foi transfigurado. E quando Jesus sopra sobre os discípulos e diz <em>recebei o Espírito Santo</em>, João usa um verbo — <em>enephysesen</em> — que aparece apenas duas vezes em toda a Bíblia grega: aqui, e em Gênesis 2,7, quando Deus sopra sobre o barro e Adão se torna ser vivo. É uma nova criação acontecendo na sala.</p>
+    <div class="d-citacao">Tomé não estava presente. João não explica por quê — e esse silêncio também é teológico. A tradição diz que estava só no seu luto. E enquanto os outros se reuniram com medo, mas juntos, Tomé isolou-se. A dor afasta. E ele só encontra o Ressuscitado quando volta à comunidade. Oito dias depois — no oitavo dia, o dia que transcende a criação, o dia da eternidade irompendo no tempo — ele está lá. E Cristo não aparece para discutir teologia com ele. Diz: coloca aqui o teu dedo. A teologia entra pela ferida. A fé mais profunda nasce não do argumento mas do contato com a dor reconhecida. E Tomé — o chamado incrédulo — pronuncia a maior confissão cristológica de todo o Evangelho de João: <em>meu Senhor e meu Deus</em>. Em grego com artigo definido e pronome possessivo. Não é exclamação de espanto. É declaração de identidade e entrega total. O incrédulo honesto chegou mais fundo do que os que creram antes.</div>
+    <p>E João faz algo extraordinário no versículo final: sai da narrativa e fala diretamente ao leitor. <em>Estas coisas foram escritas para que creiais.</em> Você estava lendo uma história — e o autor olha nos seus olhos. A beatitude de Cristo — <em>felizes os que creem sem ver</em> — não é dirigida aos discípulos presentes. É dirigida a você e a mim, que nunca tocámos nas chagas e acreditamos assim mesmo. Você está dentro do texto. Sempre esteve.</p>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">✝</span><h2 class="d-secao-label">Homilia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-homilia">
+    <div class="d-hom-topo">
+      <div class="d-hom-rotulo">✦ Reflexão do Dia ✦</div>
+      <div class="d-hom-titulo">"A fé que atravessa paredes"</div>
+    </div>
+    <div class="d-hom-corpo">
+      <p>Há uma semana, o quarto estava trancado. As portas fechadas por medo. Um punhado de homens que tinham seguido o Mestre por três anos, que o tinham visto curar cegos e ressuscitar mortos, escondidos como quem espera ser o próximo a ser levado. O medo fecha. Sempre fechou. Fechou Adão no Éden quando respondeu a Deus: <em>ouvi a tua voz e tive medo</em>. E fechou também aquelas portas no cenáculo de Jerusalém.</p>
+      <div class="d-hom-destaque">E Jesus entrou. João não diz como. Não há explicação de física ou de milagre descrito. Há apenas o contraste silencioso entre a porta fechada e a presença que atravessa. A vida que atravessa paredes — não como truque sobrenatural, mas como sinal: o Ressuscitado não respeita os limites que o medo impõe. Está onde Deus quer que esteja. E a sua primeira palavra não é reprovação nem instrução. É criação: <em>A paz esteja convosco.</em> Em hebraico — Shalom Aleichem — paz não é ausência de conflito. É plenitude. Inteireza. O estado em que nada falta. Jesus não deseja paz. Jesus cria paz. O Ressuscitado entra num ambiente de medo e o transforma pela palavra.</div>
+      <p>E depois mostra as chagas. Não explica, não argumenta, não convence. Mostra. O Cristo glorificado não aparece com um corpo perfeito e imaculado — aparece com as marcas. Porque o sofrimento não foi apagado pela ressurreição. Foi transfigurado. As chagas continuam — e brilham de outro modo. São o documento de identidade do Ressuscitado. E são o ponto onde a nossa dor se reconhece na Sua.</p>
+      <p>Tomé estava ausente. João não nos diz por quê — e esse silêncio convida à imaginação teológica. A tradição guarda uma resposta possível: estava só no seu luto. Enquanto os outros se reuniram com medo, mas juntos, Tomé isolou-se na dor. E a dor que isola afasta do encontro. Ele só encontra o Ressuscitado quando volta à comunidade. Oito dias depois — no oitavo dia, aquele que os Padres chamam de primeiro e oitavo simultaneamente, o dia que transcende o tempo da criação e toca a eternidade — ele está lá. E Cristo não vem com argumento. Vem com a ferida. <em>Coloca aqui o teu dedo.</em></p>
+      <div class="d-hom-destaque-purpura">Tomé é frequentemente lido como fraqueza. Mas há outra leitura: Tomé é honesto. Não finge crer o que não crê. E essa honestidade — essa integridade da dúvida — gera a confissão mais alta de todo o Evangelho de João. O prólogo começa com o narrador dizendo: <em>o Verbo era Deus.</em> O Evangelho inteiro caminha em direção ao momento em que um ser humano dentro da narrativa reconhece e proclama essa mesma identidade. E esse ser humano é o chamado incrédulo: <em>Meu Senhor e meu Deus.</em> A dúvida honesta pode gerar a fé mais profunda. O incrédulo que foi fiel à sua honestidade chegou mais longe do que os que creram antes sem ter tocado nas feridas.</div>
+      <p>Pedro, na segunda leitura, escreveu para os que nunca viram Jesus. Para os batizados da dispersão que criam num Ressuscitado de quem não tinham memória pessoal. E diz-lhes algo surpreendente: <em>sem o terdes visto, vós o amais.</em> Não apenas crêem — amam. E o amor sem ver é o grau mais alto da relação com Cristo. Os próprios apóstolos não experimentaram isso — porque eles viram. Paradoxalmente, as gerações que nunca viram têm acesso a uma forma de amor que os que estiveram presentes não conheceram.</p>
+      <p>O Salmo 117 (118) que cantamos hoje não é acidental. É o último dos Salmos do Hallel pascal — o que Jesus cantou com os discípulos na noite da Última Ceia, antes de ir ao Getsêmani. Ele cantou <em>não morrerei, mas viverei</em> sabendo o que estava prestes a acontecer. Cantou a pedra rejeitada que se torna angular horas antes de ser rejeitado. E o centro absoluto de toda a composição do Salmo — estruturado como um espelho em torno de um ponto central — é exatamente essa imagem. Tudo gira em torno da rejeição que se transforma em fundamento. Em Cristo, a rejeição não foi um acidente. Foi o fundamento de toda a nova criação.</p>
+      <div class="d-hom-destaque">E Atos nos mostra o que acontece depois. A comunidade que nasceu daquele cenáculo — do sopro do Espírito, da confissão de Tomé, das chagas mostradas — não consegue mais fechar as portas, nem guardar o que tem, nem parar de orar. A ressurreição, quando é real, vaza para fora. A casa aberta, o pão dividido, a alegria partilhada — não são obrigações. São consequências. Quem foi alcançado pelo Ressuscitado não consegue mais viver fechado.</div>
+      <div class="d-hom-fecho">Do quarto fechado à casa aberta.<br>Da pedra rejeitada à pedra angular.<br>Da dúvida honesta à confissão mais alta.<br>Do grito de desespero ao canto de vitória.<br><br>Este é o arco da Páscoa.<br>Este é o arco de cada vida que se rende ao Ressuscitado.<br><br>Felizes os que creem sem ver —<br>porque ver não é condição da fé.<br>A condição é o coração aberto.<br><br>Meu Senhor e meu Deus.<br><br>Aleluia.</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🌿</span><h2 class="d-secao-label">Para Levar no Dia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-oracao">
+    <div class="d-or-topo"><div class="d-or-rotulo">✦ Oração do 2.º Domingo de Páscoa ✦</div></div>
+    <div class="d-or-corpo">
+      <p>Senhor Jesus,
+Tu que atravessas as portas fechadas pelo medo —
+atravessa as minhas.
+
+As que fechei por dor.
+As que fechei por decepção.
+As que fechei porque alguém que eu amava as fechou primeiro
+e eu aprendi a me proteger.
+
+Entra — não porque as abri,
+mas porque Tu atravessas o que o medo tranca.
+
+Mostra-me as Tuas chagas.
+Não a Tua glória que me intimidaria —
+mas as marcas que me dizem que foste ferido
+e que o sofrimento não Te impediu de voltar.
+
+Que eu seja como Tomé —
+honesto o suficiente para não fingir
+e aberto o suficiente para tocar a Tua ferida
+e dizer com toda a minha vida:
+meu Senhor e meu Deus.
+
+Faz de minha casa uma Igreja doméstica.
+Faz de minha mesa um altar de pão dividido.
+Faz de minha vida um reflexo
+do rosto que não precisei ver para amar.
+
+Eterna é a Tua misericórdia.
+Este é o dia que Tu fizeste.
+Alegremo-nos e exultemos nele.
+
+Aleluia.</p>
+      <div class="d-or-amen">AMÉM · ALELUIA</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;">
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">No cotidiano fechado</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>Há alguma porta na sua vida que o medo fechou — uma relação, uma conversa, uma entrega que você adiou? O Ressuscitado entra sem esperar que você a abra. Mas a sua parte é não trancá-la com sete chaves. Identifique hoje uma porta que vale começar a entreabrir.</p></div>
+    </div>
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">Na dúvida honesta</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>Tomé não fingiu. Não disse amém onde havia interrogação. Há alguma dúvida de fé ou de vida que você carrega mas não ousou nomear? A honestidade da dúvida é mais santa do que a fé de aparência. Leve essa dúvida à oração com as palavras exatas que ela tem — e espere que o Ressuscitado apareça nela.</p></div>
+    </div>
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">Na comunidade que abre as portas</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>A primeira comunidade de Atos não era uma instituição — era vida partilhada. Pão dividido, oração contínua, casa aberta. Qual desses quatro pilares — ensino, comunhão, eucaristia, oração — está mais fraco na sua vida de fé neste momento? Escolha um gesto concreto esta semana para reforçá-lo.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="d-rodape">
+  <div class="orn">✦ ✦ ✦</div>
+  <p>"Felizes os que não viram e creram." — Jo 20,29</p>
+</div>
+`,
+
+
+'d_11abr': `
+<div class="d-header">
+  <div class="d-header-grade"></div><div class="d-header-glow"></div>
+  <div class="d-header-conteudo">
+    <div class="d-header-emblema">✦ ✝ ✦</div>
+    <div class="d-header-tempo">Sábado — Oitava da Páscoa</div>
+    <h1 class="d-header-titulo">Diário Litúrgico</h1>
+    <p class="d-header-subtitulo">Não podemos deixar de falar</p>
+    <div class="d-header-data">Sábado, 11 de abril de 2026</div>
+    <div class="d-header-linha"><div class="l"></div><span>✦</span><div class="l r"></div></div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">📖</span><h2 class="d-secao-label">A Palavra de Hoje</h2><div class="d-secao-fio"></div></div>
+  <div class="d-leituras">
+    <div class="d-leitura"><div class="d-leitura-tipo">Primeira Leitura</div><div class="d-leitura-ref">Atos 4,13-21</div><div class="d-leitura-desc">Pedro e João diante do Sinédrio — homens sem instrução, cheios do Espírito, que não podiam calar</div></div>
+    <div class="d-leitura"><div class="d-leitura-tipo">Salmo Responsorial</div><div class="d-leitura-ref">Salmo 117,1.14-21</div><div class="d-leitura-desc">A destra do Senhor fez prodígios — não morrerei mas viverei, abri-me as portas da justiça</div></div>
+    <div class="d-leitura evang"><div class="d-leitura-tipo">Evangelho</div><div class="d-leitura-ref">Marcos 16,9-15</div><div class="d-leitura-desc">As aparições do Ressuscitado e o envio — ide por todo o mundo e pregai o Evangelho a toda criatura</div></div>
+  </div>
+  <div class="d-versiculo">
+    <p>"Nós não podemos deixar de falar do que vimos e ouvimos."</p>
+    <div class="ref">— Atos 4,20</div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🙏</span><h2 class="d-secao-label">Meu Coração Responde</h2><div class="d-secao-fio"></div></div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Atos 4,13-21 — Homens sem instrução que deixaram o Sinédrio sem palavras</div>
+    <p>Pedro e João estão diante do mesmo tribunal que condenou Jesus. Os membros do Sinédrio reconhecem neles <em>companheiros de Jesus</em> — em grego <em>epignósko</em>, reconhecimento pleno, sem dúvida. Haviam visto Jesus. Agora vêem Jesus neles. É uma das afirmações mais profundas do Novo Testamento sobre o que significa ser discípulo — tornar-se tão semelhante ao Mestre que quem viu o Mestre te reconhece nEle.</p>
+    <div class="d-citacao">E ficaram admirados — <em>ethaumazon</em>, o mesmo verbo usado para a reacção das multidões ao ensinamento de Jesus. O Sinédrio delibera e chega a uma conclusão devastadora para si próprio: <em>não podemos negar o milagre — é manifesto a todos.</em> A única saída é a intimidação. Mas Pedro e João respondem com uma frase que inverte o tribunal: <em>julgai vós mesmos se é justo obedecer-vos a vós mais do que a Deus.</em> São eles que colocam o Sinédrio na posição de julgados. E então a declaração que não admite negociação: <em>não podemos deixar de falar do que vimos e ouvimos.</em> Não é apenas que não querem — não conseguem. A experiência da ressurreição tornou o silêncio fisicamente impossível.</div>
+    <p>Aquele que ora dia e noite, que medita e reflecte, descobre a sabedoria de Deus. Enche-se do Espírito Santo. E sai pelo mundo proclamando o que recebeu. É exactamente este o retrato de Pedro e João naquela manhã. Atos 4,8 diz-o com precisão: <em>então Pedro, cheio do Espírito Santo, disse-lhes.</em> O enchimento precede a palavra. A oração precede a proclamação. O silêncio de Deus interiorizado torna-se voz de Deus que transborda.</p>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Salmo 117,1.14-21 — O que foi contemplado é o que se proclama</div>
+    <p><em>Não morrerei, mas viverei — e contarei as obras do Senhor.</em> É a frase que resume a espiritualidade pascal inteira. Só se conta o que foi primeiro contemplado. Só se proclama com autoridade o que foi primeiro ouvido com humildade. A destra do Senhor fez prodígios — repetido três vezes. Em hebraico a repetição tripla é ênfase máxima. A certeza que se quer proclamar é a que foi provada no sofrimento, não apenas pensada no conforto.</p>
+    <div class="d-citacao-purpura">E a porta — <em>sha'ar hatsedek</em> — porta da justiça, porta da rectidão. Entrar pela porta do Senhor é entrar com o coração alinhado com Deus. A porta não está fechada para os que erraram. Está fechada para os que recusam mudar. Pedro havia negado — e a porta estava aberta. O ladrão na cruz havia vivido no erro — e a porta estava aberta. Quem se redime do coração duro também conseguirá. A dureza do coração não é sentença definitiva — é condição presente que pode mudar. Uma fissura no coração de pedra por onde o Espírito entra e não para mais.</div>
+  </div>
+
+  <div class="d-meditacao">
+    <div class="d-med-titulo">Marcos 16,9-15 — Os enviados que não acreditavam</div>
+    <p>Marcos é o mais honesto dos evangelistas. Os discípulos não acreditaram em Maria Madalena — a primeira testemunha, libertada de sete demónios, escolhida por Deus exactamente por ser a mais improvável. Não acreditaram nos dois de Emaús. E Jesus aparece e diz directamente: <em>por que não acreditastes?</em> Dureza de coração e falta de fé — as duas andam juntas. O coração endurecido não é apenas intelectualmente resistente — é afectivamente fechado.</p>
+    <div class="d-citacao">E Jesus não esperou que abrissem completamente. Enviou-os com a dureza ainda fresca. <em>Ide por todo o mundo e pregai o Evangelho a toda criatura.</em> É o eco de Génesis 1 — a criação foi um acto de envio, as criaturas lançadas para existir e preencher a terra. A ressurreição é uma segunda criação, e o seu gesto inaugural é também um envio. O mesmo Espírito que pairava sobre as águas do caos paira agora sobre os onze de coração duro — e faz nova criação. Os sinais que acompanharão os que crerem são continuações do que Jesus fez: as mãos que curam, a língua nova do amor e da verdade, o nome de Jesus que não é fórmula mas presença activa do Ressuscitado.</div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">✝</span><h2 class="d-secao-label">Homilia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-homilia">
+    <div class="d-hom-topo">
+      <div class="d-hom-rotulo">✦ Reflexão do Dia ✦</div>
+      <div class="d-hom-titulo">"Não podemos deixar de falar"</div>
+    </div>
+    <div class="d-hom-corpo">
+      <p>Esta semana começou no escuro — sem forma e vazia, como a terra antes da criação. E termina com dois homens sem instrução diante do tribunal mais poderoso de Israel, dizendo uma frase que resume toda a vida cristã: <em>não podemos deixar de falar do que vimos e ouvimos.</em></p>
+      <p>Pedro e João não chegaram àquele tribunal por acidente de coragem. Chegaram pela acumulação silenciosa de anos — anos de oração, de escuta, de presença ao lado do Mestre, de não entender ainda e continuar mesmo assim. O Sinédrio via homens sem letras. Via certo, pela medida humana. Mas não via o que havia sido depositado neles pelo silêncio, pela contemplação, pela convivência com Jesus. A sabedoria que os espantou não era característica natural — era fruto cultivado na oração.</p>
+      <div class="d-hom-destaque">Aquele que ora dia e noite, que medita e reflecte, descobre a sabedoria de Deus. Não a sabedoria que o mundo reconhece — a que o mundo chama de loucura. E enche-se do Espírito Santo. E sai pelo mundo proclamando o que recebeu. Atos 4,8 diz-o com uma precisão que deveria parar-nos: <em>então Pedro, cheio do Espírito Santo, disse-lhes.</em> O enchimento precede a palavra. A oração precede a proclamação. O silêncio de Deus que foi interiorizado torna-se voz de Deus que transborda. Os membros do Sinédrio tinham toda a instrução e toda a autoridade institucional — e ficaram sem palavras. Pedro e João tinham o Espírito — e não conseguiam calar.</div>
+      <p>O Salmo 117 que cantamos é exactamente este caminho. <em>Não morrerei, mas viverei — e contarei as obras do Senhor.</em> Só se conta o que foi primeiro contemplado. Só se proclama com autoridade o que foi primeiro ouvido com humildade. A destra do Senhor fez prodígios — três vezes. Porque a certeza que se quer proclamar é a que foi provada no sofrimento, não apenas pensada no conforto. E a porta da justiça permanece aberta — não apenas para os perfeitos, mas para quem se redime do coração duro. Uma fissura no coração de pedra por onde o Espírito entra e não para mais.</p>
+      <div class="d-hom-destaque-purpura">E Marcos fecha a semana com uma honestidade que nenhum evangelista iguala. Os discípulos não acreditaram. Duas vezes. E Jesus não esperou que a fé deles estivesse perfeita — enviou-os com a dureza ainda fresca, com a história de fuga e negação ainda quente. Porque a missão não começa depois da perfeição — começa a partir da imperfeição encontrada pelo Ressuscitado. Maria Madalena carregou sete demónios — e foi a primeira testemunha. Os onze não acreditaram — e foram enviados ao mundo inteiro. Deus não espera que estejamos prontos. Envia-nos enquanto ainda estamos a tornar-nos.</div>
+      <p><em>Ide por todo o mundo e pregai o Evangelho a toda criatura.</em> É o eco de Génesis 1 — quando Deus criou, abençoou e enviou. A ressurreição é uma segunda criação e o seu gesto inaugural é também um envio. O mesmo Espírito que pairava sobre as águas do caos paira agora sobre os onze de coração duro — e faz nova criação. As mãos que curam são extensão das mãos de Jesus sobre os intocáveis. A língua nova é a linguagem do amor e da verdade que o mundo não conhecia antes de Cristo. O nome de Jesus não é fórmula — é a presença activa do Ressuscitado em cada gesto feito em seu nome.</p>
+      <div class="d-hom-destaque">Os membros do Sinédrio olharam para Pedro e João e reconheceram neles companheiros de Jesus. É o maior elogio que um cristão pode receber — não que seja doutor, não que seja eloquente, não que seja poderoso — mas que quem o vê reconheça nele o rosto do Mestre. É a transformação que a oração diária, a meditação da Escritura e a recepção do Espírito operam em silêncio — até que o exterior reflicta o interior, até que o discípulo comece a parecer-se com aquele que seguiu.</div>
+      <div class="d-hom-fecho">Esta semana começou no escuro<br>e termina com dois homens<br>que não podiam ficar calados.<br><br>Não por valentia própria.<br>Por oração acumulada.<br>Por meditação que se tornou carne.<br>Por Espírito que enche quem está aberto.<br><br>Nós somos esses homens.<br>Nós somos essa mulher.<br>Portadores de um Evangelho<br>que o mundo precisa ouvir<br>e que nenhum Sinédrio consegue silenciar.<br><br>Não podemos deixar de falar<br>do que vimos e ouvimos.<br><br>Ide.<br>Por todo o mundo.<br>A toda criatura.<br><br>Em nome de Jesus.<br><br>Aleluia.</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-secao">
+  <div class="d-secao-topo"><span class="d-secao-icone">🌿</span><h2 class="d-secao-label">Para Levar no Dia</h2><div class="d-secao-fio"></div></div>
+  <div class="d-oracao">
+    <div class="d-or-topo"><div class="d-or-rotulo">✦ Oração do Sábado da Oitava ✦</div></div>
+    <div class="d-or-corpo">
+      <p>Senhor Jesus,
+Tu que apareceste aos que não acreditavam
+e os enviaste mesmo assim —
+
+Aparece a mim.
+Com a minha dureza ainda fresca.
+Com as minhas negações ainda quentes.
+Com as minhas fugas ainda na memória.
+
+Enche-me do Teu Espírito
+antes que eu me sinta digno de ser enchido.
+Envia-me antes que eu me sinta pronto para ir.
+
+Que os que me vejam
+reconheçam em mim
+um companheiro de Jesus —
+não pela minha eloquência,
+não pela minha instrução,
+mas pela minha disponibilidade
+de não calar o que vi e ouvi.
+
+Abre-me a porta da justiça.
+Mesmo que o meu coração ainda seja de pedra
+em alguns lugares —
+uma fissura basta
+para que o Teu Espírito entre
+e não pare mais.
+
+Não posso deixar de falar
+do que vi e ouvi.
+
+Aleluia.</p>
+      <div class="d-or-amen">ALELUIA · AMÉM</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;">
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">Na oração que precede a proclamação</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>Pedro falou com autoridade porque orou com fidelidade. O que proclamamos só tem o peso do que contemplamos. Hoje, antes de falar de Deus a alguém, passe primeiro um momento em silêncio com Deus. A proclamação mais poderosa nasce sempre do silêncio mais honesto.</p></div>
+    </div>
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">No coragem de não recuar</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>Pedro e João não se acovardaram diante do Sinédrio. Há alguma situação na sua vida — uma injustiça, um erro, uma atrocidade que viu — onde o silêncio seria mais cómodo mas a palavra seria mais justa? O espírito que Deus nos deu não é de medo, mas de poder, de amor e de sobriedade.</p></div>
+    </div>
+    <div class="d-vida-grupo">
+      <div class="d-vida-titulo">No rosto que reflecte o Mestre</div>
+      <div class="d-pratica"><div class="d-pratica-dot"></div><p>O Sinédrio reconheceu em Pedro e João companheiros de Jesus — não pela doutrina, mas pelo rosto. Que transformação interior está a acontecer em você que começa a aparecer no exterior? Peça hoje a Deus que o seu rosto, as suas palavras e os seus gestos reflictam cada vez mais o rosto d'Aquele que segue.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="d-rodape">
+  <div class="orn">✦ ✦ ✦</div>
+  <p>"Nós não podemos deixar de falar do que vimos e ouvimos." — At 4,20</p>
+</div>
+`,
 
 /* ═══════════════════════════════════════════════════
    DOMINGO DE PÁSCOA — 5 DE ABRIL DE 2026
